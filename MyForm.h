@@ -81,7 +81,7 @@ namespace projectView {
 					L"Statistiques"
 			});
 			this->comboBox1->Location = System::Drawing::Point(16, 15);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(205, 24);
 			this->comboBox1->TabIndex = 2;
@@ -89,7 +89,7 @@ namespace projectView {
 			// boutonValider
 			// 
 			this->boutonValider->Location = System::Drawing::Point(15, 48);
-			this->boutonValider->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->boutonValider->Margin = System::Windows::Forms::Padding(4);
 			this->boutonValider->Name = L"boutonValider";
 			this->boutonValider->Size = System::Drawing::Size(208, 28);
 			this->boutonValider->TabIndex = 3;
@@ -99,18 +99,19 @@ namespace projectView {
 			// 
 			// Afficher
 			// 
+			this->Afficher->BackColor = System::Drawing::Color::Red;
 			this->Afficher->Location = System::Drawing::Point(15, 113);
-			this->Afficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Afficher->Margin = System::Windows::Forms::Padding(4);
 			this->Afficher->Name = L"Afficher";
 			this->Afficher->Size = System::Drawing::Size(208, 55);
 			this->Afficher->TabIndex = 4;
 			this->Afficher->Text = L"Afficher ";
-			this->Afficher->UseVisualStyleBackColor = true;
+			this->Afficher->UseVisualStyleBackColor = false;
 			// 
 			// Inserer
 			// 
 			this->Inserer->Location = System::Drawing::Point(16, 176);
-			this->Inserer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Inserer->Margin = System::Windows::Forms::Padding(4);
 			this->Inserer->Name = L"Inserer";
 			this->Inserer->Size = System::Drawing::Size(207, 55);
 			this->Inserer->TabIndex = 5;
@@ -120,7 +121,7 @@ namespace projectView {
 			// Supprimer
 			// 
 			this->Supprimer->Location = System::Drawing::Point(15, 239);
-			this->Supprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Supprimer->Margin = System::Windows::Forms::Padding(4);
 			this->Supprimer->Name = L"Supprimer";
 			this->Supprimer->Size = System::Drawing::Size(208, 55);
 			this->Supprimer->TabIndex = 6;
@@ -130,7 +131,7 @@ namespace projectView {
 			// Update
 			// 
 			this->Update->Location = System::Drawing::Point(16, 302);
-			this->Update->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Update->Margin = System::Windows::Forms::Padding(4);
 			this->Update->Name = L"Update";
 			this->Update->Size = System::Drawing::Size(207, 55);
 			this->Update->TabIndex = 7;
@@ -148,7 +149,7 @@ namespace projectView {
 			this->Controls->Add(this->Afficher);
 			this->Controls->Add(this->boutonValider);
 			this->Controls->Add(this->comboBox1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->ResumeLayout(false);
