@@ -88,7 +88,6 @@ namespace projectView {
 			// 
 			// boutonValider
 			// 
-			this->boutonValider->BackColor = System::Drawing::Color::DeepSkyBlue;
 			this->boutonValider->Location = System::Drawing::Point(15, 48);
 			this->boutonValider->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->boutonValider->Name = L"boutonValider";

@@ -11,5 +11,4 @@ void main(array<String^>^ args)
 	Application::SetCompatibleTextRenderingDefault(false);
 	projectView::MyForm form;
 	Application::Run(% form);
-	// test
 }
