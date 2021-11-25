@@ -80,71 +80,80 @@ namespace projectView {
 				L"Personnel", L"Clients", L"Commandes", L"Stock",
 					L"Statistiques"
 			});
-			this->comboBox1->Location = System::Drawing::Point(12, 12);
+			this->comboBox1->Location = System::Drawing::Point(16, 15);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(155, 21);
+			this->comboBox1->Size = System::Drawing::Size(205, 24);
 			this->comboBox1->TabIndex = 2;
 			// 
 			// boutonValider
 			// 
-			this->boutonValider->Location = System::Drawing::Point(11, 39);
+			this->boutonValider->BackColor = System::Drawing::Color::DeepSkyBlue;
+			this->boutonValider->Location = System::Drawing::Point(15, 48);
+			this->boutonValider->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->boutonValider->Name = L"boutonValider";
-			this->boutonValider->Size = System::Drawing::Size(156, 23);
+			this->boutonValider->Size = System::Drawing::Size(208, 28);
 			this->boutonValider->TabIndex = 3;
 			this->boutonValider->Text = L"Valider";
-			this->boutonValider->UseVisualStyleBackColor = true;
+			this->boutonValider->UseVisualStyleBackColor = false;
 			this->boutonValider->Click += gcnew System::EventHandler(this, &MyForm::boutonValider_Click);
 			// 
 			// Afficher
 			// 
-			this->Afficher->Location = System::Drawing::Point(11, 92);
+			this->Afficher->Location = System::Drawing::Point(15, 113);
+			this->Afficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Afficher->Name = L"Afficher";
-			this->Afficher->Size = System::Drawing::Size(156, 45);
+			this->Afficher->Size = System::Drawing::Size(208, 55);
 			this->Afficher->TabIndex = 4;
 			this->Afficher->Text = L"Afficher ";
 			this->Afficher->UseVisualStyleBackColor = true;
 			// 
 			// Inserer
 			// 
-			this->Inserer->Location = System::Drawing::Point(12, 143);
+			this->Inserer->Location = System::Drawing::Point(16, 176);
+			this->Inserer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Inserer->Name = L"Inserer";
-			this->Inserer->Size = System::Drawing::Size(155, 45);
+			this->Inserer->Size = System::Drawing::Size(207, 55);
 			this->Inserer->TabIndex = 5;
 			this->Inserer->Text = L"Inserer ";
 			this->Inserer->UseVisualStyleBackColor = true;
 			// 
 			// Supprimer
 			// 
-			this->Supprimer->Location = System::Drawing::Point(11, 194);
+			this->Supprimer->Location = System::Drawing::Point(15, 239);
+			this->Supprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Supprimer->Name = L"Supprimer";
-			this->Supprimer->Size = System::Drawing::Size(156, 45);
+			this->Supprimer->Size = System::Drawing::Size(208, 55);
 			this->Supprimer->TabIndex = 6;
 			this->Supprimer->Text = L"Supprimer ";
 			this->Supprimer->UseVisualStyleBackColor = true;
 			// 
 			// Update
 			// 
-			this->Update->Location = System::Drawing::Point(12, 245);
+			this->Update->Location = System::Drawing::Point(16, 302);
+			this->Update->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Update->Name = L"Update";
-			this->Update->Size = System::Drawing::Size(155, 45);
+			this->Update->Size = System::Drawing::Size(207, 55);
 			this->Update->TabIndex = 7;
 			this->Update->Text = L"Update ";
 			this->Update->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1476, 615);
+			this->ClientSize = System::Drawing::Size(1924, 757);
 			this->Controls->Add(this->Update);
 			this->Controls->Add(this->Supprimer);
 			this->Controls->Add(this->Inserer);
 			this->Controls->Add(this->Afficher);
 			this->Controls->Add(this->boutonValider);
 			this->Controls->Add(this->comboBox1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	private: System::Void boutonValider_Click(System::Object^ sender, System::EventArgs^ e) {
