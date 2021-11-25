@@ -100,7 +100,7 @@ namespace projectView {
 			// 
 			// Afficher
 			// 
-			this->Afficher->BackColor = System::Drawing::Color::Chocolate;
+			this->Afficher->BackColor = System::Drawing::Color::Snow;
 			this->Afficher->Location = System::Drawing::Point(15, 113);
 			this->Afficher->Margin = System::Windows::Forms::Padding(4);
 			this->Afficher->Name = L"Afficher";
