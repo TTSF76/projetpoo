@@ -133,6 +133,7 @@
     <ClInclude Include="CLconnect.h" />
     <ClInclude Include="CLarticle.h" />
     <ClInclude Include="CLpersonne.h" />
+    <ClInclude Include="CLpersonnel.h" />
     <ClInclude Include="CLstock.h" />
     <ClInclude Include="InputClientInserer.h">
       <FileType>CppForm</FileType>
@@ -159,6 +160,7 @@
     <ClCompile Include="CLarticle.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLpersonne.cpp" />
+    <ClCompile Include="CLpersonnel.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="CLconnect.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />

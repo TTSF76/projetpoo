@@ -59,7 +59,7 @@
     <ClInclude Include="InputClientSupprimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputClientUpdate.h">
+    <ClInclude Include="CLpersonnel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -106,7 +106,7 @@
     <ClCompile Include="InputClientSupprimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputClientUpdate.cpp">
+    <ClCompile Include="CLpersonnel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
