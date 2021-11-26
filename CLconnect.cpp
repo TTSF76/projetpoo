@@ -2,7 +2,7 @@
 #include "CLconnect.h"
 
 NS_Comp_Data::CLcad::CLcad(void) {
-	this->sCnx = "Data Source=LAPTOP-JD3V9C6N\\MSSQL_FABIEN;Initial Catalog=Corbeille;Persist Security Info=True;User ID=CNX_P6;Password=Test123";
+	this->sCnx = "Data Source=sql5102.site4now.net;Initial Catalog=db_a7ccf4_rouencaen001;Persist Security Info=True;User ID=db_a7ccf4_rouencaen001_admin;Password=TTSF7676";
 
 	this->sSql = "undefined";
 
