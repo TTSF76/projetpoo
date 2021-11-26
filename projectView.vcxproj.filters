@@ -53,6 +53,9 @@
     <ClInclude Include="Inputs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLpersonne.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -92,6 +95,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputClientInserer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLpersonne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
