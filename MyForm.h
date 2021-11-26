@@ -1,5 +1,6 @@
 #pragma once
 #include "Auth.h"
+#include "Input.h"
 
 namespace projectView {
 
@@ -39,6 +40,7 @@ namespace projectView {
 
 	private: GroupBox^ gbxMain = gcnew GroupBox();
 	private: DataGridView^ dgvMain = gcnew DataGridView();
+	private: System::Windows::Forms::GroupBox^ gbxOperations;
 	private: System::Windows::Forms::ComboBox^ lstGestion;
 	private: System::Windows::Forms::Button^ btnValider;
 	private: System::Windows::Forms::Button^ btnAfficher;
@@ -65,92 +67,113 @@ namespace projectView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->lstGestion = (gcnew System::Windows::Forms::ComboBox());
+			this->gbxOperations = (gcnew System::Windows::Forms::GroupBox());
 			this->btnValider = (gcnew System::Windows::Forms::Button());
 			this->btnAfficher = (gcnew System::Windows::Forms::Button());
 			this->btnInserer = (gcnew System::Windows::Forms::Button());
 			this->btnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->btnUpdate = (gcnew System::Windows::Forms::Button());
+			this->lstGestion = (gcnew System::Windows::Forms::ComboBox());
+			this->gbxOperations->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// lstGestion
+			// gbxOperations
 			// 
-			this->lstGestion->FormattingEnabled = true;
-			this->lstGestion->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Personnel", L"Clients", L"Commandes", L"Stock",
-					L"Statistiques"
-			});
-			this->lstGestion->Location = System::Drawing::Point(12, 12);
-			this->lstGestion->Name = L"lstGestion";
-			this->lstGestion->Size = System::Drawing::Size(155, 21);
-			this->lstGestion->TabIndex = 2;
+			this->gbxOperations->AutoSize = true;
+			this->gbxOperations->Controls->Add(this->btnValider);
+			this->gbxOperations->Controls->Add(this->lstGestion);
+			this->gbxOperations->Location = System::Drawing::Point(10, 10);
+			this->gbxOperations->Name = L"gbxOperations";
+			this->gbxOperations->Size = System::Drawing::Size(200, 400);
+			this->gbxOperations->TabIndex = 0;
+			this->gbxOperations->TabStop = false;
+			this->gbxOperations->Text = L"Opérations";
 			// 
 			// btnValider
 			// 
-			this->btnValider->Location = System::Drawing::Point(11, 39);
+			this->btnValider->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
+			this->btnValider->Location = System::Drawing::Point(12, 47);
 			this->btnValider->Name = L"btnValider";
-			this->btnValider->Size = System::Drawing::Size(156, 23);
+			this->btnValider->Size = System::Drawing::Size(174, 25);
 			this->btnValider->TabIndex = 3;
 			this->btnValider->Text = L"Valider";
 			this->btnValider->UseVisualStyleBackColor = true;
 			this->btnValider->Click += gcnew System::EventHandler(this, &MyForm::btnValider_Click);
 			// 
-			// Afficher
+			// btnAfficher
 			// 
-			this->btnAfficher->Location = System::Drawing::Point(11, 92);
+			this->btnAfficher->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
+			this->btnAfficher->Location = System::Drawing::Point(12, 106);
 			this->btnAfficher->Name = L"btnAfficher";
-			this->btnAfficher->Size = System::Drawing::Size(156, 45);
+			this->btnAfficher->Size = System::Drawing::Size(174, 50);
 			this->btnAfficher->TabIndex = 4;
-			this->btnAfficher->Text = L"btnAfficher ";
+			this->btnAfficher->Text = L"Afficher ";
 			this->btnAfficher->UseVisualStyleBackColor = true;
 			// 
-			// Insérer
+			// btnInserer
 			// 
-			this->btnInserer->Location = System::Drawing::Point(12, 143);
+			this->btnInserer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
+			this->btnInserer->Location = System::Drawing::Point(12, 162);
 			this->btnInserer->Name = L"btnInserer";
-			this->btnInserer->Size = System::Drawing::Size(155, 45);
+			this->btnInserer->Size = System::Drawing::Size(174, 50);
 			this->btnInserer->TabIndex = 5;
-			this->btnInserer->Text = L"btnInserer ";
+			this->btnInserer->Text = L"Inserer ";
 			this->btnInserer->UseVisualStyleBackColor = true;
+			this->btnInserer->Click += gcnew System::EventHandler(this, &MyForm::btnInserer_Click);
 			// 
-			// Supprimer
+			// btnSupprimer
 			// 
-			this->btnSupprimer->Location = System::Drawing::Point(11, 194);
+			this->btnSupprimer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
+			this->btnSupprimer->Location = System::Drawing::Point(12, 274);
 			this->btnSupprimer->Name = L"btnSupprimer";
-			this->btnSupprimer->Size = System::Drawing::Size(156, 45);
+			this->btnSupprimer->Size = System::Drawing::Size(174, 50);
 			this->btnSupprimer->TabIndex = 6;
-			this->btnSupprimer->Text = L"btnSupprimer ";
+			this->btnSupprimer->Text = L"Supprimer ";
 			this->btnSupprimer->UseVisualStyleBackColor = true;
 			// 
-			// Update
+			// btnUpdate
 			// 
-			this->btnUpdate->Location = System::Drawing::Point(12, 245);
+			this->btnUpdate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
+			this->btnUpdate->Location = System::Drawing::Point(12, 218);
 			this->btnUpdate->Name = L"btnUpdate";
-			this->btnUpdate->Size = System::Drawing::Size(155, 45);
+			this->btnUpdate->Size = System::Drawing::Size(174, 50);
 			this->btnUpdate->TabIndex = 7;
-			this->btnUpdate->Text = L"btnUpdate ";
+			this->btnUpdate->Text = L"Update ";
 			this->btnUpdate->UseVisualStyleBackColor = true;
+			// 
+			// lstGestion
+			// 
+			this->lstGestion->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
+			this->lstGestion->FormattingEnabled = true;
+			this->lstGestion->Items->AddRange(gcnew cli::array<System::Object^>(5) { L"Personnel", L"Clients", L"Commandes", L"Stock", L"Statistiques" });
+			this->lstGestion->Location = System::Drawing::Point(12, 19);
+			this->lstGestion->Name = L"lstGestion";
+			this->lstGestion->Size = System::Drawing::Size(174, 21);
+			this->lstGestion->TabIndex = 2;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1443, 615);
-			this->Controls->Add(this->btnValider);
-			this->Controls->Add(this->btnAfficher);
-			this->Controls->Add(this->btnInserer);
-			this->Controls->Add(this->btnSupprimer);
-			this->Controls->Add(this->btnUpdate);
-			this->Controls->Add(this->lstGestion);
+			this->Controls->Add(this->gbxOperations);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->gbxOperations->ResumeLayout(false);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-		if (this->lstGestion->SelectedIndex == -1) return; 
+		if (this->lstGestion->SelectedIndex == -1) return;
+
+		this->gbxOperations->Controls->Add(this->btnAfficher);
+		this->gbxOperations->Controls->Add(this->btnInserer);
+		this->gbxOperations->Controls->Add(this->btnSupprimer);
+		this->gbxOperations->Controls->Add(this->btnUpdate);
+
 		if (this->lstGestion->SelectedIndex == 0)
 		{
 			/*projectView::Auth bob;
@@ -168,32 +191,37 @@ namespace projectView {
 
 		}
 
-		// GroupBox
-		gbxMain->Location = System::Drawing::Point(180, 10);
-		gbxMain->Size = System::Drawing::Size(1000, 300);
+		// GroupBox Main
 		gbxMain->Name = L"gbxMain";
+		gbxMain->Location = System::Drawing::Point(220, 10);
+		gbxMain->Size = System::Drawing::Size(750, 400);
 		gbxMain->Text = this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 
 		// DataGridView
-		dgvMain->Location = System::Drawing::Point(10, 20);
-		dgvMain->Size = System::Drawing::Size(980, 270);
 		dgvMain->Name = L"dgvMain";
+		dgvMain->Location = System::Drawing::Point(10, 20);
+		dgvMain->Size = System::Drawing::Size(730, 370);
         dgvMain->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::DisplayedCellsExceptHeaders;
         dgvMain->ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle::Single;
         dgvMain->CellBorderStyle = DataGridViewCellBorderStyle::Single;
         dgvMain->GridColor = Color::Black;
         dgvMain->RowHeadersVisible = false;
 
-		// Buttons
+		// Boutons
 		btnAfficher->Text = "Afficher " + this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 		btnInserer->Text = "Insérer " + this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 		btnSupprimer->Text = "Supprimer " + this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 		btnUpdate->Text = "Update " + this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 
-
 		this->Controls->Add(gbxMain);
 		this->gbxMain->Controls->Add(dgvMain);
 		
+	}
+
+	private: System::Void btnInserer_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		projectView::Input inputForm(1, "test");
+		inputForm.ShowDialog();
 	}
 
 };
