@@ -37,7 +37,7 @@ namespace projectView {
 		}
 
 
-	private: GroupBox^ gbMain = gcnew GroupBox();
+	private: GroupBox^ gbxMain = gcnew GroupBox();
 	private: DataGridView^ dgvMain = gcnew DataGridView();
 	private: System::Windows::Forms::ComboBox^ lstGestion;
 	private: System::Windows::Forms::Button^ btnValider;
@@ -169,10 +169,10 @@ namespace projectView {
 		}
 
 		// GroupBox
-		gbMain->Location = System::Drawing::Point(180, 10);
-		gbMain->Size = System::Drawing::Size(1000, 300);
-		gbMain->Name = L"gbMain";
-		gbMain->Text = this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
+		gbxMain->Location = System::Drawing::Point(180, 10);
+		gbxMain->Size = System::Drawing::Size(1000, 300);
+		gbxMain->Name = L"gbxMain";
+		gbxMain->Text = this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 
 		// DataGridView
 		dgvMain->Location = System::Drawing::Point(10, 20);
@@ -191,8 +191,8 @@ namespace projectView {
 		btnUpdate->Text = "Update " + this->lstGestion->GetItemText(this->lstGestion->SelectedItem);
 
 
-		this->Controls->Add(gbMain);
-		this->gbMain->Controls->Add(dgvMain);
+		this->Controls->Add(gbxMain);
+		this->gbxMain->Controls->Add(dgvMain);
 		
 	}
 
