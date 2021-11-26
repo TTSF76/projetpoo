@@ -132,7 +132,6 @@
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnect.h" />
     <ClInclude Include="CLarticle.h" />
-    <ClInclude Include="CLdate.h" />
     <ClInclude Include="CLstock.h" />
     <ClInclude Include="InputClientInserer.h">
       <FileType>CppForm</FileType>
@@ -152,7 +151,6 @@
     <ClCompile Include="CLadresse.cpp" />
     <ClCompile Include="CLarticle.cpp" />
     <ClCompile Include="CLcommande.cpp" />
-    <ClCompile Include="CLdate.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="CLconnect.cpp" />
     <ClCompile Include="Input.cpp" />
