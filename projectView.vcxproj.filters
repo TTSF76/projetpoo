@@ -35,9 +35,6 @@
     <ClInclude Include="CLconnect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CLstock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CLarticle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -54,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLpersonne.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLclient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLpersonnel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -73,9 +76,6 @@
     <ClCompile Include="Auth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLstock.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLarticle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,9 +83,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLadresse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLconnect.cpp">
@@ -98,6 +95,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLpersonne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLpersonnel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

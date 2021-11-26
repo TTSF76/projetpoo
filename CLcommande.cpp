@@ -1,66 +1,66 @@
 #include "pch.h"
 #include "CLcommande.h"
 
-void CLcommande::Create() {
+void NS_map_commande::CLcommande::Create() {
 
 }
 
-void CLcommande::Update() {
+void NS_map_commande::CLcommande::Update() {
 
 }
 
-void CLcommande::Delete() {
+void NS_map_commande::CLcommande::Delete() {
 
 }
 
-void CLcommande::Show() {
+void NS_map_commande::CLcommande::Show() {
 
 }
 
-void CLcommande::setDateLivraison(System::String^date_livraison) {
+void NS_map_commande::CLcommande::setDateLivraison(System::String^date_livraison) {
 	this->date_livraison = date_livraison;
 }
 
-void CLcommande::setDateEmission(System::String^ date_emission) {
+void NS_map_commande::CLcommande::setDateEmission(System::String^ date_emission) {
 	this->date_emission = date_emission;
 }
 
-void CLcommande::setReference(System::String^ ref_commande) {
+void NS_map_commande::CLcommande::setReference(System::String^ ref_commande) {
 	this->ref_commande = ref_commande;
 }
 
-void CLcommande::setTotalHT(float total_ht ) {
+void NS_map_commande::CLcommande::setTotalHT(float total_ht ) {
 	this->total_tva = total_ht;
 }
 
-void CLcommande::setTotalTVA(float total_tva) {
+void NS_map_commande::CLcommande::setTotalTVA(float total_tva) {
 	this->total_tva;
 }
 
-void CLcommande::setTotalTTC(float total_ttc) {
+void NS_map_commande::CLcommande::setTotalTTC(float total_ttc) {
 	this->total_ttc = total_ttc;
 }
 
-System::String^ CLcommande::getReference() {
+System::String^ NS_map_commande::CLcommande::getReference() {
 	return ref_commande;
 }
 
-System::String^ CLcommande::getDateLivraison() {
+System::String^ NS_map_commande::CLcommande::getDateLivraison() {
 	return date_livraison;
 }
 
-System::String^ CLcommande::getDateEmission() {
+System::String^ NS_map_commande::CLcommande::getDateEmission() {
 	return date_emission;
 }
 
-float CLcommande::getTotalHT() {
+float NS_map_commande::CLcommande::getTotalHT() {
 	return total_ht;
 }
 
-float CLcommande::getTotalTVA() {
+float NS_map_commande::CLcommande::getTotalTVA() {
 	return total_tva;
 }
 
-float CLcommande::getTotalTTC() {
+float NS_map_commande::CLcommande::getTotalTTC() {
 	return total_ttc;
 }

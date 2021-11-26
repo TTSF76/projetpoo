@@ -98,6 +98,7 @@ namespace projectView {
 			this->Name = L"Auth";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Auth";
+			this->Load += gcnew System::EventHandler(this, &Auth::Auth_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -114,5 +115,7 @@ namespace projectView {
 		}
 		
 	}
+private: System::Void Auth_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

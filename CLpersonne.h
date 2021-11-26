@@ -1,10 +1,10 @@
 #pragma once
-ref class CLpersonne
+ref class CLpersonne abstract
 {
 protected:
 	int id;
-	System::String^ Nom;
-	System::String^ Prenom;
+	System::String^ nom;
+	System::String^ prenom;
 
 public:
 	virtual System::String^ Create() = 0;
@@ -18,4 +18,3 @@ public:
 	virtual System::String^ getPrenom();
 
 };
-

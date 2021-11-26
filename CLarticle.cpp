@@ -1,67 +1,67 @@
 #include "pch.h"
 #include "CLarticle.h"
 
-void CLarticle::setNature(System::String^ nature) {
+void NS_map_article::CLarticle::setNature(System::String^ nature) {
 	this->nature = nature;
 }
 
-void CLarticle::setNom(System::String^ name) {
+void NS_map_article::CLarticle::setNom(System::String^ name) {
 	this->nature = name;
 }
 
-void CLarticle::setStock(int stock_article) {
+void NS_map_article::CLarticle::setStock(int stock_article) {
 	this->stock_article = stock_article;
 }
 
-void CLarticle::setRemise(float remise_article) {
+void NS_map_article::CLarticle::setRemise(float remise_article) {
 	this->remise_article = remise_article;
 }
 
-void CLarticle::setPrixHT(float prix_article_ht) {
+void NS_map_article::CLarticle::setPrixHT(float prix_article_ht) {
 	this->prix_article_ht = prix_article_ht;
 }
 
-void CLarticle::setQuantiteReapprovisionnement(int quantite_reapprovisionnement) {
+void NS_map_article::CLarticle::setQuantiteReapprovisionnement(int quantite_reapprovisionnement) {
 	this->quantite_reapprovisionnement = quantite_reapprovisionnement;
 }
 
-void CLarticle::setTauxTVA(float taux_tva) {
+void NS_map_article::CLarticle::setTauxTVA(float taux_tva) {
 	this->taux_tva = taux_tva;
 }
 
-void CLarticle::setCouleur(System::String^ couleur_article) {
+void NS_map_article::CLarticle::setCouleur(System::String^ couleur_article) {
 	this->couleur_article=couleur_article;
 }
 
-int CLarticle::getReference() {
+int NS_map_article::CLarticle::getReference() {
 	return ref_article;
 }
 
-System::String^ CLarticle::getNom() {
+System::String^ NS_map_article::CLarticle::getNom() {
 	return nom_article;
 }
 
-int CLarticle::getStock() {
+int NS_map_article::CLarticle::getStock() {
 	return stock_article;
 }
 
-float CLarticle::getRemise() {
+float NS_map_article::CLarticle::getRemise() {
 	return remise_article;
 }
 
-float CLarticle::getPrixHT() {
+float NS_map_article::CLarticle::getPrixHT() {
 	return prix_article_ht;
 }
 
-int CLarticle::getQuantiteReapprovisionnement() {
+int NS_map_article::CLarticle::getQuantiteReapprovisionnement() {
 	return quantite_reapprovisionnement;
 }
 
-float CLarticle::getTauxTVA() {
+float NS_map_article::CLarticle::getTauxTVA() {
 	return taux_tva;
 }
 
-System::String^ CLarticle::getCouleur() {
+System::String^ NS_map_article::CLarticle::getCouleur() {
 	return couleur_article;
 }
 

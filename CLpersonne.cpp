@@ -3,11 +3,11 @@
  
 
 void CLpersonne::setNom(System::String^ Name) {
-	this->Nom = Name;
+	this->nom = Name;
 }
 
 void CLpersonne::setPrenom(System::String^ Surname) {
-	this->Prenom = Surname;
+	this->prenom = Surname;
 }
 
 int CLpersonne::getId() {
@@ -15,9 +15,9 @@ int CLpersonne::getId() {
 }
 
 System::String^ CLpersonne::getNom() {
-	return Nom;
+	return nom;
 }
 
 System::String^ CLpersonne::getPrenom() {
-	return Prenom;
+	return prenom;
 }
