@@ -232,7 +232,8 @@ namespace projectView {
 	
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-
+		projetView::InputClientSupprimer inputForm;
+		inputForm.showDialog();
 	}
 
 	private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e)
