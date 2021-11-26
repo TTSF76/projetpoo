@@ -32,6 +32,9 @@
     <ClInclude Include="Auth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLconnect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -47,6 +50,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Auth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLconnect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
