@@ -4,14 +4,17 @@
 
 namespace NS_map_personnel {
 	ref class CLpersonnel : public CLpersonne {
-	private:
-		CLadresse^ adresse;
-		System::String^ date_embauche;
+private:
+
+	int id_personnel_etre_dirige;
+	CLadresse^ adresse;
+	System::String^ date_embauche;
 		NS_map_personnel::CLpersonnel^ superieur_hierarchique;
-	public:
+public:
 		System::String^ Create() override;
-		virtual System::String^ Update() override;
-		virtual System::String^ Delete() override;
-		virtual System::String^ Show() override;
+	virtual System::String^ Update() override;
+	virtual System::String^ Delete() override;
+	virtual System::String^ Show() override;
 	};
 };
+
