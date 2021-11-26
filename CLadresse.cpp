@@ -1,4 +1,4 @@
-#include "pch.h"s
+#include "pch.h"
 #include "CLadresse.h"
 
 int CLadresse::getIdAdresse() {
@@ -61,8 +61,4 @@ void CLadresse::setVille(System::String^ ville)
 
 System::String^ CLadresse::getCodePostal() {
 	return this->code_postal;
-}
-
-System::String^ CLadresse::getRegion() {
-	return this->region;
 }

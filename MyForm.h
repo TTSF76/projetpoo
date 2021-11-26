@@ -1,6 +1,6 @@
 #pragma once
 #include "Auth.h"
-#include "Input.h"
+#include "Inputs.h"
 
 namespace projectView {
 
@@ -220,7 +220,7 @@ namespace projectView {
 
 	private: System::Void btnInserer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		projectView::Input inputForm(1, "test");
+		projectView::InputClientInserer inputForm;
 		inputForm.ShowDialog();
 	}
 

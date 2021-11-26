@@ -132,7 +132,10 @@
     <ClInclude Include="CLconnect.h" />
     <ClInclude Include="CLarticle.h" />
     <ClInclude Include="CLstock.h" />
-    <ClInclude Include="Input.h" />
+    <ClInclude Include="InputClientInserer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Inputs.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -149,6 +152,7 @@
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="CLconnect.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputClientInserer.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="pch.cpp">
@@ -172,6 +176,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputClientInserer.resx">
+      <DependentUpon>InputClientInserer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
