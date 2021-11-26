@@ -14,6 +14,20 @@ void CLdate::setDate(int mois, int jour, int annee) {
 	this->mois = mois;
 	this->jour = jour;
 }
-System::String^ CLdate::getDate() {
-	return mois.ToString() + '/' + jour.ToString() + '/' + annee.ToString();
+
+System::String^ CLdate::getDate()
+{
+	return this->mois + "-" + this->jour + "-" + this->annee;
+}
+
+int CLdate::getDay() {
+	return this->jour;
+}
+
+int CLdate::getMonth() {
+	return this->mois;
+}
+
+int CLdate::getYear() {
+	return this->annee;
 }

@@ -17,16 +17,16 @@ void CLcommande::Show() {
 
 }
 
-void CLcommande::setReference(System::String^ ref_commande) {
-	this->ref_commande = ref_commande;
-}
-
-void CLcommande::setDateLivraison(CLdate date_livraison) {
+void CLcommande::setDateLivraison(CLdate^ date_livraison) {
 	this->date_livraison = date_livraison;
 }
 
-void CLcommande::setDateEmission(CLdate date_emission) {
+void CLcommande::setDateEmission(CLdate^ date_emission) {
 	this->date_emission = date_emission;
+}
+
+void CLcommande::setReference(System::String^ ref_commande) {
+	this->ref_commande = ref_commande;
 }
 
 void CLcommande::setTotalHT(float total_ht ) {
@@ -45,11 +45,11 @@ System::String^ CLcommande::getReference() {
 	return ref_commande;
 }
 
-CLdate CLcommande::getDateLivraison() {
+CLdate^ CLcommande::getDateLivraison() {
 	return date_livraison;
 }
 
-CLdate CLcommande::getDateEmission() {
+CLdate^ CLcommande::getDateEmission() {
 	return date_emission;
 }
 
