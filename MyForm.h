@@ -233,7 +233,8 @@ namespace projectView {
 
 	private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		
+		projectView::InputClientUpdate inputForm;
+		inputForm.ShowDialog();
 	}
 };
 }
