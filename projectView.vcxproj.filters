@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Inputs">
-      <UniqueIdentifier>{b56563ea-e6cd-465a-827c-408d5a4d3dec}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -47,11 +44,14 @@
     <ClInclude Include="CLadresse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Inputs.h">
-      <Filter>Header Files\Inputs</Filter>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputClientInserer.h">
-      <Filter>Header Files\Inputs</Filter>
+    <ClInclude Include="CLcommande.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLdate.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -85,8 +85,14 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputClientInserer.cpp">
-      <Filter>Header Files\Inputs</Filter>
+    <ClCompile Include="CLconnect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLcommande.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLdate.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
