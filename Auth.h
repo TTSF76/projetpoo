@@ -34,8 +34,7 @@ namespace projectView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	protected:
+	private: System::Windows::Forms::Button^ btnValider;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
 
@@ -52,62 +51,68 @@ namespace projectView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btnValider = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// button1
+			// btnValider
 			// 
-			this->button1->Location = System::Drawing::Point(218, 36);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(71, 23);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Valider";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Auth::button1_Click);
+			this->btnValider->Location = System::Drawing::Point(291, 44);
+			this->btnValider->Margin = System::Windows::Forms::Padding(4);
+			this->btnValider->Name = L"btnValider";
+			this->btnValider->Size = System::Drawing::Size(95, 28);
+			this->btnValider->TabIndex = 0;
+			this->btnValider->Text = L"Valider";
+			this->btnValider->UseVisualStyleBackColor = true;
+			this->btnValider->Click += gcnew System::EventHandler(this, &Auth::btnValider_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(61, 38);
+			this->textBox1->Location = System::Drawing::Point(81, 47);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->PasswordChar = '*';
-			this->textBox1->Size = System::Drawing::Size(151, 20);
+			this->textBox1->Size = System::Drawing::Size(200, 22);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(23, 41);
+			this->label1->Location = System::Drawing::Point(31, 50);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(32, 13);
+			this->label1->Size = System::Drawing::Size(41, 17);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Code";
 			// 
 			// Auth
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(318, 95);
+			this->ClientSize = System::Drawing::Size(424, 117);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->btnValider);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Auth";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Auth";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Auth::Auth_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void Auth_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-		MessageBox::Show("Erreur");
-		e->Cancel = true;
-		Auth::Close();
+	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (textBox1->Text == "motdepasse") {
+			MessageBox::Show("Le mot de passe est bon", "OK", MessageBoxButtons::OK);
+			this->Hide();
+		}
+		else {
+			MessageBox::Show("Mot de passe incorrect\, réessayez", "none", MessageBoxButtons::OK);
+			Application::Restart();
+		}
+		
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	}
-	};
+};
 }
