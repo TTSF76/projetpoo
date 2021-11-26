@@ -187,6 +187,9 @@
     <EmbeddedResource Include="InputClientInserer.resx">
       <DependentUpon>InputClientInserer.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputClientSupprimer.resx">
+      <DependentUpon>InputClientSupprimer.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
