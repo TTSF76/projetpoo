@@ -1,5 +1,4 @@
 #pragma once
-//test
 
 namespace projectView {
 
