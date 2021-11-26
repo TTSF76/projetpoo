@@ -132,6 +132,7 @@
     <ClInclude Include="CLconnect.h" />
     <ClInclude Include="CLarticle.h" />
     <ClInclude Include="CLstock.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -147,6 +148,7 @@
     <ClCompile Include="CLarticle.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="CLconnect.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="pch.cpp">
