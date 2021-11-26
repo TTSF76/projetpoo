@@ -56,6 +56,9 @@
     <ClInclude Include="CLpersonne.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLpersonnel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -85,9 +88,6 @@
     <ClCompile Include="CLadresse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLconnect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -98,6 +98,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLpersonne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLpersonnel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
