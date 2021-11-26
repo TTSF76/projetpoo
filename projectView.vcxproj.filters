@@ -32,6 +32,12 @@
     <ClInclude Include="Auth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLstock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLarticle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -47,6 +53,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Auth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLstock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLarticle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
