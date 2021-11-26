@@ -82,11 +82,9 @@ namespace projectView {
 			this->gbxOperations->AutoSize = true;
 			this->gbxOperations->Controls->Add(this->btnValider);
 			this->gbxOperations->Controls->Add(this->lstGestion);
-			this->gbxOperations->Location = System::Drawing::Point(13, 12);
-			this->gbxOperations->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->gbxOperations->Location = System::Drawing::Point(10, 10);
 			this->gbxOperations->Name = L"gbxOperations";
-			this->gbxOperations->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->gbxOperations->Size = System::Drawing::Size(267, 492);
+			this->gbxOperations->Size = System::Drawing::Size(200, 400);
 			this->gbxOperations->TabIndex = 0;
 			this->gbxOperations->TabStop = false;
 			this->gbxOperations->Text = L"Opérations";
@@ -95,10 +93,9 @@ namespace projectView {
 			// 
 			this->btnValider->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btnValider->Location = System::Drawing::Point(16, 58);
-			this->btnValider->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnValider->Location = System::Drawing::Point(12, 47);
 			this->btnValider->Name = L"btnValider";
-			this->btnValider->Size = System::Drawing::Size(232, 31);
+			this->btnValider->Size = System::Drawing::Size(174, 25);
 			this->btnValider->TabIndex = 3;
 			this->btnValider->Text = L"Valider";
 			this->btnValider->UseVisualStyleBackColor = true;
@@ -113,10 +110,9 @@ namespace projectView {
 				L"Personnel", L"Clients", L"Commandes", L"Stock",
 					L"Statistiques"
 			});
-			this->lstGestion->Location = System::Drawing::Point(16, 23);
-			this->lstGestion->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->lstGestion->Location = System::Drawing::Point(12, 19);
 			this->lstGestion->Name = L"lstGestion";
-			this->lstGestion->Size = System::Drawing::Size(231, 24);
+			this->lstGestion->Size = System::Drawing::Size(174, 21);
 			this->lstGestion->TabIndex = 2;
 			// 
 			// btnAfficher
@@ -152,6 +148,7 @@ namespace projectView {
 			this->btnSupprimer->TabIndex = 6;
 			this->btnSupprimer->Text = L"Supprimer ";
 			this->btnSupprimer->UseVisualStyleBackColor = true;
+			this->btnSupprimer->Click += gcnew System::EventHandler(this, &MyForm::btnSupprimer_Click);
 			// 
 			// btnUpdate
 			// 
@@ -163,14 +160,14 @@ namespace projectView {
 			this->btnUpdate->TabIndex = 7;
 			this->btnUpdate->Text = L"Update ";
 			this->btnUpdate->UseVisualStyleBackColor = true;
+			this->btnUpdate->Click += gcnew System::EventHandler(this, &MyForm::btnUpdate_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1924, 757);
+			this->ClientSize = System::Drawing::Size(979, 419);
 			this->Controls->Add(this->gbxOperations);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->gbxOperations->ResumeLayout(false);
@@ -226,6 +223,17 @@ namespace projectView {
 	{
 		projectView::InputClientInserer inputForm;
 		inputForm.ShowDialog();
+	}
+	
+	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		projectView::InputClientSupprimer inputForm;
+		inputForm.ShowDialog();
+	}
+
+	private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		
 	}
 };
 }
