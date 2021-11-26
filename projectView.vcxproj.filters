@@ -32,6 +32,9 @@
     <ClInclude Include="Auth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLconnect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="CLstock.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -128,6 +128,7 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLconnect.h" />
     <ClInclude Include="CLarticle.h" />
     <ClInclude Include="CLstock.h" />
     <ClInclude Include="MyForm.h">
@@ -143,6 +144,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CLarticle.cpp" />
     <ClCompile Include="CLstock.cpp" />
+    <ClCompile Include="CLconnect.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="pch.cpp">
