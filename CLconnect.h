@@ -3,12 +3,12 @@
 namespace NS_Comp_Data {
 	ref class CLcad {
 	private:
-		System::String^ sSql;
-		System::String^ sCnx;
-		System::Data::SqlClient::SqlConnection^ oCnx;
-		System::Data::SqlClient::SqlCommand^ oCmd;
-		System::Data::SqlClient::SqlDataAdapter^ oDa;
-		System::Data::DataSet^ oDs;
+		System::String^ requete_SQL;
+		System::String^ connexion_s;
+		System::Data::SqlClient::SqlConnection^ SqlConnection;
+		System::Data::SqlClient::SqlCommand^ SqlCommand;
+		System::Data::SqlClient::SqlDataAdapter^ SqlDataAdapter;
+		System::Data::DataSet^ DataSet;
 
 	public:
 		CLcad(void);

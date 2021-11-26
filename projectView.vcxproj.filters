@@ -35,7 +35,10 @@
     <ClInclude Include="CLconnect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
+    <ClInclude Include="CLstock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLarticle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,11 +58,11 @@
     <ClCompile Include="Auth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLconnect.cpp">
+    <ClCompile Include="CLstock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="CLarticle.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
