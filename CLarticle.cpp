@@ -37,10 +37,6 @@ int CLarticle::getReference() {
 	return ref_article;
 }
 
-int CLarticle::getReference() {
-	return ref_article;
-}
-
 System::String^ CLarticle::getNom() {
 	return nom_article;
 }
