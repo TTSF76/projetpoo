@@ -152,6 +152,7 @@ namespace projectView {
 			this->btnSupprimer->TabIndex = 6;
 			this->btnSupprimer->Text = L"Supprimer ";
 			this->btnSupprimer->UseVisualStyleBackColor = true;
+			this->btnSupprimer->Click += gcnew System::EventHandler(this, &MyForm::btnSupprimer_Click);
 			// 
 			// btnUpdate
 			// 
@@ -163,6 +164,7 @@ namespace projectView {
 			this->btnUpdate->TabIndex = 7;
 			this->btnUpdate->Text = L"Update ";
 			this->btnUpdate->UseVisualStyleBackColor = true;
+			this->btnUpdate->Click += gcnew System::EventHandler(this, &MyForm::btnUpdate_Click);
 			// 
 			// MyForm
 			// 
@@ -226,6 +228,16 @@ namespace projectView {
 	{
 		projectView::InputClientInserer inputForm;
 		inputForm.ShowDialog();
+	}
+	
+	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+
+	}
+
+	private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		
 	}
 };
 }
