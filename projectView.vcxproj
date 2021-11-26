@@ -155,7 +155,6 @@
     <ClCompile Include="CLpersonne.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="CLconnect.cpp" />
-    <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
