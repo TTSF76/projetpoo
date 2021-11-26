@@ -17,11 +17,11 @@ void CLcommande::Show() {
 
 }
 
-void CLcommande::setDateLivraison(CLdate^ date_livraison) {
+void CLcommande::setDateLivraison(System::String^date_livraison) {
 	this->date_livraison = date_livraison;
 }
 
-void CLcommande::setDateEmission(CLdate^ date_emission) {
+void CLcommande::setDateEmission(System::String^ date_emission) {
 	this->date_emission = date_emission;
 }
 
@@ -45,11 +45,11 @@ System::String^ CLcommande::getReference() {
 	return ref_commande;
 }
 
-CLdate^ CLcommande::getDateLivraison() {
+System::String^ CLcommande::getDateLivraison() {
 	return date_livraison;
 }
 
-CLdate^ CLcommande::getDateEmission() {
+System::String^ CLcommande::getDateEmission() {
 	return date_emission;
 }
 

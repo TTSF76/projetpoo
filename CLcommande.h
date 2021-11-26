@@ -1,12 +1,11 @@
 #pragma once
-#include "CLdate.h"
 
 public ref class CLcommande
 {
 private:
 	System::String^ ref_commande;
-	CLdate^ date_livraison;
-	CLdate^ date_emission;
+	System:: String^ date_livraison;
+	System::String^ date_emission;
 	float total_ht, total_tva, total_ttc;
 
 public:
@@ -16,14 +15,14 @@ public:
 	void Delete();
 	void Show();
 	void setReference(System::String^);
-	void setDateLivraison(CLdate^);
-	void setDateEmission(CLdate^);
+	void setDateLivraison(System::String^);
+	void setDateEmission(System::String^);
 	void setTotalHT(float);
 	void setTotalTVA(float);
 	void setTotalTTC(float);
 	System::String^ getReference();
-	CLdate^ getDateLivraison();
-	CLdate^ getDateEmission();
+	System::String^ getDateLivraison();
+	System::String^ getDateEmission();
 	float getTotalHT();
 	float getTotalTVA();
 	float getTotalTTC();
