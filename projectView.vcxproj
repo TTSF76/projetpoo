@@ -128,11 +128,13 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLadresse.h" />
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnect.h" />
     <ClInclude Include="CLarticle.h" />
     <ClInclude Include="CLdate.h" />
     <ClInclude Include="CLstock.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,11 +146,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CLadresse.cpp" />
     <ClCompile Include="CLarticle.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLdate.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="CLconnect.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="pch.cpp">

@@ -41,6 +41,12 @@
     <ClInclude Include="CLarticle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLadresse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="CLcommande.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -68,6 +74,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLarticle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLconnect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLadresse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLconnect.cpp">
