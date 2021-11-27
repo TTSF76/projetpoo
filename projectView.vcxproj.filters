@@ -71,6 +71,12 @@
     <ClInclude Include="InputPersonnelInserer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputCommandeInserer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputStockInserer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -125,6 +131,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputPersonnelInserer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCommandeInserer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputStockInserer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

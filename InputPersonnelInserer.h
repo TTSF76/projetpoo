@@ -70,50 +70,6 @@ namespace projectView {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.

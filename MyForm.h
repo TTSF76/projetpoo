@@ -230,6 +230,10 @@ namespace projectView {
 			projectView::InputPersonnelInserer inputForm;
 			inputForm.ShowDialog();
 		}
+		else if (gestion == "Stock") {
+			projectView::InputStockInserer inputForm;
+			inputForm.ShowDialog();
+		}
 	}
 	
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
