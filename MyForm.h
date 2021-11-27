@@ -1,6 +1,7 @@
 #pragma once
 #include "Auth.h"
 #include "Inputs.h"
+#include "CLconnect.h"
 
 namespace projectView {
 
@@ -177,7 +178,6 @@ namespace projectView {
 		}
 #pragma endregion
 	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
-	
 		if (this->lstGestion->SelectedIndex == -1) return;
 		if (this->lstGestion->SelectedIndex == 0)
 		{
@@ -221,8 +221,15 @@ namespace projectView {
 
 	private: System::Void btnInserer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		projectView::InputClientInserer inputForm;
-		inputForm.ShowDialog();
+		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
+		if (gestion == "Clients") {
+			projectView::InputClientInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "Personnel") {
+			projectView::InputPersonnelInserer inputForm;
+			inputForm.ShowDialog();
+		}
 	}
 	
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
@@ -233,6 +240,8 @@ namespace projectView {
 
 	private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+
+		//if(action = client) fomulaire pour client
 		projectView::InputClientUpdate inputForm;
 		inputForm.ShowDialog();
 	}

@@ -4,7 +4,7 @@
 
 System::String^ NS_map_client::CLclient::Create()
 {
-	return "";
+	return "SELECT * FROM dbo.Table1";
 }
 
 System::String^ NS_map_client::CLclient::Update()
