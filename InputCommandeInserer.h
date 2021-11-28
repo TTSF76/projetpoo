@@ -35,6 +35,7 @@ namespace projectView {
 			}
 		}
 	private: System::Windows::Forms::GroupBox^ gbxMain;
+	private: System::Windows::Forms::Button^ btnAnnuler;
 	protected:
 
 
@@ -54,30 +55,44 @@ namespace projectView {
 
 
 
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+
+	private: System::Windows::Forms::Button^ btnValider;
+
 	private: System::Windows::Forms::GroupBox^ gbxFact;
+	private: System::Windows::Forms::DateTimePicker^ dtpPaiementDate;
 
 
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker3;
-	private: System::Windows::Forms::Label^ label7;
 
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::TextBox^ tbxTauxTVA;
-	private: System::Windows::Forms::TextBox^ tbxRemise;
-	private: System::Windows::Forms::TextBox^ tbxQte;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ lblPaiementDate;
+
+	private: System::Windows::Forms::Label^ lblPaiementMoyen;
+	private: System::Windows::Forms::ComboBox^ cbxClient;
+	private: System::Windows::Forms::TextBox^ tbxPaiementNombre;
+
+
+	private: System::Windows::Forms::TextBox^ tbxTelSAV;
+
+	private: System::Windows::Forms::TextBox^ tbxNomSociete;
+
+	private: System::Windows::Forms::Label^ lblPaiementNombre;
+	private: System::Windows::Forms::Label^ lblClient;
+	private: System::Windows::Forms::Label^ lblTelSAV;
+	private: System::Windows::Forms::Label^ lblSocieteNom;
 	private: System::Windows::Forms::GroupBox^ gbxCommande;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ tbxNature;
+	private: System::Windows::Forms::DateTimePicker^ dtpEnvoi;
+
+	private: System::Windows::Forms::DateTimePicker^ dtpLivraison;
+	private: System::Windows::Forms::TextBox^ tbxTotalPrix;
+
+	private: System::Windows::Forms::Label^ lblTotalPrix;
+
+
+
+
+	private: System::Windows::Forms::TextBox^ tbxTVA;
+
+	private: System::Windows::Forms::TextBox^ tbxTotalHT;
+
 	private: System::Windows::Forms::TextBox^ tbxRef;
 
 	private: System::Windows::Forms::Label^ prixht;
@@ -86,23 +101,32 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ Ref;
 	private: System::Windows::Forms::Label^ nom;
 	private: System::Windows::Forms::GroupBox^ gbxAdrEntreprise;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::TextBox^ textBox9;
-	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::TextBox^ textBox10;
-	private: System::Windows::Forms::Label^ label14;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
-	private: System::Windows::Forms::Label^ label15;
-	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::ComboBox^ comboBox4;
-	private: System::Windows::Forms::ComboBox^ comboBox5;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Label^ lblResidence;
+	private: System::Windows::Forms::TextBox^ tbxResidence;
+
+	private: System::Windows::Forms::TextBox^ tbxEtage;
+
+	private: System::Windows::Forms::Label^ lblEtage;
+	private: System::Windows::Forms::TextBox^ tbxRue;
+
+	private: System::Windows::Forms::Label^ lblRue;
+	private: System::Windows::Forms::Label^ lblRueNum;
+	private: System::Windows::Forms::TextBox^ tbxRueNum;
+
+	private: System::Windows::Forms::Label^ lblCodePostal;
+	private: System::Windows::Forms::TextBox^ tbxCodePostal;
+
+	private: System::Windows::Forms::Label^ lblVille;
+	private: System::Windows::Forms::ComboBox^ cbxVille;
+
+	private: System::Windows::Forms::Label^ lblRegion;
+	private: System::Windows::Forms::Label^ lblPays;
+	private: System::Windows::Forms::ComboBox^ cbxRegion;
+
+private: System::Windows::Forms::ComboBox^ cbxPays;
+
+private: System::Windows::Forms::ComboBox^ cbxPaiementMoyen;
+
 
 	private:
 		/// <summary>
@@ -118,55 +142,55 @@ namespace projectView {
 		void InitializeComponent(void)
 		{
 			this->gbxMain = (gcnew System::Windows::Forms::GroupBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->gbxAdrEntreprise = (gcnew System::Windows::Forms::GroupBox());
+			this->lblResidence = (gcnew System::Windows::Forms::Label());
+			this->tbxResidence = (gcnew System::Windows::Forms::TextBox());
+			this->tbxEtage = (gcnew System::Windows::Forms::TextBox());
+			this->lblEtage = (gcnew System::Windows::Forms::Label());
+			this->tbxRue = (gcnew System::Windows::Forms::TextBox());
+			this->lblRue = (gcnew System::Windows::Forms::Label());
+			this->lblRueNum = (gcnew System::Windows::Forms::Label());
+			this->tbxRueNum = (gcnew System::Windows::Forms::TextBox());
+			this->lblCodePostal = (gcnew System::Windows::Forms::Label());
+			this->tbxCodePostal = (gcnew System::Windows::Forms::TextBox());
+			this->lblVille = (gcnew System::Windows::Forms::Label());
+			this->cbxVille = (gcnew System::Windows::Forms::ComboBox());
+			this->lblRegion = (gcnew System::Windows::Forms::Label());
+			this->lblPays = (gcnew System::Windows::Forms::Label());
+			this->cbxRegion = (gcnew System::Windows::Forms::ComboBox());
+			this->cbxPays = (gcnew System::Windows::Forms::ComboBox());
+			this->gbxFact = (gcnew System::Windows::Forms::GroupBox());
+			this->cbxPaiementMoyen = (gcnew System::Windows::Forms::ComboBox());
+			this->dtpPaiementDate = (gcnew System::Windows::Forms::DateTimePicker());
+			this->lblPaiementDate = (gcnew System::Windows::Forms::Label());
+			this->lblPaiementMoyen = (gcnew System::Windows::Forms::Label());
+			this->tbxNomSociete = (gcnew System::Windows::Forms::TextBox());
+			this->lblSocieteNom = (gcnew System::Windows::Forms::Label());
+			this->tbxTelSAV = (gcnew System::Windows::Forms::TextBox());
+			this->lblPaiementNombre = (gcnew System::Windows::Forms::Label());
+			this->lblClient = (gcnew System::Windows::Forms::Label());
+			this->lblTelSAV = (gcnew System::Windows::Forms::Label());
+			this->cbxClient = (gcnew System::Windows::Forms::ComboBox());
+			this->tbxPaiementNombre = (gcnew System::Windows::Forms::TextBox());
 			this->gbxCommande = (gcnew System::Windows::Forms::GroupBox());
-			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->tbxNature = (gcnew System::Windows::Forms::TextBox());
+			this->dtpEnvoi = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dtpLivraison = (gcnew System::Windows::Forms::DateTimePicker());
+			this->tbxTotalPrix = (gcnew System::Windows::Forms::TextBox());
+			this->lblTotalPrix = (gcnew System::Windows::Forms::Label());
+			this->tbxTVA = (gcnew System::Windows::Forms::TextBox());
+			this->tbxTotalHT = (gcnew System::Windows::Forms::TextBox());
 			this->tbxRef = (gcnew System::Windows::Forms::TextBox());
 			this->prixht = (gcnew System::Windows::Forms::Label());
 			this->Produit = (gcnew System::Windows::Forms::Label());
 			this->Couleur = (gcnew System::Windows::Forms::Label());
 			this->Ref = (gcnew System::Windows::Forms::Label());
 			this->nom = (gcnew System::Windows::Forms::Label());
-			this->gbxFact = (gcnew System::Windows::Forms::GroupBox());
-			this->dateTimePicker3 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->tbxTauxTVA = (gcnew System::Windows::Forms::TextBox());
-			this->tbxRemise = (gcnew System::Windows::Forms::TextBox());
-			this->tbxQte = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->gbxAdrEntreprise = (gcnew System::Windows::Forms::GroupBox());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
+			this->btnValider = (gcnew System::Windows::Forms::Button());
 			this->gbxMain->SuspendLayout();
-			this->gbxCommande->SuspendLayout();
-			this->gbxFact->SuspendLayout();
 			this->gbxAdrEntreprise->SuspendLayout();
+			this->gbxFact->SuspendLayout();
+			this->gbxCommande->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// gbxMain
@@ -174,469 +198,491 @@ namespace projectView {
 			this->gbxMain->Controls->Add(this->gbxAdrEntreprise);
 			this->gbxMain->Controls->Add(this->gbxFact);
 			this->gbxMain->Controls->Add(this->gbxCommande);
-			this->gbxMain->Controls->Add(this->button2);
-			this->gbxMain->Controls->Add(this->button1);
-			this->gbxMain->Location = System::Drawing::Point(23, 12);
+			this->gbxMain->Controls->Add(this->btnAnnuler);
+			this->gbxMain->Controls->Add(this->btnValider);
+			this->gbxMain->Location = System::Drawing::Point(11, 11);
+			this->gbxMain->Margin = System::Windows::Forms::Padding(2);
 			this->gbxMain->Name = L"gbxMain";
-			this->gbxMain->Size = System::Drawing::Size(1225, 358);
+			this->gbxMain->Padding = System::Windows::Forms::Padding(2);
+			this->gbxMain->Size = System::Drawing::Size(887, 265);
 			this->gbxMain->TabIndex = 1;
 			this->gbxMain->TabStop = false;
 			this->gbxMain->Text = L"Insertion de commande";
 			// 
-			// button2
+			// gbxAdrEntreprise
 			// 
-			this->button2->Location = System::Drawing::Point(616, 251);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(590, 78);
-			this->button2->TabIndex = 23;
-			this->button2->Text = L"Annuler";
-			this->button2->UseVisualStyleBackColor = true;
+			this->gbxAdrEntreprise->Controls->Add(this->lblResidence);
+			this->gbxAdrEntreprise->Controls->Add(this->tbxResidence);
+			this->gbxAdrEntreprise->Controls->Add(this->tbxEtage);
+			this->gbxAdrEntreprise->Controls->Add(this->lblEtage);
+			this->gbxAdrEntreprise->Controls->Add(this->tbxRue);
+			this->gbxAdrEntreprise->Controls->Add(this->lblRue);
+			this->gbxAdrEntreprise->Controls->Add(this->lblRueNum);
+			this->gbxAdrEntreprise->Controls->Add(this->tbxRueNum);
+			this->gbxAdrEntreprise->Controls->Add(this->lblCodePostal);
+			this->gbxAdrEntreprise->Controls->Add(this->tbxCodePostal);
+			this->gbxAdrEntreprise->Controls->Add(this->lblVille);
+			this->gbxAdrEntreprise->Controls->Add(this->cbxVille);
+			this->gbxAdrEntreprise->Controls->Add(this->lblRegion);
+			this->gbxAdrEntreprise->Controls->Add(this->lblPays);
+			this->gbxAdrEntreprise->Controls->Add(this->cbxRegion);
+			this->gbxAdrEntreprise->Controls->Add(this->cbxPays);
+			this->gbxAdrEntreprise->Location = System::Drawing::Point(593, 18);
+			this->gbxAdrEntreprise->Name = L"gbxAdrEntreprise";
+			this->gbxAdrEntreprise->Size = System::Drawing::Size(290, 173);
+			this->gbxAdrEntreprise->TabIndex = 54;
+			this->gbxAdrEntreprise->TabStop = false;
+			this->gbxAdrEntreprise->Text = L"Adresse de l\'entreprise";
 			// 
-			// button1
+			// lblResidence
 			// 
-			this->button1->Location = System::Drawing::Point(16, 251);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(592, 78);
-			this->button1->TabIndex = 22;
-			this->button1->Text = L"Valider";
-			this->button1->UseVisualStyleBackColor = true;
+			this->lblResidence->AutoSize = true;
+			this->lblResidence->Location = System::Drawing::Point(103, 128);
+			this->lblResidence->Name = L"lblResidence";
+			this->lblResidence->Size = System::Drawing::Size(58, 13);
+			this->lblResidence->TabIndex = 31;
+			this->lblResidence->Text = L"Résidence";
+			// 
+			// tbxResidence
+			// 
+			this->tbxResidence->Location = System::Drawing::Point(167, 125);
+			this->tbxResidence->Name = L"tbxResidence";
+			this->tbxResidence->Size = System::Drawing::Size(110, 20);
+			this->tbxResidence->TabIndex = 30;
+			// 
+			// tbxEtage
+			// 
+			this->tbxEtage->Location = System::Drawing::Point(53, 125);
+			this->tbxEtage->Name = L"tbxEtage";
+			this->tbxEtage->Size = System::Drawing::Size(44, 20);
+			this->tbxEtage->TabIndex = 29;
+			// 
+			// lblEtage
+			// 
+			this->lblEtage->AutoSize = true;
+			this->lblEtage->Location = System::Drawing::Point(6, 128);
+			this->lblEtage->Name = L"lblEtage";
+			this->lblEtage->Size = System::Drawing::Size(35, 13);
+			this->lblEtage->TabIndex = 28;
+			this->lblEtage->Text = L"Etage";
+			// 
+			// tbxRue
+			// 
+			this->tbxRue->Location = System::Drawing::Point(136, 99);
+			this->tbxRue->Name = L"tbxRue";
+			this->tbxRue->Size = System::Drawing::Size(141, 20);
+			this->tbxRue->TabIndex = 27;
+			// 
+			// lblRue
+			// 
+			this->lblRue->AutoSize = true;
+			this->lblRue->Location = System::Drawing::Point(103, 102);
+			this->lblRue->Name = L"lblRue";
+			this->lblRue->Size = System::Drawing::Size(27, 13);
+			this->lblRue->TabIndex = 26;
+			this->lblRue->Text = L"Rue";
+			// 
+			// lblRueNum
+			// 
+			this->lblRueNum->AutoSize = true;
+			this->lblRueNum->Location = System::Drawing::Point(6, 102);
+			this->lblRueNum->Name = L"lblRueNum";
+			this->lblRueNum->Size = System::Drawing::Size(42, 13);
+			this->lblRueNum->TabIndex = 25;
+			this->lblRueNum->Text = L"N° Rue";
+			// 
+			// tbxRueNum
+			// 
+			this->tbxRueNum->Location = System::Drawing::Point(53, 99);
+			this->tbxRueNum->Name = L"tbxRueNum";
+			this->tbxRueNum->Size = System::Drawing::Size(44, 20);
+			this->tbxRueNum->TabIndex = 24;
+			// 
+			// lblCodePostal
+			// 
+			this->lblCodePostal->AutoSize = true;
+			this->lblCodePostal->Location = System::Drawing::Point(192, 76);
+			this->lblCodePostal->Name = L"lblCodePostal";
+			this->lblCodePostal->Size = System::Drawing::Size(21, 13);
+			this->lblCodePostal->TabIndex = 23;
+			this->lblCodePostal->Text = L"CP";
+			// 
+			// tbxCodePostal
+			// 
+			this->tbxCodePostal->Location = System::Drawing::Point(219, 73);
+			this->tbxCodePostal->Name = L"tbxCodePostal";
+			this->tbxCodePostal->Size = System::Drawing::Size(58, 20);
+			this->tbxCodePostal->TabIndex = 22;
+			// 
+			// lblVille
+			// 
+			this->lblVille->AutoSize = true;
+			this->lblVille->Location = System::Drawing::Point(6, 76);
+			this->lblVille->Name = L"lblVille";
+			this->lblVille->Size = System::Drawing::Size(26, 13);
+			this->lblVille->TabIndex = 21;
+			this->lblVille->Text = L"Ville";
+			// 
+			// cbxVille
+			// 
+			this->cbxVille->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxVille->FormattingEnabled = true;
+			this->cbxVille->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
+			this->cbxVille->Location = System::Drawing::Point(53, 73);
+			this->cbxVille->Name = L"cbxVille";
+			this->cbxVille->Size = System::Drawing::Size(133, 21);
+			this->cbxVille->TabIndex = 20;
+			// 
+			// lblRegion
+			// 
+			this->lblRegion->AutoSize = true;
+			this->lblRegion->Location = System::Drawing::Point(6, 49);
+			this->lblRegion->Name = L"lblRegion";
+			this->lblRegion->Size = System::Drawing::Size(41, 13);
+			this->lblRegion->TabIndex = 19;
+			this->lblRegion->Text = L"Region";
+			// 
+			// lblPays
+			// 
+			this->lblPays->AutoSize = true;
+			this->lblPays->Location = System::Drawing::Point(6, 22);
+			this->lblPays->Name = L"lblPays";
+			this->lblPays->Size = System::Drawing::Size(30, 13);
+			this->lblPays->TabIndex = 18;
+			this->lblPays->Text = L"Pays";
+			// 
+			// cbxRegion
+			// 
+			this->cbxRegion->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxRegion->FormattingEnabled = true;
+			this->cbxRegion->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
+			this->cbxRegion->Location = System::Drawing::Point(53, 46);
+			this->cbxRegion->Name = L"cbxRegion";
+			this->cbxRegion->Size = System::Drawing::Size(224, 21);
+			this->cbxRegion->TabIndex = 17;
+			// 
+			// cbxPays
+			// 
+			this->cbxPays->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxPays->FormattingEnabled = true;
+			this->cbxPays->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
+			this->cbxPays->Location = System::Drawing::Point(53, 19);
+			this->cbxPays->Name = L"cbxPays";
+			this->cbxPays->Size = System::Drawing::Size(224, 21);
+			this->cbxPays->TabIndex = 16;
+			// 
+			// gbxFact
+			// 
+			this->gbxFact->Controls->Add(this->cbxPaiementMoyen);
+			this->gbxFact->Controls->Add(this->dtpPaiementDate);
+			this->gbxFact->Controls->Add(this->lblPaiementDate);
+			this->gbxFact->Controls->Add(this->lblPaiementMoyen);
+			this->gbxFact->Controls->Add(this->tbxNomSociete);
+			this->gbxFact->Controls->Add(this->lblSocieteNom);
+			this->gbxFact->Controls->Add(this->tbxTelSAV);
+			this->gbxFact->Controls->Add(this->lblPaiementNombre);
+			this->gbxFact->Controls->Add(this->lblClient);
+			this->gbxFact->Controls->Add(this->lblTelSAV);
+			this->gbxFact->Controls->Add(this->cbxClient);
+			this->gbxFact->Controls->Add(this->tbxPaiementNombre);
+			this->gbxFact->Location = System::Drawing::Point(298, 17);
+			this->gbxFact->Margin = System::Windows::Forms::Padding(2);
+			this->gbxFact->Name = L"gbxFact";
+			this->gbxFact->Padding = System::Windows::Forms::Padding(2);
+			this->gbxFact->Size = System::Drawing::Size(290, 173);
+			this->gbxFact->TabIndex = 53;
+			this->gbxFact->TabStop = false;
+			this->gbxFact->Text = L"Facturation";
+			// 
+			// cbxPaiementMoyen
+			// 
+			this->cbxPaiementMoyen->FormattingEnabled = true;
+			this->cbxPaiementMoyen->Location = System::Drawing::Point(125, 114);
+			this->cbxPaiementMoyen->Margin = System::Windows::Forms::Padding(2);
+			this->cbxPaiementMoyen->Name = L"cbxPaiementMoyen";
+			this->cbxPaiementMoyen->Size = System::Drawing::Size(161, 21);
+			this->cbxPaiementMoyen->TabIndex = 64;
+			// 
+			// dtpPaiementDate
+			// 
+			this->dtpPaiementDate->Location = System::Drawing::Point(125, 139);
+			this->dtpPaiementDate->Margin = System::Windows::Forms::Padding(2);
+			this->dtpPaiementDate->Name = L"dtpPaiementDate";
+			this->dtpPaiementDate->Size = System::Drawing::Size(161, 20);
+			this->dtpPaiementDate->TabIndex = 63;
+			// 
+			// lblPaiementDate
+			// 
+			this->lblPaiementDate->AutoSize = true;
+			this->lblPaiementDate->Location = System::Drawing::Point(4, 141);
+			this->lblPaiementDate->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblPaiementDate->Name = L"lblPaiementDate";
+			this->lblPaiementDate->Size = System::Drawing::Size(91, 13);
+			this->lblPaiementDate->TabIndex = 62;
+			this->lblPaiementDate->Text = L"Date de paiement";
+			// 
+			// lblPaiementMoyen
+			// 
+			this->lblPaiementMoyen->AutoSize = true;
+			this->lblPaiementMoyen->Location = System::Drawing::Point(4, 117);
+			this->lblPaiementMoyen->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblPaiementMoyen->Name = L"lblPaiementMoyen";
+			this->lblPaiementMoyen->Size = System::Drawing::Size(100, 13);
+			this->lblPaiementMoyen->TabIndex = 60;
+			this->lblPaiementMoyen->Text = L"Moyen de paiement";
+			// 
+			// tbxNomSociete
+			// 
+			this->tbxNomSociete->Location = System::Drawing::Point(125, 17);
+			this->tbxNomSociete->Margin = System::Windows::Forms::Padding(2);
+			this->tbxNomSociete->Name = L"tbxNomSociete";
+			this->tbxNomSociete->Size = System::Drawing::Size(161, 20);
+			this->tbxNomSociete->TabIndex = 56;
+			// 
+			// lblSocieteNom
+			// 
+			this->lblSocieteNom->AutoSize = true;
+			this->lblSocieteNom->Location = System::Drawing::Point(4, 20);
+			this->lblSocieteNom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblSocieteNom->Name = L"lblSocieteNom";
+			this->lblSocieteNom->Size = System::Drawing::Size(81, 13);
+			this->lblSocieteNom->TabIndex = 52;
+			this->lblSocieteNom->Text = L"Nom de société";
+			// 
+			// tbxTelSAV
+			// 
+			this->tbxTelSAV->Location = System::Drawing::Point(125, 41);
+			this->tbxTelSAV->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTelSAV->Name = L"tbxTelSAV";
+			this->tbxTelSAV->Size = System::Drawing::Size(161, 20);
+			this->tbxTelSAV->TabIndex = 57;
+			// 
+			// lblPaiementNombre
+			// 
+			this->lblPaiementNombre->AutoSize = true;
+			this->lblPaiementNombre->Location = System::Drawing::Point(4, 92);
+			this->lblPaiementNombre->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblPaiementNombre->Name = L"lblPaiementNombre";
+			this->lblPaiementNombre->Size = System::Drawing::Size(110, 13);
+			this->lblPaiementNombre->TabIndex = 55;
+			this->lblPaiementNombre->Text = L"Nombre de paiements";
+			// 
+			// lblClient
+			// 
+			this->lblClient->AutoSize = true;
+			this->lblClient->Location = System::Drawing::Point(4, 68);
+			this->lblClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblClient->Name = L"lblClient";
+			this->lblClient->Size = System::Drawing::Size(117, 13);
+			this->lblClient->TabIndex = 54;
+			this->lblClient->Text = L"Client ayant commandé";
+			// 
+			// lblTelSAV
+			// 
+			this->lblTelSAV->AutoSize = true;
+			this->lblTelSAV->Location = System::Drawing::Point(4, 44);
+			this->lblTelSAV->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblTelSAV->Name = L"lblTelSAV";
+			this->lblTelSAV->Size = System::Drawing::Size(97, 13);
+			this->lblTelSAV->TabIndex = 53;
+			this->lblTelSAV->Text = L"Téléphone du SAV";
+			// 
+			// cbxClient
+			// 
+			this->cbxClient->FormattingEnabled = true;
+			this->cbxClient->Location = System::Drawing::Point(125, 65);
+			this->cbxClient->Margin = System::Windows::Forms::Padding(2);
+			this->cbxClient->Name = L"cbxClient";
+			this->cbxClient->Size = System::Drawing::Size(161, 21);
+			this->cbxClient->TabIndex = 59;
+			// 
+			// tbxPaiementNombre
+			// 
+			this->tbxPaiementNombre->Location = System::Drawing::Point(125, 90);
+			this->tbxPaiementNombre->Margin = System::Windows::Forms::Padding(2);
+			this->tbxPaiementNombre->Name = L"tbxPaiementNombre";
+			this->tbxPaiementNombre->Size = System::Drawing::Size(161, 20);
+			this->tbxPaiementNombre->TabIndex = 58;
 			// 
 			// gbxCommande
 			// 
-			this->gbxCommande->Controls->Add(this->dateTimePicker2);
-			this->gbxCommande->Controls->Add(this->dateTimePicker1);
-			this->gbxCommande->Controls->Add(this->textBox1);
-			this->gbxCommande->Controls->Add(this->label1);
-			this->gbxCommande->Controls->Add(this->textBox5);
-			this->gbxCommande->Controls->Add(this->tbxNature);
+			this->gbxCommande->Controls->Add(this->dtpEnvoi);
+			this->gbxCommande->Controls->Add(this->dtpLivraison);
+			this->gbxCommande->Controls->Add(this->tbxTotalPrix);
+			this->gbxCommande->Controls->Add(this->lblTotalPrix);
+			this->gbxCommande->Controls->Add(this->tbxTVA);
+			this->gbxCommande->Controls->Add(this->tbxTotalHT);
 			this->gbxCommande->Controls->Add(this->tbxRef);
 			this->gbxCommande->Controls->Add(this->prixht);
 			this->gbxCommande->Controls->Add(this->Produit);
 			this->gbxCommande->Controls->Add(this->Couleur);
 			this->gbxCommande->Controls->Add(this->Ref);
 			this->gbxCommande->Controls->Add(this->nom);
-			this->gbxCommande->Location = System::Drawing::Point(16, 32);
+			this->gbxCommande->Location = System::Drawing::Point(4, 17);
+			this->gbxCommande->Margin = System::Windows::Forms::Padding(2);
 			this->gbxCommande->Name = L"gbxCommande";
-			this->gbxCommande->Size = System::Drawing::Size(377, 212);
+			this->gbxCommande->Padding = System::Windows::Forms::Padding(2);
+			this->gbxCommande->Size = System::Drawing::Size(290, 173);
 			this->gbxCommande->TabIndex = 52;
 			this->gbxCommande->TabStop = false;
 			this->gbxCommande->Text = L"Commande";
 			// 
-			// dateTimePicker2
+			// dtpEnvoi
 			// 
-			this->dateTimePicker2->Location = System::Drawing::Point(123, 84);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(224, 22);
-			this->dateTimePicker2->TabIndex = 58;
+			this->dtpEnvoi->Location = System::Drawing::Point(82, 65);
+			this->dtpEnvoi->Margin = System::Windows::Forms::Padding(2);
+			this->dtpEnvoi->Name = L"dtpEnvoi";
+			this->dtpEnvoi->Size = System::Drawing::Size(204, 20);
+			this->dtpEnvoi->TabIndex = 58;
 			// 
-			// dateTimePicker1
+			// dtpLivraison
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(121, 55);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(226, 22);
-			this->dateTimePicker1->TabIndex = 57;
+			this->dtpLivraison->Location = System::Drawing::Point(82, 41);
+			this->dtpLivraison->Margin = System::Windows::Forms::Padding(2);
+			this->dtpLivraison->Name = L"dtpLivraison";
+			this->dtpLivraison->Size = System::Drawing::Size(204, 20);
+			this->dtpLivraison->TabIndex = 57;
 			// 
-			// textBox1
+			// tbxTotalPrix
 			// 
-			this->textBox1->Location = System::Drawing::Point(110, 169);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(237, 22);
-			this->textBox1->TabIndex = 56;
+			this->tbxTotalPrix->Location = System::Drawing::Point(82, 137);
+			this->tbxTotalPrix->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTotalPrix->Name = L"tbxTotalPrix";
+			this->tbxTotalPrix->Size = System::Drawing::Size(204, 20);
+			this->tbxTotalPrix->TabIndex = 56;
 			// 
-			// label1
+			// lblTotalPrix
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(30, 174);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(62, 17);
-			this->label1->TabIndex = 55;
-			this->label1->Text = L"Prix total";
+			this->lblTotalPrix->AutoSize = true;
+			this->lblTotalPrix->Location = System::Drawing::Point(4, 140);
+			this->lblTotalPrix->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblTotalPrix->Name = L"lblTotalPrix";
+			this->lblTotalPrix->Size = System::Drawing::Size(47, 13);
+			this->lblTotalPrix->TabIndex = 55;
+			this->lblTotalPrix->Text = L"Prix total";
 			// 
-			// textBox5
+			// tbxTVA
 			// 
-			this->textBox5->Location = System::Drawing::Point(133, 141);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(214, 22);
-			this->textBox5->TabIndex = 54;
+			this->tbxTVA->Location = System::Drawing::Point(82, 113);
+			this->tbxTVA->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTVA->Name = L"tbxTVA";
+			this->tbxTVA->Size = System::Drawing::Size(204, 20);
+			this->tbxTVA->TabIndex = 54;
 			// 
-			// tbxNature
+			// tbxTotalHT
 			// 
-			this->tbxNature->Location = System::Drawing::Point(121, 113);
-			this->tbxNature->Name = L"tbxNature";
-			this->tbxNature->Size = System::Drawing::Size(226, 22);
-			this->tbxNature->TabIndex = 53;
+			this->tbxTotalHT->Location = System::Drawing::Point(82, 89);
+			this->tbxTotalHT->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTotalHT->Name = L"tbxTotalHT";
+			this->tbxTotalHT->Size = System::Drawing::Size(204, 20);
+			this->tbxTotalHT->TabIndex = 53;
 			// 
 			// tbxRef
 			// 
-			this->tbxRef->Location = System::Drawing::Point(110, 22);
+			this->tbxRef->Location = System::Drawing::Point(82, 17);
+			this->tbxRef->Margin = System::Windows::Forms::Padding(2);
 			this->tbxRef->Name = L"tbxRef";
-			this->tbxRef->Size = System::Drawing::Size(237, 22);
+			this->tbxRef->Size = System::Drawing::Size(204, 20);
 			this->tbxRef->TabIndex = 52;
 			// 
 			// prixht
 			// 
 			this->prixht->AutoSize = true;
-			this->prixht->Location = System::Drawing::Point(30, 146);
+			this->prixht->Location = System::Drawing::Point(4, 116);
+			this->prixht->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->prixht->Name = L"prixht";
-			this->prixht->Size = System::Drawing::Size(97, 17);
+			this->prixht->Size = System::Drawing::Size(74, 13);
 			this->prixht->TabIndex = 51;
 			this->prixht->Text = L"Prix de la TVA";
 			// 
 			// Produit
 			// 
 			this->Produit->AutoSize = true;
-			this->Produit->Location = System::Drawing::Point(30, 116);
+			this->Produit->Location = System::Drawing::Point(4, 92);
+			this->Produit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Produit->Name = L"Produit";
-			this->Produit->Size = System::Drawing::Size(85, 17);
+			this->Produit->Size = System::Drawing::Size(65, 13);
 			this->Produit->TabIndex = 50;
 			this->Produit->Text = L"Prix total HT";
 			// 
 			// Couleur
 			// 
 			this->Couleur->AutoSize = true;
-			this->Couleur->Location = System::Drawing::Point(30, 87);
+			this->Couleur->Location = System::Drawing::Point(4, 68);
+			this->Couleur->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Couleur->Name = L"Couleur";
-			this->Couleur->Size = System::Drawing::Size(87, 17);
+			this->Couleur->Size = System::Drawing::Size(67, 13);
 			this->Couleur->TabIndex = 49;
 			this->Couleur->Text = L"Date d\'envoi";
 			// 
 			// Ref
 			// 
 			this->Ref->AutoSize = true;
-			this->Ref->Location = System::Drawing::Point(30, 55);
+			this->Ref->Location = System::Drawing::Point(4, 44);
+			this->Ref->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Ref->Name = L"Ref";
-			this->Ref->Size = System::Drawing::Size(94, 17);
+			this->Ref->Size = System::Drawing::Size(71, 13);
 			this->Ref->TabIndex = 48;
 			this->Ref->Text = L"Date livraison";
 			// 
 			// nom
 			// 
 			this->nom->AutoSize = true;
-			this->nom->Location = System::Drawing::Point(30, 25);
+			this->nom->Location = System::Drawing::Point(4, 21);
+			this->nom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->nom->Name = L"nom";
-			this->nom->Size = System::Drawing::Size(74, 17);
+			this->nom->Size = System::Drawing::Size(57, 13);
 			this->nom->TabIndex = 47;
 			this->nom->Text = L"Reférence";
 			// 
-			// gbxFact
+			// btnAnnuler
 			// 
-			this->gbxFact->Controls->Add(this->comboBox2);
-			this->gbxFact->Controls->Add(this->dateTimePicker3);
-			this->gbxFact->Controls->Add(this->label7);
-			this->gbxFact->Controls->Add(this->label6);
-			this->gbxFact->Controls->Add(this->comboBox1);
-			this->gbxFact->Controls->Add(this->tbxTauxTVA);
-			this->gbxFact->Controls->Add(this->tbxRemise);
-			this->gbxFact->Controls->Add(this->tbxQte);
-			this->gbxFact->Controls->Add(this->label2);
-			this->gbxFact->Controls->Add(this->label3);
-			this->gbxFact->Controls->Add(this->label4);
-			this->gbxFact->Controls->Add(this->label5);
-			this->gbxFact->Location = System::Drawing::Point(421, 32);
-			this->gbxFact->Name = L"gbxFact";
-			this->gbxFact->Size = System::Drawing::Size(357, 212);
-			this->gbxFact->TabIndex = 53;
-			this->gbxFact->TabStop = false;
-			this->gbxFact->Text = L"Facturation";
+			this->btnAnnuler->Location = System::Drawing::Point(444, 195);
+			this->btnAnnuler->Name = L"btnAnnuler";
+			this->btnAnnuler->Size = System::Drawing::Size(439, 63);
+			this->btnAnnuler->TabIndex = 23;
+			this->btnAnnuler->Text = L"Annuler";
+			this->btnAnnuler->UseVisualStyleBackColor = true;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputCommandeInserer::btnAnnuler_Click);
 			// 
-			// dateTimePicker3
+			// btnValider
 			// 
-			this->dateTimePicker3->Location = System::Drawing::Point(132, 170);
-			this->dateTimePicker3->Name = L"dateTimePicker3";
-			this->dateTimePicker3->Size = System::Drawing::Size(221, 22);
-			this->dateTimePicker3->TabIndex = 63;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(6, 170);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(120, 17);
-			this->label7->TabIndex = 62;
-			this->label7->Text = L"Date de paiement";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(6, 142);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(132, 17);
-			this->label6->TabIndex = 60;
-			this->label6->Text = L"Moyen de paiement";
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(171, 78);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(182, 24);
-			this->comboBox1->TabIndex = 59;
-			// 
-			// tbxTauxTVA
-			// 
-			this->tbxTauxTVA->Location = System::Drawing::Point(159, 109);
-			this->tbxTauxTVA->Name = L"tbxTauxTVA";
-			this->tbxTauxTVA->Size = System::Drawing::Size(194, 22);
-			this->tbxTauxTVA->TabIndex = 58;
-			// 
-			// tbxRemise
-			// 
-			this->tbxRemise->Location = System::Drawing::Point(134, 48);
-			this->tbxRemise->Name = L"tbxRemise";
-			this->tbxRemise->Size = System::Drawing::Size(219, 22);
-			this->tbxRemise->TabIndex = 57;
-			// 
-			// tbxQte
-			// 
-			this->tbxQte->Location = System::Drawing::Point(142, 18);
-			this->tbxQte->Name = L"tbxQte";
-			this->tbxQte->Size = System::Drawing::Size(211, 22);
-			this->tbxQte->TabIndex = 56;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(6, 112);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(147, 17);
-			this->label2->TabIndex = 55;
-			this->label2->Text = L"Nombre de paiements";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(6, 83);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(155, 17);
-			this->label3->TabIndex = 54;
-			this->label3->Text = L"Client ayant commandé";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(6, 51);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(127, 17);
-			this->label4->TabIndex = 53;
-			this->label4->Text = L"Téléphone du SAV";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(6, 21);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(106, 17);
-			this->label5->TabIndex = 52;
-			this->label5->Text = L"Nom de société";
-			// 
-			// gbxAdrEntreprise
-			// 
-			this->gbxAdrEntreprise->Controls->Add(this->label9);
-			this->gbxAdrEntreprise->Controls->Add(this->textBox6);
-			this->gbxAdrEntreprise->Controls->Add(this->textBox7);
-			this->gbxAdrEntreprise->Controls->Add(this->label10);
-			this->gbxAdrEntreprise->Controls->Add(this->textBox8);
-			this->gbxAdrEntreprise->Controls->Add(this->label11);
-			this->gbxAdrEntreprise->Controls->Add(this->label12);
-			this->gbxAdrEntreprise->Controls->Add(this->textBox9);
-			this->gbxAdrEntreprise->Controls->Add(this->label13);
-			this->gbxAdrEntreprise->Controls->Add(this->textBox10);
-			this->gbxAdrEntreprise->Controls->Add(this->label14);
-			this->gbxAdrEntreprise->Controls->Add(this->comboBox3);
-			this->gbxAdrEntreprise->Controls->Add(this->label15);
-			this->gbxAdrEntreprise->Controls->Add(this->label16);
-			this->gbxAdrEntreprise->Controls->Add(this->comboBox4);
-			this->gbxAdrEntreprise->Controls->Add(this->comboBox5);
-			this->gbxAdrEntreprise->Location = System::Drawing::Point(821, 32);
-			this->gbxAdrEntreprise->Margin = System::Windows::Forms::Padding(4);
-			this->gbxAdrEntreprise->Name = L"gbxAdrEntreprise";
-			this->gbxAdrEntreprise->Padding = System::Windows::Forms::Padding(4);
-			this->gbxAdrEntreprise->Size = System::Drawing::Size(385, 212);
-			this->gbxAdrEntreprise->TabIndex = 54;
-			this->gbxAdrEntreprise->TabStop = false;
-			this->gbxAdrEntreprise->Text = L"Adresse de l\'entreprise";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(137, 158);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(75, 17);
-			this->label9->TabIndex = 31;
-			this->label9->Text = L"Résidence";
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(223, 154);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(145, 22);
-			this->textBox6->TabIndex = 30;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(71, 154);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(57, 22);
-			this->textBox7->TabIndex = 29;
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(8, 158);
-			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(45, 17);
-			this->label10->TabIndex = 28;
-			this->label10->Text = L"Etage";
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(181, 122);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(187, 22);
-			this->textBox8->TabIndex = 27;
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(137, 126);
-			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(34, 17);
-			this->label11->TabIndex = 26;
-			this->label11->Text = L"Rue";
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(8, 126);
-			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(54, 17);
-			this->label12->TabIndex = 25;
-			this->label12->Text = L"N° Rue";
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(71, 122);
-			this->textBox9->Margin = System::Windows::Forms::Padding(4);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(57, 22);
-			this->textBox9->TabIndex = 24;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(256, 94);
-			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(26, 17);
-			this->label13->TabIndex = 23;
-			this->label13->Text = L"CP";
-			// 
-			// textBox10
-			// 
-			this->textBox10->Location = System::Drawing::Point(292, 90);
-			this->textBox10->Margin = System::Windows::Forms::Padding(4);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(76, 22);
-			this->textBox10->TabIndex = 22;
-			// 
-			// label14
-			// 
-			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(8, 94);
-			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(34, 17);
-			this->label14->TabIndex = 21;
-			this->label14->Text = L"Ville";
-			// 
-			// comboBox3
-			// 
-			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox3->Location = System::Drawing::Point(71, 90);
-			this->comboBox3->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(176, 24);
-			this->comboBox3->TabIndex = 20;
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(8, 60);
-			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(53, 17);
-			this->label15->TabIndex = 19;
-			this->label15->Text = L"Region";
-			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(8, 27);
-			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(39, 17);
-			this->label16->TabIndex = 18;
-			this->label16->Text = L"Pays";
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox4->Location = System::Drawing::Point(71, 57);
-			this->comboBox4->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(297, 24);
-			this->comboBox4->TabIndex = 17;
-			// 
-			// comboBox5
-			// 
-			this->comboBox5->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox5->Location = System::Drawing::Point(71, 23);
-			this->comboBox5->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(297, 24);
-			this->comboBox5->TabIndex = 16;
-			// 
-			// comboBox2
-			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(142, 140);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(209, 24);
-			this->comboBox2->TabIndex = 64;
+			this->btnValider->Location = System::Drawing::Point(4, 195);
+			this->btnValider->Name = L"btnValider";
+			this->btnValider->Size = System::Drawing::Size(440, 63);
+			this->btnValider->TabIndex = 22;
+			this->btnValider->Text = L"Valider";
+			this->btnValider->UseVisualStyleBackColor = true;
+			this->btnValider->Click += gcnew System::EventHandler(this, &InputCommandeInserer::btnValider_Click);
 			// 
 			// InputCommandeInserer
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1433, 431);
+			this->ClientSize = System::Drawing::Size(908, 285);
 			this->Controls->Add(this->gbxMain);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"InputCommandeInserer";
-			this->Text = L"InputCommandeInserer";
+			this->Text = L"Insérer une commande";
 			this->gbxMain->ResumeLayout(false);
-			this->gbxCommande->ResumeLayout(false);
-			this->gbxCommande->PerformLayout();
-			this->gbxFact->ResumeLayout(false);
-			this->gbxFact->PerformLayout();
 			this->gbxAdrEntreprise->ResumeLayout(false);
 			this->gbxAdrEntreprise->PerformLayout();
+			this->gbxFact->ResumeLayout(false);
+			this->gbxFact->PerformLayout();
+			this->gbxCommande->ResumeLayout(false);
+			this->gbxCommande->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		// Code pour validation
+		this->Close();
+	}
+	private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->Close();
+	}
 };
 }
