@@ -34,12 +34,17 @@ namespace projectView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::GroupBox^ gbxMain;
+	private: System::Windows::Forms::Button^ btnAnnuler;
 	protected:
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::ComboBox^ cbxPersonel;
+	private: System::Windows::Forms::Button^ btnValider;
+	private: System::Windows::Forms::Label^ lblCommande;
+	private: System::Windows::Forms::ComboBox^ cbxCommande;
+
+	protected:
+
+
+
+
 
 	private:
 		/// <summary>
@@ -54,77 +59,76 @@ namespace projectView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->gbxMain = (gcnew System::Windows::Forms::GroupBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->cbxPersonel = (gcnew System::Windows::Forms::ComboBox());
-			this->gbxMain->SuspendLayout();
+			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
+			this->btnValider = (gcnew System::Windows::Forms::Button());
+			this->lblCommande = (gcnew System::Windows::Forms::Label());
+			this->cbxCommande = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
-			// gbxMain
+			// btnAnnuler
 			// 
-			this->gbxMain->Controls->Add(this->button2);
-			this->gbxMain->Controls->Add(this->button1);
-			this->gbxMain->Controls->Add(this->label1);
-			this->gbxMain->Controls->Add(this->cbxPersonel);
-			this->gbxMain->Location = System::Drawing::Point(24, 12);
-			this->gbxMain->Name = L"gbxMain";
-			this->gbxMain->Size = System::Drawing::Size(384, 120);
-			this->gbxMain->TabIndex = 2;
-			this->gbxMain->TabStop = false;
-			this->gbxMain->Text = L"Supprimer une commande";
+			this->btnAnnuler->Location = System::Drawing::Point(152, 32);
+			this->btnAnnuler->Name = L"btnAnnuler";
+			this->btnAnnuler->Size = System::Drawing::Size(130, 29);
+			this->btnAnnuler->TabIndex = 29;
+			this->btnAnnuler->Text = L"Annuler";
+			this->btnAnnuler->UseVisualStyleBackColor = true;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputCommandeSupprimer::btnAnnuler_Click);
 			// 
-			// button2
+			// btnValider
 			// 
-			this->button2->Location = System::Drawing::Point(198, 76);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(173, 36);
-			this->button2->TabIndex = 25;
-			this->button2->Text = L"Annuler";
-			this->button2->UseVisualStyleBackColor = true;
+			this->btnValider->Location = System::Drawing::Point(13, 32);
+			this->btnValider->Name = L"btnValider";
+			this->btnValider->Size = System::Drawing::Size(131, 29);
+			this->btnValider->TabIndex = 28;
+			this->btnValider->Text = L"Valider";
+			this->btnValider->UseVisualStyleBackColor = true;
+			this->btnValider->Click += gcnew System::EventHandler(this, &InputCommandeSupprimer::btnValider_Click);
 			// 
-			// button1
+			// lblCommande
 			// 
-			this->button1->Location = System::Drawing::Point(15, 76);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(175, 36);
-			this->button1->TabIndex = 24;
-			this->button1->Text = L"Valider";
-			this->button1->UseVisualStyleBackColor = true;
+			this->lblCommande->AutoSize = true;
+			this->lblCommande->Location = System::Drawing::Point(11, 9);
+			this->lblCommande->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblCommande->Name = L"lblCommande";
+			this->lblCommande->Size = System::Drawing::Size(120, 13);
+			this->lblCommande->TabIndex = 27;
+			this->lblCommande->Text = L"Commande à supprimer:";
 			// 
-			// label1
+			// cbxCommande
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(12, 48);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(162, 17);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Commande à supprimer:";
-			// 
-			// cbxPersonel
-			// 
-			this->cbxPersonel->FormattingEnabled = true;
-			this->cbxPersonel->Location = System::Drawing::Point(176, 45);
-			this->cbxPersonel->Name = L"cbxPersonel";
-			this->cbxPersonel->Size = System::Drawing::Size(195, 24);
-			this->cbxPersonel->TabIndex = 0;
+			this->cbxCommande->FormattingEnabled = true;
+			this->cbxCommande->Location = System::Drawing::Point(134, 7);
+			this->cbxCommande->Margin = System::Windows::Forms::Padding(2);
+			this->cbxCommande->Name = L"cbxCommande";
+			this->cbxCommande->Size = System::Drawing::Size(147, 21);
+			this->cbxCommande->TabIndex = 26;
 			// 
 			// InputCommandeSupprimer
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(419, 138);
-			this->Controls->Add(this->gbxMain);
+			this->ClientSize = System::Drawing::Size(295, 69);
+			this->Controls->Add(this->btnAnnuler);
+			this->Controls->Add(this->btnValider);
+			this->Controls->Add(this->lblCommande);
+			this->Controls->Add(this->cbxCommande);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"InputCommandeSupprimer";
-			this->Text = L"InputCommandeSupprimer";
-			this->gbxMain->ResumeLayout(false);
-			this->gbxMain->PerformLayout();
+			this->Text = L"Supprimer une commande";
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		// Code pour validation
+		this->Close();
+	}
+	private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->Close();
+	}
+};
 }
