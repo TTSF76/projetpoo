@@ -158,6 +158,9 @@
     <ClInclude Include="InputStockInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InputStockSupprimer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -184,6 +187,7 @@
     <ClCompile Include="InputPersonnelInserer.cpp" />
     <ClCompile Include="InputPersonnelSupprimer.cpp" />
     <ClCompile Include="InputStockInserer.cpp" />
+    <ClCompile Include="InputStockSupprimer.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="pch.cpp">
@@ -228,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputStockInserer.resx">
       <DependentUpon>InputStockInserer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputStockSupprimer.resx">
+      <DependentUpon>InputStockSupprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>

@@ -185,9 +185,11 @@ namespace projectView {
 		}
 
 		this->gbxOperations->Controls->Add(this->btnAfficher);
-		this->gbxOperations->Controls->Add(this->btnInserer);
-		this->gbxOperations->Controls->Add(this->btnSupprimer);
-		this->gbxOperations->Controls->Add(this->btnUpdate);
+		if(this->lstGestion->SelectedIndex != 4) {
+			this->gbxOperations->Controls->Add(this->btnInserer);
+			this->gbxOperations->Controls->Add(this->btnSupprimer);
+			this->gbxOperations->Controls->Add(this->btnUpdate);
+		}
 
 		
 
@@ -265,17 +267,17 @@ namespace projectView {
 	{
 		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
 		if (gestion == "Personnel") {
-			projectView::InputPersonnelInserer inputForm;
+			projectView::InputPersonnelSupprimer inputForm;
 			inputForm.ShowDialog();
 		}
-		/*else if (gestion == "Commandes") {
-			projectView::InputCommandeInserer inputForm;
+		else if (gestion == "Commandes") {
+			projectView::InputCommandeSupprimer inputForm;
 			inputForm.ShowDialog();
 		}
 		else if (gestion == "Stock") {
-			projectView::InputStockInserer inputForm;
+			projectView::InputStockSupprimer inputForm;
 			inputForm.ShowDialog();
-		}*/
+		}
 		
 	}
 

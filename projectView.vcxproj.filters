@@ -77,6 +77,9 @@
     <ClInclude Include="CLserviceclient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputStockSupprimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -137,6 +140,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLserviceclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputStockSupprimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
