@@ -89,6 +89,9 @@
     <ClInclude Include="MyForm1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -162,6 +165,9 @@
     </ClCompile>
     <ClCompile Include="MyForm1.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

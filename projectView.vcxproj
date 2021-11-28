@@ -97,7 +97,7 @@
     <Link>
       <AdditionalDependencies />
       <SubSystem>Windows</SubSystem>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <EntryPointSymbol>main2</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -172,6 +172,7 @@
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -201,6 +202,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="projectView.cpp" />
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
