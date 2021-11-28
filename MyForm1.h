@@ -232,39 +232,62 @@ namespace projectView {
 			// 
 			// bouton_select
 			// 
-			this->bouton_select->Location = System::Drawing::Point(327, 164);
+			this->bouton_select->BackColor = System::Drawing::SystemColors::Control;
+			this->bouton_select->FlatAppearance->BorderSize = 0;
+			this->bouton_select->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_select->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_select.Image")));
+			this->bouton_select->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->bouton_select->Location = System::Drawing::Point(294, 100);
 			this->bouton_select->Name = L"bouton_select";
-			this->bouton_select->Size = System::Drawing::Size(75, 23);
+			this->bouton_select->Size = System::Drawing::Size(185, 134);
 			this->bouton_select->TabIndex = 1;
-			this->bouton_select->Text = L"Afficher";
-			this->bouton_select->UseVisualStyleBackColor = true;
+			this->bouton_select->Text = L"\r\n\r\nAfficher";
+			this->bouton_select->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->bouton_select->UseVisualStyleBackColor = false;
 			// 
 			// bouton_create
 			// 
-			this->bouton_create->Location = System::Drawing::Point(527, 164);
+			this->bouton_create->BackColor = System::Drawing::SystemColors::Control;
+			this->bouton_create->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->bouton_create->FlatAppearance->BorderSize = 0;
+			this->bouton_create->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_create->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_create.Image")));
+			this->bouton_create->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->bouton_create->Location = System::Drawing::Point(527, 100);
 			this->bouton_create->Name = L"bouton_create";
-			this->bouton_create->Size = System::Drawing::Size(75, 23);
+			this->bouton_create->Size = System::Drawing::Size(180, 134);
 			this->bouton_create->TabIndex = 2;
 			this->bouton_create->Text = L"Créer";
-			this->bouton_create->UseVisualStyleBackColor = true;
+			this->bouton_create->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->bouton_create->UseVisualStyleBackColor = false;
 			this->bouton_create->Click += gcnew System::EventHandler(this, &MyForm1::button6_Click);
 			// 
 			// bouton_update
 			// 
-			this->bouton_update->Location = System::Drawing::Point(327, 329);
+			this->bouton_update->FlatAppearance->BorderSize = 0;
+			this->bouton_update->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_update->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_update.Image")));
+			this->bouton_update->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->bouton_update->Location = System::Drawing::Point(294, 284);
 			this->bouton_update->Name = L"bouton_update";
-			this->bouton_update->Size = System::Drawing::Size(124, 23);
+			this->bouton_update->Size = System::Drawing::Size(185, 134);
 			this->bouton_update->TabIndex = 3;
-			this->bouton_update->Text = L"Mise à jour";
+			this->bouton_update->Text = L"Mettre à jour";
+			this->bouton_update->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->bouton_update->UseVisualStyleBackColor = true;
 			// 
 			// bouton_delete
 			// 
-			this->bouton_delete->Location = System::Drawing::Point(527, 329);
+			this->bouton_delete->FlatAppearance->BorderSize = 0;
+			this->bouton_delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_delete->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_delete.Image")));
+			this->bouton_delete->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->bouton_delete->Location = System::Drawing::Point(527, 284);
 			this->bouton_delete->Name = L"bouton_delete";
-			this->bouton_delete->Size = System::Drawing::Size(105, 23);
+			this->bouton_delete->Size = System::Drawing::Size(180, 134);
 			this->bouton_delete->TabIndex = 4;
 			this->bouton_delete->Text = L"Supprimer";
+			this->bouton_delete->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->bouton_delete->UseVisualStyleBackColor = true;
 			// 
 			// MyForm1
@@ -279,7 +302,7 @@ namespace projectView {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Text = L"Delivery Manager";
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
