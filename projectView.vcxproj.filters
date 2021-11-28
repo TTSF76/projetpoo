@@ -53,9 +53,6 @@
     <ClInclude Include="CLpersonne.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputClientSupprimer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CLpersonnel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,6 +72,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputStockInserer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputPersonnelSupprimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputCommandeSupprimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -115,9 +118,6 @@
     <ClCompile Include="CLpersonne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputClientSupprimer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLpersonnel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -137,6 +137,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputStockInserer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputPersonnelSupprimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCommandeSupprimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

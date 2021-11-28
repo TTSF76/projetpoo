@@ -214,6 +214,25 @@ namespace projectView {
 		
 	}
 
+	private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
+		if (gestion == "CLients") {
+			//requete select clients
+		}
+		else if (gestion == "Personnel") {
+			//requete select personnel
+		}
+		else if (gestion == "Commandes") {
+			//requete select commandes
+		}
+		else if (gestion == "Stock") {
+			//requete select articles
+		}
+		else if (gestion == "Statistiques") {
+			//requerte select stats
+		}
+	}
+
 	private: System::Void btnInserer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
@@ -238,15 +257,11 @@ namespace projectView {
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
-		if (gestion == "Clients") {
-			projectView::InputClientSupprimer inputForm;
-			inputForm.ShowDialog();
-		}
-		/*else if (gestion == "Personnel") {
+		if (gestion == "Personnel") {
 			projectView::InputPersonnelInserer inputForm;
 			inputForm.ShowDialog();
 		}
-		else if (gestion == "Commandes") {
+		/*else if (gestion == "Commandes") {
 			projectView::InputCommandeInserer inputForm;
 			inputForm.ShowDialog();
 		}
