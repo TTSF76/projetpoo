@@ -74,10 +74,7 @@
     <ClInclude Include="InputStockInserer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputPersonnelSupprimer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InputCommandeSupprimer.h">
+    <ClInclude Include="CLserviceclient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputStockSupprimer.h">
@@ -142,10 +139,7 @@
     <ClCompile Include="InputStockInserer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputPersonnelSupprimer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InputCommandeSupprimer.cpp">
+    <ClCompile Include="CLserviceclient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputStockSupprimer.cpp">

@@ -17,7 +17,7 @@ System::String^ NS_map_client::CLclient::Delete()
 	return "";
 }
 
-System::String^ NS_map_client::CLclient::Show()
+System::String^ NS_map_client::CLclient::Select()
 {
-	return "";
+	return "SELECT * FROM client";
 }
