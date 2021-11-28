@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "UIManager.h"
 
-void UIManager::modifierCouleur(projectView::MyForm1^ Form, int numero) {
+void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel1, System::Windows::Forms::Button^ bouton_client, System::Windows::Forms::Button^ bouton_commande, System::Windows::Forms::Button^ bouton_stock, System::Windows::Forms::Button^ bouton_personnel, System::Windows::Forms::Button^ bouton_stats, int numero) {
 	System::Drawing::Color couleur_client_bouton = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(80)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
 	System::Drawing::Color couleur_client_panel = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(120)),
@@ -31,49 +31,49 @@ void UIManager::modifierCouleur(projectView::MyForm1^ Form, int numero) {
 
 	case 1:
 
-		Form->bouton_client->BackColor = couleur_client_bouton;
-		Form->panel1->BackColor = couleur_client_panel;
-		Form->bouton_commande->BackColor = couleur_client_panel;
-		Form->bouton_stock->BackColor = couleur_client_panel;
-		Form->bouton_personnel->BackColor = couleur_client_panel;
-		Form->bouton_stats->BackColor = couleur_client_panel;
+		bouton_client->BackColor = couleur_client_bouton;
+		panel1->BackColor = couleur_client_panel;
+		bouton_commande->BackColor = couleur_client_panel;
+		bouton_stock->BackColor = couleur_client_panel;
+		bouton_personnel->BackColor = couleur_client_panel;
+		bouton_stats->BackColor = couleur_client_panel;
 		break;
 
 	case 2:
-		Form->bouton_stock->BackColor = couleur_stock_bouton;
-		Form->panel1->BackColor = couleur_stock_panel;
-		Form->bouton_commande->BackColor = couleur_stock_panel;
-		Form->bouton_client->BackColor = couleur_stock_panel;
-		Form->bouton_personnel->BackColor = couleur_stock_panel;
-		Form->bouton_stats->BackColor = couleur_stock_panel;
+		bouton_stock->BackColor = couleur_stock_bouton;
+		panel1->BackColor = couleur_stock_panel;
+		bouton_commande->BackColor = couleur_stock_panel;
+		bouton_client->BackColor = couleur_stock_panel;
+		bouton_personnel->BackColor = couleur_stock_panel;
+		bouton_stats->BackColor = couleur_stock_panel;
 		break;
 
 	case 3:
-		Form->bouton_personnel->BackColor = couleur_personnel_bouton;
-		Form->panel1->BackColor = couleur_personnel_panel;
-		Form->bouton_commande->BackColor = couleur_personnel_panel;
-		Form->bouton_client->BackColor = couleur_personnel_panel;
-		Form->bouton_stock->BackColor = couleur_personnel_panel;
-		Form->bouton_stats->BackColor = couleur_personnel_panel;
+		bouton_personnel->BackColor = couleur_personnel_bouton;
+		panel1->BackColor = couleur_personnel_panel;
+		bouton_commande->BackColor = couleur_personnel_panel;
+		bouton_client->BackColor = couleur_personnel_panel;
+		bouton_stock->BackColor = couleur_personnel_panel;
+		bouton_stats->BackColor = couleur_personnel_panel;
 		break;
 
 	case 4:
-		Form->bouton_commande->BackColor = couleur_commande_bouton;
-		Form->panel1->BackColor = couleur_commande_panel;
-		Form->bouton_personnel->BackColor = couleur_commande_panel;
-		Form->bouton_client->BackColor = couleur_commande_panel;
-		Form->bouton_stock->BackColor = couleur_commande_panel;
-		Form->bouton_stats->BackColor = couleur_commande_panel;
+		bouton_commande->BackColor = couleur_commande_bouton;
+		panel1->BackColor = couleur_commande_panel;
+		bouton_personnel->BackColor = couleur_commande_panel;
+		bouton_client->BackColor = couleur_commande_panel;
+		bouton_stock->BackColor = couleur_commande_panel;
+		bouton_stats->BackColor = couleur_commande_panel;
 		break;
 
 	case 5:
 
-		Form->bouton_stats->BackColor = couleur_stats_bouton;
-		Form->panel1->BackColor = couleur_stats_panel;
-		Form->bouton_commande->BackColor = couleur_stats_panel;
-		Form->bouton_client->BackColor = couleur_stats_panel;
-		Form->bouton_stock->BackColor = couleur_stats_panel;
-		Form->bouton_personnel->BackColor = couleur_stats_panel;
+		bouton_stats->BackColor = couleur_stats_bouton;
+		panel1->BackColor = couleur_stats_panel;
+		bouton_commande->BackColor = couleur_stats_panel;
+		bouton_client->BackColor = couleur_stats_panel;
+		bouton_stock->BackColor = couleur_stats_panel;
+		bouton_personnel->BackColor = couleur_stats_panel;
 		break;
 
 	}

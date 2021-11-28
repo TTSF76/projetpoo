@@ -120,7 +120,7 @@ namespace projectView {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(200, 579);
+			this->panel1->Size = System::Drawing::Size(200, 555);
 			this->panel1->TabIndex = 0;
 			// 
 			// bouton_stats
@@ -271,7 +271,7 @@ namespace projectView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(724, 579);
+			this->ClientSize = System::Drawing::Size(826, 555);
 			this->Controls->Add(this->bouton_delete);
 			this->Controls->Add(this->bouton_update);
 			this->Controls->Add(this->bouton_create);
@@ -288,25 +288,25 @@ namespace projectView {
 		}
 #pragma endregion
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::modifierCouleur(this, 1);
+		UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1);
 	}
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::modifierCouleur(this, 2);
+		UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2);
 
 	}
 
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::modifierCouleur(this, 3);
+	UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3);
 
 }
 private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::modifierCouleur(this, 4);
+	UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4);
 
 }
 private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::modifierCouleur(this, 5);
+	UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5);
 
 }
 };
