@@ -211,6 +211,9 @@
     <EmbeddedResource Include="InputClientUpdate.resx">
       <DependentUpon>InputClientUpdate.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputCommandeInserer.resx">
+      <DependentUpon>InputCommandeInserer.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputPersonnelInserer.resx">
       <DependentUpon>InputPersonnelInserer.h</DependentUpon>
     </EmbeddedResource>

@@ -48,11 +48,6 @@ namespace projectView {
 	private: System::Windows::Forms::Button^ btnInserer;
 	private: System::Windows::Forms::Button^ btnSupprimer;
 	private: System::Windows::Forms::Button^ btnUpdate;
-
-
-
-
-
 	protected:
 
 	private:
@@ -228,6 +223,10 @@ namespace projectView {
 		}
 		else if (gestion == "Personnel") {
 			projectView::InputPersonnelInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "Commandes") {
+			projectView::InputCommandeInserer inputForm;
 			inputForm.ShowDialog();
 		}
 		else if (gestion == "Stock") {

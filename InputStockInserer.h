@@ -186,11 +186,11 @@ namespace projectView {
 			// prixht
 			// 
 			this->prixht->AutoSize = true;
-			this->prixht->Location = System::Drawing::Point(215, 163);
+			this->prixht->Location = System::Drawing::Point(51, 160);
 			this->prixht->Name = L"prixht";
-			this->prixht->Size = System::Drawing::Size(161, 17);
+			this->prixht->Size = System::Drawing::Size(97, 17);
 			this->prixht->TabIndex = 28;
-			this->prixht->Text = L"Prix de l\'article hors taxe";
+			this->prixht->Text = L"Prix de la TVA";
 			// 
 			// tbxNom
 			// 
@@ -222,7 +222,7 @@ namespace projectView {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(382, 160);
+			this->textBox5->Location = System::Drawing::Point(218, 157);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(100, 22);
 			this->textBox5->TabIndex = 33;
