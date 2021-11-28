@@ -2,6 +2,7 @@
 #include "Auth.h"
 #include "Inputs.h"
 #include "CLconnect.h"
+#include "CLserviceclient.h"
 
 namespace projectView {
 
@@ -48,6 +49,8 @@ namespace projectView {
 	private: System::Windows::Forms::Button^ btnInserer;
 	private: System::Windows::Forms::Button^ btnSupprimer;
 	private: System::Windows::Forms::Button^ btnUpdate;
+	private: NS_Client_svc::CLserviceclient^ svcClient = gcnew NS_Client_svc::CLserviceclient();
+	private: System::Data::DataSet^ oDs;
 	protected:
 
 	private:
@@ -121,6 +124,7 @@ namespace projectView {
 			this->btnAfficher->TabIndex = 4;
 			this->btnAfficher->Text = L"Afficher ";
 			this->btnAfficher->UseVisualStyleBackColor = true;
+			this->btnAfficher->Click += gcnew System::EventHandler(this, &MyForm::btnAfficher_Click);
 			// 
 			// btnInserer
 			// 
@@ -216,8 +220,11 @@ namespace projectView {
 
 	private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
-		if (gestion == "CLients") {
-			//requete select clients
+		if (gestion == "Clients") {
+			this->dgvMain->Refresh();
+			this->oDs = this->svcClient->selectAllClients("Rsl");
+			this->dgvMain->DataSource = this->oDs;
+			this->dgvMain->DataMember = "Rsl";
 		}
 		else if (gestion == "Personnel") {
 			//requete select personnel

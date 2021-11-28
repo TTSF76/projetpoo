@@ -110,7 +110,7 @@ namespace projectView {
 			this->Hide();
 		}
 		else {
-			MessageBox::Show("Mot de passe incorrect\, réessayez", "none", MessageBoxButtons::OK);
+			MessageBox::Show("Mot de passe incorrect, réessayez", "none", MessageBoxButtons::OK);
 			Application::Restart();
 		}
 		

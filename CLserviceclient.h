@@ -9,7 +9,7 @@ namespace NS_Client_svc {
 		System::Data::DataSet^ selectAllClients(System::String^);
 		CLserviceclient(void);
 	private:
-		NS_Comp_Data::CLcad^ oCad;
+		NS_Comp_Data::CLconnect^ oCad;
 		NS_map_client::CLclient^ mapClient;
 	};
 }

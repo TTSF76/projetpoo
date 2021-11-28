@@ -9,7 +9,7 @@ namespace NS_map_client {
 		CLadresse^ adresse_livraison;
 		System::String^ date_anniversaire;
 	public:
-		System::String^ Create() override;
+		virtual System::String^ Create() override;
 		virtual System::String^ Update() override;
 		virtual System::String^ Delete() override;
 		virtual System::String^ Select() override;

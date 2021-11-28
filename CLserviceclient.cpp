@@ -3,7 +3,7 @@
 
 NS_Client_svc::CLserviceclient::CLserviceclient(void)
 {
-	this->oCad = gcnew NS_Comp_Data::CLcad();
+	this->oCad = gcnew NS_Comp_Data::CLconnect();
 	this->mapClient = gcnew NS_map_client::CLclient();
 }
 

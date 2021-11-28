@@ -1,7 +1,7 @@
 #pragma once
 
 namespace NS_Comp_Data {
-	ref class CLcad {
+	ref class CLconnect {
 	private:
 		System::String^ requete_SQL;
 		System::String^ connexion_s;
@@ -11,7 +11,7 @@ namespace NS_Comp_Data {
 		System::Data::DataSet^ DataSet;
 
 	public:
-		CLcad(void);
+		CLconnect(void);
 		System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
 	};

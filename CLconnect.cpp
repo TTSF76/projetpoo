@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "CLconnect.h"
 
-NS_Comp_Data::CLcad::CLcad(void) {
-	this->connexion_s = "Data Source=sql5102.site4now.net;Initial Catalog=db_a7ccf4_rouencaen001;Persist Security Info=True;User ID=db_a7ccf4_rouencaen001_admin;Password=TTSF7676";
+NS_Comp_Data::CLconnect::CLconnect(void) {
+	this->connexion_s = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=ttsf76_db;User ID=ttsf76_db;Password=TTSF76";
 
 	this->requete_SQL = "undefined";
 
@@ -15,7 +15,7 @@ NS_Comp_Data::CLcad::CLcad(void) {
 
 }
 
-System::Data::DataSet^ NS_Comp_Data::CLcad::getRows(System::String^ sSql, System::String^ sDataTableName) {
+System::Data::DataSet^ NS_Comp_Data::CLconnect::getRows(System::String^ sSql, System::String^ sDataTableName) {
 	this->DataSet->Clear();
 	this->requete_SQL = sSql;
 	this->SqlCommand->CommandText = this->requete_SQL;
@@ -25,7 +25,7 @@ System::Data::DataSet^ NS_Comp_Data::CLcad::getRows(System::String^ sSql, System
 	return this->DataSet;
 }
 
-void NS_Comp_Data::CLcad::actionRows(System::String^ sSql) {
+void NS_Comp_Data::CLconnect::actionRows(System::String^ sSql) {
 	this->requete_SQL = sSql;
 	this->SqlCommand->CommandText = this->requete_SQL;
 	this->SqlDataAdapter->SelectCommand = this->SqlCommand;
