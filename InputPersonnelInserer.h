@@ -441,7 +441,7 @@ namespace projectView {
 			this->Controls->Add(this->gbxInputPersonnelInserer);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"InputPersonnelInserer";
-			this->Text = L"Insérer un employé";
+			this->Text = L"Insérer un personnel";
 			this->gbxInputPersonnelInserer->ResumeLayout(false);
 			this->gbxInfos->ResumeLayout(false);
 			this->gbxInfos->PerformLayout();
