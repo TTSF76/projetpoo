@@ -139,16 +139,19 @@
     <ClInclude Include="InputClientInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="InputClientSupprimer.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="InputClientUpdate.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="InputCommandeInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InputCommandeSupprimer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="InputPersonnelInserer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InputPersonnelSupprimer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inputs.h" />
@@ -175,10 +178,11 @@
     <ClCompile Include="CLconnect.cpp" />
     <ClCompile Include="CLserviceclient.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
-    <ClCompile Include="InputClientSupprimer.cpp" />
     <ClCompile Include="InputClientUpdate.cpp" />
     <ClCompile Include="InputCommandeInserer.cpp" />
+    <ClCompile Include="InputCommandeSupprimer.cpp" />
     <ClCompile Include="InputPersonnelInserer.cpp" />
+    <ClCompile Include="InputPersonnelSupprimer.cpp" />
     <ClCompile Include="InputStockInserer.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
@@ -207,17 +211,20 @@
     <EmbeddedResource Include="InputClientInserer.resx">
       <DependentUpon>InputClientInserer.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputClientSupprimer.resx">
-      <DependentUpon>InputClientSupprimer.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InputClientUpdate.resx">
       <DependentUpon>InputClientUpdate.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputCommandeInserer.resx">
       <DependentUpon>InputCommandeInserer.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputCommandeSupprimer.resx">
+      <DependentUpon>InputCommandeSupprimer.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputPersonnelInserer.resx">
       <DependentUpon>InputPersonnelInserer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputPersonnelSupprimer.resx">
+      <DependentUpon>InputPersonnelSupprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputStockInserer.resx">
       <DependentUpon>InputStockInserer.h</DependentUpon>
