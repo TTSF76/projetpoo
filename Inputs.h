@@ -4,4 +4,6 @@
 #include "InputCommandeInserer.h"
 #include "InputStockInserer.h"
 #include "InputPersonnelSupprimer.h"
+#include "InputCommandeSupprimer.h"
+#include "InputStockSupprimer.h"
 #include "InputClientUpdate.h"
