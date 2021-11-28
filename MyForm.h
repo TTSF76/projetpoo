@@ -237,8 +237,24 @@ namespace projectView {
 	
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		projectView::InputClientSupprimer inputForm;
-		inputForm.ShowDialog();
+		String^ gestion = lstGestion->GetItemText(lstGestion->SelectedItem);
+		if (gestion == "Clients") {
+			projectView::InputClientSupprimer inputForm;
+			inputForm.ShowDialog();
+		}
+		/*else if (gestion == "Personnel") {
+			projectView::InputPersonnelInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "Commandes") {
+			projectView::InputCommandeInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "Stock") {
+			projectView::InputStockInserer inputForm;
+			inputForm.ShowDialog();
+		}*/
+		
 	}
 
 	private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e)
