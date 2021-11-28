@@ -12,6 +12,6 @@ namespace NS_map_client {
 		System::String^ Create() override;
 		virtual System::String^ Update() override;
 		virtual System::String^ Delete() override;
-		virtual System::String^ Show() override;
+		virtual System::String^ Select() override;
 	};
 };
