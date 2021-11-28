@@ -66,6 +66,7 @@ namespace projectView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->gbxOperations = (gcnew System::Windows::Forms::GroupBox());
 			this->btnValider = (gcnew System::Windows::Forms::Button());
 			this->lstGestion = (gcnew System::Windows::Forms::ComboBox());
@@ -81,9 +82,11 @@ namespace projectView {
 			this->gbxOperations->AutoSize = true;
 			this->gbxOperations->Controls->Add(this->btnValider);
 			this->gbxOperations->Controls->Add(this->lstGestion);
-			this->gbxOperations->Location = System::Drawing::Point(10, 10);
+			this->gbxOperations->Location = System::Drawing::Point(13, 12);
+			this->gbxOperations->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->gbxOperations->Name = L"gbxOperations";
-			this->gbxOperations->Size = System::Drawing::Size(200, 400);
+			this->gbxOperations->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->gbxOperations->Size = System::Drawing::Size(267, 492);
 			this->gbxOperations->TabIndex = 0;
 			this->gbxOperations->TabStop = false;
 			this->gbxOperations->Text = L"Opérations";
@@ -92,9 +95,10 @@ namespace projectView {
 			// 
 			this->btnValider->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btnValider->Location = System::Drawing::Point(12, 47);
+			this->btnValider->Location = System::Drawing::Point(16, 58);
+			this->btnValider->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnValider->Name = L"btnValider";
-			this->btnValider->Size = System::Drawing::Size(174, 25);
+			this->btnValider->Size = System::Drawing::Size(232, 31);
 			this->btnValider->TabIndex = 3;
 			this->btnValider->Text = L"Valider";
 			this->btnValider->UseVisualStyleBackColor = true;
@@ -104,14 +108,16 @@ namespace projectView {
 			// 
 			this->lstGestion->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->lstGestion->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->lstGestion->FormattingEnabled = true;
 			this->lstGestion->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
 				L"Personnel", L"Clients", L"Commandes", L"Stock",
 					L"Statistiques"
 			});
-			this->lstGestion->Location = System::Drawing::Point(12, 19);
+			this->lstGestion->Location = System::Drawing::Point(16, 23);
+			this->lstGestion->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->lstGestion->Name = L"lstGestion";
-			this->lstGestion->Size = System::Drawing::Size(174, 21);
+			this->lstGestion->Size = System::Drawing::Size(231, 24);
 			this->lstGestion->TabIndex = 2;
 			// 
 			// btnAfficher
@@ -164,10 +170,12 @@ namespace projectView {
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(979, 419);
+			this->ClientSize = System::Drawing::Size(1305, 516);
 			this->Controls->Add(this->gbxOperations);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->gbxOperations->ResumeLayout(false);
