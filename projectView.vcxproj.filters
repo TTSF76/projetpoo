@@ -80,6 +80,12 @@
     <ClInclude Include="InputStockSupprimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputCommandeSupprimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputPersonnelSupprimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -143,6 +149,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputStockSupprimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCommandeSupprimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputPersonnelSupprimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
