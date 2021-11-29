@@ -8,10 +8,10 @@ namespace NS_Utilitaire_svc {
 	ref class CLserviceutilitaire
 	{
 	private:
-		NS_Comp_Data::CLconnect^ Ocad;
-		NS_map_Utilitaire::CLUtilitaire^ mapUtilitaire;
+		static NS_Comp_Data::CLconnect^ Ocad;
+		static NS_map_Utilitaire::CLUtilitaire^ mapUtilitaire;
 	public:
-		void repertorierVilles(std::vector<System::String^>&);
+		static void repertorierVilles(std::vector<System::String^>&);
 		CLserviceutilitaire(void);
 
 	};

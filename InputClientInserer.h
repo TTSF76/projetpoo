@@ -561,7 +561,11 @@ namespace projectView {
 			this->comboBox2->Size = System::Drawing::Size(176, 24);
 			this->comboBox2->TabIndex = 4;
 			std::vector<System::String^> list_ville;
-			void NS_Utilitaire_svc::CLserviceutilitaire::repertorierVilles(list_ville);
+		     NS_Utilitaire_svc::CLserviceutilitaire::repertorierVilles(list_ville);
+			 int i;
+			 for (i = 0; i < list_ville.size(); i++) {
+				this->comboBox2->Items->Add(list_ville[i]);
+			 }
 			
 			// 
 			// label2

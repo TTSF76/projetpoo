@@ -9,7 +9,7 @@ NS_Utilitaire_svc::CLserviceutilitaire::CLserviceutilitaire(void) {
 
 void:: NS_Utilitaire_svc::CLserviceutilitaire::repertorierVilles(std::vector<System::String^>& list_ville) {
 	System::String^ sql;
-	sql = this->mapUtilitaire->SelectVille();
+	sql = mapUtilitaire->SelectVille();
 	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
 
 	while (val->Read()) {
