@@ -782,7 +782,8 @@ namespace projectView {
 	private: System::Void inputClientInserer_Valider(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
-		if (tbxNom->Text->Length == 0) {
+		if (tbxNom->Text->Length == 0 || tbxPrenom->Text->Length == 0 || tbxNRueL->Text->Length == 0 || tbxRueL->Text->Length == 0 || tbxEtageL->Text->Length == 0 ||
+			tbxNRueF->Text->Length == 0 || tbxRueF->Text->Length == 0 || tbxEtageF->Text->Length == 0 || tbxResidenceF->Text->Length == 0) {
 			MessageBox::Show("Vous n'avez pas renseigné tous les champs", "Erreur", MessageBoxButtons::OK);
 			return;
 		}
