@@ -33,3 +33,31 @@ void NS_Comp_Data::CLconnect::actionRows(System::String^ sSql) {
 	this->SqlCommand->ExecuteNonQuery();
 	this->SqlConnection->Close();
 }
+
+System::Data::SqlClient::SqlConnection^ ::NS_Comp_Data::CLconnect::getSqlConnexion() {
+
+	return this->SqlConnection;
+
+}
+
+System::Data::SqlClient::SqlCommand^ ::NS_Comp_Data::CLconnect::getSqlCommand() {
+
+	return this->SqlCommand;
+
+}
+
+System::Data::SqlClient::SqlDataAdapter^ ::NS_Comp_Data::CLconnect::getSqlDataAdapter() {
+
+	return this->SqlDataAdapter;
+
+}
+
+System::Data::SqlClient::SqlDataReader^ ::NS_Comp_Data::CLconnect::lecteurData(System::String^ cmd) {
+
+	SqlCommand->CommandType = System::Data::CommandType::Text;
+	SqlConnection->Open();
+	System::Data::SqlClient::SqlDataReader^ val = SqlCommand->ExecuteReader();
+	SqlConnection->Close();
+	return val;
+
+}

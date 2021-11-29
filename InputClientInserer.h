@@ -3,6 +3,7 @@
 #include "CLconnect.h"
 #include "CLclient.h"
 #include "UIAction.h"
+#include "CLserviceutilitaire.h"
 
 
 namespace projectView {
@@ -559,6 +560,9 @@ namespace projectView {
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(176, 24);
 			this->comboBox2->TabIndex = 4;
+			std::vector<System::String^> list_ville;
+			void NS_Utilitaire_svc::CLserviceutilitaire::repertorierVilles(list_ville);
+			
 			// 
 			// label2
 			// 

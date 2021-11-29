@@ -8,3 +8,4 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectVille();
 	};
 }
+
