@@ -35,18 +35,22 @@ namespace projectView {
 				delete components;
 			}
 		}
-	public: System::Windows::Forms::Panel^ panel1;
+	public: System::Windows::Forms::Panel^ panel_menu_left;
+	private: System::Windows::Forms::Panel^ panel_logo;
+	public:
 	protected:
 
 	protected:
 
 	protected:
 
+	protected:
+
 
 	protected:
 
 	protected:
-	private: System::Windows::Forms::Panel^ panel2;
+
 	public: System::Windows::Forms::Button^ bouton_client;
 	private:
 	public: System::Windows::Forms::Button^ bouton_commande;
@@ -71,6 +75,20 @@ namespace projectView {
 
 	private: System::Windows::Forms::Button^ bouton_update;
 	private: System::Windows::Forms::Button^ bouton_delete;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	public: System::Windows::Forms::Panel^ panel_header;
+	private: System::Windows::Forms::Label^ label_bienvenue;
+	private: System::Windows::Forms::PictureBox^ logo_welcome;
+	private: System::Windows::Forms::Label^ titre_rubrique;
+	public:
+
+
+	public:
+
+	public:
+	private:
+
+	private:
 
 
 
@@ -91,43 +109,52 @@ namespace projectView {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel_menu_left = (gcnew System::Windows::Forms::Panel());
 			this->bouton_stats = (gcnew System::Windows::Forms::Button());
 			this->bouton_commande = (gcnew System::Windows::Forms::Button());
 			this->bouton_stock = (gcnew System::Windows::Forms::Button());
 			this->bouton_personnel = (gcnew System::Windows::Forms::Button());
 			this->bouton_client = (gcnew System::Windows::Forms::Button());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel_logo = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->bouton_select = (gcnew System::Windows::Forms::Button());
 			this->bouton_create = (gcnew System::Windows::Forms::Button());
 			this->bouton_update = (gcnew System::Windows::Forms::Button());
 			this->bouton_delete = (gcnew System::Windows::Forms::Button());
-			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->panel_header = (gcnew System::Windows::Forms::Panel());
+			this->titre_rubrique = (gcnew System::Windows::Forms::Label());
+			this->label_bienvenue = (gcnew System::Windows::Forms::Label());
+			this->logo_welcome = (gcnew System::Windows::Forms::PictureBox());
+			this->panel_menu_left->SuspendLayout();
+			this->panel_logo->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->panel_header->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logo_welcome))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// panel1
+			// panel_menu_left
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			this->panel_menu_left->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(76)));
-			this->panel1->Controls->Add(this->bouton_stats);
-			this->panel1->Controls->Add(this->bouton_commande);
-			this->panel1->Controls->Add(this->bouton_stock);
-			this->panel1->Controls->Add(this->bouton_personnel);
-			this->panel1->Controls->Add(this->bouton_client);
-			this->panel1->Controls->Add(this->panel2);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(200, 555);
-			this->panel1->TabIndex = 0;
+			this->panel_menu_left->Controls->Add(this->bouton_stats);
+			this->panel_menu_left->Controls->Add(this->bouton_commande);
+			this->panel_menu_left->Controls->Add(this->bouton_stock);
+			this->panel_menu_left->Controls->Add(this->bouton_personnel);
+			this->panel_menu_left->Controls->Add(this->bouton_client);
+			this->panel_menu_left->Controls->Add(this->panel_logo);
+			this->panel_menu_left->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel_menu_left->Location = System::Drawing::Point(0, 0);
+			this->panel_menu_left->Name = L"panel_menu_left";
+			this->panel_menu_left->Size = System::Drawing::Size(200, 598);
+			this->panel_menu_left->TabIndex = 0;
 			// 
 			// bouton_stats
 			// 
 			this->bouton_stats->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_stats->FlatAppearance->BorderSize = 0;
 			this->bouton_stats->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_stats->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
 			this->bouton_stats->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_stats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_stats.Image")));
 			this->bouton_stats->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -135,7 +162,7 @@ namespace projectView {
 			this->bouton_stats->Name = L"bouton_stats";
 			this->bouton_stats->Size = System::Drawing::Size(200, 84);
 			this->bouton_stats->TabIndex = 5;
-			this->bouton_stats->Text = L"            Gestion Statistiques";
+			this->bouton_stats->Text = L"                Gestion \r\n             Statistiques";
 			this->bouton_stats->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_stats->UseVisualStyleBackColor = true;
 			this->bouton_stats->Click += gcnew System::EventHandler(this, &MyForm1::bouton_stats_Click);
@@ -145,6 +172,7 @@ namespace projectView {
 			this->bouton_commande->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_commande->FlatAppearance->BorderSize = 0;
 			this->bouton_commande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_commande->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
 			this->bouton_commande->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_commande->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_commande.Image")));
 			this->bouton_commande->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -152,7 +180,7 @@ namespace projectView {
 			this->bouton_commande->Name = L"bouton_commande";
 			this->bouton_commande->Size = System::Drawing::Size(200, 84);
 			this->bouton_commande->TabIndex = 4;
-			this->bouton_commande->Text = L"            Gestion Commandes";
+			this->bouton_commande->Text = L"                 Gestion \r\n             Commandes";
 			this->bouton_commande->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_commande->UseVisualStyleBackColor = true;
 			this->bouton_commande->Click += gcnew System::EventHandler(this, &MyForm1::bouton_commande_Click);
@@ -162,6 +190,7 @@ namespace projectView {
 			this->bouton_stock->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_stock->FlatAppearance->BorderSize = 0;
 			this->bouton_stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_stock->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
 			this->bouton_stock->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_stock->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_stock.Image")));
 			this->bouton_stock->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -169,8 +198,7 @@ namespace projectView {
 			this->bouton_stock->Name = L"bouton_stock";
 			this->bouton_stock->Size = System::Drawing::Size(200, 84);
 			this->bouton_stock->TabIndex = 3;
-			this->bouton_stock->Text = L"            Gestion Stock";
-			this->bouton_stock->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->bouton_stock->Text = L"Gestion\r\nStock";
 			this->bouton_stock->UseVisualStyleBackColor = true;
 			this->bouton_stock->Click += gcnew System::EventHandler(this, &MyForm1::bouton_stock_Click);
 			// 
@@ -179,6 +207,8 @@ namespace projectView {
 			this->bouton_personnel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_personnel->FlatAppearance->BorderSize = 0;
 			this->bouton_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->bouton_personnel->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_personnel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_personnel.Image")));
 			this->bouton_personnel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -186,7 +216,7 @@ namespace projectView {
 			this->bouton_personnel->Name = L"bouton_personnel";
 			this->bouton_personnel->Size = System::Drawing::Size(200, 84);
 			this->bouton_personnel->TabIndex = 2;
-			this->bouton_personnel->Text = L"       Gestion Personnel";
+			this->bouton_personnel->Text = L"  Gestion \r\n Personnel";
 			this->bouton_personnel->UseVisualStyleBackColor = true;
 			this->bouton_personnel->Click += gcnew System::EventHandler(this, &MyForm1::bouton_personnel_Click);
 			// 
@@ -195,6 +225,8 @@ namespace projectView {
 			this->bouton_client->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_client->FlatAppearance->BorderSize = 0;
 			this->bouton_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->bouton_client->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_client->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_client.Image")));
 			this->bouton_client->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -202,21 +234,20 @@ namespace projectView {
 			this->bouton_client->Name = L"bouton_client";
 			this->bouton_client->Size = System::Drawing::Size(200, 84);
 			this->bouton_client->TabIndex = 1;
-			this->bouton_client->Text = L"            Gestion Clients";
-			this->bouton_client->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->bouton_client->Text = L" Gestion \r\n Clients";
 			this->bouton_client->UseVisualStyleBackColor = true;
 			this->bouton_client->Click += gcnew System::EventHandler(this, &MyForm1::bouton_client_Click);
 			// 
-			// panel2
+			// panel_logo
 			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
+			this->panel_logo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(59)));
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel2->Location = System::Drawing::Point(0, 0);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(200, 100);
-			this->panel2->TabIndex = 0;
+			this->panel_logo->Controls->Add(this->label1);
+			this->panel_logo->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel_logo->Location = System::Drawing::Point(0, 0);
+			this->panel_logo->Name = L"panel_logo";
+			this->panel_logo->Size = System::Drawing::Size(200, 100);
+			this->panel_logo->TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -232,105 +263,219 @@ namespace projectView {
 			// 
 			// bouton_select
 			// 
-			this->bouton_select->BackColor = System::Drawing::SystemColors::Control;
-			this->bouton_select->FlatAppearance->BorderSize = 0;
+			this->bouton_select->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(214)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bouton_select->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->bouton_select->FlatAppearance->BorderSize = 2;
 			this->bouton_select->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_select->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bouton_select->ForeColor = System::Drawing::Color::White;
 			this->bouton_select->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_select.Image")));
-			this->bouton_select->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->bouton_select->Location = System::Drawing::Point(294, 100);
+			this->bouton_select->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->bouton_select->Location = System::Drawing::Point(206, 523);
 			this->bouton_select->Name = L"bouton_select";
-			this->bouton_select->Size = System::Drawing::Size(185, 134);
+			this->bouton_select->Size = System::Drawing::Size(159, 49);
 			this->bouton_select->TabIndex = 1;
-			this->bouton_select->Text = L"\r\n\r\nAfficher";
-			this->bouton_select->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->bouton_select->Text = L"       Afficher";
+			this->bouton_select->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_select->UseVisualStyleBackColor = false;
+			this->bouton_select->Visible = false;
+			this->bouton_select->Click += gcnew System::EventHandler(this, &MyForm1::bouton_select_Click);
 			// 
 			// bouton_create
 			// 
-			this->bouton_create->BackColor = System::Drawing::SystemColors::Control;
+			this->bouton_create->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
 			this->bouton_create->FlatAppearance->BorderColor = System::Drawing::Color::White;
-			this->bouton_create->FlatAppearance->BorderSize = 0;
+			this->bouton_create->FlatAppearance->BorderSize = 2;
 			this->bouton_create->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_create->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bouton_create->ForeColor = System::Drawing::Color::White;
 			this->bouton_create->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_create.Image")));
-			this->bouton_create->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->bouton_create->Location = System::Drawing::Point(527, 100);
+			this->bouton_create->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->bouton_create->Location = System::Drawing::Point(371, 523);
 			this->bouton_create->Name = L"bouton_create";
-			this->bouton_create->Size = System::Drawing::Size(180, 134);
+			this->bouton_create->Size = System::Drawing::Size(159, 49);
 			this->bouton_create->TabIndex = 2;
-			this->bouton_create->Text = L"Créer";
-			this->bouton_create->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->bouton_create->Text = L"         Créer";
+			this->bouton_create->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_create->UseVisualStyleBackColor = false;
+			this->bouton_create->Visible = false;
 			this->bouton_create->Click += gcnew System::EventHandler(this, &MyForm1::button6_Click);
 			// 
 			// bouton_update
 			// 
-			this->bouton_update->FlatAppearance->BorderSize = 0;
+			this->bouton_update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->bouton_update->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->bouton_update->FlatAppearance->BorderSize = 2;
 			this->bouton_update->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_update->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bouton_update->ForeColor = System::Drawing::Color::White;
 			this->bouton_update->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_update.Image")));
-			this->bouton_update->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->bouton_update->Location = System::Drawing::Point(294, 284);
+			this->bouton_update->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->bouton_update->Location = System::Drawing::Point(701, 523);
 			this->bouton_update->Name = L"bouton_update";
-			this->bouton_update->Size = System::Drawing::Size(185, 134);
+			this->bouton_update->Size = System::Drawing::Size(159, 49);
 			this->bouton_update->TabIndex = 3;
 			this->bouton_update->Text = L"Mettre à jour";
-			this->bouton_update->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->bouton_update->UseVisualStyleBackColor = true;
+			this->bouton_update->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->bouton_update->UseVisualStyleBackColor = false;
+			this->bouton_update->Visible = false;
 			// 
 			// bouton_delete
 			// 
-			this->bouton_delete->FlatAppearance->BorderSize = 0;
+			this->bouton_delete->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->bouton_delete->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->bouton_delete->FlatAppearance->BorderSize = 2;
 			this->bouton_delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->bouton_delete->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bouton_delete->ForeColor = System::Drawing::Color::White;
 			this->bouton_delete->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_delete.Image")));
-			this->bouton_delete->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->bouton_delete->Location = System::Drawing::Point(527, 284);
+			this->bouton_delete->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->bouton_delete->Location = System::Drawing::Point(536, 523);
 			this->bouton_delete->Name = L"bouton_delete";
-			this->bouton_delete->Size = System::Drawing::Size(180, 134);
+			this->bouton_delete->Size = System::Drawing::Size(159, 49);
 			this->bouton_delete->TabIndex = 4;
-			this->bouton_delete->Text = L"Supprimer";
-			this->bouton_delete->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->bouton_delete->UseVisualStyleBackColor = true;
+			this->bouton_delete->Text = L" Supprimer";
+			this->bouton_delete->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->bouton_delete->UseVisualStyleBackColor = false;
+			this->bouton_delete->Visible = false;
+			this->bouton_delete->Click += gcnew System::EventHandler(this, &MyForm1::bouton_delete_Click);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(231, 118);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(629, 375);
+			this->dataGridView1->TabIndex = 5;
+			this->dataGridView1->Visible = false;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm1::dataGridView1_CellContentClick);
+			// 
+			// panel_header
+			// 
+			this->panel_header->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(76)));
+			this->panel_header->Controls->Add(this->titre_rubrique);
+			this->panel_header->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel_header->Location = System::Drawing::Point(200, 0);
+			this->panel_header->Name = L"panel_header";
+			this->panel_header->Size = System::Drawing::Size(690, 100);
+			this->panel_header->TabIndex = 6;
+			// 
+			// titre_rubrique
+			// 
+			this->titre_rubrique->AutoSize = true;
+			this->titre_rubrique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->titre_rubrique->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->titre_rubrique->ForeColor = System::Drawing::Color::White;
+			this->titre_rubrique->Location = System::Drawing::Point(221, 28);
+			this->titre_rubrique->Name = L"titre_rubrique";
+			this->titre_rubrique->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->titre_rubrique->Size = System::Drawing::Size(0, 50);
+			this->titre_rubrique->TabIndex = 0;
+			this->titre_rubrique->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->titre_rubrique->Visible = false;
+			// 
+			// label_bienvenue
+			// 
+			this->label_bienvenue->AutoSize = true;
+			this->label_bienvenue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_bienvenue->ForeColor = System::Drawing::Color::White;
+			this->label_bienvenue->Location = System::Drawing::Point(261, 149);
+			this->label_bienvenue->Name = L"label_bienvenue";
+			this->label_bienvenue->Size = System::Drawing::Size(566, 128);
+			this->label_bienvenue->TabIndex = 7;
+			this->label_bienvenue->Text = L"Bienvenue sur\r\nDELIVERY MANAGER !";
+			this->label_bienvenue->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// logo_welcome
+			// 
+			this->logo_welcome->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->logo_welcome->ImageLocation = L"https://i.imgur.com/8U0xiHQ.png";
+			this->logo_welcome->Location = System::Drawing::Point(466, 321);
+			this->logo_welcome->Name = L"logo_welcome";
+			this->logo_welcome->Size = System::Drawing::Size(245, 172);
+			this->logo_welcome->TabIndex = 8;
+			this->logo_welcome->TabStop = false;
+			this->logo_welcome->Click += gcnew System::EventHandler(this, &MyForm1::logo_welcome_Click);
 			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(826, 555);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ClientSize = System::Drawing::Size(890, 598);
+			this->Controls->Add(this->panel_header);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->bouton_delete);
 			this->Controls->Add(this->bouton_update);
 			this->Controls->Add(this->bouton_create);
 			this->Controls->Add(this->bouton_select);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel_menu_left);
+			this->Controls->Add(this->label_bienvenue);
+			this->Controls->Add(this->logo_welcome);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm1";
 			this->Text = L"Delivery Manager";
-			this->panel1->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
+			this->panel_menu_left->ResumeLayout(false);
+			this->panel_logo->ResumeLayout(false);
+			this->panel_logo->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->panel_header->ResumeLayout(false);
+			this->panel_header->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logo_welcome))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1);
+		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1);
+		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 1);
 	}
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2);
-
+		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2);
+		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 2);
 	}
 
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3);
-
+	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3);
+	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
 }
 private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4);
-
+	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4);
+	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
 }
 private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::modifierCouleur(this->panel1, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5);
+	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5);
+	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 5);
+}
+private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
 
+
+private: System::Void logo_welcome_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
