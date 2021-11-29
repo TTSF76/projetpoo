@@ -1,5 +1,10 @@
 #pragma once
 
+#include "CLconnect.h"
+#include "CLclient.h"
+#include "UIAction.h"
+
+
 namespace projectView {
 
 	using namespace System;
@@ -74,13 +79,21 @@ namespace projectView {
 
 
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ tbxResidenceL;
+
+	private: System::Windows::Forms::TextBox^ tbxEtageL;
+
+
+
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ tbxRueL;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ tbxNRueL;
+
+
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label3;
@@ -88,13 +101,17 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ tbxResidenceF;
+
+	private: System::Windows::Forms::TextBox^ tbxEtageF;
+
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ tbxRueF;
+
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::TextBox^ tbxNRueF;
+
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::Label^ label14;
@@ -133,13 +150,13 @@ namespace projectView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->tbxResidenceF = (gcnew System::Windows::Forms::TextBox());
+			this->tbxEtageF = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->tbxRueF = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->tbxNRueF = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->label14 = (gcnew System::Windows::Forms::Label());
@@ -149,13 +166,13 @@ namespace projectView {
 			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->tbxResidenceL = (gcnew System::Windows::Forms::TextBox());
+			this->tbxEtageL = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->tbxRueL = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->tbxNRueL = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -222,29 +239,29 @@ namespace projectView {
 			this->label9->TabIndex = 31;
 			this->label9->Text = L"Résidence";
 			// 
-			// textBox6
+			// tbxResidenceF
 			// 
-			this->textBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxResidenceF->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox6->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox6->ForeColor = System::Drawing::Color::Silver;
-			this->textBox6->Location = System::Drawing::Point(1037, 192);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(145, 15);
-			this->textBox6->TabIndex = 30;
+			this->tbxResidenceF->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxResidenceF->ForeColor = System::Drawing::Color::Silver;
+			this->tbxResidenceF->Location = System::Drawing::Point(1037, 192);
+			this->tbxResidenceF->Margin = System::Windows::Forms::Padding(4);
+			this->tbxResidenceF->Name = L"tbxResidenceF";
+			this->tbxResidenceF->Size = System::Drawing::Size(145, 15);
+			this->tbxResidenceF->TabIndex = 30;
 			// 
-			// textBox7
+			// tbxEtageF
 			// 
-			this->textBox7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxEtageF->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox7->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox7->ForeColor = System::Drawing::Color::Silver;
-			this->textBox7->Location = System::Drawing::Point(873, 192);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(57, 15);
-			this->textBox7->TabIndex = 29;
+			this->tbxEtageF->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxEtageF->ForeColor = System::Drawing::Color::Silver;
+			this->tbxEtageF->Location = System::Drawing::Point(873, 192);
+			this->tbxEtageF->Margin = System::Windows::Forms::Padding(4);
+			this->tbxEtageF->Name = L"tbxEtageF";
+			this->tbxEtageF->Size = System::Drawing::Size(57, 15);
+			this->tbxEtageF->TabIndex = 29;
 			// 
 			// label10
 			// 
@@ -257,17 +274,17 @@ namespace projectView {
 			this->label10->TabIndex = 28;
 			this->label10->Text = L"Etage";
 			// 
-			// textBox8
+			// tbxRueF
 			// 
-			this->textBox8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxRueF->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox8->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox8->ForeColor = System::Drawing::Color::Silver;
-			this->textBox8->Location = System::Drawing::Point(995, 160);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(187, 15);
-			this->textBox8->TabIndex = 27;
+			this->tbxRueF->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxRueF->ForeColor = System::Drawing::Color::Silver;
+			this->tbxRueF->Location = System::Drawing::Point(995, 160);
+			this->tbxRueF->Margin = System::Windows::Forms::Padding(4);
+			this->tbxRueF->Name = L"tbxRueF";
+			this->tbxRueF->Size = System::Drawing::Size(187, 15);
+			this->tbxRueF->TabIndex = 27;
 			// 
 			// label11
 			// 
@@ -291,17 +308,17 @@ namespace projectView {
 			this->label12->TabIndex = 25;
 			this->label12->Text = L"N° Rue";
 			// 
-			// textBox9
+			// tbxNRueF
 			// 
-			this->textBox9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxNRueF->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox9->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox9->ForeColor = System::Drawing::Color::Silver;
-			this->textBox9->Location = System::Drawing::Point(873, 160);
-			this->textBox9->Margin = System::Windows::Forms::Padding(4);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(57, 15);
-			this->textBox9->TabIndex = 24;
+			this->tbxNRueF->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxNRueF->ForeColor = System::Drawing::Color::Silver;
+			this->tbxNRueF->Location = System::Drawing::Point(873, 160);
+			this->tbxNRueF->Margin = System::Windows::Forms::Padding(4);
+			this->tbxNRueF->Name = L"tbxNRueF";
+			this->tbxNRueF->Size = System::Drawing::Size(57, 15);
+			this->tbxNRueF->TabIndex = 24;
 			// 
 			// label13
 			// 
@@ -412,31 +429,31 @@ namespace projectView {
 			this->label8->TabIndex = 15;
 			this->label8->Text = L"Résidence";
 			// 
-			// textBox5
+			// tbxResidenceL
 			// 
-			this->textBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxResidenceL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox5->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->tbxResidenceL->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxResidenceL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->ForeColor = System::Drawing::Color::Silver;
-			this->textBox5->Location = System::Drawing::Point(633, 192);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(145, 15);
-			this->textBox5->TabIndex = 14;
+			this->tbxResidenceL->ForeColor = System::Drawing::Color::Silver;
+			this->tbxResidenceL->Location = System::Drawing::Point(633, 192);
+			this->tbxResidenceL->Margin = System::Windows::Forms::Padding(4);
+			this->tbxResidenceL->Name = L"tbxResidenceL";
+			this->tbxResidenceL->Size = System::Drawing::Size(145, 15);
+			this->tbxResidenceL->TabIndex = 14;
 			// 
-			// textBox4
+			// tbxEtageL
 			// 
-			this->textBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxEtageL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox4->ForeColor = System::Drawing::Color::Silver;
-			this->textBox4->Location = System::Drawing::Point(481, 192);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(57, 15);
-			this->textBox4->TabIndex = 13;
+			this->tbxEtageL->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxEtageL->ForeColor = System::Drawing::Color::Silver;
+			this->tbxEtageL->Location = System::Drawing::Point(481, 192);
+			this->tbxEtageL->Margin = System::Windows::Forms::Padding(4);
+			this->tbxEtageL->Name = L"tbxEtageL";
+			this->tbxEtageL->Size = System::Drawing::Size(57, 15);
+			this->tbxEtageL->TabIndex = 13;
 			// 
 			// label7
 			// 
@@ -449,17 +466,17 @@ namespace projectView {
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"Etage";
 			// 
-			// textBox3
+			// tbxRueL
 			// 
-			this->textBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxRueL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox3->ForeColor = System::Drawing::Color::Silver;
-			this->textBox3->Location = System::Drawing::Point(591, 160);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(187, 15);
-			this->textBox3->TabIndex = 11;
+			this->tbxRueL->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxRueL->ForeColor = System::Drawing::Color::Silver;
+			this->tbxRueL->Location = System::Drawing::Point(591, 160);
+			this->tbxRueL->Margin = System::Windows::Forms::Padding(4);
+			this->tbxRueL->Name = L"tbxRueL";
+			this->tbxRueL->Size = System::Drawing::Size(187, 15);
+			this->tbxRueL->TabIndex = 11;
 			// 
 			// label6
 			// 
@@ -483,17 +500,17 @@ namespace projectView {
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"N° Rue";
 			// 
-			// textBox2
+			// tbxNRueL
 			// 
-			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->tbxNRueL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->ForeColor = System::Drawing::Color::Silver;
-			this->textBox2->Location = System::Drawing::Point(481, 158);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(57, 15);
-			this->textBox2->TabIndex = 8;
+			this->tbxNRueL->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxNRueL->ForeColor = System::Drawing::Color::Silver;
+			this->tbxNRueL->Location = System::Drawing::Point(481, 158);
+			this->tbxNRueL->Margin = System::Windows::Forms::Padding(4);
+			this->tbxNRueL->Name = L"tbxNRueL";
+			this->tbxNRueL->Size = System::Drawing::Size(57, 15);
+			this->tbxNRueL->TabIndex = 8;
 			// 
 			// label4
 			// 
@@ -679,7 +696,7 @@ namespace projectView {
 			// 
 			this->label_adresse_facturation->AutoSize = true;
 			this->label_adresse_facturation->ForeColor = System::Drawing::Color::Silver;
-			this->label_adresse_facturation->Location = System::Drawing::Point(490, 9);
+			this->label_adresse_facturation->Location = System::Drawing::Point(869, 9);
 			this->label_adresse_facturation->Name = L"label_adresse_facturation";
 			this->label_adresse_facturation->Size = System::Drawing::Size(155, 17);
 			this->label_adresse_facturation->TabIndex = 33;
@@ -689,7 +706,7 @@ namespace projectView {
 			// 
 			this->label_adresse_livraison->AutoSize = true;
 			this->label_adresse_livraison->ForeColor = System::Drawing::Color::Silver;
-			this->label_adresse_livraison->Location = System::Drawing::Point(858, 9);
+			this->label_adresse_livraison->Location = System::Drawing::Point(478, 9);
 			this->label_adresse_livraison->Name = L"label_adresse_livraison";
 			this->label_adresse_livraison->Size = System::Drawing::Size(141, 17);
 			this->label_adresse_livraison->TabIndex = 34;
@@ -709,21 +726,21 @@ namespace projectView {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->tbxResidenceF);
 			this->Controls->Add(this->label18);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->tbxEtageF);
+			this->Controls->Add(this->tbxResidenceL);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->tbxRueF);
+			this->Controls->Add(this->tbxEtageL);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBox9);
+			this->Controls->Add(this->tbxNRueF);
 			this->Controls->Add(this->dtpAnniversaire);
 			this->Controls->Add(this->label13);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->tbxRueL);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->tbxNom);
 			this->Controls->Add(this->label14);
@@ -735,7 +752,7 @@ namespace projectView {
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->tbxPrenom);
 			this->Controls->Add(this->comboBox4);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->tbxNRueL);
 			this->Controls->Add(this->comboBox5);
 			this->Controls->Add(this->cbxAdrLivPays);
 			this->Controls->Add(this->label4);
@@ -764,7 +781,23 @@ namespace projectView {
 	private: System::Void inputInserer_Annuler(System::Object^ sender, System::EventArgs^ e) { this->Close(); }
 	private: System::Void inputClientInserer_Valider(System::Object^ sender, System::EventArgs^ e)
 	{
-		// Inserer dans CLclient et CLadresse
+		NS_map_client::CLclient^ client;
+		CLadresse^ adresse_facturation;
+		CLadresse^ adresse_livraison;
+		client->setNom(this->tbxNom->Text);
+		client->setPrenom(this->tbxPrenom->Text);
+		client->setDateNaissance(this->dtpAnniversaire->Text);
+		adresse_livraison->setVille(1);
+		adresse_livraison->setNumeroRue(tbxNRueL->Text);
+		adresse_livraison->setRue(tbxRueL->Text);
+		adresse_livraison->setNumeroEtage(int::Parse(tbxEtageL->Text));
+		adresse_livraison->setNomResidence(tbxResidenceL->Text);
+		adresse_facturation->setVille(1);
+		adresse_facturation->setNumeroRue(tbxNRueF->Text);
+		adresse_facturation->setRue(tbxRueF->Text);
+		adresse_facturation->setNumeroEtage(int::Parse(tbxEtageF->Text));
+		adresse_facturation->setNomResidence(tbxResidenceF->Text);
+		UIAction::validerButton(this, client, adresse_livraison, adresse_facturation);
 		this->Close();
 	}
 private: System::Void gbxInputClientInserer_Enter(System::Object^ sender, System::EventArgs^ e) {

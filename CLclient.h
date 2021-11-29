@@ -5,13 +5,13 @@
 namespace NS_map_client {
 	ref class CLclient : public CLpersonne {
 	private:
-		CLadresse^ adresse_facturation;
-		CLadresse^ adresse_livraison;
 		System::String^ nom;
 		System::String^ prenom;
 		System::String^ date_anniversaire;
 	public:
-		virtual System::String^ Create() override;
+		void setDateNaissance(System::String^ date_anniversaire);
+		System::String^ getDateNaissance();
+		virtual System::String^ Create(CLadresse^ adresse_livraison, CLadresse^ adresse_facturation) override;
 		virtual System::String^ Update() override;
 		virtual System::String^ Delete() override;
 		virtual System::String^ Select() override;
