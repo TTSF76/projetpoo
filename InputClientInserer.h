@@ -781,12 +781,16 @@ namespace projectView {
 	private: System::Void inputInserer_Annuler(System::Object^ sender, System::EventArgs^ e) { this->Close(); }
 	private: System::Void inputClientInserer_Valider(System::Object^ sender, System::EventArgs^ e)
 	{
-		NS_map_client::CLclient^ client;
-		CLadresse^ adresse_facturation;
-		CLadresse^ adresse_livraison;
+		NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
+		if (tbxNom->Text->Length == 0) {
+			MessageBox::Show("Vous n'avez pas renseigné tous les champs", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+		CLadresse^ adresse_facturation = gcnew CLadresse;
+		CLadresse^ adresse_livraison = gcnew CLadresse;
 		client->setNom(this->tbxNom->Text);
 		client->setPrenom(this->tbxPrenom->Text);
-		client->setDateNaissance(this->dtpAnniversaire->Text);
+		client->setDateNaissance(this->dtpAnniversaire->Value.ToString("yyyy-MM-dd"));
 		adresse_livraison->setVille(1);
 		adresse_livraison->setNumeroRue(tbxNRueL->Text);
 		adresse_livraison->setRue(tbxRueL->Text);

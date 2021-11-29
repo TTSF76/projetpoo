@@ -7,8 +7,6 @@ namespace NS_map_client {
 	private:
 		CLadresse^ adresse_livraison;
 		CLadresse^ adresse_facturation;
-		System::String^ nom;
-		System::String^ prenom;
 		System::String^ date_anniversaire;
 	public:
 		void setDateNaissance(System::String^ date_anniversaire);
