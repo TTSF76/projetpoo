@@ -10,5 +10,6 @@ private:
 	static System::Data::DataSet^ oDs;
 public:
 	static void selectButton(System::Windows::Forms::DataGridView^ dgb, System::Windows::Forms::Label^ lbl);
+
 };
 

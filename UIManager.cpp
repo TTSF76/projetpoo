@@ -1,31 +1,42 @@
 #include "pch.h"
 #include "UIManager.h"
 
-void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, System::Windows::Forms::Panel^ panel_header, System::Windows::Forms::Button^ bouton_client, System::Windows::Forms::Button^ bouton_commande, System::Windows::Forms::Button^ bouton_stock, System::Windows::Forms::Button^ bouton_personnel, System::Windows::Forms::Button^ bouton_stats, int numero) {
+void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, System::Windows::Forms::Panel^ panel_header, System::Windows::Forms::Button^ bouton_client, System::Windows::Forms::Button^ bouton_commande, System::Windows::Forms::Button^ bouton_stock, System::Windows::Forms::Button^ bouton_personnel, System::Windows::Forms::Button^ bouton_stats, int numero, System::Windows::Forms::Form^ MyForm1) {
 	System::Drawing::Color couleur_client_bouton = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(80)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
 	System::Drawing::Color couleur_client_panel = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(120)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
+	System::Drawing::Color couleur_client_form = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(165)),
+		static_cast<System::Int32>(static_cast<System::Byte>(145)));
 
 	System::Drawing::Color couleur_stock_bouton = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 		static_cast<System::Int32>(static_cast<System::Byte>(165)));
 	System::Drawing::Color couleur_stock_panel = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(131)),
 		static_cast<System::Int32>(static_cast<System::Byte>(255)));
+	System::Drawing::Color couleur_stock_form = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(185)),
+		static_cast<System::Int32>(static_cast<System::Byte>(209)));
 
 	System::Drawing::Color couleur_personnel_bouton = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(117)), static_cast<System::Int32>(static_cast<System::Byte>(117)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
 	System::Drawing::Color couleur_personnel_panel = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(175)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
+	System::Drawing::Color couleur_personnel_form = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
+		static_cast<System::Int32>(static_cast<System::Byte>(147)));
 
 	System::Drawing::Color couleur_commande_bouton = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 		static_cast<System::Int32>(static_cast<System::Byte>(155)));
 	System::Drawing::Color couleur_commande_panel = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+		static_cast<System::Int32>(static_cast<System::Byte>(255)));
+	System::Drawing::Color couleur_commande_form = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 		static_cast<System::Int32>(static_cast<System::Byte>(255)));
 
 	System::Drawing::Color couleur_stats_bouton = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(145)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
 	System::Drawing::Color couleur_stats_panel = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 		static_cast<System::Int32>(static_cast<System::Byte>(0)));
+	System::Drawing::Color couleur_stats_form = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+		static_cast<System::Int32>(static_cast<System::Byte>(128)));
+
 
 	switch (numero) {
 
@@ -38,6 +49,7 @@ void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, 
 		bouton_personnel->BackColor = couleur_client_panel;
 		bouton_stats->BackColor = couleur_client_panel;
 		panel_header->BackColor = couleur_client_panel;
+		MyForm1->BackColor = couleur_client_form;
 		break;
 
 	case 2:
@@ -48,6 +60,7 @@ void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, 
 		bouton_personnel->BackColor = couleur_stock_panel;
 		bouton_stats->BackColor = couleur_stock_panel;
 		panel_header->BackColor = couleur_stock_panel;
+		MyForm1->BackColor = couleur_stock_form;
 		break;
 
 	case 3:
@@ -58,6 +71,7 @@ void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, 
 		bouton_stock->BackColor = couleur_personnel_panel;
 		bouton_stats->BackColor = couleur_personnel_panel;
 		panel_header->BackColor = couleur_personnel_panel;
+		MyForm1->BackColor = couleur_personnel_form;
 		break;
 
 	case 4:
@@ -68,6 +82,7 @@ void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, 
 		bouton_stock->BackColor = couleur_commande_panel;
 		bouton_stats->BackColor = couleur_commande_panel;
 		panel_header->BackColor = couleur_commande_panel;
+		MyForm1->BackColor = couleur_commande_form;
 		break;
 
 	case 5:
@@ -79,6 +94,7 @@ void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, 
 		bouton_stock->BackColor = couleur_stats_panel;
 		bouton_personnel->BackColor = couleur_stats_panel;
 		panel_header->BackColor = couleur_stats_panel;
+		MyForm1->BackColor = couleur_stats_form;
 		break;
 
 	}
