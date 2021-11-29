@@ -1,4 +1,6 @@
 #pragma once
+
+#include "UIAction.h"
 #include "UIManager.h"
 
 namespace projectView {
@@ -273,11 +275,11 @@ namespace projectView {
 			this->bouton_select->ForeColor = System::Drawing::Color::White;
 			this->bouton_select->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_select.Image")));
 			this->bouton_select->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->bouton_select->Location = System::Drawing::Point(206, 523);
+			this->bouton_select->Location = System::Drawing::Point(222, 519);
 			this->bouton_select->Name = L"bouton_select";
 			this->bouton_select->Size = System::Drawing::Size(159, 49);
 			this->bouton_select->TabIndex = 1;
-			this->bouton_select->Text = L"       Afficher";
+			this->bouton_select->Text = L"Afficher";
 			this->bouton_select->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_select->UseVisualStyleBackColor = false;
 			this->bouton_select->Visible = false;
@@ -295,11 +297,11 @@ namespace projectView {
 			this->bouton_create->ForeColor = System::Drawing::Color::White;
 			this->bouton_create->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_create.Image")));
 			this->bouton_create->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->bouton_create->Location = System::Drawing::Point(371, 523);
+			this->bouton_create->Location = System::Drawing::Point(387, 519);
 			this->bouton_create->Name = L"bouton_create";
 			this->bouton_create->Size = System::Drawing::Size(159, 49);
 			this->bouton_create->TabIndex = 2;
-			this->bouton_create->Text = L"         Créer";
+			this->bouton_create->Text = L"Créer";
 			this->bouton_create->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_create->UseVisualStyleBackColor = false;
 			this->bouton_create->Visible = false;
@@ -317,7 +319,7 @@ namespace projectView {
 			this->bouton_update->ForeColor = System::Drawing::Color::White;
 			this->bouton_update->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_update.Image")));
 			this->bouton_update->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->bouton_update->Location = System::Drawing::Point(701, 523);
+			this->bouton_update->Location = System::Drawing::Point(717, 519);
 			this->bouton_update->Name = L"bouton_update";
 			this->bouton_update->Size = System::Drawing::Size(159, 49);
 			this->bouton_update->TabIndex = 3;
@@ -338,7 +340,7 @@ namespace projectView {
 			this->bouton_delete->ForeColor = System::Drawing::Color::White;
 			this->bouton_delete->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_delete.Image")));
 			this->bouton_delete->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->bouton_delete->Location = System::Drawing::Point(536, 523);
+			this->bouton_delete->Location = System::Drawing::Point(552, 519);
 			this->bouton_delete->Name = L"bouton_delete";
 			this->bouton_delete->Size = System::Drawing::Size(159, 49);
 			this->bouton_delete->TabIndex = 4;
@@ -375,15 +377,17 @@ namespace projectView {
 			// 
 			// titre_rubrique
 			// 
+			this->titre_rubrique->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
 			this->titre_rubrique->AutoSize = true;
 			this->titre_rubrique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->titre_rubrique->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->titre_rubrique->ForeColor = System::Drawing::Color::White;
-			this->titre_rubrique->Location = System::Drawing::Point(221, 28);
+			this->titre_rubrique->Location = System::Drawing::Point(98, 28);
+			this->titre_rubrique->MinimumSize = System::Drawing::Size(500, 0);
 			this->titre_rubrique->Name = L"titre_rubrique";
-			this->titre_rubrique->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->titre_rubrique->Size = System::Drawing::Size(0, 50);
+			this->titre_rubrique->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->titre_rubrique->Size = System::Drawing::Size(500, 50);
 			this->titre_rubrique->TabIndex = 0;
 			this->titre_rubrique->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->titre_rubrique->Visible = false;
@@ -447,10 +451,13 @@ namespace projectView {
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1);
 		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 1);
+		
 	}
+	
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2);
 		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 2);
+	
 	}
 
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -470,6 +477,7 @@ private: System::Void bouton_stats_Click(System::Object^ sender, System::EventAr
 private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
+	UIAction::selectButton(this->dataGridView1, this->titre_rubrique);
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }

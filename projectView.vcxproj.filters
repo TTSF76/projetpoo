@@ -92,6 +92,9 @@
     <ClInclude Include="UIManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UIAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -167,6 +170,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="UIManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

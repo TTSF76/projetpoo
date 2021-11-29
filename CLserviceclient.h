@@ -7,6 +7,7 @@ namespace NS_Client_svc {
 	ref class CLserviceclient {
 	public:
 		System::Data::DataSet^ selectAllClients(System::String^);
+		System::Data::DataSet^ createClient(System::String^);
 		CLserviceclient(void);
 	private:
 		NS_Comp_Data::CLconnect^ oCad;
