@@ -438,6 +438,7 @@ namespace projectView {
 			this->Controls->Add(this->logo_welcome);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm1";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Delivery Manager";
 			this->panel_menu_left->ResumeLayout(false);
 			this->panel_logo->ResumeLayout(false);
@@ -452,12 +453,17 @@ namespace projectView {
 		}
 #pragma endregion
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->DataSource = nullptr;
+		this->dataGridView1->Rows->Clear();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1,this);
 		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 1);
 		
 	}
 	
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->DataSource = nullptr;
+		this->dataGridView1->Rows->Clear();
+		this->dataGridView1->Refresh();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2, this);
 		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 2);
 	
@@ -468,14 +474,23 @@ private: System::Void bouton_create_Click(System::Object^ sender, System::EventA
 	inputForm.ShowDialog();
 }
 private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Rows->Clear();
+	this->dataGridView1->Refresh();
 	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3, this);
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
 }
 private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Rows->Clear();
+	this->dataGridView1->Refresh();
 	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4,this);
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
 }
 private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Rows->Clear();
+	this->dataGridView1->Refresh();
 	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5,this);
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 5);
 }
