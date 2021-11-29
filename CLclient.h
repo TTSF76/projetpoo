@@ -7,6 +7,8 @@ namespace NS_map_client {
 	private:
 		CLadresse^ adresse_facturation;
 		CLadresse^ adresse_livraison;
+		System::String^ nom;
+		System::String^ prenom;
 		System::String^ date_anniversaire;
 	public:
 		virtual System::String^ Create() override;

@@ -21,9 +21,9 @@ void CLadresse::setRegion(System::String^ region) {
 	this->region = region;
 }
 
-System::String^ CLadresse::getVille()
+int CLadresse::getVille()
 {
-	return this->ville;
+	return this->id_ville;
 }
 
 System::String^ CLadresse::getRegion() {
@@ -44,19 +44,36 @@ void CLadresse::setNomResidence(System::String^ nom_residence)
 	this->nom_residence = nom_residence;
 }
 
-int CLadresse::getNumeroRue()
+System::String^ CLadresse::getNumeroRue()
 {
 	return this->numero_rue;
 }
 
-void CLadresse::setNumeroRue(int numero_rue)
+void CLadresse::setNumeroRue(System::String^ numero_rue)
 {
 	this->numero_rue = numero_rue;
 }
 
-void CLadresse::setVille(System::String^ ville)
+int CLadresse::getNumeroEtage()
 {
-	this->ville = ville;
+	return this->numero_etage;
+}
+
+void CLadresse::setNumeroEtage(int numero_etage)
+{
+	this->numero_etage = numero_etage;
+}
+
+void CLadresse::setVille(int id_ville)
+{
+	this->id_ville = id_ville;
+}
+
+System::String^ CLadresse::getRue() {
+	return this->rue;
+}
+void CLadresse::setRue(System::String^ rue) {
+	this->rue = rue;
 }
 
 System::String^ CLadresse::getCodePostal() {

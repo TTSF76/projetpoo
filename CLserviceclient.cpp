@@ -14,8 +14,9 @@ System::Data::DataSet^ NS_Client_svc::CLserviceclient::selectAllClients(System::
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Client_svc::CLserviceclient::createClient(System::String^ dataTableName) {
+void NS_Client_svc::CLserviceclient::insertClient(NS_map_client::CLclient^ client)
+{
 	System::String^ sql;
-	sql = this->mapClient->Select();
-	return this->oCad->getRows(sql, dataTableName);
+	sql = this->mapClient->Create();
+	this->oCad->actionRows(sql);
 }

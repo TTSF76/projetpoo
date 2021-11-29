@@ -5,12 +5,12 @@
 
 namespace NS_Client_svc {
 	ref class CLserviceclient {
-	public:
-		System::Data::DataSet^ selectAllClients(System::String^);
-		System::Data::DataSet^ createClient(System::String^);
-		CLserviceclient(void);
-	private:
-		NS_Comp_Data::CLconnect^ oCad;
-		NS_map_client::CLclient^ mapClient;
+		public:
+			System::Data::DataSet^ selectAllClients(System::String^);
+			void insertClient(NS_map_client::CLclient^ client);
+			CLserviceclient(void);
+		private:
+			NS_Comp_Data::CLconnect^ oCad;
+			NS_map_client::CLclient^ mapClient;
 	};
 }
