@@ -17,6 +17,7 @@ System::Data::DataSet^ NS_Client_svc::CLserviceclient::selectAllClients(System::
 void NS_Client_svc::CLserviceclient::insertClient(NS_map_client::CLclient^ client)
 {
 	System::String^ sql;
+	this->mapClient = client;
 	sql = this->mapClient->Create();
 	this->oCad->actionRows(sql);
 }

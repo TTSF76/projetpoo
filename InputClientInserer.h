@@ -797,7 +797,9 @@ namespace projectView {
 		adresse_facturation->setRue(tbxRueF->Text);
 		adresse_facturation->setNumeroEtage(int::Parse(tbxEtageF->Text));
 		adresse_facturation->setNomResidence(tbxResidenceF->Text);
-		UIAction::validerButton(this, client, adresse_livraison, adresse_facturation);
+		client->setAdresseLivraison(adresse_livraison);
+		client->setAdresseFacturation(adresse_facturation);
+		UIAction::validerButton(this, client);
 		this->Close();
 	}
 private: System::Void gbxInputClientInserer_Enter(System::Object^ sender, System::EventArgs^ e) {
