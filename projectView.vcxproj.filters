@@ -101,6 +101,9 @@
     <ClInclude Include="CLserviceutilitaire.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLservicepersonnel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -185,6 +188,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLserviceutilitaire.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLservicepersonnel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

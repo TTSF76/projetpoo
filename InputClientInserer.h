@@ -71,37 +71,11 @@ namespace projectView {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::ComboBox^ cbxAdrLivPays;
 	private: System::Windows::Forms::ComboBox^ comboBox_region;
 
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -837,7 +811,7 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 		adresse_facturation->setNomResidence(tbxResidenceF->Text);
 		client->setAdresseLivraison(adresse_livraison);
 		client->setAdresseFacturation(adresse_facturation);
-		UIAction::validerButton(this, client);
+		UIAction::validerButtonClient(this, client);
 		this->Close();
 	}
 private: System::Void gbxInputClientInserer_Enter(System::Object^ sender, System::EventArgs^ e) {

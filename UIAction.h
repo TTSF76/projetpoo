@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "CLserviceclient.h"
+#include "CLservicepersonnel.h"
 
 
 ref class UIAction
@@ -8,7 +9,10 @@ ref class UIAction
 private:
 	static NS_Client_svc::CLserviceclient^ svcClient = gcnew NS_Client_svc::CLserviceclient();
 	static System::Data::DataSet^ oDs;
+	static NS_Personnel_svc::CLservicepersonnel^ svcPersonnel = gcnew NS_Personnel_svc::CLservicepersonnel();
 public:
-	static void selectButton(System::Windows::Forms::DataGridView^ dgb, System::Windows::Forms::Label^ lbl);
-	static void validerButton(System::Windows::Forms::Form^ form,NS_map_client::CLclient^ client);
+	static void selectButtonClient(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
+	static void validerButtonClient(System::Windows::Forms::Form^, NS_map_client::CLclient^);
+	static void selectButtonPersonnel(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
+	static void validerButtonPersonnel(System::Windows::Forms::Form^, NS_map_personnel::CLpersonnel^);
 };

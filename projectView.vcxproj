@@ -136,6 +136,7 @@
     <ClInclude Include="CLpersonne.h" />
     <ClInclude Include="CLpersonnel.h" />
     <ClInclude Include="CLserviceclient.h" />
+    <ClInclude Include="CLservicepersonnel.h" />
     <ClInclude Include="CLserviceutilitaire.h" />
     <ClInclude Include="CLUtilitaire.h" />
     <ClInclude Include="InputClientInserer.h">
@@ -187,6 +188,7 @@
     <ClCompile Include="CLpersonnel.cpp" />
     <ClCompile Include="CLconnect.cpp" />
     <ClCompile Include="CLserviceclient.cpp" />
+    <ClCompile Include="CLservicepersonnel.cpp" />
     <ClCompile Include="CLserviceutilitaire.cpp" />
     <ClCompile Include="CLUtilitaire.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />

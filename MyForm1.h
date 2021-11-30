@@ -469,10 +469,26 @@ namespace projectView {
 	
 	}
 
-private: System::Void bouton_create_Click(System::Object^ sender, System::EventArgs^ e) {
-	projectView::InputClientInserer inputForm;
-	inputForm.ShowDialog();
-}
+	private: System::Void bouton_create_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		String^ gestion = titre_rubrique->Text;
+		if (gestion == "CLIENTS") {
+			projectView::InputClientInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "PERSONNEL") {
+			projectView::InputPersonnelInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "COMMANDE") {
+			projectView::InputCommandeInserer inputForm;
+			inputForm.ShowDialog();
+		}
+		else if (gestion == "STOCK") {
+			projectView::InputStockInserer inputForm;
+			inputForm.ShowDialog();
+		}
+	}
 private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataGridView1->DataSource = nullptr;
 	this->dataGridView1->Rows->Clear();
@@ -497,7 +513,17 @@ private: System::Void bouton_stats_Click(System::Object^ sender, System::EventAr
 private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIAction::selectButton(this->dataGridView1, this->titre_rubrique);
+	String^ gestion = titre_rubrique->Text;
+
+	if (gestion == "CLIENTS") {
+		
+		UIAction::selectButtonClient(this->dataGridView1, this->titre_rubrique);
+	}
+	else if (gestion == "PERSONNEL") {
+		
+		UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
+
+	}
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }

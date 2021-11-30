@@ -9,12 +9,19 @@ private:
 	int id_personnel_etre_dirige;
 	CLadresse^ adresse;
 	System::String^ date_embauche;
-		NS_map_personnel::CLpersonnel^ superieur_hierarchique;
+	NS_map_personnel::CLpersonnel^ superieur_hierarchique;
+
 public:
-		System::String^ Create() override;
+	void setIdSupHierarchique(int);
+	void setDateEmbauche(System::String^);
+	System::String^ getDateEmbauche(); 
+	void setAdresse(CLadresse^ adresse);
+	CLadresse^ getAdresse();
+
+	virtual System::String^ Create() override;
 	virtual System::String^ Update() override;
 	virtual System::String^ Delete() override;
-	virtual System::String^ Show() override;
+	virtual System::String^ Select() override;
 	};
 };
 
