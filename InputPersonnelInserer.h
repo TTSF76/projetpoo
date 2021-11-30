@@ -27,31 +27,31 @@ namespace projectView {
 			//
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_ville;
+			std::vector<std::string> list_ville;
 			list_ville = ville->repertorierVilles(list_ville);
 			for (int i = 0; i < list_ville.size(); i++) {
-				this->cbxVille->Items->Add(list_ville[i]);
+				this->cbxVille->Items->Add(gcnew String(list_ville[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_pays;
+			std::vector<std::string> list_pays;
 			list_pays = pays->repertorierPays(list_pays);
 			for (int i = 0; i < list_pays.size(); i++) {
-				this->cbxPays->Items->Add(list_pays[i]);
+				this->cbxPays->Items->Add(gcnew String(list_pays[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_code_postaux;
+			std::vector<std::string> list_code_postaux;
 			list_code_postaux = code_postal->repertorierCodePostaux(list_code_postaux);
 			for (int i = 0; i < list_code_postaux.size(); i++) {
-				this->cbxCode_postal->Items->Add(list_code_postaux[i]);
+				this->cbxCode_postal->Items->Add(gcnew String(list_code_postaux[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_region;
+			std::vector<std::string> list_region;
 			list_region = region->repertorierRegion(list_region);
 			for (int i = 0; i < list_region.size(); i++) {
-				this->cbxRegion->Items->Add(list_region[i]);
+				this->cbxRegion->Items->Add(gcnew String(list_region[i].c_str()));
 			}
 		}
 
