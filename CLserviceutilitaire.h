@@ -17,8 +17,13 @@ namespace NS_Utilitaire_svc {
         cliext::vector<System::String^> repertorierPays(cliext::vector<System::String^>);
 		cliext::vector<System::String^> repertorierCodePostaux(cliext::vector<System::String^>);
 		cliext::vector<System::String^> repertorierRegion(cliext::vector<System::String^>);
-		cliext::vector<System::String^> miseAjourVille(cliext::vector<System::String^>, System::String^);
-		cliext::vector<System::String^> miseAjourRegion(cliext::vector<System::String^>, System::String^);
-		cliext::vector<System::String^> miseAjourPays(cliext::vector<System::String^>, System::String^);
+
+		cliext::vector<System::String^> miseAjourVilleCBCP(cliext::vector<System::String^>, System::String^);
+		cliext::vector<System::String^> miseAjourRegionCBCP(cliext::vector<System::String^>, System::String^);
+		cliext::vector<System::String^> miseAjourPaysCBCP(cliext::vector<System::String^>, System::String^);
+
+		cliext::vector<System::String^> miseAjourCodePostalCBV(cliext::vector<System::String^>, System::String^);
+		cliext::vector<System::String^> miseAjourRegionCBV(cliext::vector<System::String^>, System::String^);
+		cliext::vector<System::String^> miseAjourPaysCBV(cliext::vector<System::String^>, System::String^);
 	};
 }

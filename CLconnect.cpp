@@ -34,11 +34,12 @@ void NS_Comp_Data::CLconnect::actionRows(System::String^ sSql) {
 	this->SqlConnection->Close();
 }
 
-System::Data::SqlClient::SqlDataReader^ ::NS_Comp_Data::CLconnect::lecteurData(System::String^ sSql) {
+System::Data::SqlClient::SqlDataReader^ NS_Comp_Data::CLconnect::lecteurData(System::String^ sSql) {
 	this->requete_SQL = sSql;
 	SqlCommand = gcnew System::Data::SqlClient::SqlCommand(requete_SQL, this->SqlConnection);
 	this->SqlCommand->CommandType = System::Data::CommandType::Text;
-	this->SqlConnection->Open();
+	SqlConnection->Close();
+	SqlConnection->Open();
 	System::Data::SqlClient::SqlDataReader^ val = this->SqlCommand->ExecuteReader();
 	return val;
 
