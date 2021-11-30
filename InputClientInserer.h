@@ -28,31 +28,31 @@ namespace projectView {
 			//TODO: Add the constructor code here
 			//
 			NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_ville;
+			std::vector<std::string> list_ville;
 			list_ville = ville->repertorierVilles(list_ville);
 			for (int i = 0; i < list_ville.size(); i++) {
-				this->cbxAdrLivVille->Items->Add(list_ville[i]);
+				this->cbxAdrLivVille->Items->Add(gcnew String(list_ville[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_pays;
+			std::vector<std::string> list_pays;
 			list_pays= pays->repertorierPays(list_pays);
 			for (int i = 0; i < list_pays.size(); i++) {
-				this->cbxAdrLivPays->Items->Add(list_pays[i]);
+				this->cbxAdrLivPays->Items->Add(gcnew String(list_pays[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_code_postaux;
+			std::vector<std::string> list_code_postaux;
 			list_code_postaux = code_postal->repertorierCodePostaux(list_code_postaux);
 			for (int i = 0; i < list_code_postaux.size(); i++) {
-				this->cbxAdrLivCP->Items->Add(list_code_postaux[i]);
+				this->cbxAdrLivCP->Items->Add(gcnew String(list_code_postaux[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-			cliext::vector<System::String^> list_region;
+			std::vector<std::string> list_region;
 			list_region = region->repertorierRegion(list_region);
 			for (int i = 0; i < list_region.size(); i++) {
-				this->cbxAdrLivRegion->Items->Add(list_region[i]);
+				this->cbxAdrLivRegion->Items->Add(gcnew String(list_region[i].c_str()));
 			}
 		}
 
@@ -833,29 +833,29 @@ private: System::Void cbxAdrLivCP_SelectedIndexChanged(System::Object^ sender, S
 	NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 
-	cliext::vector<System::String^> vecteur_ville;
-	cliext::vector<System::String^> vecteur_region;
-	cliext::vector<System::String^> vecteur_pays;
+	std::vector<std::string> vecteur_ville;
+	std::vector<std::string> vecteur_region;
+	std::vector<std::string> vecteur_pays;
 
 		cbxAdrLivVille->Enabled = false;
 		cbxAdrLivVille->Items->Clear();
 		vecteur_ville = ville->miseAjourVilleCBCP(vecteur_ville, this->cbxAdrLivCP->Text);
 		for (int i = 0; i < vecteur_ville.size(); i++) {
-			this->cbxAdrLivVille->Items->Add(vecteur_ville[i]);
+			this->cbxAdrLivVille->Items->Add(gcnew String(vecteur_ville[i].c_str()));
 		}
 
 		cbxAdrLivRegion->Enabled = false;
 		cbxAdrLivRegion->Items->Clear();
 		vecteur_region = region->miseAjourRegionCBCP(vecteur_region, this->cbxAdrLivCP->Text);
 		for (int i = 0; i < vecteur_region.size(); i++) {
-			this->cbxAdrLivRegion->Items->Add(vecteur_region[i]);
+			this->cbxAdrLivRegion->Items->Add(gcnew String(vecteur_region[i].c_str()));
 		}
 
 		cbxAdrLivPays->Enabled = false;
 		cbxAdrLivPays->Items->Clear();
 		vecteur_pays = pays->miseAjourPaysCBCP(vecteur_pays, this->cbxAdrLivCP->Text);
 		for (int i = 0; i < vecteur_region.size(); i++) {
-			this->cbxAdrLivPays->Items->Add(vecteur_pays[i]);
+			this->cbxAdrLivPays->Items->Add(gcnew String(vecteur_pays[i].c_str()));
 		}
 
 
