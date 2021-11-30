@@ -56,23 +56,44 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 }
 
 
-cliext::vector<cliext::vector<System::String^>> NS_Utilitaire_svc::CLserviceutilitaire::mettreAjourVilleRegionPays(cliext::vector<cliext::vector<System::String^>> vecteur, System::String^ code_postal) {
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire:: miseAjourVille(cliext::vector<System::String^> vecteur_ville, System::String^ code_postal)
+{
 
 	System::String^ sql;
-	sql = mapUtilitaire->SelectPaysRegionVille(code_postal);
+	sql = mapUtilitaire->SelectVilleCp(code_postal);
 	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
-	cliext::vector<System::String^> vecteur_ville;
-	cliext::vector<System::String^> vecteur_region;
-	cliext::vector<System::String^> vecteur_pays;
+
+	while (val->Read()) {
+		vecteur_ville.push_back(val[0]->ToString());
+	}
+	val->Close();
+	return vecteur_ville;
+}
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourRegion(cliext::vector<System::String^> vecteur_region, System::String^ code_postal)
+{
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectRegionCp(code_postal);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		vecteur_region.push_back(val[0]->ToString());
+	}
+	val->Close();
+	return vecteur_region;
+}
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourPays(cliext::vector<System::String^> vecteur_pays, System::String^ code_postal)
+{
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectPaysCp(code_postal);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
 
 	while (val->Read()) {
 		vecteur_pays.push_back(val[0]->ToString());
-		vecteur_region.push_back(val[1]->ToString());
-		vecteur_ville.push_back(val[2]->ToString());
 	}
 	val->Close();
-	vecteur.push_back(vecteur_pays);
-	vecteur.push_back(vecteur_region);
-	vecteur.push_back(vecteur_ville);
-	return vecteur;
+	return vecteur_pays;
 }

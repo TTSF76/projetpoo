@@ -846,19 +846,39 @@ private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, Sys
 }
 private: System::Void comboBox_CP_liv_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	
+	cbVille->Enabled = false;
+	comboBox_region->Enabled = false;
+	cbxAdrLivPays->Enabled = false;
 
-	NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
-	cliext::vector<cliext::vector<System::String^>> vecteur;
-	vecteur = code_postal->mettreAjourVilleRegionPays(vecteur,comboBox_CP_liv->Text);
-	cliext::vector<System::String^> vliste_ville = vecteur[2];
-	cliext::vector<System::String^> vliste_pays = vecteur[0];
-	cliext::vector<System::String^> vliste_region = vecteur[1];
-	for (int i = 0; i < vliste_ville.size(); i++) {
-		this->cbVille->Items->Add(vliste_ville[i]);
-		this->cbVille->Items->Add(vliste_pays[i]);
-		this->cbVille->Items->Add(vliste_region[i]);
+	cbVille->Items->Clear();
+	comboBox_region->Items->Clear();
+	cbxAdrLivPays->Items->Clear();
+
+	NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+
+	cliext::vector<System::String^> vecteur_ville;
+	cliext::vector<System::String^> vecteur_region;
+	cliext::vector<System::String^> vecteur_pays;
+
+	vecteur_ville = ville->miseAjourVille(vecteur_ville, this->comboBox_CP_liv->Text);
+	vecteur_region = region->miseAjourRegion(vecteur_region, this->comboBox_CP_liv->Text);
+	vecteur_pays = pays->miseAjourPays(vecteur_pays, this->comboBox_CP_liv->Text);
+
+	for (int i = 0; i < vecteur_ville.size(); i++) {
+		this->cbVille->Items->Add(vecteur_ville[i]);
+		this->comboBox_region->Items->Add(vecteur_region[i]);
+		this->cbxAdrLivPays->Items->Add(vecteur_pays[i]);
 	}
 
-}
+	cbVille->Enabled = true;
+	comboBox_region->Enabled = true; 
+	cbxAdrLivPays->Enabled = true;
+	}
+
+
+
 };
 }
+

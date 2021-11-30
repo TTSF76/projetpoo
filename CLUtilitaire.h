@@ -9,7 +9,10 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectPays(); 
 		System::String^ SelectCodePostal();
 		System::String^ SelectRegion();
-		System::String^ SelectPaysRegionVille(System::String^);
+		System::String^ SelectVilleCp(System::String^);
+		System::String^ SelectRegionCp(System::String^);
+		System::String^ SelectPaysCp(System::String^);
+
 	};
 }
 
