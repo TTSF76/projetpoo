@@ -31,7 +31,7 @@ namespace projectView {
 			cliext::vector<System::String^> list_ville;
 			list_ville = ville->repertorierVilles(list_ville);
 			for (int i = 0; i < list_ville.size(); i++) {
-				this->comboBox2->Items->Add(list_ville[i]);
+				this->cbVille->Items->Add(list_ville[i]);
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
@@ -126,7 +126,8 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ label4;
 
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
+private: System::Windows::Forms::ComboBox^ cbVille;
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label9;
@@ -205,7 +206,7 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->tbxNRueL = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->cbVille = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->comboBox_region = (gcnew System::Windows::Forms::ComboBox());
@@ -564,20 +565,20 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Ville";
 			// 
-			// comboBox2
+			// cbVille
 			// 
-			this->comboBox2->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
-			this->comboBox2->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
-			this->comboBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->cbVille->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
+			this->cbVille->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
+			this->cbVille->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->comboBox2->ForeColor = System::Drawing::Color::Silver;
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(481, 118);
-			this->comboBox2->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(151, 24);
-			this->comboBox2->TabIndex = 4;
-			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::comboBox2_SelectedIndexChanged);
+			this->cbVille->ForeColor = System::Drawing::Color::Silver;
+			this->cbVille->FormattingEnabled = true;
+			this->cbVille->Location = System::Drawing::Point(481, 118);
+			this->cbVille->Margin = System::Windows::Forms::Padding(4);
+			this->cbVille->Name = L"cbVille";
+			this->cbVille->Size = System::Drawing::Size(151, 24);
+			this->cbVille->TabIndex = 4;
+			this->cbVille->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::comboBox2_SelectedIndexChanged);
 			// 
 			// label2
 			// 
@@ -793,7 +794,7 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->cbVille);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximumSize = System::Drawing::Size(1219, 400);
@@ -849,9 +850,14 @@ private: System::Void comboBox_CP_liv_SelectedIndexChanged(System::Object^ sende
 	NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	cliext::vector<cliext::vector<System::String^>> vecteur;
 	vecteur = code_postal->mettreAjourVilleRegionPays(vecteur,comboBox_CP_liv->Text);
-		this->comboBox2->Items->Add(vecteur[2]);
-		this->cbxAdrLivPays->Items->Add(vecteur[0]);
-		this->comboBox_region->Items->Add(vecteur[1]);
+	cliext::vector<System::String^> vliste_ville = vecteur[2];
+	cliext::vector<System::String^> vliste_pays = vecteur[0];
+	cliext::vector<System::String^> vliste_region = vecteur[1];
+	for (int i = 0; i < vliste_ville.size(); i++) {
+		this->cbVille->Items->Add(vliste_ville[i]);
+		this->cbVille->Items->Add(vliste_pays[i]);
+		this->cbVille->Items->Add(vliste_region[i]);
+	}
 
 }
 };
