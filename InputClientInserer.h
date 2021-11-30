@@ -47,6 +47,13 @@ namespace projectView {
 			for (int i = 0; i < list_code_postaux.size(); i++) {
 				this->comboBox_CP_liv->Items->Add(list_code_postaux[i]);
 			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_region;
+			list_region = region->repertorierRegion(list_region);
+			for (int i = 0; i < list_region.size(); i++) {
+				this->comboBox_region->Items->Add(list_region[i]);
+			}
 		}
 
 	protected:
@@ -77,7 +84,8 @@ namespace projectView {
 
 
 	private: System::Windows::Forms::ComboBox^ cbxAdrLivPays;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox_region;
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
 
@@ -200,7 +208,7 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox_region = (gcnew System::Windows::Forms::ComboBox());
 			this->cbxAdrLivPays = (gcnew System::Windows::Forms::ComboBox());
 			this->dtpAnniversaire = (gcnew System::Windows::Forms::DateTimePicker());
 			this->lblAnniversaire = (gcnew System::Windows::Forms::Label());
@@ -593,19 +601,18 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Pays";
 			// 
-			// comboBox1
+			// comboBox_region
 			// 
-			this->comboBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->comboBox_region->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox1->ForeColor = System::Drawing::Color::Silver;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox1->Location = System::Drawing::Point(481, 85);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(297, 24);
-			this->comboBox1->TabIndex = 1;
+			this->comboBox_region->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox_region->ForeColor = System::Drawing::Color::Silver;
+			this->comboBox_region->FormattingEnabled = true;
+			this->comboBox_region->Location = System::Drawing::Point(481, 85);
+			this->comboBox_region->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox_region->Name = L"comboBox_region";
+			this->comboBox_region->Size = System::Drawing::Size(297, 24);
+			this->comboBox_region->TabIndex = 1;
 			// 
 			// cbxAdrLivPays
 			// 
@@ -781,7 +788,7 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->Controls->Add(this->comboBox5);
 			this->Controls->Add(this->cbxAdrLivPays);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->comboBox_region);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);

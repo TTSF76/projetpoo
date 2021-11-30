@@ -42,3 +42,15 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 	val->Close();
 	return list_code_postaux;
 }
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertorierRegion(cliext::vector<System::String^> list_region) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectRegion();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		list_region.push_back(val[0]->ToString());
+	}
+	val->Close();
+	return list_region;
+}
