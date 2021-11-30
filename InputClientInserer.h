@@ -30,8 +30,22 @@ namespace projectView {
 			NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 			cliext::vector<System::String^> list_ville;
 			list_ville = ville->repertorierVilles(list_ville);
-			for (int i = 0; i < list_ville.size() - 1; i++) {
+			for (int i = 0; i < list_ville.size(); i++) {
 				this->comboBox2->Items->Add(list_ville[i]);
+			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_pays;
+			list_pays= pays->repertorierPays(list_pays);
+			for (int i = 0; i < list_pays.size(); i++) {
+				this->cbxAdrLivPays->Items->Add(list_pays[i]);
+			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_code_postaux;
+			list_code_postaux = pays->repertorierPays(list_code_postaux);
+			for (int i = 0; i < list_code_postaux.size(); i++) {
+				this->comboBox_CP_liv->Items->Add(list_code_postaux[i]);
 			}
 		}
 
@@ -102,7 +116,7 @@ namespace projectView {
 
 
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
 	private: System::Windows::Forms::Label^ label2;
@@ -137,6 +151,7 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ label_information_generale;
 	private: System::Windows::Forms::Label^ label_adresse_facturation;
 	private: System::Windows::Forms::Label^ label_adresse_livraison;
+private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 
 	protected:
 
@@ -181,7 +196,6 @@ namespace projectView {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->tbxNRueL = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -197,6 +211,7 @@ namespace projectView {
 			this->label_information_generale = (gcnew System::Windows::Forms::Label());
 			this->label_adresse_facturation = (gcnew System::Windows::Forms::Label());
 			this->label_adresse_livraison = (gcnew System::Windows::Forms::Label());
+			this->comboBox_CP_liv = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// button2
@@ -523,24 +538,12 @@ namespace projectView {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->ForeColor = System::Drawing::Color::Silver;
-			this->label4->Location = System::Drawing::Point(666, 122);
+			this->label4->Location = System::Drawing::Point(640, 122);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(26, 17);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"CP";
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
-				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->ForeColor = System::Drawing::Color::Silver;
-			this->textBox1->Location = System::Drawing::Point(702, 128);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(76, 15);
-			this->textBox1->TabIndex = 6;
 			// 
 			// label3
 			// 
@@ -557,13 +560,12 @@ namespace projectView {
 			// 
 			this->comboBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox2->ForeColor = System::Drawing::Color::Silver;
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Location = System::Drawing::Point(481, 118);
 			this->comboBox2->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(176, 24);
+			this->comboBox2->Size = System::Drawing::Size(151, 24);
 			this->comboBox2->TabIndex = 4;
 			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::comboBox2_SelectedIndexChanged);
 			// 
@@ -610,7 +612,6 @@ namespace projectView {
 			this->cbxAdrLivPays->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbxAdrLivPays->ForeColor = System::Drawing::Color::Silver;
 			this->cbxAdrLivPays->FormattingEnabled = true;
-			this->cbxAdrLivPays->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
 			this->cbxAdrLivPays->Location = System::Drawing::Point(481, 51);
 			this->cbxAdrLivPays->Margin = System::Windows::Forms::Padding(4);
 			this->cbxAdrLivPays->Name = L"cbxAdrLivPays";
@@ -719,6 +720,19 @@ namespace projectView {
 			this->label_adresse_livraison->TabIndex = 34;
 			this->label_adresse_livraison->Text = L"Adresse de Livraison";
 			// 
+			// comboBox_CP_liv
+			// 
+			this->comboBox_CP_liv->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
+			this->comboBox_CP_liv->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->comboBox_CP_liv->ForeColor = System::Drawing::Color::Silver;
+			this->comboBox_CP_liv->FormattingEnabled = true;
+			this->comboBox_CP_liv->Location = System::Drawing::Point(674, 118);
+			this->comboBox_CP_liv->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox_CP_liv->Name = L"comboBox_CP_liv";
+			this->comboBox_CP_liv->Size = System::Drawing::Size(104, 24);
+			this->comboBox_CP_liv->TabIndex = 35;
+			// 
 			// InputClientInserer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -726,6 +740,7 @@ namespace projectView {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(1201, 353);
+			this->Controls->Add(this->comboBox_CP_liv);
 			this->Controls->Add(this->label_adresse_livraison);
 			this->Controls->Add(this->label_adresse_facturation);
 			this->Controls->Add(this->label_information_generale);
@@ -764,7 +779,6 @@ namespace projectView {
 			this->Controls->Add(this->cbxAdrLivPays);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);

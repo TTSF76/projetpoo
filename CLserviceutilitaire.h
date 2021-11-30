@@ -13,6 +13,8 @@ namespace NS_Utilitaire_svc {
 	public:
 		cliext::vector<System::String^> repertorierVilles(cliext::vector<System::String^>);
 		CLserviceutilitaire(void);
+        cliext::vector<System::String^> repertorierPays(cliext::vector<System::String^>);
+		cliext::vector<System::String^> repertorierCodePostaux(cliext::vector<System::String^>);
 
 	};
 }

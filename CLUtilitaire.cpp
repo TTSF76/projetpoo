@@ -4,3 +4,11 @@
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectVille() {
 	return "select * from villes order by ville";
 }
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectPays() {
+	return "select pays from villes group by pays ";
+}
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectCodePostal(){
+	return "select code_postal from villes order by code_postal";
+}

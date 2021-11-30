@@ -18,3 +18,27 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 	val->Close();
 	return list_ville;
 }
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertorierPays(cliext::vector<System::String^> list_pays) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectPays();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		list_pays.push_back(val[0]->ToString());
+	}
+	val->Close();
+	return list_pays;
+}
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertorierCodePostaux(cliext::vector<System::String^> list_code_postaux) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectCodePostal();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		list_code_postaux.push_back(val[0]->ToString());
+	}
+	val->Close();
+	return list_code_postaux;
+}
