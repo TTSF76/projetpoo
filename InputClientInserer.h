@@ -558,6 +558,8 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			// 
 			// comboBox2
 			// 
+			this->comboBox2->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
+			this->comboBox2->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
 			this->comboBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->comboBox2->ForeColor = System::Drawing::Color::Silver;
@@ -722,7 +724,8 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			// 
 			// comboBox_CP_liv
 			// 
-			this->comboBox_CP_liv->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
+			this->comboBox_CP_liv->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->comboBox_CP_liv->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
 			this->comboBox_CP_liv->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->comboBox_CP_liv->ForeColor = System::Drawing::Color::Silver;
