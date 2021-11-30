@@ -2,5 +2,5 @@
 #include "CLUtilitaire.h"
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectVille() {
-	return "select * from villes";
+	return "select * from villes order by ville";
 }

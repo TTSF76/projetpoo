@@ -14,9 +14,6 @@ namespace NS_Comp_Data {
 		CLconnect(void);
 		System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
-		System::Data::SqlClient::SqlConnection^ getSqlConnexion();
-		System::Data::SqlClient::SqlCommand^ getSqlCommand();
-		System::Data::SqlClient::SqlDataAdapter^ getSqlDataAdapter();
 		System::Data::SqlClient::SqlDataReader^ lecteurData(System::String^);
 	};
 }

@@ -27,6 +27,12 @@ namespace projectView {
 			//
 			//TODO: Add the constructor code here
 			//
+			NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_ville;
+			list_ville = ville->repertorierVilles(list_ville);
+			for (int i = 0; i < list_ville.size() - 1; i++) {
+				this->comboBox2->Items->Add(list_ville[i]);
+			}
 		}
 
 	protected:
@@ -554,19 +560,12 @@ namespace projectView {
 			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox2->ForeColor = System::Drawing::Color::Silver;
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
 			this->comboBox2->Location = System::Drawing::Point(481, 118);
 			this->comboBox2->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(176, 24);
 			this->comboBox2->TabIndex = 4;
-			std::vector<System::String^> list_ville;
-		     NS_Utilitaire_svc::CLserviceutilitaire::repertorierVilles(list_ville);
-			 int i;
-			 for (i = 0; i < list_ville.size(); i++) {
-				this->comboBox2->Items->Add(list_ville[i]);
-			 }
-			
+			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::comboBox2_SelectedIndexChanged);
 			// 
 			// label2
 			// 
@@ -816,6 +815,8 @@ namespace projectView {
 		this->Close();
 	}
 private: System::Void gbxInputClientInserer_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
