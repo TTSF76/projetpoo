@@ -7,7 +7,7 @@ namespace NS_map_personnel {
 private:
 
 	int id_personnel_etre_dirige;
-	CLadresse^ adresse;
+	CLadresse^ adresse_personnel;
 	System::String^ date_embauche;
 	NS_map_personnel::CLpersonnel^ superieur_hierarchique;
 

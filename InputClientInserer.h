@@ -839,14 +839,14 @@ private: System::Void cbxAdrLivCP_SelectedIndexChanged(System::Object^ sender, S
 
 		cbxAdrLivVille->Enabled = false;
 		cbxAdrLivVille->Items->Clear();
-		vecteur_ville = ville->miseAjourVilleCBCP(vecteur_ville, this->cbxAdrLivCP->Text);
+		vecteur_ville = ville->miseAjourVille(vecteur_ville, this->cbxAdrLivCP->Text);
 		for (int i = 0; i < vecteur_ville.size(); i++) {
 			this->cbxAdrLivVille->Items->Add(vecteur_ville[i]);
 		}
 
 		cbxAdrLivRegion->Enabled = false;
 		cbxAdrLivRegion->Items->Clear();
-		vecteur_region = region->miseAjourRegionCBCP(vecteur_region, this->cbxAdrLivCP->Text);
+		vecteur_region = region->miseAjourRegion(vecteur_region, this->cbxAdrLivCP->Text);
 		for (int i = 0; i < vecteur_region.size(); i++) {
 			this->cbxAdrLivRegion->Items->Add(vecteur_region[i]);
 		}

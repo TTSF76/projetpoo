@@ -1,7 +1,6 @@
 #pragma once
 #include "Clpersonnel.h"
 #include "UIAction.h"
-#include "CLserviceutilitaire.h"
 #include "CLconnect.h"
 
 namespace projectView {
@@ -26,6 +25,33 @@ namespace projectView {
 			//TODO: ajoutez ici le code du constructeur
 			//
 
+			NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_ville;
+			list_ville = ville->repertorierVilles(list_ville);
+			for (int i = 0; i < list_ville.size(); i++) {
+				this->cbxVille->Items->Add(list_ville[i]);
+			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_pays;
+			list_pays = pays->repertorierPays(list_pays);
+			for (int i = 0; i < list_pays.size(); i++) {
+				this->cbxPays->Items->Add(list_pays[i]);
+			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_code_postaux;
+			list_code_postaux = code_postal->repertorierCodePostaux(list_code_postaux);
+			for (int i = 0; i < list_code_postaux.size(); i++) {
+				this->cbxCode_postal->Items->Add(list_code_postaux[i]);
+			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			cliext::vector<System::String^> list_region;
+			list_region = region->repertorierRegion(list_region);
+			for (int i = 0; i < list_region.size(); i++) {
+				this->cbxRegion->Items->Add(list_region[i]);
+			}
 		}
 
 	protected:
@@ -46,7 +72,7 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ lblRegion;
 	private: System::Windows::Forms::ComboBox^ cbxVille;
 	private: System::Windows::Forms::Label^ lblVille;
-	private: System::Windows::Forms::TextBox^ tbxCodePostal;
+
 	private: System::Windows::Forms::Label^ lblCodePostal;
 	private: System::Windows::Forms::TextBox^ tbxRueNum;
 	private: System::Windows::Forms::Label^ lblRueNum;
@@ -70,6 +96,8 @@ namespace projectView {
 	private: System::Windows::Forms::Button^ btnAnnuler;
 	private: System::Windows::Forms::Label^ label_titre_infos;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::ComboBox^ cbxCode_postal;
+
 
 	protected:
 
@@ -139,7 +167,6 @@ namespace projectView {
 			this->lblRegion = (gcnew System::Windows::Forms::Label());
 			this->cbxVille = (gcnew System::Windows::Forms::ComboBox());
 			this->lblVille = (gcnew System::Windows::Forms::Label());
-			this->tbxCodePostal = (gcnew System::Windows::Forms::TextBox());
 			this->lblCodePostal = (gcnew System::Windows::Forms::Label());
 			this->tbxRueNum = (gcnew System::Windows::Forms::TextBox());
 			this->lblRueNum = (gcnew System::Windows::Forms::Label());
@@ -161,6 +188,7 @@ namespace projectView {
 			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
 			this->label_titre_infos = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->cbxCode_postal = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// cbxPays
@@ -238,18 +266,6 @@ namespace projectView {
 			this->lblVille->Size = System::Drawing::Size(34, 17);
 			this->lblVille->TabIndex = 5;
 			this->lblVille->Text = L"Ville";
-			// 
-			// tbxCodePostal
-			// 
-			this->tbxCodePostal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
-				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->tbxCodePostal->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbxCodePostal->ForeColor = System::Drawing::Color::Silver;
-			this->tbxCodePostal->Location = System::Drawing::Point(734, 158);
-			this->tbxCodePostal->Margin = System::Windows::Forms::Padding(4);
-			this->tbxCodePostal->Name = L"tbxCodePostal";
-			this->tbxCodePostal->Size = System::Drawing::Size(76, 15);
-			this->tbxCodePostal->TabIndex = 6;
 			// 
 			// lblCodePostal
 			// 
@@ -497,6 +513,21 @@ namespace projectView {
 			this->label2->TabIndex = 25;
 			this->label2->Text = L"Adresse de Résidence";
 			// 
+			// cbxCode_postal
+			// 
+			this->cbxCode_postal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->cbxCode_postal->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxCode_postal->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cbxCode_postal->ForeColor = System::Drawing::Color::Silver;
+			this->cbxCode_postal->FormattingEnabled = true;
+			this->cbxCode_postal->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
+			this->cbxCode_postal->Location = System::Drawing::Point(734, 153);
+			this->cbxCode_postal->Margin = System::Windows::Forms::Padding(4);
+			this->cbxCode_postal->Name = L"cbxCode_postal";
+			this->cbxCode_postal->Size = System::Drawing::Size(76, 24);
+			this->cbxCode_postal->TabIndex = 26;
+			// 
 			// InputPersonnelInserer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -504,6 +535,7 @@ namespace projectView {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(841, 416);
+			this->Controls->Add(this->cbxCode_postal);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label_titre_infos);
 			this->Controls->Add(this->btnAnnuler);
@@ -523,7 +555,6 @@ namespace projectView {
 			this->Controls->Add(this->tbxRueNum);
 			this->Controls->Add(this->lblCodePostal);
 			this->Controls->Add(this->lblNom);
-			this->Controls->Add(this->tbxCodePostal);
 			this->Controls->Add(this->tbxNom);
 			this->Controls->Add(this->lblVille);
 			this->Controls->Add(this->lblPrenom);
@@ -546,22 +577,23 @@ namespace projectView {
 	{
 		NS_map_personnel::CLpersonnel^ personnel = gcnew NS_map_personnel::CLpersonnel;
 		if (tbxNom->Text->Length == 0 || tbxPrenom->Text->Length == 0 || tbxRueNum->Text->Length == 0 || tbxRue->Text->Length == 0 || tbxEtage->Text->Length == 0 ||
-			tbxResidence->Text->Length == 0 || cbxRegion->SelectedIndex < 0 || cbxPays->SelectedIndex < 0  || cbxVille->SelectedIndex < 0 || tbxCodePostal->Text->Length == 0 ) {
+			tbxResidence->Text->Length == 0 || cbxRegion->SelectedIndex < 0 || cbxPays->SelectedIndex < 0  || cbxVille->SelectedIndex < 0 || cbxCode_postal->Text->Length == 0 ) {
 			MessageBox::Show("Vous n'avez pas renseigné tous les champs", "Erreur", MessageBoxButtons::OK);
 			return;
 		}
-		CLadresse^ adresse = gcnew CLadresse;
+		CLadresse^ adresse_personnel = gcnew CLadresse;
 		
 		personnel->setNom(this->tbxNom->Text);
 		personnel->setPrenom(this->tbxPrenom->Text);
 		personnel->setDateEmbauche(this->dtpEmbauche->Value.ToString("yyyy-MM-dd"));
-		adresse->setVille(1);
-		adresse->setNumeroRue(tbxRueNum->Text);
-		adresse->setRue(tbxRue->Text);
-		adresse->setNumeroEtage(int::Parse(tbxEtage->Text));
-		adresse->setNomResidence(tbxResidence->Text);
+		personnel->setIdSupHierarchique(1523);
+		adresse_personnel->setVille(1);
+		adresse_personnel->setNumeroRue(tbxRueNum->Text);
+		adresse_personnel->setRue(tbxRue->Text);
+		adresse_personnel->setNumeroEtage(int::Parse(tbxEtage->Text));
+		adresse_personnel->setNomResidence(tbxResidence->Text);
 		
-		personnel->setAdresse(adresse);
+		personnel->setAdresse(adresse_personnel);
 		
 		UIAction::validerButtonPersonnel(this, personnel);
 		this->Close();

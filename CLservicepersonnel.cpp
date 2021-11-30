@@ -12,9 +12,9 @@ System::Data::DataSet^ NS_Personnel_svc::CLservicepersonnel::selectAllPersonnel(
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Personnel_svc::CLservicepersonnel::insertPersonnel(NS_map_personnel::CLpersonnel^ client) {
+void NS_Personnel_svc::CLservicepersonnel::insertPersonnel(NS_map_personnel::CLpersonnel^ personnel) {
 	System::String^ sql;
-	this->mapPersonnel = client;
+	this->mapPersonnel = personnel;
 	sql = this->mapPersonnel->Create();
 	this->oCad->actionRows(sql);
 }
