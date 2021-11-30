@@ -12,3 +12,7 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectPays() {
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectCodePostal(){
 	return "select code_postal from villes order by code_postal";
 }
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectRegion() {
+	return "select region from villes group by region ";
+}
