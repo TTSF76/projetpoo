@@ -43,7 +43,7 @@ namespace projectView {
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 			cliext::vector<System::String^> list_code_postaux;
-			list_code_postaux = pays->repertorierPays(list_code_postaux);
+			list_code_postaux = code_postal->repertorierCodePostaux(list_code_postaux);
 			for (int i = 0; i < list_code_postaux.size(); i++) {
 				this->comboBox_CP_liv->Items->Add(list_code_postaux[i]);
 			}
