@@ -742,6 +742,7 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 			this->comboBox_CP_liv->Name = L"comboBox_CP_liv";
 			this->comboBox_CP_liv->Size = System::Drawing::Size(104, 24);
 			this->comboBox_CP_liv->TabIndex = 35;
+			this->comboBox_CP_liv->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::comboBox_CP_liv_SelectedIndexChanged);
 			// 
 			// InputClientInserer
 			// 
@@ -841,6 +842,17 @@ private: System::Windows::Forms::ComboBox^ comboBox_CP_liv;
 private: System::Void gbxInputClientInserer_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox_CP_liv_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	
+
+	NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	cliext::vector<cliext::vector<System::String^>> vecteur;
+	vecteur = code_postal->mettreAjourVilleRegionPays(vecteur,comboBox_CP_liv->Text);
+		this->comboBox2->Items->Add(vecteur[2]);
+		this->cbxAdrLivPays->Items->Add(vecteur[0]);
+		this->comboBox_region->Items->Add(vecteur[1]);
+
 }
 };
 }
