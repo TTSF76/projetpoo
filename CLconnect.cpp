@@ -2,7 +2,7 @@
 #include "CLconnect.h"
 
 NS_Comp_Data::CLconnect::CLconnect(void) {
-	this->connexion_s = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=ttsf76_db;User ID=ttsf76_db;Password=TTSF76";
+	this->connexion_s = "Data Source=ttsf.database.windows.net;Initial Catalog=ttsf;User ID=ttsf76_db;Password=yAHsu@XKdgsC6Hy";
 
 	this->requete_SQL = "undefined";
 
