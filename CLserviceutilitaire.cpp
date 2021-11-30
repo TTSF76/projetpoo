@@ -15,7 +15,6 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 	while (val->Read()) {
 		list_ville.push_back(val[2]->ToString());
 	}
-	val->Close();
 	return list_ville;
 }
 
@@ -27,7 +26,6 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 	while (val->Read()) {
 		list_pays.push_back(val[0]->ToString());
 	}
-	val->Close();
 	return list_pays;
 }
 
@@ -39,7 +37,6 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 	while (val->Read()) {
 		list_code_postaux.push_back(val[0]->ToString());
 	}
-	val->Close();
 	return list_code_postaux;
 }
 
@@ -51,12 +48,11 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::repertor
 	while (val->Read()) {
 		list_region.push_back(val[0]->ToString());
 	}
-	val->Close();
 	return list_region;
 }
 
 
-cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire:: miseAjourVille(cliext::vector<System::String^> vecteur_ville, System::String^ code_postal)
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire:: miseAjourVilleCBCP(cliext::vector<System::String^> vecteur_ville, System::String^ code_postal)
 {
 
 	System::String^ sql;
@@ -66,11 +62,10 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire:: miseAjo
 	while (val->Read()) {
 		vecteur_ville.push_back(val[0]->ToString());
 	}
-	val->Close();
 	return vecteur_ville;
 }
 
-cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourRegion(cliext::vector<System::String^> vecteur_region, System::String^ code_postal)
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourRegionCBCP(cliext::vector<System::String^> vecteur_region, System::String^ code_postal)
 {
 
 	System::String^ sql;
@@ -80,11 +75,10 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjou
 	while (val->Read()) {
 		vecteur_region.push_back(val[0]->ToString());
 	}
-	val->Close();
 	return vecteur_region;
 }
 
-cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourPays(cliext::vector<System::String^> vecteur_pays, System::String^ code_postal)
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourPaysCBCP(cliext::vector<System::String^> vecteur_pays, System::String^ code_postal)
 {
 
 	System::String^ sql;
@@ -94,6 +88,43 @@ cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjou
 	while (val->Read()) {
 		vecteur_pays.push_back(val[0]->ToString());
 	}
-	val->Close();
+	return vecteur_pays;
+}
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourCodePostalCBV(cliext::vector<System::String^> vecteur_ville, System::String^ code_postal)
+{
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectVilleCp(code_postal);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+	while (val->Read()) {
+		vecteur_ville.push_back(val[0]->ToString());
+	}
+	return vecteur_ville;
+}
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourRegionCBV(cliext::vector<System::String^> vecteur_region, System::String^ code_postal)
+{
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectRegionCp(code_postal);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		vecteur_region.push_back(val[0]->ToString());
+	}
+	return vecteur_region;
+}
+
+cliext::vector<System::String^> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourPaysCBV(cliext::vector<System::String^> vecteur_pays, System::String^ code_postal)
+{
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectPaysCp(code_postal);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		vecteur_pays.push_back(val[0]->ToString());
+	}
 	return vecteur_pays;
 }
