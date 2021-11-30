@@ -2,6 +2,7 @@
 #include "Clpersonnel.h"
 #include "UIAction.h"
 #include "CLconnect.h"
+#include "CLserviceutilitaire.h"
 
 namespace projectView {
 
@@ -102,50 +103,6 @@ namespace projectView {
 	protected:
 
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	protected:
 	private:
