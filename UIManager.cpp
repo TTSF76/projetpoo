@@ -133,7 +133,11 @@ void UIManager::afficherElementRubrique(System::Windows::Forms::DataGridView^ Da
 	}
 }
 
-void UIManager::afficherStats(System::Windows::Forms::Label^ label, System::Windows::Forms::Button^ button1, System::Windows::Forms::Button^ button2, System::Windows::Forms::Button^ button3, System::Windows::Forms::Button^ button4, System::Windows::Forms::Button^ button5, System::Windows::Forms::Button^ button6, System::Windows::Forms::Button^ button7, System::Windows::Forms::Button^ button8, System::Windows::Forms::Button^ button9) {
+void UIManager::afficherStats(System::Windows::Forms::Label^ label, System::Windows::Forms::Button^ button1, System::Windows::Forms::Button^ button2, System::Windows::Forms::Button^ button3, System::Windows::Forms::Button^ button4, System::Windows::Forms::Button^ button5, System::Windows::Forms::Button^ button6, System::Windows::Forms::Button^ button7, System::Windows::Forms::Button^ button8, System::Windows::Forms::Button^ button9, System::Windows::Forms::TextBox^ textbox1, System::Windows::Forms::TextBox^ textbox2, System::Windows::Forms::TextBox^ textbox3, System::Windows::Forms::TextBox^ textbox4) {
+	textbox1->Visible = true;
+	textbox2->Visible = true;
+	textbox3->Visible = true;
+	textbox4->Visible = true;
 	label->Visible = true;
 	button1->Visible = true;
 	button2->Visible = true;
@@ -146,7 +150,11 @@ void UIManager::afficherStats(System::Windows::Forms::Label^ label, System::Wind
 	button9->Visible = true;
 }
 
-void UIManager::cacherStats(System::Windows::Forms::Label^ label, System::Windows::Forms::Button^ button1, System::Windows::Forms::Button^ button2, System::Windows::Forms::Button^ button3, System::Windows::Forms::Button^ button4, System::Windows::Forms::Button^ button5, System::Windows::Forms::Button^ button6, System::Windows::Forms::Button^ button7, System::Windows::Forms::Button^ button8, System::Windows::Forms::Button^ button9) {
+void UIManager::cacherStats(System::Windows::Forms::Label^ label, System::Windows::Forms::Button^ button1, System::Windows::Forms::Button^ button2, System::Windows::Forms::Button^ button3, System::Windows::Forms::Button^ button4, System::Windows::Forms::Button^ button5, System::Windows::Forms::Button^ button6, System::Windows::Forms::Button^ button7, System::Windows::Forms::Button^ button8, System::Windows::Forms::Button^ button9, System::Windows::Forms::TextBox^ textbox1, System::Windows::Forms::TextBox^ textbox2, System::Windows::Forms::TextBox^ textbox3, System::Windows::Forms::TextBox^ textbox4) {
+	textbox1->Visible = false;
+	textbox2->Visible = false;
+	textbox3->Visible = false;
+	textbox4->Visible = false;
 	label->Visible = false;
 	button1->Visible = false;
 	button2->Visible = false;
@@ -157,4 +165,5 @@ void UIManager::cacherStats(System::Windows::Forms::Label^ label, System::Window
 	button7->Visible = false;
 	button8->Visible = false;
 	button9->Visible = false;
+	textbox1->Visible = false;
 }

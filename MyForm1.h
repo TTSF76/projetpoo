@@ -626,7 +626,7 @@ namespace projectView {
 	}
 
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1,this);
@@ -635,7 +635,7 @@ namespace projectView {
 	}
 	
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		this->dataGridView1->Refresh();
@@ -665,7 +665,7 @@ namespace projectView {
 		}
 	}
 private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 	this->dataGridView1->DataSource = nullptr;
 	this->dataGridView1->Rows->Clear();
 	this->dataGridView1->Refresh();
@@ -673,7 +673,7 @@ private: System::Void bouton_personnel_Click(System::Object^ sender, System::Eve
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
 }
 private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 	this->dataGridView1->DataSource = nullptr;
 	this->dataGridView1->Rows->Clear();
 	this->dataGridView1->Refresh();
@@ -688,7 +688,7 @@ private: System::Void bouton_stats_Click(System::Object^ sender, System::EventAr
 	this->bouton_delete->Visible = false;
 	this->bouton_update->Visible = false;
 	this->bouton_select->Visible = false;
-	UIManager::afficherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+	UIManager::afficherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 }
 private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->titre_rubrique->Text == "CLIENTS") {
