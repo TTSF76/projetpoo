@@ -29,13 +29,31 @@ void UIAction::selectButtonPersonnel(System::Windows::Forms::DataGridView^ dgv, 
 	}
 }
 
-void UIAction::deleteButtonPersonnel(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl){
-		
+void UIAction::selectButtonStock(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl) {
+	if (lbl->Text == "STOCK") {
+		dgv->Refresh();
+		UIAction::oDs = UIAction::svcArticle->selectAllArticle("Rsl");
+		dgv->DataSource = UIAction::oDs;
+		dgv->DataMember = "Rsl";
+	}
 }
 
-void UIAction::deleteButtonClient(System::Windows::Forms::Label^, NS_map_client::CLclient^ client)
+void UIAction::deleteButtonClient(System::Windows::Forms::Label^, NS_map_client::CLclient^ client, System::Windows::Forms::DataGridView^ dgv)
 {
 	UIAction::svcClient->deleteClient(client);
+	dgv->Refresh();
+	UIAction::oDs = UIAction::svcClient->selectAllClients("Rsl");
+	dgv->DataSource = UIAction::oDs;
+	dgv->DataMember = "Rsl";
+}
+
+void UIAction::deleteButtonPersonnel(System::Windows::Forms::Label^, NS_map_personnel::CLpersonnel^ personnel, System::Windows::Forms::DataGridView^ dgv)
+{
+	UIAction::svcPersonnel->deletePersonnel(personnel);
+	dgv->Refresh();
+	UIAction::oDs = UIAction::svcPersonnel->selectAllPersonnel("Rsl");
+	dgv->DataSource = UIAction::oDs;
+	dgv->DataMember = "Rsl";
 }
 
 void UIAction::validerButtonPersonnel(System::Windows::Forms::Form^ form, NS_map_personnel::CLpersonnel^ personnel)

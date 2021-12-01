@@ -65,3 +65,18 @@ System::String^ NS_map_article::CLarticle::getCouleur() {
 	return couleur_article;
 }
 
+System::String^ NS_map_article::CLarticle::Select() {
+	return "SELECT * FROM article";
+}
+
+System::String^ NS_map_article::CLarticle::Create() {
+	return "SELECT * FROM article";
+}
+
+System::String^ NS_map_article::CLarticle::Delete() {
+	return "SELECT * FROM article";
+}
+
+System::String^ NS_map_article::CLarticle::Update() {
+	return "SELECT * FROM article";
+}

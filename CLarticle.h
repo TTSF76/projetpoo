@@ -30,5 +30,10 @@ namespace NS_map_article {
 		float getTauxTVA();
 		System::String^ getCouleur();
 
+		System::String^ Create();
+		System::String^ Update();
+		System::String^ Delete();
+		System::String^ Select();
+
 	};
 };

@@ -523,7 +523,24 @@ private: System::Void bouton_delete_Click(System::Object^ sender, System::EventA
 			return;
 		}
 			client->setIdClient(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
-		UIAction::deleteButtonClient(this->label1, client);
+		UIAction::deleteButtonClient(this->label1, client,this->dataGridView1);
+	}
+	else if (this->titre_rubrique->Text == "PERSONNEL") {
+			NS_map_personnel::CLpersonnel^ personnel = gcnew NS_map_personnel::CLpersonnel;
+			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+			if (columnindex != 0) {
+				MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_personnel !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
+			for (int i = 0; i < dataGridView1->Rows->Count; i++) { 
+				if (this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString() == this->dataGridView1->Rows[i]->Cells[5]->Value->ToString()) {
+					MessageBox::Show("Action impossible : ce membre du personnel est supérieur hiérarchique d'un autre. Veuillez changer le supérieur hiérarchique du personnel ayant pour supérieur hiérachique le personnel ID #"+ this->dataGridView1->Rows[i]->Cells[5]->Value->ToString(), "Erreur", MessageBoxButtons::OK);
+					return;
+				} 
+			}
+			personnel->setIdPersonnel(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
+			UIAction::deleteButtonPersonnel(this->label1, personnel,this->dataGridView1);
 	}
 }
 private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -536,6 +553,10 @@ private: System::Void bouton_select_Click(System::Object^ sender, System::EventA
 	else if (gestion == "PERSONNEL") {
 		
 		UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
+
+	}else if (gestion == "STOCK") {
+
+		UIAction::selectButtonStock(this->dataGridView1, this->titre_rubrique);
 
 	}
 }
