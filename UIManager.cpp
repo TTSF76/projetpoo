@@ -165,5 +165,4 @@ void UIManager::cacherStats(System::Windows::Forms::Label^ label, System::Window
 	button7->Visible = false;
 	button8->Visible = false;
 	button9->Visible = false;
-	textbox1->Visible = false;
 }

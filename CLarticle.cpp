@@ -61,8 +61,18 @@ float NS_map_article::CLarticle::getTauxTVA() {
 	return taux_tva;
 }
 
+int NS_map_article::CLarticle::getRefArticle()
+{
+	return this->ref_article;
+}
+
 System::String^ NS_map_article::CLarticle::getCouleur() {
 	return couleur_article;
+}
+
+void NS_map_article::CLarticle::setRefArticle(int ref_article)
+{
+	this->ref_article = ref_article;
 }
 
 System::String^ NS_map_article::CLarticle::Select() {
@@ -74,7 +84,7 @@ System::String^ NS_map_article::CLarticle::Create() {
 }
 
 System::String^ NS_map_article::CLarticle::Delete() {
-	return "SELECT * FROM article";
+	return "DELETE FROM article WHERE ref_article="+this->ref_article;
 }
 
 System::String^ NS_map_article::CLarticle::Update() {

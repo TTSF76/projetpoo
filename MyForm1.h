@@ -714,6 +714,10 @@ namespace projectView {
 	{
 		if (this->titre_rubrique->Text == "CLIENTS")
 		{
+			if (this->dataGridView1->DataSource == nullptr) {
+				MessageBox::Show("Vous devez lister les clients puis sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
 			NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
 			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
 			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
@@ -727,6 +731,10 @@ namespace projectView {
 		}
 		else if (this->titre_rubrique->Text == "PERSONNEL")
 		{
+			if(this->dataGridView1->DataSource == nullptr){
+				MessageBox::Show("Vous devez lister le personnel puis sélectionner une valeur de la colonne id_personnel !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
 			NS_map_personnel::CLpersonnel^ personnel = gcnew NS_map_personnel::CLpersonnel;
 			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
 			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
@@ -745,6 +753,22 @@ namespace projectView {
 			}
 			personnel->setIdPersonnel(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
 			UIAction::deleteButtonPersonnel(this->label1, personnel,this->dataGridView1);
+		}if (this->titre_rubrique->Text == "STOCK")
+		{
+			if (this->dataGridView1->DataSource == nullptr) {
+				MessageBox::Show("Vous devez lister le stock puis sélectionner une valeur de la colonne ref_article !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
+			NS_map_article::CLarticle^ article = gcnew NS_map_article::CLarticle;
+			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+			if (columnindex != 0)
+			{
+				MessageBox::Show("Vous devez sélectionner une valeur de la colonne ref_article !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
+			article->setRefArticle(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
+			UIAction::deleteButtonArticle(this->label1, article, this->dataGridView1);
 		}
 	}
 
