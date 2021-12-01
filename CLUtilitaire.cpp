@@ -48,3 +48,14 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectPaysV(System::String^ vil
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClient() {
 	return "select id_client from client order by id_client ";
 }
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectPrenom(int id_client) {
+
+	return "select prenom from client where id_client = '"+id_client+"'";
+}
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNom(int id_client) {
+
+	return "select nom from client where id_client = '" + id_client + "'";
+
+}

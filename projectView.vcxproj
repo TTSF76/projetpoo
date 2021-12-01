@@ -143,6 +143,9 @@
     <ClInclude Include="CLserviceutilitaire.h" />
     <ClInclude Include="CLstats.h" />
     <ClInclude Include="CLUtilitaire.h" />
+    <ClInclude Include="InputArticleInserer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="InputClientInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -199,6 +202,7 @@
     <ClCompile Include="CLserviceutilitaire.cpp" />
     <ClCompile Include="CLstats.cpp" />
     <ClCompile Include="CLUtilitaire.cpp" />
+    <ClCompile Include="InputArticleInserer.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
     <ClCompile Include="InputClientUpdate.cpp" />
     <ClCompile Include="InputCommandeInserer.cpp" />

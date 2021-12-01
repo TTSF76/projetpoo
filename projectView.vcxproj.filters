@@ -107,6 +107,18 @@
     <ClInclude Include="CLservicecommande.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLservicearticle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLserviceStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLstats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputArticleInserer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -163,13 +175,7 @@
     <ClCompile Include="InputCommandeInserer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputStockInserer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLserviceclient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InputStockSupprimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputCommandeSupprimer.cpp">
@@ -198,6 +204,18 @@
     </ClCompile>
     <ClCompile Include="CLservicecommande.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLservicearticle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLserviceStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLstats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputArticleInserer.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
