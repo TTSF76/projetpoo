@@ -568,7 +568,11 @@ namespace projectView {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
-		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire();
+		if (this->textBox1->Text == "" || this->textBox2->Text == "") {
+			this->label2->Text = "Rentrez des données dans les inputs 1 et/ou 2";
+			return;
+		}
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox1->Text));
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
 
@@ -581,8 +585,12 @@ namespace projectView {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		if (this->textBox1->Text == "" || this->textBox2->Text == "") {
+			this->label2->Text = "Rentrez des données dans l\'inputs 1";
+			return;
+		}
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
-		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats(System::Int32::Parse(this->textBox1->Text));
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Montant total") + "€";
 	}
 
@@ -616,8 +624,12 @@ namespace projectView {
 
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		if (this->textBox1->Text == "" || this->textBox2->Text == "") {
+			this->label2->Text = "Rentrez des données dans les inputs 1 et/ou 2 et/ou 3 et/ou 4";
+			return;
+		}
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
-		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox2->Text), System::Int32::Parse(this->textBox3->Text), System::Int32::Parse(this->textBox4->Text));
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
 

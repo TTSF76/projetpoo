@@ -13,10 +13,10 @@ System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerPanierMoyen() {
 	return this->Ocad->getRows(sql,"bob");
 }
 
-System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerChiffreDaffaire()
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerChiffreDaffaire(int i1, int i2)
 {
 	System::String^ sql;
-	sql = this->mapStats->chiffreAffaire(1,2);
+	sql = this->mapStats->chiffreAffaire(i1,i2);
 	return this->Ocad->getRows(sql, "bobi");
 }
 
@@ -27,10 +27,10 @@ System::Data::DataSet^ NS_stats_svc::CLserviceStats::identifierProduitSeuil()
 	return this->Ocad->getRows(sql, "test");
 }
 
-System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerMontantTotalAchats()
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerMontantTotalAchats(int i1)
 {
 	System::String^ sql;
-	sql = this->mapStats->montantTotal(1);
+	sql = this->mapStats->montantTotal(i1);
 	return this->Ocad->getRows(sql, "test");
 }
 
@@ -62,10 +62,10 @@ System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerValeurDachat()
 	return this->Ocad->getRows(sql, "test");
 }
 
-System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerVariationCommerciale()
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerVariationCommerciale(int i1, int i2, int i3, int i4)
 {
 	System::String^ sql;
-	sql = this->mapStats->varCommerciale(1, 10, 2000, 2000);
+	sql = this->mapStats->varCommerciale(i1, i2, i3, i4);
 	return this->Ocad->getRows(sql, "test");
 }
 
