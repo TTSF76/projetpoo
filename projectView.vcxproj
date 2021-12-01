@@ -146,6 +146,9 @@
     <ClInclude Include="InputArticleInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InputArticleUpdate.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="InputClientInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,10 +161,16 @@
     <ClInclude Include="InputCommandeSupprimer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InputCommandeUpdate.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="InputPersonnelInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="InputPersonnelSupprimer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InputPersonnelUpdate.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inputs.h" />
@@ -203,12 +212,15 @@
     <ClCompile Include="CLstats.cpp" />
     <ClCompile Include="CLUtilitaire.cpp" />
     <ClCompile Include="InputArticleInserer.cpp" />
+    <ClCompile Include="InputArticleUpdate.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
     <ClCompile Include="InputClientUpdate.cpp" />
     <ClCompile Include="InputCommandeInserer.cpp" />
     <ClCompile Include="InputCommandeSupprimer.cpp" />
+    <ClCompile Include="InputCommandeUpdate.cpp" />
     <ClCompile Include="InputPersonnelInserer.cpp" />
     <ClCompile Include="InputPersonnelSupprimer.cpp" />
+    <ClCompile Include="InputPersonnelUpdate.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="MyForm1.cpp" />
