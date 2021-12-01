@@ -820,6 +820,8 @@ namespace projectView {
 
 	private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->titre_rubrique->Visible = true;
+		this->titre_rubrique->Text = "STATISTIQUES";
 		this->label_bienvenue->Visible = false;
 		this->logo_welcome->Visible = false;
 		this->dataGridView1->Visible = false;
