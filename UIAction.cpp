@@ -29,7 +29,7 @@ void UIAction::selectButtonPersonnel(System::Windows::Forms::DataGridView^ dgv, 
 	}
 }
 
-void UIAction::selectButtonStock(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl) {
+void UIAction::selectButtonArticle(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl) {
 	if (lbl->Text == "STOCK") {
 		dgv->Refresh();
 		UIAction::oDs = UIAction::svcArticle->selectAllArticle("Rsl");
@@ -75,5 +75,12 @@ void UIAction::validerButtonCommande(System::Windows::Forms::Form^ form, NS_map_
 {
 	if (form->Name == "InputCommandeInserer") {
 		UIAction::svcCommande->insertCommande(commande);
+	}
+}
+
+void UIAction::validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article)
+{
+	if (form->Name == "InputArticleInserer") {
+		UIAction::svcArticle->insertArticle(article);
 	}
 }

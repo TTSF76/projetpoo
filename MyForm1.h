@@ -6,6 +6,7 @@
 #include "CLconnect.h"
 #include "CLserviceclient.h"
 #include "CLserviceStats.h"
+#include "CLservicearticle.h"
 
 namespace projectView {
 
@@ -732,7 +733,7 @@ private: System::Void bouton_select_Click(System::Object^ sender, System::EventA
 
 	}else if (gestion == "STOCK") {
 
-		UIAction::selectButtonStock(this->dataGridView1, this->titre_rubrique);
+		UIAction::selectButtonArticle(this->dataGridView1, this->titre_rubrique);
 
 	}
 
