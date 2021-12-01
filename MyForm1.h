@@ -5,6 +5,7 @@
 #include "Inputs.h"
 #include "CLconnect.h"
 #include "CLserviceclient.h"
+#include "CLserviceStats.h"
 
 namespace projectView {
 
@@ -453,6 +454,7 @@ namespace projectView {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Visible = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
 			// button2
 			// 
@@ -585,6 +587,12 @@ namespace projectView {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerPanierMoyen();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen")+"€";
+	}
+
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;

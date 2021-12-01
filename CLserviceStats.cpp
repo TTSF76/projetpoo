@@ -19,3 +19,46 @@ System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerChiffreDaffaire()
 	sql = this->mapStats->chiffreAffaire(1,2);
 	return this->Ocad->getRows(sql, "bobi");
 }
+
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::identifierProduitSeuil()
+{
+	System::String^ sql;
+	sql = this->mapStats->restocker();
+	return this->Ocad->getRows(sql, "test");
+}
+
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerMontantTotalAchats()
+{
+	System::String^ sql;
+	sql = this->mapStats->montantTotal(1);
+	return this->Ocad->getRows(sql, "test");
+}
+
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::identifierPlusVendus()
+{
+	System::String^ sql;
+	sql = this->mapStats->plusVendus();
+	return this->Ocad->getRows(sql, "rest");
+}
+
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::identifierMoinsVendus()
+{
+	System::String^ sql;
+	sql = this->mapStats->moinsVendus();
+	return this->Ocad->getRows(sql, "test");
+}
+
+System::String^ NS_stats_svc::CLserviceStats::convertToLabel(System::Data::DataSet^ ds, System::String^ nom) {
+	System::String^ result = nom+ ": ";
+	for each (System::Data::DataTable^ table in ds->Tables)
+	{
+		for each (System::Data::DataRow^ row in table->Rows)
+		{
+			for each (System::Data::DataColumn^ column in table->Columns)
+			{
+				result += row[column];
+			}
+		}
+	}
+	return result;
+}

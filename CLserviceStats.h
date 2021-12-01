@@ -12,15 +12,13 @@ namespace NS_stats_svc {
 		CLserviceStats();
 		System::Data::DataSet^ calculerPanierMoyen();
 		System::Data::DataSet^ calculerChiffreDaffaire();
-		/*System::Data::DataSet^ identifierProduitSeuil();
+		System::Data::DataSet^ identifierProduitSeuil();
 		System::Data::DataSet^ calculerMontantTotalAchats();
 		System::Data::DataSet^ identifierPlusVendus();
 		System::Data::DataSet^ identifierMoinsVendus();
-		System::Data::DataSet^ calculerValeurCommerciale();
+	/*	System::Data::DataSet^ calculerValeurCommerciale();
 		System::Data::DataSet^ calculerValeurDachat();
 		System::Data::DataSet^ calculerVariationCommerciale();*/
+		System::String^ convertToLabel(System::Data::DataSet^, System::String^);
 	};
 }
-
-
-
