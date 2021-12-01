@@ -829,7 +829,9 @@ namespace projectView {
 			}
 			personnel->setIdPersonnel(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
 			UIAction::deleteButtonPersonnel(this->label1, personnel,this->dataGridView1);
-		}if (this->titre_rubrique->Text == "STOCK")
+		}
+		
+		if (this->titre_rubrique->Text == "STOCK")
 		{
 			if (this->dataGridView1->DataSource == nullptr) {
 				MessageBox::Show("Vous devez lister le stock puis sélectionner une valeur de la colonne ref_article !", "Erreur", MessageBoxButtons::OK);
