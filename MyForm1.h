@@ -5,6 +5,7 @@
 #include "Inputs.h"
 #include "CLconnect.h"
 #include "CLserviceclient.h"
+#include "CLserviceStats.h"
 
 namespace projectView {
 
@@ -95,6 +96,10 @@ namespace projectView {
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
 	public:
 
 
@@ -151,6 +156,10 @@ namespace projectView {
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->panel_menu_left->SuspendLayout();
 			this->panel_logo->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -453,6 +462,7 @@ namespace projectView {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Visible = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
 			// button2
 			// 
@@ -463,6 +473,7 @@ namespace projectView {
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Visible = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm1::button2_Click);
 			// 
 			// button3
 			// 
@@ -473,6 +484,7 @@ namespace projectView {
 			this->button3->Text = L"button3";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Visible = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm1::button3_Click);
 			// 
 			// button4
 			// 
@@ -483,6 +495,7 @@ namespace projectView {
 			this->button4->Text = L"button4";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Visible = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm1::button4_Click);
 			// 
 			// button5
 			// 
@@ -493,6 +506,7 @@ namespace projectView {
 			this->button5->Text = L"button5";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Visible = false;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm1::button5_Click);
 			// 
 			// button6
 			// 
@@ -503,6 +517,7 @@ namespace projectView {
 			this->button6->Text = L"button6";
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Visible = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm1::button6_Click);
 			// 
 			// button7
 			// 
@@ -513,6 +528,7 @@ namespace projectView {
 			this->button7->Text = L"button7";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Visible = false;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm1::button7_Click);
 			// 
 			// button8
 			// 
@@ -523,6 +539,7 @@ namespace projectView {
 			this->button8->Text = L"button8";
 			this->button8->UseVisualStyleBackColor = true;
 			this->button8->Visible = false;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm1::button8_Click);
 			// 
 			// button9
 			// 
@@ -533,6 +550,7 @@ namespace projectView {
 			this->button9->Text = L"button9";
 			this->button9->UseVisualStyleBackColor = true;
 			this->button9->Visible = false;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm1::button9_Click);
 			// 
 			// label2
 			// 
@@ -544,12 +562,44 @@ namespace projectView {
 			this->label2->Text = L"label2";
 			this->label2->Visible = false;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(345, 151);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->TabIndex = 19;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(657, 151);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->TabIndex = 20;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(345, 236);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 22);
+			this->textBox3->TabIndex = 21;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(657, 236);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 22);
+			this->textBox4->TabIndex = 22;
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(890, 598);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button8);
@@ -585,6 +635,52 @@ namespace projectView {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerPanierMoyen();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen")+"€";
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->identifierProduitSeuil();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Montant total") + "€";
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->identifierPlusVendus();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->identifierMoinsVendus();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurCommerciale();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur commerciale du stock") + "€";
+	}
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurDachat();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur d'achat du stock") + "€";
+	}
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;
