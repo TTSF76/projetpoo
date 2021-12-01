@@ -138,7 +138,9 @@
     <ClInclude Include="CLserviceclient.h" />
     <ClInclude Include="CLservicecommande.h" />
     <ClInclude Include="CLservicepersonnel.h" />
+    <ClInclude Include="CLserviceStats.h" />
     <ClInclude Include="CLserviceutilitaire.h" />
+    <ClInclude Include="CLstats.h" />
     <ClInclude Include="CLUtilitaire.h" />
     <ClInclude Include="InputClientInserer.h">
       <FileType>CppForm</FileType>
@@ -191,7 +193,9 @@
     <ClCompile Include="CLserviceclient.cpp" />
     <ClCompile Include="CLservicecommande.cpp" />
     <ClCompile Include="CLservicepersonnel.cpp" />
+    <ClCompile Include="CLserviceStats.cpp" />
     <ClCompile Include="CLserviceutilitaire.cpp" />
+    <ClCompile Include="CLstats.cpp" />
     <ClCompile Include="CLUtilitaire.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
     <ClCompile Include="InputClientUpdate.cpp" />

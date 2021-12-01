@@ -132,3 +132,29 @@ void UIManager::afficherElementRubrique(System::Windows::Forms::DataGridView^ Da
 		break;
 	}
 }
+
+void UIManager::afficherStats(System::Windows::Forms::Label^ label, System::Windows::Forms::Button^ button1, System::Windows::Forms::Button^ button2, System::Windows::Forms::Button^ button3, System::Windows::Forms::Button^ button4, System::Windows::Forms::Button^ button5, System::Windows::Forms::Button^ button6, System::Windows::Forms::Button^ button7, System::Windows::Forms::Button^ button8, System::Windows::Forms::Button^ button9) {
+	label->Visible = true;
+	button1->Visible = true;
+	button2->Visible = true;
+	button3->Visible = true;
+	button4->Visible = true;
+	button5->Visible = true;
+	button6->Visible = true;
+	button7->Visible = true;
+	button8->Visible = true;
+	button9->Visible = true;
+}
+
+void UIManager::cacherStats(System::Windows::Forms::Label^ label, System::Windows::Forms::Button^ button1, System::Windows::Forms::Button^ button2, System::Windows::Forms::Button^ button3, System::Windows::Forms::Button^ button4, System::Windows::Forms::Button^ button5, System::Windows::Forms::Button^ button6, System::Windows::Forms::Button^ button7, System::Windows::Forms::Button^ button8, System::Windows::Forms::Button^ button9) {
+	label->Visible = false;
+	button1->Visible = false;
+	button2->Visible = false;
+	button3->Visible = false;
+	button4->Visible = false;
+	button5->Visible = false;
+	button6->Visible = false;
+	button7->Visible = false;
+	button8->Visible = false;
+	button9->Visible = false;
+}

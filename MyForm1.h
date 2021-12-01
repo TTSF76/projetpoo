@@ -85,6 +85,16 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ label_bienvenue;
 	private: System::Windows::Forms::PictureBox^ logo_welcome;
 	private: System::Windows::Forms::Label^ titre_rubrique;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ button9;
+	private: System::Windows::Forms::Label^ label2;
 	public:
 
 
@@ -131,6 +141,16 @@ namespace projectView {
 			this->titre_rubrique = (gcnew System::Windows::Forms::Label());
 			this->label_bienvenue = (gcnew System::Windows::Forms::Label());
 			this->logo_welcome = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel_menu_left->SuspendLayout();
 			this->panel_logo->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -421,12 +441,122 @@ namespace projectView {
 			this->logo_welcome->TabStop = false;
 			this->logo_welcome->Click += gcnew System::EventHandler(this, &MyForm1::logo_welcome_Click);
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(315, 356);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 9;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Visible = false;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(442, 356);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 10;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Visible = false;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(552, 356);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->TabIndex = 11;
+			this->button3->Text = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Visible = false;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(315, 413);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 12;
+			this->button4->Text = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Visible = false;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(442, 413);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->TabIndex = 13;
+			this->button5->Text = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Visible = false;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(552, 413);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 14;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Visible = false;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(315, 470);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(75, 23);
+			this->button7->TabIndex = 15;
+			this->button7->Text = L"button7";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Visible = false;
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(442, 470);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(75, 23);
+			this->button8->TabIndex = 16;
+			this->button8->Text = L"button8";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Visible = false;
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(552, 470);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(75, 23);
+			this->button9->TabIndex = 17;
+			this->button9->Text = L"button9";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Visible = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(471, 268);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(46, 17);
+			this->label2->TabIndex = 18;
+			this->label2->Text = L"label2";
+			this->label2->Visible = false;
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(890, 598);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->button9);
+			this->Controls->Add(this->button8);
+			this->Controls->Add(this->button7);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->panel_header);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->bouton_delete);
@@ -453,6 +583,7 @@ namespace projectView {
 		}
 #pragma endregion
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1,this);
@@ -461,6 +592,7 @@ namespace projectView {
 	}
 	
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		this->dataGridView1->Refresh();
@@ -490,6 +622,7 @@ namespace projectView {
 		}
 	}
 private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 	this->dataGridView1->DataSource = nullptr;
 	this->dataGridView1->Rows->Clear();
 	this->dataGridView1->Refresh();
@@ -497,6 +630,7 @@ private: System::Void bouton_personnel_Click(System::Object^ sender, System::Eve
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
 }
 private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
+	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 	this->dataGridView1->DataSource = nullptr;
 	this->dataGridView1->Rows->Clear();
 	this->dataGridView1->Refresh();
@@ -504,11 +638,14 @@ private: System::Void bouton_commande_Click(System::Object^ sender, System::Even
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
 }
 private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView1->DataSource = nullptr;
-	this->dataGridView1->Rows->Clear();
-	this->dataGridView1->Refresh();
-	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5,this);
-	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 5);
+	this->label_bienvenue->Visible = false;
+	this->logo_welcome->Visible = false;
+	this->dataGridView1->Visible = false;
+	this->bouton_create->Visible = false;
+	this->bouton_delete->Visible = false;
+	this->bouton_update->Visible = false;
+	this->bouton_select->Visible = false;
+	UIManager::afficherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 }
 private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 }

@@ -107,6 +107,12 @@
     <ClInclude Include="CLservicecommande.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLstats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLserviceStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -197,6 +203,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLservicecommande.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLstats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLserviceStats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
