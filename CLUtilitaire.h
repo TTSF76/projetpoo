@@ -19,7 +19,8 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectRegionV(System::String^);
 
 		System::String^ SelectIdClient();
-		
+		System::String^ SelectPrenom(int);
+		System::String^ SelectNom(int);
 
 	};
 }
