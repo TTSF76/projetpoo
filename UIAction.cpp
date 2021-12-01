@@ -34,3 +34,18 @@ void UIAction::validerButtonPersonnel(System::Windows::Forms::Form^ form, NS_map
 		UIAction::svcPersonnel->insertPersonnel(personnel);
 	}
 }
+
+void UIAction::selectButtonCommande(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl) {
+	if (lbl->Text == "COMMANDE") {
+		dgv->Refresh();
+		UIAction::oDs = UIAction::svcCommande->selectAllCommandes("Rsl");
+		dgv->DataSource = UIAction::oDs;
+		dgv->DataMember = "Rsl";
+	}
+}
+void UIAction::validerButtonCommande(System::Windows::Forms::Form^ form, NS_map_commande::CLcommande^ commande)
+{
+	if (form->Name == "InputCommandeInserer") {
+		UIAction::svcCommande->insertCommande(commande);
+	}
+}

@@ -19,6 +19,8 @@ namespace NS_Utilitaire_svc {
 		std::vector<std::string> repertorierCodePostaux(std::vector<std::string>);
 		std::vector<std::string> repertorierRegion(std::vector<std::string>);
 
+		std::vector<std::string> repertorierIdClients(std::vector<std::string>);
+
 		std::vector<std::string> miseAjourVilleCBCP(std::vector<std::string>, System::String^);
 		std::vector<std::string> miseAjourRegionCBCP(std::vector<std::string>, System::String^);
 		std::vector<std::string> miseAjourPaysCBCP(std::vector<std::string>, System::String^);

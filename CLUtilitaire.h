@@ -18,6 +18,9 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectPaysV(System::String^);
 		System::String^ SelectRegionV(System::String^);
 
+		System::String^ SelectIdClient();
+		
+
 	};
 }
 

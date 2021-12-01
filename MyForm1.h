@@ -524,6 +524,13 @@ private: System::Void bouton_select_Click(System::Object^ sender, System::EventA
 		UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
 
 	}
+
+	else if (gestion == "COMMANDE") {
+
+		UIAction::selectButtonCommande(this->dataGridView1, this->titre_rubrique);
+
+	}
+
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
