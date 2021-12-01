@@ -177,9 +177,6 @@
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm2.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="UIAction.h" />
@@ -208,12 +205,9 @@
     <ClCompile Include="InputCommandeSupprimer.cpp" />
     <ClCompile Include="InputPersonnelInserer.cpp" />
     <ClCompile Include="InputPersonnelSupprimer.cpp" />
-    <ClCompile Include="InputStockInserer.cpp" />
-    <ClCompile Include="InputStockSupprimer.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="MyForm1.cpp" />
-    <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
