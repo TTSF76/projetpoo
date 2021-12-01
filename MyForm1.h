@@ -673,9 +673,17 @@ namespace projectView {
 
 		}
 #pragma endregion
+	private: System::Void clearLabels() {
+		this->label1->Text = "";
+		this->label3->Text = "";
+		this->label4->Text = "";
+		this->label5->Text = "";
+	}
+
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerPanierMoyen();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Panier Moyen ") + "€";
@@ -690,8 +698,7 @@ namespace projectView {
 			this->label3->Text = "Rentrez un mois ici";
 			return;
 		}
-		this->label1->Text = "";
-		this->label3->Text = "";
+		this->clearLabels();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox2->Text));
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Chiffre d'Affaire ") + "€";
 
@@ -699,6 +706,7 @@ namespace projectView {
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierProduitSeuil();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Restocker ");
@@ -706,11 +714,13 @@ namespace projectView {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		if (this->textBox1->Text == "") {
 			this->label2->Text = "Rentrez des données dans l\'inputs 1";
 			this->label1->Text = "Rentrer un id de client";
 			return;
 		}
+		this->clearLabels();
 		this->label1->Text = "";
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats(System::Int32::Parse(this->textBox1->Text));
@@ -719,6 +729,7 @@ namespace projectView {
 
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierPlusVendus();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Plus Vendus ");
@@ -726,6 +737,7 @@ namespace projectView {
 
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierMoinsVendus();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Moins Vendus ");
@@ -733,6 +745,7 @@ namespace projectView {
 
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurCommerciale();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur Commerciale du Stock ") + "€";
@@ -740,6 +753,7 @@ namespace projectView {
 
 	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurDachat();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur d'Achat du Stock ") + "€";
@@ -747,6 +761,7 @@ namespace projectView {
 
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "") {
 			this->label2->Text = "Rentrez des données dans les inputs 1 et/ou 2 et/ou 3 et/ou 4";
 			this->label1->Text = "Rentrez ici la TVA (1,2 ou 3)";
@@ -755,16 +770,14 @@ namespace projectView {
 			this->label5->Text = "Rentrez ici la démarque";
 			return;
 		}
-		this->label1->Text = "";
-		this->label3->Text = "";
-		this->label4->Text = "";
-		this->label5->Text = "";
+		this->clearLabels();
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox2->Text), System::Int32::Parse(this->textBox3->Text), System::Int32::Parse(this->textBox4->Text));
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur Commerciale du Stock (var) ") + "€";
 	}
 
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
@@ -774,6 +787,7 @@ namespace projectView {
 
 	private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
@@ -784,6 +798,7 @@ namespace projectView {
 	
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
@@ -794,6 +809,7 @@ namespace projectView {
 
 	private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
