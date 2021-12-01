@@ -370,7 +370,6 @@ namespace projectView {
 			this->logo_welcome->Size = System::Drawing::Size(245, 172);
 			this->logo_welcome->TabIndex = 8;
 			this->logo_welcome->TabStop = false;
-			this->logo_welcome->Click += gcnew System::EventHandler(this, &MyForm1::logo_welcome_Click);
 			// 
 			// button1
 			// 
