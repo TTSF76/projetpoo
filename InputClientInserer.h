@@ -32,6 +32,7 @@ namespace projectView {
 			list_ville = ville->repertorierVilles(list_ville);
 			for (int i = 0; i < list_ville.size(); i++) {
 				this->cbxAdrLivVille->Items->Add(gcnew String(list_ville[i].c_str()));
+				this->cbxVilleFac->Items->Add(gcnew String(list_ville[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
@@ -39,6 +40,7 @@ namespace projectView {
 			list_pays= pays->repertorierPays(list_pays);
 			for (int i = 0; i < list_pays.size(); i++) {
 				this->cbxAdrLivPays->Items->Add(gcnew String(list_pays[i].c_str()));
+				this->cbxPaysFac->Items->Add(gcnew String(list_pays[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
@@ -46,6 +48,7 @@ namespace projectView {
 			list_code_postaux = code_postal->repertorierCodePostaux(list_code_postaux);
 			for (int i = 0; i < list_code_postaux.size(); i++) {
 				this->cbxAdrLivCP->Items->Add(gcnew String(list_code_postaux[i].c_str()));
+				this->cbxCP_facturation->Items->Add(gcnew String(list_code_postaux[i].c_str()));
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
@@ -53,6 +56,7 @@ namespace projectView {
 			list_region = region->repertorierRegion(list_region);
 			for (int i = 0; i < list_region.size(); i++) {
 				this->cbxAdrLivRegion->Items->Add(gcnew String(list_region[i].c_str()));
+				this->cbxRegionFac->Items->Add(gcnew String(list_region[i].c_str()));
 			}
 		}
 
@@ -119,13 +123,17 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivVille;
 	private: System::Windows::Forms::TextBox^ tbxNRueF;
 
 	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::TextBox^ textBox10;
+
 	private: System::Windows::Forms::Label^ label14;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
+private: System::Windows::Forms::ComboBox^ cbxVilleFac;
+
+
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::ComboBox^ comboBox4;
-	private: System::Windows::Forms::ComboBox^ comboBox5;
+private: System::Windows::Forms::ComboBox^ cbxRegionFac;
+private: System::Windows::Forms::ComboBox^ cbxPaysFac;
+
+
 
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::Label^ label17;
@@ -137,6 +145,8 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivVille;
 	private: System::Windows::Forms::Label^ label_adresse_facturation;
 	private: System::Windows::Forms::Label^ label_adresse_livraison;
 private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
+private: System::Windows::Forms::ComboBox^ cbxCP_facturation;
+
 
 
 	protected:
@@ -166,13 +176,12 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->tbxNRueF = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->cbxVilleFac = (gcnew System::Windows::Forms::ComboBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
+			this->cbxRegionFac = (gcnew System::Windows::Forms::ComboBox());
+			this->cbxPaysFac = (gcnew System::Windows::Forms::ComboBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->tbxResidenceL = (gcnew System::Windows::Forms::TextBox());
 			this->tbxEtageL = (gcnew System::Windows::Forms::TextBox());
@@ -198,6 +207,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			this->label_adresse_facturation = (gcnew System::Windows::Forms::Label());
 			this->label_adresse_livraison = (gcnew System::Windows::Forms::Label());
 			this->cbxAdrLivCP = (gcnew System::Windows::Forms::ComboBox());
+			this->cbxCP_facturation = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// button2
@@ -240,7 +250,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			// 
 			this->label9->AutoSize = true;
 			this->label9->ForeColor = System::Drawing::Color::Silver;
-			this->label9->Location = System::Drawing::Point(950, 190);
+			this->label9->Location = System::Drawing::Point(925, 192);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(75, 17);
@@ -253,7 +263,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->tbxResidenceF->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tbxResidenceF->ForeColor = System::Drawing::Color::Silver;
-			this->tbxResidenceF->Location = System::Drawing::Point(1037, 192);
+			this->tbxResidenceF->Location = System::Drawing::Point(1012, 192);
 			this->tbxResidenceF->Margin = System::Windows::Forms::Padding(4);
 			this->tbxResidenceF->Name = L"tbxResidenceF";
 			this->tbxResidenceF->Size = System::Drawing::Size(145, 15);
@@ -265,7 +275,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->tbxEtageF->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tbxEtageF->ForeColor = System::Drawing::Color::Silver;
-			this->tbxEtageF->Location = System::Drawing::Point(873, 192);
+			this->tbxEtageF->Location = System::Drawing::Point(860, 192);
 			this->tbxEtageF->Margin = System::Windows::Forms::Padding(4);
 			this->tbxEtageF->Name = L"tbxEtageF";
 			this->tbxEtageF->Size = System::Drawing::Size(57, 15);
@@ -275,7 +285,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			// 
 			this->label10->AutoSize = true;
 			this->label10->ForeColor = System::Drawing::Color::Silver;
-			this->label10->Location = System::Drawing::Point(811, 190);
+			this->label10->Location = System::Drawing::Point(799, 192);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(45, 17);
@@ -288,7 +298,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->tbxRueF->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tbxRueF->ForeColor = System::Drawing::Color::Silver;
-			this->tbxRueF->Location = System::Drawing::Point(995, 160);
+			this->tbxRueF->Location = System::Drawing::Point(970, 162);
 			this->tbxRueF->Margin = System::Windows::Forms::Padding(4);
 			this->tbxRueF->Name = L"tbxRueF";
 			this->tbxRueF->Size = System::Drawing::Size(187, 15);
@@ -298,7 +308,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			// 
 			this->label11->AutoSize = true;
 			this->label11->ForeColor = System::Drawing::Color::Silver;
-			this->label11->Location = System::Drawing::Point(950, 158);
+			this->label11->Location = System::Drawing::Point(925, 160);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(34, 17);
@@ -309,7 +319,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			// 
 			this->label12->AutoSize = true;
 			this->label12->ForeColor = System::Drawing::Color::Silver;
-			this->label12->Location = System::Drawing::Point(811, 158);
+			this->label12->Location = System::Drawing::Point(798, 160);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(54, 17);
@@ -322,7 +332,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->tbxNRueF->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tbxNRueF->ForeColor = System::Drawing::Color::Silver;
-			this->tbxNRueF->Location = System::Drawing::Point(873, 160);
+			this->tbxNRueF->Location = System::Drawing::Point(860, 160);
 			this->tbxNRueF->Margin = System::Windows::Forms::Padding(4);
 			this->tbxNRueF->Name = L"tbxNRueF";
 			this->tbxNRueF->Size = System::Drawing::Size(57, 15);
@@ -332,55 +342,43 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			// 
 			this->label13->AutoSize = true;
 			this->label13->ForeColor = System::Drawing::Color::Silver;
-			this->label13->Location = System::Drawing::Point(1070, 126);
+			this->label13->Location = System::Drawing::Point(1044, 126);
 			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(26, 17);
 			this->label13->TabIndex = 23;
 			this->label13->Text = L"CP";
 			// 
-			// textBox10
-			// 
-			this->textBox10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
-				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->textBox10->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox10->ForeColor = System::Drawing::Color::Silver;
-			this->textBox10->Location = System::Drawing::Point(1106, 128);
-			this->textBox10->Margin = System::Windows::Forms::Padding(4);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(76, 15);
-			this->textBox10->TabIndex = 22;
-			// 
 			// label14
 			// 
 			this->label14->AutoSize = true;
 			this->label14->ForeColor = System::Drawing::Color::Silver;
-			this->label14->Location = System::Drawing::Point(811, 126);
+			this->label14->Location = System::Drawing::Point(798, 126);
 			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(34, 17);
 			this->label14->TabIndex = 21;
 			this->label14->Text = L"Ville";
 			// 
-			// comboBox3
+			// cbxVilleFac
 			// 
-			this->comboBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->cbxVilleFac->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox3->ForeColor = System::Drawing::Color::Silver;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox3->Location = System::Drawing::Point(872, 123);
-			this->comboBox3->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(176, 24);
-			this->comboBox3->TabIndex = 20;
+			this->cbxVilleFac->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxVilleFac->ForeColor = System::Drawing::Color::Silver;
+			this->cbxVilleFac->FormattingEnabled = true;
+			this->cbxVilleFac->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
+			this->cbxVilleFac->Location = System::Drawing::Point(860, 125);
+			this->cbxVilleFac->Margin = System::Windows::Forms::Padding(4);
+			this->cbxVilleFac->Name = L"cbxVilleFac";
+			this->cbxVilleFac->Size = System::Drawing::Size(176, 24);
+			this->cbxVilleFac->TabIndex = 20;
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
 			this->label15->ForeColor = System::Drawing::Color::Silver;
-			this->label15->Location = System::Drawing::Point(811, 92);
+			this->label15->Location = System::Drawing::Point(799, 92);
 			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(53, 17);
@@ -391,40 +389,38 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			// 
 			this->label16->AutoSize = true;
 			this->label16->ForeColor = System::Drawing::Color::Silver;
-			this->label16->Location = System::Drawing::Point(811, 59);
+			this->label16->Location = System::Drawing::Point(798, 60);
 			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(39, 17);
 			this->label16->TabIndex = 18;
 			this->label16->Text = L"Pays";
 			// 
-			// comboBox4
+			// cbxRegionFac
 			// 
-			this->comboBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->cbxRegionFac->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox4->ForeColor = System::Drawing::Color::Silver;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox4->Location = System::Drawing::Point(872, 90);
-			this->comboBox4->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(297, 24);
-			this->comboBox4->TabIndex = 17;
+			this->cbxRegionFac->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxRegionFac->ForeColor = System::Drawing::Color::Silver;
+			this->cbxRegionFac->FormattingEnabled = true;
+			this->cbxRegionFac->Location = System::Drawing::Point(860, 88);
+			this->cbxRegionFac->Margin = System::Windows::Forms::Padding(4);
+			this->cbxRegionFac->Name = L"cbxRegionFac";
+			this->cbxRegionFac->Size = System::Drawing::Size(297, 24);
+			this->cbxRegionFac->TabIndex = 17;
 			// 
-			// comboBox5
+			// cbxPaysFac
 			// 
-			this->comboBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+			this->cbxPaysFac->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->comboBox5->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox5->ForeColor = System::Drawing::Color::Silver;
-			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->comboBox5->Location = System::Drawing::Point(872, 56);
-			this->comboBox5->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(297, 24);
-			this->comboBox5->TabIndex = 16;
+			this->cbxPaysFac->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cbxPaysFac->ForeColor = System::Drawing::Color::Silver;
+			this->cbxPaysFac->FormattingEnabled = true;
+			this->cbxPaysFac->Location = System::Drawing::Point(860, 53);
+			this->cbxPaysFac->Margin = System::Windows::Forms::Padding(4);
+			this->cbxPaysFac->Name = L"cbxPaysFac";
+			this->cbxPaysFac->Size = System::Drawing::Size(297, 24);
+			this->cbxPaysFac->TabIndex = 16;
 			// 
 			// label8
 			// 
@@ -722,6 +718,21 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			this->cbxAdrLivCP->TabIndex = 35;
 			this->cbxAdrLivCP->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::cbxAdrLivCP_SelectedIndexChanged);
 			// 
+			// cbxCP_facturation
+			// 
+			this->cbxCP_facturation->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->cbxCP_facturation->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
+			this->cbxCP_facturation->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->cbxCP_facturation->ForeColor = System::Drawing::Color::Silver;
+			this->cbxCP_facturation->FormattingEnabled = true;
+			this->cbxCP_facturation->Location = System::Drawing::Point(1078, 125);
+			this->cbxCP_facturation->Margin = System::Windows::Forms::Padding(4);
+			this->cbxCP_facturation->Name = L"cbxCP_facturation";
+			this->cbxCP_facturation->Size = System::Drawing::Size(79, 24);
+			this->cbxCP_facturation->TabIndex = 36;
+			this->cbxCP_facturation->SelectedIndexChanged += gcnew System::EventHandler(this, &InputClientInserer::cbxCP_facturation_SelectedIndexChanged);
+			// 
 			// InputClientInserer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -729,6 +740,7 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(1201, 353);
+			this->Controls->Add(this->cbxCP_facturation);
 			this->Controls->Add(this->cbxAdrLivCP);
 			this->Controls->Add(this->label_adresse_livraison);
 			this->Controls->Add(this->label_adresse_facturation);
@@ -752,19 +764,18 @@ private: System::Windows::Forms::ComboBox^ cbxAdrLivCP;
 			this->Controls->Add(this->dtpAnniversaire);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->tbxRueL);
-			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->tbxNom);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->comboBox3);
+			this->Controls->Add(this->cbxVilleFac);
 			this->Controls->Add(this->lblAnniversaire);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->tbxPrenom);
-			this->Controls->Add(this->comboBox4);
+			this->Controls->Add(this->cbxRegionFac);
 			this->Controls->Add(this->tbxNRueL);
-			this->Controls->Add(this->comboBox5);
+			this->Controls->Add(this->cbxPaysFac);
 			this->Controls->Add(this->cbxAdrLivPays);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->cbxAdrLivRegion);
@@ -862,6 +873,43 @@ private: System::Void cbxAdrLivCP_SelectedIndexChanged(System::Object^ sender, S
 	cbxAdrLivVille->Enabled = true;
 	cbxAdrLivRegion->Enabled = true;
 	cbxAdrLivPays->Enabled = true;
+}
+
+
+private: System::Void cbxCP_facturation_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+
+	std::vector<std::string> vecteur_ville;
+	std::vector<std::string> vecteur_region;
+	std::vector<std::string> vecteur_pays;
+
+	cbxVilleFac->Enabled = false;
+	cbxVilleFac->Items->Clear();
+	vecteur_ville = ville->miseAjourVilleCBCP(vecteur_ville, this->cbxCP_facturation->Text);
+	for (int i = 0; i < vecteur_ville.size(); i++) {
+		this->cbxVilleFac->Items->Add(gcnew String(vecteur_ville[i].c_str()));
+	}
+
+	cbxRegionFac->Enabled = false;
+	cbxRegionFac->Items->Clear();
+	vecteur_region = region->miseAjourRegionCBCP(vecteur_region, this->cbxCP_facturation->Text);
+	for (int i = 0; i < vecteur_region.size(); i++) {
+		this->cbxRegionFac->Items->Add(gcnew String(vecteur_region[i].c_str()));
+	}
+
+	cbxPaysFac->Enabled = false;
+	cbxPaysFac->Items->Clear();
+	vecteur_pays = pays->miseAjourPaysCBCP(vecteur_pays, this->cbxCP_facturation->Text);
+	for (int i = 0; i < vecteur_region.size(); i++) {
+		this->cbxPaysFac->Items->Add(gcnew String(vecteur_pays[i].c_str()));
+	}
+
+
+	cbxVilleFac->Enabled = true;
+	cbxRegionFac->Enabled = true;
+	cbxPaysFac->Enabled = true;
 }
 };
 }
