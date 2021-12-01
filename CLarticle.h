@@ -29,6 +29,8 @@ namespace NS_map_article {
 		int getQuantiteReapprovisionnement();
 		float getTauxTVA();
 		System::String^ getCouleur();
+		void setRefArticle(int ref_article);
+		int getRefArticle();
 
 		System::String^ Create();
 		System::String^ Update();

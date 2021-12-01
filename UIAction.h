@@ -28,4 +28,5 @@ public:
 
 	static void selectButtonArticle(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article);
+	static void deleteButtonArticle(System::Windows::Forms::Label^ lbl, NS_map_article::CLarticle^ article, System::Windows::Forms::DataGridView^ dgv);
 };

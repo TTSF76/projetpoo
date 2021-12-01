@@ -84,3 +84,12 @@ void UIAction::validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_a
 		UIAction::svcArticle->insertArticle(article);
 	}
 }
+
+void UIAction::deleteButtonArticle(System::Windows::Forms::Label^ lbl, NS_map_article::CLarticle^ article, System::Windows::Forms::DataGridView^ dgv)
+{
+	UIAction::svcArticle->deleteArticle(article);
+	dgv->Refresh();
+	UIAction::oDs = UIAction::svcArticle->selectAllArticle("Rsl");
+	dgv->DataSource = UIAction::oDs;
+	dgv->DataMember = "Rsl";
+}
