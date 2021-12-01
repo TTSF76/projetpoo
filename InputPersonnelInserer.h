@@ -38,6 +38,7 @@ namespace projectView {
 			list_pays = pays->repertorierPays(list_pays);
 			for (int i = 0; i < list_pays.size(); i++) {
 				this->cbxPays->Items->Add(gcnew String(list_pays[i].c_str()));
+				
 			}
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ code_postal = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
@@ -53,6 +54,9 @@ namespace projectView {
 			for (int i = 0; i < list_region.size(); i++) {
 				this->cbxRegion->Items->Add(gcnew String(list_region[i].c_str()));
 			}
+		
+		
+		
 		}
 
 	protected:
@@ -155,7 +159,6 @@ namespace projectView {
 			this->cbxPays->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbxPays->ForeColor = System::Drawing::Color::Silver;
 			this->cbxPays->FormattingEnabled = true;
-			this->cbxPays->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
 			this->cbxPays->Location = System::Drawing::Point(513, 85);
 			this->cbxPays->Margin = System::Windows::Forms::Padding(4);
 			this->cbxPays->Name = L"cbxPays";
@@ -169,7 +172,6 @@ namespace projectView {
 			this->cbxRegion->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbxRegion->ForeColor = System::Drawing::Color::Silver;
 			this->cbxRegion->FormattingEnabled = true;
-			this->cbxRegion->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
 			this->cbxRegion->Location = System::Drawing::Point(513, 119);
 			this->cbxRegion->Margin = System::Windows::Forms::Padding(4);
 			this->cbxRegion->Name = L"cbxRegion";
@@ -205,7 +207,6 @@ namespace projectView {
 			this->cbxVille->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbxVille->ForeColor = System::Drawing::Color::Silver;
 			this->cbxVille->FormattingEnabled = true;
-			this->cbxVille->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
 			this->cbxVille->Location = System::Drawing::Point(512, 152);
 			this->cbxVille->Margin = System::Windows::Forms::Padding(4);
 			this->cbxVille->Name = L"cbxVille";
@@ -472,18 +473,19 @@ namespace projectView {
 			// 
 			// cbxCode_postal
 			// 
+			this->cbxCode_postal->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->cbxCode_postal->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
 			this->cbxCode_postal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
-			this->cbxCode_postal->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbxCode_postal->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->cbxCode_postal->ForeColor = System::Drawing::Color::Silver;
 			this->cbxCode_postal->FormattingEnabled = true;
-			this->cbxCode_postal->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
 			this->cbxCode_postal->Location = System::Drawing::Point(734, 153);
 			this->cbxCode_postal->Margin = System::Windows::Forms::Padding(4);
 			this->cbxCode_postal->Name = L"cbxCode_postal";
 			this->cbxCode_postal->Size = System::Drawing::Size(76, 24);
 			this->cbxCode_postal->TabIndex = 26;
+			this->cbxCode_postal->SelectedIndexChanged += gcnew System::EventHandler(this, &InputPersonnelInserer::cbxCode_postal_SelectedIndexChanged);
 			// 
 			// InputPersonnelInserer
 			// 
@@ -561,6 +563,41 @@ namespace projectView {
 		this->Close();
 	}
 private: System::Void cbxVille_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void cbxCode_postal_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+
+	std::vector<std::string> vecteur_ville;
+	std::vector<std::string> vecteur_region;
+	std::vector<std::string> vecteur_pays;
+
+	cbxVille->Enabled = false;
+	cbxVille->Items->Clear();
+	vecteur_ville = ville->miseAjourVilleCBCP(vecteur_ville, this->cbxCode_postal->Text);
+	for (int i = 0; i < vecteur_ville.size(); i++) {
+		this->cbxVille->Items->Add(gcnew String(vecteur_ville[i].c_str()));
+	}
+
+	cbxRegion->Enabled = false;
+	cbxRegion->Items->Clear();
+	vecteur_region = region->miseAjourRegionCBCP(vecteur_region, this->cbxCode_postal->Text);
+	for (int i = 0; i < vecteur_region.size(); i++) {
+		this->cbxRegion->Items->Add(gcnew String(vecteur_region[i].c_str()));
+	}
+
+	cbxPays->Enabled = false;
+	cbxPays->Items->Clear();
+	vecteur_pays = pays->miseAjourPaysCBCP(vecteur_pays, this->cbxCode_postal->Text);
+	for (int i = 0; i < vecteur_region.size(); i++) {
+		this->cbxPays->Items->Add(gcnew String(vecteur_pays[i].c_str()));
+	}
+
+
+	cbxVille->Enabled = true;
+	cbxRegion->Enabled = true;
+	cbxPays->Enabled = true;
 }
 };
 }

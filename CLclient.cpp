@@ -51,5 +51,5 @@ System::String^ NS_map_client::CLclient::Delete()
 
 System::String^ NS_map_client::CLclient::Select()
 {
-	return "SELECT * FROM [ttsf76_db].[dbo].[client]";
+	return "SELECT * FROM client";
 }
