@@ -8,6 +8,7 @@ namespace NS_Client_svc {
 		public:
 			System::Data::DataSet^ selectAllClients(System::String^);
 			void insertClient(NS_map_client::CLclient^ client);
+			void deleteClient(NS_map_client::CLclient^ client);
 			CLserviceclient(void);
 		private:
 			NS_Comp_Data::CLconnect^ oCad;

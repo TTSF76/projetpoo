@@ -12,6 +12,7 @@ void UIAction::selectButtonClient(System::Windows::Forms::DataGridView^ dgv, Sys
 		dgv->DataMember = "Rsl";
 	}
 }
+
 void UIAction::validerButtonClient(System::Windows::Forms::Form^ form, NS_map_client::CLclient^ client)
 {
 	if (form->Name == "InputClientInserer") {
@@ -26,6 +27,15 @@ void UIAction::selectButtonPersonnel(System::Windows::Forms::DataGridView^ dgv, 
 		dgv->DataSource = UIAction::oDs;
 		dgv->DataMember = "Rsl";
 	}
+}
+
+void UIAction::deleteButtonPersonnel(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl){
+		
+}
+
+void UIAction::deleteButtonClient(System::Windows::Forms::Label^, NS_map_client::CLclient^ client)
+{
+	UIAction::svcClient->deleteClient(client);
 }
 
 void UIAction::validerButtonPersonnel(System::Windows::Forms::Form^ form, NS_map_personnel::CLpersonnel^ personnel)
