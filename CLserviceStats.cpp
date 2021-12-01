@@ -77,7 +77,7 @@ System::String^ NS_stats_svc::CLserviceStats::convertToLabel(System::Data::DataS
 		{
 			for each (System::Data::DataColumn^ column in table->Columns)
 			{
-				result += row[column];
+				result += row[column]+"\n";
 			}
 		}
 	}
