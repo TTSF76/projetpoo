@@ -1,5 +1,4 @@
 #pragma once
-
 #include "UIAction.h"
 #include "UIManager.h"
 #include "Inputs.h"
@@ -17,74 +16,54 @@ namespace projectView {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Description résumée de MyForm1
-	/// </summary>
 	public ref class MyForm1 : public System::Windows::Forms::Form
 	{
 	public:
 		MyForm1(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
 		}
 
-	protected:
-		/// <summary>
-		/// Nettoyage des ressources utilisées.
-		/// </summary>
-		~MyForm1()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
-	public: System::Windows::Forms::Panel^ panel_menu_left;
-	private: System::Windows::Forms::Panel^ panel_logo;
-	public: System::Windows::Forms::Button^ bouton_client;
+	protected: ~MyForm1() { if (components) { delete components; }}
+
+	public:
+		System::Windows::Forms::Panel^ panel_menu_left;
+		System::Windows::Forms::Button^ bouton_client;
+		System::Windows::Forms::Button^ bouton_commande;
+		System::Windows::Forms::Button^ bouton_stock;
+		System::Windows::Forms::Button^ bouton_personnel;
+		System::Windows::Forms::Button^ bouton_stats;
+		System::Windows::Forms::Panel^ panel_header;
+
 	private:
-	public: System::Windows::Forms::Button^ bouton_commande;
-	public: System::Windows::Forms::Button^ bouton_stock;
-	public: System::Windows::Forms::Button^ bouton_personnel;
-	public: System::Windows::Forms::Button^ bouton_stats;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ bouton_select;
-	private: System::Windows::Forms::Button^ bouton_create;
-	private: System::Windows::Forms::Button^ bouton_update;
-	private: System::Windows::Forms::Button^ bouton_delete;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	public: System::Windows::Forms::Panel^ panel_header;
-	private: System::Windows::Forms::Label^ label_bienvenue;
-	private: System::Windows::Forms::PictureBox^ logo_welcome;
-	private: System::Windows::Forms::Label^ titre_rubrique;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Button^ button9;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private:
-		/// <summary>
-		/// Variable nécessaire au concepteur.
-		/// </summary>
+		System::Windows::Forms::Panel^ panel_logo;
+		System::Windows::Forms::Label^ label1;
+		System::Windows::Forms::Button^ bouton_select;
+		System::Windows::Forms::Button^ bouton_create;
+		System::Windows::Forms::Button^ bouton_update;
+		System::Windows::Forms::Button^ bouton_delete;
+		System::Windows::Forms::DataGridView^ dataGridView1;
+		System::Windows::Forms::Label^ label_bienvenue;
+		System::Windows::Forms::PictureBox^ logo_welcome;
+		System::Windows::Forms::Label^ titre_rubrique;
+		System::Windows::Forms::Button^ button1;
+		System::Windows::Forms::Button^ button2;
+		System::Windows::Forms::Button^ button3;
+		System::Windows::Forms::Button^ button4;
+		System::Windows::Forms::Button^ button5;
+		System::Windows::Forms::Button^ button6;
+		System::Windows::Forms::Button^ button7;
+		System::Windows::Forms::Button^ button8;
+		System::Windows::Forms::Button^ button9;
+		System::Windows::Forms::Label^ label2;
+		System::Windows::Forms::TextBox^ textBox1;
+		System::Windows::Forms::TextBox^ textBox2;
+		System::Windows::Forms::TextBox^ textBox3;
+		System::Windows::Forms::TextBox^ textBox4;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
@@ -391,7 +370,6 @@ namespace projectView {
 			this->logo_welcome->Size = System::Drawing::Size(245, 172);
 			this->logo_welcome->TabIndex = 8;
 			this->logo_welcome->TabStop = false;
-			this->logo_welcome->Click += gcnew System::EventHandler(this, &MyForm1::logo_welcome_Click);
 			// 
 			// button1
 			// 
@@ -579,174 +557,206 @@ namespace projectView {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerPanierMoyen();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen")+"€";
 	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierProduitSeuil();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Montant total") + "€";
 	}
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierPlusVendus();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
-	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierMoinsVendus();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
-	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurCommerciale();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur commerciale du stock") + "€";
 	}
-	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurDachat();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur d'achat du stock") + "€";
 	}
-	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale();
 		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
 	}
 
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1,this);
 		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 1);
-		
+	}
+
+	private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+		this->dataGridView1->DataSource = nullptr;
+		this->dataGridView1->Rows->Clear();
+		this->dataGridView1->Refresh();
+		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3, this);
+		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
 	}
 	
-	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e) {
-		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
+	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		this->dataGridView1->Refresh();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2, this);
 		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 2);
-	
 	}
 
-	private: System::Void bouton_create_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+		this->dataGridView1->DataSource = nullptr;
+		this->dataGridView1->Rows->Clear();
+		this->dataGridView1->Refresh();
+		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4, this);
+		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
+	}
 
+	private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->label_bienvenue->Visible = false;
+		this->logo_welcome->Visible = false;
+		this->dataGridView1->Visible = false;
+		this->bouton_create->Visible = false;
+		this->bouton_delete->Visible = false;
+		this->bouton_update->Visible = false;
+		this->bouton_select->Visible = false;
+		UIManager::afficherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
+	}
+
+	private: System::Void bouton_create_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		String^ gestion = titre_rubrique->Text;
-		if (gestion == "CLIENTS") {
+
+		if (gestion == "CLIENTS")
+		{
 			projectView::InputClientInserer inputForm;
 			inputForm.ShowDialog();
 		}
-		else if (gestion == "PERSONNEL") {
+		else if (gestion == "PERSONNEL")
+		{
 			projectView::InputPersonnelInserer inputForm;
 			inputForm.ShowDialog();
 		}
-		else if (gestion == "COMMANDE") {
+		else if (gestion == "COMMANDE")
+		{
 			projectView::InputCommandeInserer inputForm;
 			inputForm.ShowDialog();
 		}
-		else if (gestion == "STOCK") {
+		else if (gestion == "STOCK")
+		{
 			projectView::InputArticleInserer inputForm;
 			inputForm.ShowDialog();
 		}
 	}
-private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
-	this->dataGridView1->DataSource = nullptr;
-	this->dataGridView1->Rows->Clear();
-	this->dataGridView1->Refresh();
-	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3, this);
-	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
-}
-private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
-	UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
-	this->dataGridView1->DataSource = nullptr;
-	this->dataGridView1->Rows->Clear();
-	this->dataGridView1->Refresh();
-	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4,this);
-	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
-}
-private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->label_bienvenue->Visible = false;
-	this->logo_welcome->Visible = false;
-	this->dataGridView1->Visible = false;
-	this->bouton_create->Visible = false;
-	this->bouton_delete->Visible = false;
-	this->bouton_update->Visible = false;
-	this->bouton_select->Visible = false;
-	UIManager::afficherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
-}
-private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->titre_rubrique->Text == "CLIENTS") {
-		NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
-		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
-		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
-		if (columnindex != 0) {
-			MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
-			return;
-		}
+
+	private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (this->titre_rubrique->Text == "CLIENTS")
+		{
+			NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
+			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+			if (columnindex != 0)
+			{
+				MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
 			client->setIdClient(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
-		UIAction::deleteButtonClient(this->label1, client,this->dataGridView1);
-	}
-	else if (this->titre_rubrique->Text == "PERSONNEL") {
+			UIAction::deleteButtonClient(this->label1, client,this->dataGridView1);
+		}
+		else if (this->titre_rubrique->Text == "PERSONNEL")
+		{
 			NS_map_personnel::CLpersonnel^ personnel = gcnew NS_map_personnel::CLpersonnel;
 			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
 			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
-			if (columnindex != 0) {
+			if (columnindex != 0)
+			{
 				MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_personnel !", "Erreur", MessageBoxButtons::OK);
 				return;
 			}
-			for (int i = 0; i < dataGridView1->Rows->Count; i++) { 
-				if (this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString() == this->dataGridView1->Rows[i]->Cells[5]->Value->ToString()) {
+			for (int i = 0; i < dataGridView1->Rows->Count; i++)
+			{ 
+				if (this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString() == this->dataGridView1->Rows[i]->Cells[5]->Value->ToString())
+				{
 					MessageBox::Show("Action impossible : ce membre du personnel est supérieur hiérarchique d'un autre. Veuillez changer le supérieur hiérarchique du personnel ayant pour supérieur hiérachique le personnel ID #"+ this->dataGridView1->Rows[i]->Cells[5]->Value->ToString(), "Erreur", MessageBoxButtons::OK);
 					return;
 				} 
 			}
 			personnel->setIdPersonnel(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
 			UIAction::deleteButtonPersonnel(this->label1, personnel,this->dataGridView1);
-	}
-}
-private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ gestion = titre_rubrique->Text;
-
-	if (gestion == "CLIENTS") {
-		
-		UIAction::selectButtonClient(this->dataGridView1, this->titre_rubrique);
-	}
-	else if (gestion == "PERSONNEL") {
-		
-		UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
-
-	}else if (gestion == "STOCK") {
-
-		UIAction::selectButtonArticle(this->dataGridView1, this->titre_rubrique);
-
+		}
 	}
 
-	else if (gestion == "COMMANDE") {
+	private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		String^ gestion = titre_rubrique->Text;
 
-		UIAction::selectButtonCommande(this->dataGridView1, this->titre_rubrique);
+		if (gestion == "CLIENTS")
+		{
+			UIAction::selectButtonClient(this->dataGridView1, this->titre_rubrique);
+		}
+		else if (gestion == "PERSONNEL")
+		{
+			UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
+		}
+		else if (gestion == "STOCK")
+		{
+			UIAction::selectButtonArticle(this->dataGridView1, this->titre_rubrique);
+		}
+
+		else if (gestion == "COMMANDE")
+		{
+			UIAction::selectButtonCommande(this->dataGridView1, this->titre_rubrique);
+		}
 
 	}
-
-}
-
-
-private: System::Void logo_welcome_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }

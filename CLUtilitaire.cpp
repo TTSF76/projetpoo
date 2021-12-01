@@ -49,13 +49,27 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClient() {
 	return "select id_client from client order by id_client ";
 }
 
-System::String^ NS_map_Utilitaire::CLUtilitaire::SelectPrenom(int id_client) {
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenom(int id_client) {
 
-	return "select prenom from client where id_client = '"+id_client+"'";
+	return "select nom_client, prenom_client from client where id_client = '"+id_client+"'";
 }
 
-System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNom(int id_client) {
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdAdresseFacturation(int id_client) {
+	return "select id_adresse from facturer where id_client = '"+id_client+"'";
+}
 
-	return "select nom from client where id_client = '" + id_client + "'";
 
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoAdresseFacturation(int id_adresse_facturation) {
+	return "select rue, numero_rue, nom_residence,numero_etage, code_postal,ville,region, pays from adresses inner join villes on adresses.id_ville = villes.id_ville AND id_adresse ='" + id_adresse_facturation + "'";
+}
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdAdresseLivraison(int id_client) {
+	return "select id_adresse from livrer where id_client = '" + id_client + "'";
+}
+
+
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoAdresseLivraison(int id_adresse_livraison) {
+	return "select rue, numero_rue, nom_residence,numero_etage, code_postal,ville,region, pays from adresses inner join villes on adresses.id_ville = villes.id_ville AND id_adresse ='" + id_adresse_livraison + "'";
 }
