@@ -5,6 +5,8 @@
 #include "Inputs.h"
 #include "CLconnect.h"
 #include "CLserviceclient.h"
+#include "CLserviceStats.h"
+#include "CLservicearticle.h"
 
 namespace projectView {
 
@@ -42,42 +44,15 @@ namespace projectView {
 		}
 	public: System::Windows::Forms::Panel^ panel_menu_left;
 	private: System::Windows::Forms::Panel^ panel_logo;
-	public:
-	protected:
-
-	protected:
-
-	protected:
-
-	protected:
-
-
-	protected:
-
-	protected:
-
 	public: System::Windows::Forms::Button^ bouton_client;
 	private:
 	public: System::Windows::Forms::Button^ bouton_commande;
 	public: System::Windows::Forms::Button^ bouton_stock;
 	public: System::Windows::Forms::Button^ bouton_personnel;
 	public: System::Windows::Forms::Button^ bouton_stats;
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ bouton_select;
 	private: System::Windows::Forms::Button^ bouton_create;
-
-
-
 	private: System::Windows::Forms::Button^ bouton_update;
 	private: System::Windows::Forms::Button^ bouton_delete;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
@@ -95,21 +70,10 @@ namespace projectView {
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Label^ label2;
-	public:
-
-
-	public:
-
-	public:
-	private:
-
-	private:
-
-
-
-
-
-
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -151,6 +115,10 @@ namespace projectView {
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->panel_menu_left->SuspendLayout();
 			this->panel_logo->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -160,8 +128,7 @@ namespace projectView {
 			// 
 			// panel_menu_left
 			// 
-			this->panel_menu_left->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(76)));
+			this->panel_menu_left->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(76)));
 			this->panel_menu_left->Controls->Add(this->bouton_stats);
 			this->panel_menu_left->Controls->Add(this->bouton_commande);
 			this->panel_menu_left->Controls->Add(this->bouton_stock);
@@ -232,8 +199,7 @@ namespace projectView {
 			this->bouton_personnel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_personnel->FlatAppearance->BorderSize = 0;
 			this->bouton_personnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->bouton_personnel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bouton_personnel->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_personnel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_personnel.Image")));
 			this->bouton_personnel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -250,8 +216,7 @@ namespace projectView {
 			this->bouton_client->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bouton_client->FlatAppearance->BorderSize = 0;
 			this->bouton_client->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->bouton_client->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bouton_client->ForeColor = System::Drawing::Color::Snow;
 			this->bouton_client->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_client.Image")));
 			this->bouton_client->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -265,8 +230,7 @@ namespace projectView {
 			// 
 			// panel_logo
 			// 
-			this->panel_logo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
-				static_cast<System::Int32>(static_cast<System::Byte>(59)));
+			this->panel_logo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(59)));
 			this->panel_logo->Controls->Add(this->label1);
 			this->panel_logo->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_logo->Location = System::Drawing::Point(0, 0);
@@ -277,8 +241,7 @@ namespace projectView {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label1->Location = System::Drawing::Point(40, 28);
 			this->label1->Name = L"label1";
@@ -288,13 +251,11 @@ namespace projectView {
 			// 
 			// bouton_select
 			// 
-			this->bouton_select->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(214)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bouton_select->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(214)), static_cast<System::Int32>(static_cast<System::Byte>(214)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->bouton_select->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->bouton_select->FlatAppearance->BorderSize = 2;
 			this->bouton_select->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_select->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->bouton_select->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bouton_select->ForeColor = System::Drawing::Color::White;
 			this->bouton_select->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_select.Image")));
 			this->bouton_select->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -310,13 +271,11 @@ namespace projectView {
 			// 
 			// bouton_create
 			// 
-			this->bouton_create->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->bouton_create->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)), static_cast<System::Int32>(static_cast<System::Byte>(114)));
 			this->bouton_create->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->bouton_create->FlatAppearance->BorderSize = 2;
 			this->bouton_create->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_create->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->bouton_create->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bouton_create->ForeColor = System::Drawing::Color::White;
 			this->bouton_create->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_create.Image")));
 			this->bouton_create->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -332,13 +291,11 @@ namespace projectView {
 			// 
 			// bouton_update
 			// 
-			this->bouton_update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->bouton_update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->bouton_update->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->bouton_update->FlatAppearance->BorderSize = 2;
 			this->bouton_update->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_update->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->bouton_update->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bouton_update->ForeColor = System::Drawing::Color::White;
 			this->bouton_update->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_update.Image")));
 			this->bouton_update->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -353,13 +310,11 @@ namespace projectView {
 			// 
 			// bouton_delete
 			// 
-			this->bouton_delete->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
-				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->bouton_delete->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(76)), static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->bouton_delete->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->bouton_delete->FlatAppearance->BorderSize = 2;
 			this->bouton_delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_delete->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->bouton_delete->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bouton_delete->ForeColor = System::Drawing::Color::White;
 			this->bouton_delete->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_delete.Image")));
 			this->bouton_delete->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -378,8 +333,7 @@ namespace projectView {
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToOrderColumns = true;
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(231, 118);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -392,8 +346,7 @@ namespace projectView {
 			// 
 			// panel_header
 			// 
-			this->panel_header->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(76)));
+			this->panel_header->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(76)));
 			this->panel_header->Controls->Add(this->titre_rubrique);
 			this->panel_header->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_header->Location = System::Drawing::Point(200, 0);
@@ -406,8 +359,7 @@ namespace projectView {
 			this->titre_rubrique->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
 			this->titre_rubrique->AutoSize = true;
 			this->titre_rubrique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->titre_rubrique->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->titre_rubrique->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->titre_rubrique->ForeColor = System::Drawing::Color::White;
 			this->titre_rubrique->Location = System::Drawing::Point(98, 28);
 			this->titre_rubrique->MinimumSize = System::Drawing::Size(500, 0);
@@ -421,8 +373,7 @@ namespace projectView {
 			// label_bienvenue
 			// 
 			this->label_bienvenue->AutoSize = true;
-			this->label_bienvenue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->label_bienvenue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label_bienvenue->ForeColor = System::Drawing::Color::White;
 			this->label_bienvenue->Location = System::Drawing::Point(261, 149);
 			this->label_bienvenue->Name = L"label_bienvenue";
@@ -433,9 +384,7 @@ namespace projectView {
 			// 
 			// logo_welcome
 			// 
-			this->logo_welcome->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
+			this->logo_welcome->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) | System::Windows::Forms::AnchorStyles::Left) | System::Windows::Forms::AnchorStyles::Right));
 			this->logo_welcome->ImageLocation = L"https://i.imgur.com/8U0xiHQ.png";
 			this->logo_welcome->Location = System::Drawing::Point(466, 321);
 			this->logo_welcome->Name = L"logo_welcome";
@@ -453,6 +402,7 @@ namespace projectView {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Visible = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
 			// button2
 			// 
@@ -463,6 +413,7 @@ namespace projectView {
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Visible = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm1::button2_Click);
 			// 
 			// button3
 			// 
@@ -473,6 +424,7 @@ namespace projectView {
 			this->button3->Text = L"button3";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Visible = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm1::button3_Click);
 			// 
 			// button4
 			// 
@@ -483,6 +435,7 @@ namespace projectView {
 			this->button4->Text = L"button4";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Visible = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm1::button4_Click);
 			// 
 			// button5
 			// 
@@ -493,6 +446,7 @@ namespace projectView {
 			this->button5->Text = L"button5";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Visible = false;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm1::button5_Click);
 			// 
 			// button6
 			// 
@@ -503,6 +457,7 @@ namespace projectView {
 			this->button6->Text = L"button6";
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Visible = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm1::button6_Click);
 			// 
 			// button7
 			// 
@@ -513,6 +468,7 @@ namespace projectView {
 			this->button7->Text = L"button7";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Visible = false;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm1::button7_Click);
 			// 
 			// button8
 			// 
@@ -523,6 +479,7 @@ namespace projectView {
 			this->button8->Text = L"button8";
 			this->button8->UseVisualStyleBackColor = true;
 			this->button8->Visible = false;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm1::button8_Click);
 			// 
 			// button9
 			// 
@@ -533,6 +490,7 @@ namespace projectView {
 			this->button9->Text = L"button9";
 			this->button9->UseVisualStyleBackColor = true;
 			this->button9->Visible = false;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm1::button9_Click);
 			// 
 			// label2
 			// 
@@ -544,12 +502,48 @@ namespace projectView {
 			this->label2->Text = L"label2";
 			this->label2->Visible = false;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(345, 151);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->TabIndex = 19;
+			this->textBox1->Visible = false;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(657, 151);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->TabIndex = 20;
+			this->textBox2->Visible = false;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(345, 236);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 22);
+			this->textBox3->TabIndex = 21;
+			this->textBox3->Visible = false;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(657, 236);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 22);
+			this->textBox4->TabIndex = 22;
+			this->textBox4->Visible = false;
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(890, 598);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button8);
@@ -585,6 +579,52 @@ namespace projectView {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerPanierMoyen();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen")+"€";
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->identifierProduitSeuil();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Montant total") + "€";
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->identifierPlusVendus();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->identifierMoinsVendus();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurCommerciale();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur commerciale du stock") + "€";
+	}
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurDachat();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur d'achat du stock") + "€";
+	}
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale();
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+	}
+
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9);
 		this->dataGridView1->DataSource = nullptr;
@@ -620,7 +660,7 @@ namespace projectView {
 			inputForm.ShowDialog();
 		}
 		else if (gestion == "STOCK") {
-			projectView::InputStockInserer inputForm;
+			projectView::InputArticleInserer inputForm;
 			inputForm.ShowDialog();
 		}
 	}
@@ -693,7 +733,7 @@ private: System::Void bouton_select_Click(System::Object^ sender, System::EventA
 
 	}else if (gestion == "STOCK") {
 
-		UIAction::selectButtonStock(this->dataGridView1, this->titre_rubrique);
+		UIAction::selectButtonArticle(this->dataGridView1, this->titre_rubrique);
 
 	}
 

@@ -422,7 +422,7 @@ namespace projectView {
 			this->btnValider->FlatAppearance->BorderSize = 0;
 			this->btnValider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnValider->ForeColor = System::Drawing::Color::White;
-			this->btnValider->Location = System::Drawing::Point(462, 335);
+			this->btnValider->Location = System::Drawing::Point(453, 277);
 			this->btnValider->Margin = System::Windows::Forms::Padding(4);
 			this->btnValider->MaximumSize = System::Drawing::Size(174, 28);
 			this->btnValider->MinimumSize = System::Drawing::Size(174, 28);
@@ -440,7 +440,7 @@ namespace projectView {
 			this->btnAnnuler->FlatAppearance->BorderSize = 0;
 			this->btnAnnuler->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnAnnuler->ForeColor = System::Drawing::Color::White;
-			this->btnAnnuler->Location = System::Drawing::Point(644, 335);
+			this->btnAnnuler->Location = System::Drawing::Point(636, 277);
 			this->btnAnnuler->Margin = System::Windows::Forms::Padding(4);
 			this->btnAnnuler->MaximumSize = System::Drawing::Size(174, 28);
 			this->btnAnnuler->MinimumSize = System::Drawing::Size(174, 28);
@@ -493,7 +493,7 @@ namespace projectView {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
-			this->ClientSize = System::Drawing::Size(841, 416);
+			this->ClientSize = System::Drawing::Size(841, 323);
 			this->Controls->Add(this->cbxCode_postal);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label_titre_infos);
@@ -523,9 +523,10 @@ namespace projectView {
 			this->Controls->Add(this->cbxPays);
 			this->Controls->Add(this->lblPays);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->MaximumSize = System::Drawing::Size(859, 463);
-			this->MinimumSize = System::Drawing::Size(859, 463);
+			this->MaximumSize = System::Drawing::Size(859, 370);
+			this->MinimumSize = System::Drawing::Size(859, 370);
 			this->Name = L"InputPersonnelInserer";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Insérer un personnel";
 			this->ResumeLayout(false);
 			this->PerformLayout();

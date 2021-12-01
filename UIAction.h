@@ -25,7 +25,9 @@ public:
 
 	static void validerButtonPersonnel(System::Windows::Forms::Form^, NS_map_personnel::CLpersonnel^);
 
-	static void selectButtonStock(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
+	static void selectButtonArticle(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void selectButtonCommande(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void validerButtonCommande(System::Windows::Forms::Form^, NS_map_commande::CLcommande^);
+
+	static void validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article);
 };

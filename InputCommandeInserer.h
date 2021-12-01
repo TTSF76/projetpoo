@@ -1092,6 +1092,7 @@ private: System::Windows::Forms::TextBox^ tbxRegionL;
 			this->MaximumSize = System::Drawing::Size(846, 693);
 			this->MinimumSize = System::Drawing::Size(846, 693);
 			this->Name = L"InputCommandeInserer";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Insérer une commande";
 			this->ResumeLayout(false);
 			this->PerformLayout();

@@ -52,10 +52,12 @@ namespace projectView {
 			// 
 			// InputClientUpdate
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(782, 261);
+			this->ClientSize = System::Drawing::Size(1043, 321);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"InputClientUpdate";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"InputClientUpdate";
 			this->ResumeLayout(false);
 

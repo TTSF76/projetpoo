@@ -6,7 +6,7 @@ void NS_map_article::CLarticle::setNature(System::String^ nature) {
 }
 
 void NS_map_article::CLarticle::setNom(System::String^ name) {
-	this->nature = name;
+	this->nom_article = name;
 }
 
 void NS_map_article::CLarticle::setStock(int stock_article) {
@@ -70,7 +70,7 @@ System::String^ NS_map_article::CLarticle::Select() {
 }
 
 System::String^ NS_map_article::CLarticle::Create() {
-	return "SELECT * FROM article";
+	return "DECLARE @nature char(40); SET @nature = '"+this->nature+"'; DECLARE @nom_article char(40); SET @nom_article = '"+this->nom_article+"'; DECLARE @stock_article int; SET @stock_article = "+this->stock_article+"; DECLARE @remise_article float; SET @remise_article = "+this->remise_article+"; DECLARE @prix_article_ht float; SET @prix_article_ht = "+this->prix_article_ht+"; DECLARE @seuil_reapprovisionnement float; SET @seuil_reapprovisionnement = "+this->quantite_reapprovisionnement+"; DECLARE @taux_tva float; SET @taux_tva ="+this->taux_tva+"; DECLARE @couleur_article char(40); SET @couleur_article = '"+this->couleur_article+"'; If Not Exists(SELECT ref_article FROM article WHERE nature=@nature AND nom_article=@nom_article AND couleur_article=@couleur_article) Begin INSERT INTO article (nature,nom_article,stock_article,remise_article,prix_article_ht,seuil_reapprovisionnement,taux_tva,couleur_article) VALUES(@nature,@nom_article,@stock_article,@remise_article,@prix_article_ht,@seuil_reapprovisionnement,@taux_tva,@couleur_article) End ELSE (SELECT 'Cet article existe déjà !' as Erreur)";
 }
 
 System::String^ NS_map_article::CLarticle::Delete() {

@@ -7,3 +7,4 @@
 #include "InputCommandeSupprimer.h"
 #include "InputStockSupprimer.h"
 #include "InputClientUpdate.h"
+#include "InputArticleInserer.h"

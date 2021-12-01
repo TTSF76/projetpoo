@@ -236,6 +236,9 @@
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputArticleInserer.resx">
+      <DependentUpon>InputArticleInserer.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputClientInserer.resx">
       <DependentUpon>InputClientInserer.h</DependentUpon>
     </EmbeddedResource>
