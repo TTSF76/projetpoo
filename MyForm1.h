@@ -37,7 +37,7 @@ namespace projectView {
 
 	private:
 		System::Windows::Forms::Panel^ panel_logo;
-		System::Windows::Forms::Label^ label1;
+		System::Windows::Forms::Label^ lblDeliveryManager;
 		System::Windows::Forms::Button^ bouton_select;
 		System::Windows::Forms::Button^ bouton_create;
 		System::Windows::Forms::Button^ bouton_update;
@@ -79,7 +79,7 @@ namespace projectView {
 			this->bouton_personnel = (gcnew System::Windows::Forms::Button());
 			this->bouton_client = (gcnew System::Windows::Forms::Button());
 			this->panel_logo = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->lblDeliveryManager = (gcnew System::Windows::Forms::Label());
 			this->bouton_select = (gcnew System::Windows::Forms::Button());
 			this->bouton_create = (gcnew System::Windows::Forms::Button());
 			this->bouton_update = (gcnew System::Windows::Forms::Button());
@@ -122,7 +122,7 @@ namespace projectView {
 			this->panel_menu_left->Controls->Add(this->panel_logo);
 			this->panel_menu_left->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel_menu_left->Location = System::Drawing::Point(0, 0);
-			this->panel_menu_left->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel_menu_left->Margin = System::Windows::Forms::Padding(2);
 			this->panel_menu_left->Name = L"panel_menu_left";
 			this->panel_menu_left->Size = System::Drawing::Size(150, 486);
 			this->panel_menu_left->TabIndex = 0;
@@ -137,7 +137,7 @@ namespace projectView {
 			this->bouton_stats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_stats.Image")));
 			this->bouton_stats->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_stats->Location = System::Drawing::Point(0, 353);
-			this->bouton_stats->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_stats->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_stats->Name = L"bouton_stats";
 			this->bouton_stats->Size = System::Drawing::Size(150, 68);
 			this->bouton_stats->TabIndex = 5;
@@ -156,7 +156,7 @@ namespace projectView {
 			this->bouton_commande->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_commande.Image")));
 			this->bouton_commande->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_commande->Location = System::Drawing::Point(0, 285);
-			this->bouton_commande->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_commande->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_commande->Name = L"bouton_commande";
 			this->bouton_commande->Size = System::Drawing::Size(150, 68);
 			this->bouton_commande->TabIndex = 4;
@@ -175,7 +175,7 @@ namespace projectView {
 			this->bouton_stock->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_stock.Image")));
 			this->bouton_stock->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_stock->Location = System::Drawing::Point(0, 217);
-			this->bouton_stock->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_stock->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_stock->Name = L"bouton_stock";
 			this->bouton_stock->Size = System::Drawing::Size(150, 68);
 			this->bouton_stock->TabIndex = 3;
@@ -194,7 +194,7 @@ namespace projectView {
 			this->bouton_personnel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_personnel.Image")));
 			this->bouton_personnel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_personnel->Location = System::Drawing::Point(0, 149);
-			this->bouton_personnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_personnel->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_personnel->Name = L"bouton_personnel";
 			this->bouton_personnel->Size = System::Drawing::Size(150, 68);
 			this->bouton_personnel->TabIndex = 2;
@@ -213,7 +213,7 @@ namespace projectView {
 			this->bouton_client->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_client.Image")));
 			this->bouton_client->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_client->Location = System::Drawing::Point(0, 81);
-			this->bouton_client->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_client->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_client->Name = L"bouton_client";
 			this->bouton_client->Size = System::Drawing::Size(150, 68);
 			this->bouton_client->TabIndex = 1;
@@ -225,26 +225,26 @@ namespace projectView {
 			// 
 			this->panel_logo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(59)));
-			this->panel_logo->Controls->Add(this->label1);
+			this->panel_logo->Controls->Add(this->lblDeliveryManager);
 			this->panel_logo->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_logo->Location = System::Drawing::Point(0, 0);
-			this->panel_logo->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel_logo->Margin = System::Windows::Forms::Padding(2);
 			this->panel_logo->Name = L"panel_logo";
 			this->panel_logo->Size = System::Drawing::Size(150, 81);
 			this->panel_logo->TabIndex = 0;
 			// 
-			// label1
+			// lblDeliveryManager
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblDeliveryManager->AutoSize = true;
+			this->lblDeliveryManager->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(30, 23);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(93, 34);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"DELIVERY \r\nMANAGER";
+			this->lblDeliveryManager->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lblDeliveryManager->Location = System::Drawing::Point(30, 23);
+			this->lblDeliveryManager->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblDeliveryManager->Name = L"lblDeliveryManager";
+			this->lblDeliveryManager->Size = System::Drawing::Size(93, 34);
+			this->lblDeliveryManager->TabIndex = 0;
+			this->lblDeliveryManager->Text = L"DELIVERY \r\nMANAGER";
 			// 
 			// bouton_select
 			// 
@@ -259,7 +259,7 @@ namespace projectView {
 			this->bouton_select->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_select.Image")));
 			this->bouton_select->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->bouton_select->Location = System::Drawing::Point(166, 422);
-			this->bouton_select->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_select->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_select->Name = L"bouton_select";
 			this->bouton_select->Size = System::Drawing::Size(119, 40);
 			this->bouton_select->TabIndex = 1;
@@ -282,7 +282,7 @@ namespace projectView {
 			this->bouton_create->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_create.Image")));
 			this->bouton_create->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->bouton_create->Location = System::Drawing::Point(290, 422);
-			this->bouton_create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_create->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_create->Name = L"bouton_create";
 			this->bouton_create->Size = System::Drawing::Size(119, 40);
 			this->bouton_create->TabIndex = 2;
@@ -305,7 +305,7 @@ namespace projectView {
 			this->bouton_update->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_update.Image")));
 			this->bouton_update->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->bouton_update->Location = System::Drawing::Point(538, 422);
-			this->bouton_update->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_update->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_update->Name = L"bouton_update";
 			this->bouton_update->Size = System::Drawing::Size(119, 40);
 			this->bouton_update->TabIndex = 3;
@@ -327,7 +327,7 @@ namespace projectView {
 			this->bouton_delete->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_delete.Image")));
 			this->bouton_delete->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->bouton_delete->Location = System::Drawing::Point(414, 422);
-			this->bouton_delete->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bouton_delete->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_delete->Name = L"bouton_delete";
 			this->bouton_delete->Size = System::Drawing::Size(119, 40);
 			this->bouton_delete->TabIndex = 4;
@@ -346,7 +346,7 @@ namespace projectView {
 				static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(173, 96);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
@@ -362,7 +362,7 @@ namespace projectView {
 			this->panel_header->Controls->Add(this->titre_rubrique);
 			this->panel_header->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel_header->Location = System::Drawing::Point(150, 0);
-			this->panel_header->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel_header->Margin = System::Windows::Forms::Padding(2);
 			this->panel_header->Name = L"panel_header";
 			this->panel_header->Size = System::Drawing::Size(526, 81);
 			this->panel_header->TabIndex = 6;
@@ -406,7 +406,7 @@ namespace projectView {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->logo_welcome->ImageLocation = L"https://i.imgur.com/8U0xiHQ.png";
 			this->logo_welcome->Location = System::Drawing::Point(350, 261);
-			this->logo_welcome->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->logo_welcome->Margin = System::Windows::Forms::Padding(2);
 			this->logo_welcome->Name = L"logo_welcome";
 			this->logo_welcome->Size = System::Drawing::Size(192, 140);
 			this->logo_welcome->TabIndex = 8;
@@ -416,8 +416,8 @@ namespace projectView {
 			// 
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button1->Location = System::Drawing::Point(414, 107);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Location = System::Drawing::Point(445, 165);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(220, 31);
 			this->button1->TabIndex = 9;
@@ -430,8 +430,8 @@ namespace projectView {
 			// 
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button2->Location = System::Drawing::Point(414, 142);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Location = System::Drawing::Point(445, 200);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(220, 31);
 			this->button2->TabIndex = 10;
@@ -444,8 +444,8 @@ namespace projectView {
 			// 
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button3->Location = System::Drawing::Point(414, 177);
-			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button3->Location = System::Drawing::Point(445, 235);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(220, 31);
 			this->button3->TabIndex = 11;
@@ -458,8 +458,8 @@ namespace projectView {
 			// 
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button4->Location = System::Drawing::Point(414, 212);
-			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button4->Location = System::Drawing::Point(445, 270);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(220, 31);
 			this->button4->TabIndex = 12;
@@ -472,8 +472,8 @@ namespace projectView {
 			// 
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button5->Location = System::Drawing::Point(414, 247);
-			this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button5->Location = System::Drawing::Point(445, 305);
+			this->button5->Margin = System::Windows::Forms::Padding(2);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(220, 31);
 			this->button5->TabIndex = 13;
@@ -486,8 +486,8 @@ namespace projectView {
 			// 
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button6->Location = System::Drawing::Point(414, 282);
-			this->button6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button6->Location = System::Drawing::Point(445, 340);
+			this->button6->Margin = System::Windows::Forms::Padding(2);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(220, 31);
 			this->button6->TabIndex = 14;
@@ -500,8 +500,8 @@ namespace projectView {
 			// 
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button7->Location = System::Drawing::Point(414, 317);
-			this->button7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button7->Location = System::Drawing::Point(445, 375);
+			this->button7->Margin = System::Windows::Forms::Padding(2);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(220, 31);
 			this->button7->TabIndex = 15;
@@ -514,8 +514,8 @@ namespace projectView {
 			// 
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button8->Location = System::Drawing::Point(414, 352);
-			this->button8->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button8->Location = System::Drawing::Point(445, 410);
+			this->button8->Margin = System::Windows::Forms::Padding(2);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(220, 31);
 			this->button8->TabIndex = 16;
@@ -528,8 +528,8 @@ namespace projectView {
 			// 
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->button9->Location = System::Drawing::Point(414, 387);
-			this->button9->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button9->Location = System::Drawing::Point(445, 445);
+			this->button9->Margin = System::Windows::Forms::Padding(2);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(220, 31);
 			this->button9->TabIndex = 17;
@@ -543,7 +543,7 @@ namespace projectView {
 			this->label2->AutoSize = true;
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold));
-			this->label2->Location = System::Drawing::Point(180, 435);
+			this->label2->Location = System::Drawing::Point(154, 83);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(54, 16);
@@ -553,8 +553,8 @@ namespace projectView {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(183, 107);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Location = System::Drawing::Point(166, 386);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(140, 20);
 			this->textBox1->TabIndex = 19;
@@ -562,8 +562,8 @@ namespace projectView {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(183, 130);
-			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox2->Location = System::Drawing::Point(166, 409);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(140, 20);
 			this->textBox2->TabIndex = 20;
@@ -571,8 +571,8 @@ namespace projectView {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(183, 153);
-			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox3->Location = System::Drawing::Point(166, 432);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(140, 20);
 			this->textBox3->TabIndex = 21;
@@ -580,8 +580,8 @@ namespace projectView {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(183, 176);
-			this->textBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox4->Location = System::Drawing::Point(166, 455);
+			this->textBox4->Margin = System::Windows::Forms::Padding(2);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(140, 20);
 			this->textBox4->TabIndex = 22;
@@ -617,7 +617,7 @@ namespace projectView {
 			this->Controls->Add(this->label_bienvenue);
 			this->Controls->Add(this->logo_welcome);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Delivery Manager";
@@ -638,7 +638,7 @@ namespace projectView {
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerPanierMoyen();
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen")+"€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Panier Moyen ") + "€";
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
@@ -648,15 +648,15 @@ namespace projectView {
 			this->label2->Text = "Rentrez des données dans les inputs 1 et/ou 2";
 			return;
 		}
-		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox1->Text));
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+		System::Data::DataSet^ tmpD = oStatsSvc->calculerChiffreDaffaire(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox2->Text));
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Chiffre d'Affaire ") + "€";
 	}
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierProduitSeuil();
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Restocker ");
 	}
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
@@ -667,35 +667,35 @@ namespace projectView {
 		}
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerMontantTotalAchats(System::Int32::Parse(this->textBox1->Text));
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "Montant total") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Montant Total ") + "€";
 	}
 
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierPlusVendus();
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Plus Vendus ");
 	}
 
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->identifierMoinsVendus();
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Moins Vendus ");
 	}
 
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurCommerciale();
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur commerciale du stock") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur Commerciale du Stock ") + "€";
 	}
 
 	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerValeurDachat();
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur d'achat du stock") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur d'Achat du Stock ") + "€";
 	}
 
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e)
@@ -706,7 +706,7 @@ namespace projectView {
 		}
 		NS_stats_svc::CLserviceStats^ oStatsSvc = gcnew NS_stats_svc::CLserviceStats();
 		System::Data::DataSet^ tmpD = oStatsSvc->calculerVariationCommerciale(System::Int32::Parse(this->textBox1->Text), System::Int32::Parse(this->textBox2->Text), System::Int32::Parse(this->textBox3->Text), System::Int32::Parse(this->textBox4->Text));
-		label2->Text = oStatsSvc->convertToLabel(tmpD, "panier moyen") + "€";
+		label2->Text = oStatsSvc->convertToLabel(tmpD, "Valeur Commerciale du Stock (var) ") + "€";
 	}
 
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -803,7 +803,7 @@ namespace projectView {
 				return;
 			}
 			client->setIdClient(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
-			UIAction::deleteButtonClient(this->label1, client,this->dataGridView1);
+			UIAction::deleteButtonClient(this->lblDeliveryManager, client,this->dataGridView1);
 		}
 		else if (this->titre_rubrique->Text == "PERSONNEL")
 		{
@@ -828,7 +828,7 @@ namespace projectView {
 				} 
 			}
 			personnel->setIdPersonnel(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
-			UIAction::deleteButtonPersonnel(this->label1, personnel,this->dataGridView1);
+			UIAction::deleteButtonPersonnel(this->lblDeliveryManager, personnel,this->dataGridView1);
 		}
 		
 		if (this->titre_rubrique->Text == "STOCK")
@@ -846,7 +846,7 @@ namespace projectView {
 				return;
 			}
 			article->setRefArticle(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
-			UIAction::deleteButtonArticle(this->label1, article, this->dataGridView1);
+			UIAction::deleteButtonArticle(this->lblDeliveryManager, article, this->dataGridView1);
 		}
 	}
 
