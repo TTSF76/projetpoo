@@ -1177,6 +1177,7 @@ private: System::Void lblClient_Click(System::Object^ sender, System::EventArgs^
 private: System::Void cbxIdClient_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	cbxIdLivraison->Items->Clear();
 	cbxIdFacturation->Items->Clear();
+	tbxRef->Clear();
 
 	NS_Utilitaire_svc::CLserviceutilitaire^ nomprenom = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	std::vector<std::string> vecteur_nom_prenom;
@@ -1232,5 +1233,6 @@ private: System::Void cbxIdFacturation_SelectedIndexChanged(System::Object^ send
 	this->tbxResidenceF->Text = (gcnew String(vecteur_adresse_facturation[2].c_str()));
 
 }
+
 };
 }
