@@ -620,7 +620,7 @@ namespace projectView {
 			inputForm.ShowDialog();
 		}
 		else if (gestion == "STOCK") {
-			projectView::InputStockInserer inputForm;
+			projectView::InputArticleInserer inputForm;
 			inputForm.ShowDialog();
 		}
 	}
