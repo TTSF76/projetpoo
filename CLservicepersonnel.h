@@ -8,7 +8,8 @@ namespace NS_Personnel_svc {
 	{
 	public:
 		System::Data::DataSet^ selectAllPersonnel(System::String^);
-		void insertPersonnel(NS_map_personnel::CLpersonnel^ client);
+		void insertPersonnel(NS_map_personnel::CLpersonnel^ personnel);
+		void deletePersonnel(NS_map_personnel::CLpersonnel^ personnel);
 		CLservicepersonnel(void);
 	private:
 		NS_Comp_Data::CLconnect^ oCad;

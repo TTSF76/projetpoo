@@ -355,17 +355,20 @@ namespace projectView {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AllowUserToOrderColumns = true;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(231, 118);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(629, 375);
 			this->dataGridView1->TabIndex = 5;
 			this->dataGridView1->Visible = false;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm1::dataGridView1_CellContentClick);
 			// 
 			// panel_header
 			// 
@@ -511,6 +514,34 @@ private: System::Void bouton_stats_Click(System::Object^ sender, System::EventAr
 	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 5);
 }
 private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->titre_rubrique->Text == "CLIENTS") {
+		NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
+		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+		if (columnindex != 0) {
+			MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+			client->setIdClient(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
+		UIAction::deleteButtonClient(this->label1, client,this->dataGridView1);
+	}
+	else if (this->titre_rubrique->Text == "PERSONNEL") {
+			NS_map_personnel::CLpersonnel^ personnel = gcnew NS_map_personnel::CLpersonnel;
+			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+			if (columnindex != 0) {
+				MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_personnel !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
+			for (int i = 0; i < dataGridView1->Rows->Count; i++) { 
+				if (this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString() == this->dataGridView1->Rows[i]->Cells[5]->Value->ToString()) {
+					MessageBox::Show("Action impossible : ce membre du personnel est supérieur hiérarchique d'un autre. Veuillez changer le supérieur hiérarchique du personnel ayant pour supérieur hiérachique le personnel ID #"+ this->dataGridView1->Rows[i]->Cells[5]->Value->ToString(), "Erreur", MessageBoxButtons::OK);
+					return;
+				} 
+			}
+			personnel->setIdPersonnel(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
+			UIAction::deleteButtonPersonnel(this->label1, personnel,this->dataGridView1);
+	}
 }
 private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ gestion = titre_rubrique->Text;
@@ -523,6 +554,10 @@ private: System::Void bouton_select_Click(System::Object^ sender, System::EventA
 		
 		UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
 
+	}else if (gestion == "STOCK") {
+
+		UIAction::selectButtonStock(this->dataGridView1, this->titre_rubrique);
+
 	}
 
 	else if (gestion == "COMMANDE") {
@@ -531,8 +566,6 @@ private: System::Void bouton_select_Click(System::Object^ sender, System::EventA
 
 	}
 
-}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 
 
