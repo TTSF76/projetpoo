@@ -1,4 +1,8 @@
 #pragma once
+#include "CLconnect.h"
+#include "CLarticle.h"
+#include "UIAction.h"
+#include "CLserviceutilitaire.h"
 
 namespace projectView {
 
@@ -160,6 +164,7 @@ namespace projectView {
 			this->btnValider->TabIndex = 47;
 			this->btnValider->Text = L"Valider";
 			this->btnValider->UseVisualStyleBackColor = false;
+			this->btnValider->Click += gcnew System::EventHandler(this, &InputArticleInserer::btnValider_Click);
 			// 
 			// lblQuantite
 			// 
@@ -253,8 +258,10 @@ namespace projectView {
 			// 
 			this->tbxPrixHT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxPrixHT->DecimalPlaces = 2;
 			this->tbxPrixHT->ForeColor = System::Drawing::SystemColors::Window;
 			this->tbxPrixHT->Location = System::Drawing::Point(156, 246);
+			this->tbxPrixHT->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999999, 0, 0, 0 });
 			this->tbxPrixHT->Name = L"tbxPrixHT";
 			this->tbxPrixHT->Size = System::Drawing::Size(227, 22);
 			this->tbxPrixHT->TabIndex = 59;
@@ -279,6 +286,7 @@ namespace projectView {
 			this->tbxPrixTTC->ForeColor = System::Drawing::SystemColors::Window;
 			this->tbxPrixTTC->InterceptArrowKeys = false;
 			this->tbxPrixTTC->Location = System::Drawing::Point(156, 320);
+			this->tbxPrixTTC->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999999, 0, 0, 0 });
 			this->tbxPrixTTC->Name = L"tbxPrixTTC";
 			this->tbxPrixTTC->ReadOnly = true;
 			this->tbxPrixTTC->Size = System::Drawing::Size(227, 22);
@@ -404,21 +412,34 @@ namespace projectView {
 
 		}
 #pragma endregion
-private: Decimal calculatePrice() { 
-	return tbxPrixHT->Value * (1 + tbxTauxTVA->Value / 100) - tbxPrixHT->Value * (tbxRemise->Value / 100);
+private: float calculatePrice() {
+	return (float)tbxPrixHT->Value * (1 + (float)tbxTauxTVA->Value / 100) - (float)tbxPrixHT->Value * ((float)tbxRemise->Value / 100);
 }
 
 private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
 private: System::Void tbxTauxTVA_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	tbxPrixTTC->Value=calculatePrice();
+	tbxPrixTTC->Value= (Decimal)calculatePrice();
 }
 private: System::Void tbxPrixHT_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	tbxPrixTTC->Value = calculatePrice();
+	tbxPrixTTC->Value = (Decimal)calculatePrice();
 }
 private: System::Void tbxRemise_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	tbxPrixTTC->Value = calculatePrice();
+	tbxPrixTTC->Value = (Decimal)calculatePrice();
+}
+private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	NS_map_article::CLarticle^ article = gcnew NS_map_article::CLarticle;
+	article->setNom(this->tbxNom->Text);
+	article->setNature(this->tbxNature->Text);
+	article->setCouleur(this->tbxCouleur->Text);
+	article->setPrixHT(float::Parse(this->tbxPrixHT->Text));
+	article->setRemise(float::Parse(this->tbxRemise->Text));
+	article->setStock(int::Parse(this->tbxQuantite->Text));
+	article->setQuantiteReapprovisionnement(int::Parse(this->tbxSeuil->Text));
+	article->setTauxTVA(float::Parse(this->tbxTauxTVA->Text));
+	UIAction::validerButtonArticle(this, article);
+	this->Close();
 }
 };
 }
