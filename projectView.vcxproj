@@ -135,6 +135,7 @@
     <ClInclude Include="CLarticle.h" />
     <ClInclude Include="CLpersonne.h" />
     <ClInclude Include="CLpersonnel.h" />
+    <ClInclude Include="CLservicearticle.h" />
     <ClInclude Include="CLserviceclient.h" />
     <ClInclude Include="CLservicecommande.h" />
     <ClInclude Include="CLservicepersonnel.h" />
@@ -176,6 +177,9 @@
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyForm2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="UIAction.h" />
@@ -190,6 +194,7 @@
     <ClCompile Include="CLpersonne.cpp" />
     <ClCompile Include="CLpersonnel.cpp" />
     <ClCompile Include="CLconnect.cpp" />
+    <ClCompile Include="CLservicearticle.cpp" />
     <ClCompile Include="CLserviceclient.cpp" />
     <ClCompile Include="CLservicecommande.cpp" />
     <ClCompile Include="CLservicepersonnel.cpp" />
@@ -208,6 +213,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

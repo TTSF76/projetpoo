@@ -8,6 +8,7 @@ namespace NS_map_client {
 		CLadresse^ adresse_livraison;
 		CLadresse^ adresse_facturation;
 		System::String^ date_anniversaire;
+		int id_client;
 	public:
 		void setDateNaissance(System::String^ date_anniversaire);
 		System::String^ getDateNaissance();
@@ -15,6 +16,8 @@ namespace NS_map_client {
 		CLadresse^ geAdresseLivraison(CLadresse^ adresse_livraison);
 		void setAdresseFacturation(CLadresse^ adresse_facturation);
 		CLadresse^ geAdresseFacturation(CLadresse^ adresse_facturation);
+		int getIdClient();
+		void setIdClient(int id_client);
 		virtual System::String^ Create() override;
 		virtual System::String^ Update() override;
 		virtual System::String^ Delete() override;

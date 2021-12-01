@@ -18,3 +18,11 @@ void NS_Personnel_svc::CLservicepersonnel::insertPersonnel(NS_map_personnel::CLp
 	sql = this->mapPersonnel->Create();
 	this->oCad->actionRows(sql);
 }
+
+void NS_Personnel_svc::CLservicepersonnel::deletePersonnel(NS_map_personnel::CLpersonnel^ personnel)
+{
+	System::String^ sql;
+	this->mapPersonnel = personnel;
+	sql = this->mapPersonnel->Delete();
+	this->oCad->actionRows(sql);
+}

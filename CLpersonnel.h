@@ -10,9 +10,12 @@ private:
 	CLadresse^ adresse_personnel;
 	System::String^ date_embauche;
 	NS_map_personnel::CLpersonnel^ superieur_hierarchique;
+	int id_personnel;
 
 public:
 	void setIdSupHierarchique(int);
+	void setIdPersonnel(int);
+	int getIdPersonnel();
 	void setDateEmbauche(System::String^);
 	System::String^ getDateEmbauche(); 
 	void setAdresse(CLadresse^ adresse);

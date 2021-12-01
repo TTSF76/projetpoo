@@ -14,6 +14,18 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierVill
 	return list_ville;
 }
 
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierIdClients(std::vector<std::string> list_id_client)
+{
+	System::String^ sql;
+	sql = mapUtilitaire->SelectIdClient();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		list_id_client.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+	}
+	return list_id_client;
+}
+
 NS_Utilitaire_svc::CLserviceutilitaire::CLserviceutilitaire(void) {
 	this->Ocad = gcnew NS_Comp_Data::CLconnect();
 	this->mapUtilitaire = gcnew NS_map_Utilitaire::CLUtilitaire();

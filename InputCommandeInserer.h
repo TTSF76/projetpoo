@@ -1,5 +1,10 @@
 #pragma once
 
+#include "CLconnect.h"
+#include "CLcommande.h"
+#include "UIAction.h"
+#include "CLserviceutilitaire.h"
+
 namespace projectView {
 
 	using namespace System;
@@ -21,6 +26,15 @@ namespace projectView {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			NS_Utilitaire_svc::CLserviceutilitaire^ id_client = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			std::vector<std::string> list_id_client;
+			list_id_client = id_client->repertorierIdClients(list_id_client);
+			for (int i = 0; i < list_id_client.size(); i++) {
+				this->cbxIdClient->Items->Add(gcnew String(list_id_client[i].c_str()));
+		
+			}
+
+			
 		}
 
 	protected:
@@ -34,8 +48,8 @@ namespace projectView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::GroupBox^ gbxMain;
-	private: System::Windows::Forms::Button^ btnAnnuler;
+
+
 	protected:
 
 
@@ -56,9 +70,9 @@ namespace projectView {
 
 
 
-	private: System::Windows::Forms::Button^ btnValider;
 
-	private: System::Windows::Forms::GroupBox^ gbxFact;
+
+
 	private: System::Windows::Forms::DateTimePicker^ dtpPaiementDate;
 
 
@@ -66,19 +80,20 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ lblPaiementDate;
 
 	private: System::Windows::Forms::Label^ lblPaiementMoyen;
-	private: System::Windows::Forms::ComboBox^ cbxClient;
+	private: System::Windows::Forms::ComboBox^ cbxIdClient;
+
 	private: System::Windows::Forms::TextBox^ tbxPaiementNombre;
 
 
-	private: System::Windows::Forms::TextBox^ tbxTelSAV;
 
-	private: System::Windows::Forms::TextBox^ tbxNomSociete;
+
+
 
 	private: System::Windows::Forms::Label^ lblPaiementNombre;
 	private: System::Windows::Forms::Label^ lblClient;
-	private: System::Windows::Forms::Label^ lblTelSAV;
-	private: System::Windows::Forms::Label^ lblSocieteNom;
-	private: System::Windows::Forms::GroupBox^ gbxCommande;
+
+
+
 	private: System::Windows::Forms::DateTimePicker^ dtpEnvoi;
 
 	private: System::Windows::Forms::DateTimePicker^ dtpLivraison;
@@ -100,32 +115,52 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ Couleur;
 	private: System::Windows::Forms::Label^ Ref;
 	private: System::Windows::Forms::Label^ nom;
-	private: System::Windows::Forms::GroupBox^ gbxAdrEntreprise;
-	private: System::Windows::Forms::Label^ lblResidence;
-	private: System::Windows::Forms::TextBox^ tbxResidence;
 
-	private: System::Windows::Forms::TextBox^ tbxEtage;
 
-	private: System::Windows::Forms::Label^ lblEtage;
-	private: System::Windows::Forms::TextBox^ tbxRue;
 
-	private: System::Windows::Forms::Label^ lblRue;
-	private: System::Windows::Forms::Label^ lblRueNum;
-	private: System::Windows::Forms::TextBox^ tbxRueNum;
 
-	private: System::Windows::Forms::Label^ lblCodePostal;
-	private: System::Windows::Forms::TextBox^ tbxCodePostal;
 
-	private: System::Windows::Forms::Label^ lblVille;
-	private: System::Windows::Forms::ComboBox^ cbxVille;
 
-	private: System::Windows::Forms::Label^ lblRegion;
-	private: System::Windows::Forms::Label^ lblPays;
-	private: System::Windows::Forms::ComboBox^ cbxRegion;
 
-private: System::Windows::Forms::ComboBox^ cbxPays;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 private: System::Windows::Forms::ComboBox^ cbxPaiementMoyen;
+private: System::Windows::Forms::Button^ btnValider;
+private: System::Windows::Forms::Button^ btnAnnuler;
+private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::Label^ label_tire_commande;
+private: System::Windows::Forms::Label^ label_titre_facturation;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::TextBox^ tbxNom;
+
+private: System::Windows::Forms::Label^ label3;
+private: System::Windows::Forms::TextBox^ tbxPrenom;
+
+
+
+
+
+
+
+
+
+
 
 
 	private:
@@ -141,38 +176,15 @@ private: System::Windows::Forms::ComboBox^ cbxPaiementMoyen;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->gbxMain = (gcnew System::Windows::Forms::GroupBox());
-			this->gbxAdrEntreprise = (gcnew System::Windows::Forms::GroupBox());
-			this->lblResidence = (gcnew System::Windows::Forms::Label());
-			this->tbxResidence = (gcnew System::Windows::Forms::TextBox());
-			this->tbxEtage = (gcnew System::Windows::Forms::TextBox());
-			this->lblEtage = (gcnew System::Windows::Forms::Label());
-			this->tbxRue = (gcnew System::Windows::Forms::TextBox());
-			this->lblRue = (gcnew System::Windows::Forms::Label());
-			this->lblRueNum = (gcnew System::Windows::Forms::Label());
-			this->tbxRueNum = (gcnew System::Windows::Forms::TextBox());
-			this->lblCodePostal = (gcnew System::Windows::Forms::Label());
-			this->tbxCodePostal = (gcnew System::Windows::Forms::TextBox());
-			this->lblVille = (gcnew System::Windows::Forms::Label());
-			this->cbxVille = (gcnew System::Windows::Forms::ComboBox());
-			this->lblRegion = (gcnew System::Windows::Forms::Label());
-			this->lblPays = (gcnew System::Windows::Forms::Label());
-			this->cbxRegion = (gcnew System::Windows::Forms::ComboBox());
-			this->cbxPays = (gcnew System::Windows::Forms::ComboBox());
-			this->gbxFact = (gcnew System::Windows::Forms::GroupBox());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InputCommandeInserer::typeid));
 			this->cbxPaiementMoyen = (gcnew System::Windows::Forms::ComboBox());
 			this->dtpPaiementDate = (gcnew System::Windows::Forms::DateTimePicker());
 			this->lblPaiementDate = (gcnew System::Windows::Forms::Label());
 			this->lblPaiementMoyen = (gcnew System::Windows::Forms::Label());
-			this->tbxNomSociete = (gcnew System::Windows::Forms::TextBox());
-			this->lblSocieteNom = (gcnew System::Windows::Forms::Label());
-			this->tbxTelSAV = (gcnew System::Windows::Forms::TextBox());
 			this->lblPaiementNombre = (gcnew System::Windows::Forms::Label());
 			this->lblClient = (gcnew System::Windows::Forms::Label());
-			this->lblTelSAV = (gcnew System::Windows::Forms::Label());
-			this->cbxClient = (gcnew System::Windows::Forms::ComboBox());
+			this->cbxIdClient = (gcnew System::Windows::Forms::ComboBox());
 			this->tbxPaiementNombre = (gcnew System::Windows::Forms::TextBox());
-			this->gbxCommande = (gcnew System::Windows::Forms::GroupBox());
 			this->dtpEnvoi = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dtpLivraison = (gcnew System::Windows::Forms::DateTimePicker());
 			this->tbxTotalPrix = (gcnew System::Windows::Forms::TextBox());
@@ -185,504 +197,464 @@ private: System::Windows::Forms::ComboBox^ cbxPaiementMoyen;
 			this->Couleur = (gcnew System::Windows::Forms::Label());
 			this->Ref = (gcnew System::Windows::Forms::Label());
 			this->nom = (gcnew System::Windows::Forms::Label());
-			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
 			this->btnValider = (gcnew System::Windows::Forms::Button());
-			this->gbxMain->SuspendLayout();
-			this->gbxAdrEntreprise->SuspendLayout();
-			this->gbxFact->SuspendLayout();
-			this->gbxCommande->SuspendLayout();
+			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label_tire_commande = (gcnew System::Windows::Forms::Label());
+			this->label_titre_facturation = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->tbxNom = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->tbxPrenom = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
-			// 
-			// gbxMain
-			// 
-			this->gbxMain->Controls->Add(this->gbxAdrEntreprise);
-			this->gbxMain->Controls->Add(this->gbxFact);
-			this->gbxMain->Controls->Add(this->gbxCommande);
-			this->gbxMain->Controls->Add(this->btnAnnuler);
-			this->gbxMain->Controls->Add(this->btnValider);
-			this->gbxMain->Location = System::Drawing::Point(11, 11);
-			this->gbxMain->Margin = System::Windows::Forms::Padding(2);
-			this->gbxMain->Name = L"gbxMain";
-			this->gbxMain->Padding = System::Windows::Forms::Padding(2);
-			this->gbxMain->Size = System::Drawing::Size(887, 265);
-			this->gbxMain->TabIndex = 1;
-			this->gbxMain->TabStop = false;
-			this->gbxMain->Text = L"Insertion de commande";
-			// 
-			// gbxAdrEntreprise
-			// 
-			this->gbxAdrEntreprise->Controls->Add(this->lblResidence);
-			this->gbxAdrEntreprise->Controls->Add(this->tbxResidence);
-			this->gbxAdrEntreprise->Controls->Add(this->tbxEtage);
-			this->gbxAdrEntreprise->Controls->Add(this->lblEtage);
-			this->gbxAdrEntreprise->Controls->Add(this->tbxRue);
-			this->gbxAdrEntreprise->Controls->Add(this->lblRue);
-			this->gbxAdrEntreprise->Controls->Add(this->lblRueNum);
-			this->gbxAdrEntreprise->Controls->Add(this->tbxRueNum);
-			this->gbxAdrEntreprise->Controls->Add(this->lblCodePostal);
-			this->gbxAdrEntreprise->Controls->Add(this->tbxCodePostal);
-			this->gbxAdrEntreprise->Controls->Add(this->lblVille);
-			this->gbxAdrEntreprise->Controls->Add(this->cbxVille);
-			this->gbxAdrEntreprise->Controls->Add(this->lblRegion);
-			this->gbxAdrEntreprise->Controls->Add(this->lblPays);
-			this->gbxAdrEntreprise->Controls->Add(this->cbxRegion);
-			this->gbxAdrEntreprise->Controls->Add(this->cbxPays);
-			this->gbxAdrEntreprise->Location = System::Drawing::Point(593, 18);
-			this->gbxAdrEntreprise->Name = L"gbxAdrEntreprise";
-			this->gbxAdrEntreprise->Size = System::Drawing::Size(290, 173);
-			this->gbxAdrEntreprise->TabIndex = 54;
-			this->gbxAdrEntreprise->TabStop = false;
-			this->gbxAdrEntreprise->Text = L"Adresse de l\'entreprise";
-			// 
-			// lblResidence
-			// 
-			this->lblResidence->AutoSize = true;
-			this->lblResidence->Location = System::Drawing::Point(103, 128);
-			this->lblResidence->Name = L"lblResidence";
-			this->lblResidence->Size = System::Drawing::Size(58, 13);
-			this->lblResidence->TabIndex = 31;
-			this->lblResidence->Text = L"Résidence";
-			// 
-			// tbxResidence
-			// 
-			this->tbxResidence->Location = System::Drawing::Point(167, 125);
-			this->tbxResidence->Name = L"tbxResidence";
-			this->tbxResidence->Size = System::Drawing::Size(110, 20);
-			this->tbxResidence->TabIndex = 30;
-			// 
-			// tbxEtage
-			// 
-			this->tbxEtage->Location = System::Drawing::Point(53, 125);
-			this->tbxEtage->Name = L"tbxEtage";
-			this->tbxEtage->Size = System::Drawing::Size(44, 20);
-			this->tbxEtage->TabIndex = 29;
-			// 
-			// lblEtage
-			// 
-			this->lblEtage->AutoSize = true;
-			this->lblEtage->Location = System::Drawing::Point(6, 128);
-			this->lblEtage->Name = L"lblEtage";
-			this->lblEtage->Size = System::Drawing::Size(35, 13);
-			this->lblEtage->TabIndex = 28;
-			this->lblEtage->Text = L"Etage";
-			// 
-			// tbxRue
-			// 
-			this->tbxRue->Location = System::Drawing::Point(136, 99);
-			this->tbxRue->Name = L"tbxRue";
-			this->tbxRue->Size = System::Drawing::Size(141, 20);
-			this->tbxRue->TabIndex = 27;
-			// 
-			// lblRue
-			// 
-			this->lblRue->AutoSize = true;
-			this->lblRue->Location = System::Drawing::Point(103, 102);
-			this->lblRue->Name = L"lblRue";
-			this->lblRue->Size = System::Drawing::Size(27, 13);
-			this->lblRue->TabIndex = 26;
-			this->lblRue->Text = L"Rue";
-			// 
-			// lblRueNum
-			// 
-			this->lblRueNum->AutoSize = true;
-			this->lblRueNum->Location = System::Drawing::Point(6, 102);
-			this->lblRueNum->Name = L"lblRueNum";
-			this->lblRueNum->Size = System::Drawing::Size(42, 13);
-			this->lblRueNum->TabIndex = 25;
-			this->lblRueNum->Text = L"N° Rue";
-			// 
-			// tbxRueNum
-			// 
-			this->tbxRueNum->Location = System::Drawing::Point(53, 99);
-			this->tbxRueNum->Name = L"tbxRueNum";
-			this->tbxRueNum->Size = System::Drawing::Size(44, 20);
-			this->tbxRueNum->TabIndex = 24;
-			// 
-			// lblCodePostal
-			// 
-			this->lblCodePostal->AutoSize = true;
-			this->lblCodePostal->Location = System::Drawing::Point(192, 76);
-			this->lblCodePostal->Name = L"lblCodePostal";
-			this->lblCodePostal->Size = System::Drawing::Size(21, 13);
-			this->lblCodePostal->TabIndex = 23;
-			this->lblCodePostal->Text = L"CP";
-			// 
-			// tbxCodePostal
-			// 
-			this->tbxCodePostal->Location = System::Drawing::Point(219, 73);
-			this->tbxCodePostal->Name = L"tbxCodePostal";
-			this->tbxCodePostal->Size = System::Drawing::Size(58, 20);
-			this->tbxCodePostal->TabIndex = 22;
-			// 
-			// lblVille
-			// 
-			this->lblVille->AutoSize = true;
-			this->lblVille->Location = System::Drawing::Point(6, 76);
-			this->lblVille->Name = L"lblVille";
-			this->lblVille->Size = System::Drawing::Size(26, 13);
-			this->lblVille->TabIndex = 21;
-			this->lblVille->Text = L"Ville";
-			// 
-			// cbxVille
-			// 
-			this->cbxVille->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cbxVille->FormattingEnabled = true;
-			this->cbxVille->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->cbxVille->Location = System::Drawing::Point(53, 73);
-			this->cbxVille->Name = L"cbxVille";
-			this->cbxVille->Size = System::Drawing::Size(133, 21);
-			this->cbxVille->TabIndex = 20;
-			// 
-			// lblRegion
-			// 
-			this->lblRegion->AutoSize = true;
-			this->lblRegion->Location = System::Drawing::Point(6, 49);
-			this->lblRegion->Name = L"lblRegion";
-			this->lblRegion->Size = System::Drawing::Size(41, 13);
-			this->lblRegion->TabIndex = 19;
-			this->lblRegion->Text = L"Region";
-			// 
-			// lblPays
-			// 
-			this->lblPays->AutoSize = true;
-			this->lblPays->Location = System::Drawing::Point(6, 22);
-			this->lblPays->Name = L"lblPays";
-			this->lblPays->Size = System::Drawing::Size(30, 13);
-			this->lblPays->TabIndex = 18;
-			this->lblPays->Text = L"Pays";
-			// 
-			// cbxRegion
-			// 
-			this->cbxRegion->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cbxRegion->FormattingEnabled = true;
-			this->cbxRegion->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->cbxRegion->Location = System::Drawing::Point(53, 46);
-			this->cbxRegion->Name = L"cbxRegion";
-			this->cbxRegion->Size = System::Drawing::Size(224, 21);
-			this->cbxRegion->TabIndex = 17;
-			// 
-			// cbxPays
-			// 
-			this->cbxPays->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cbxPays->FormattingEnabled = true;
-			this->cbxPays->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"France", L"Allemagne", L"Royaume-Uni" });
-			this->cbxPays->Location = System::Drawing::Point(53, 19);
-			this->cbxPays->Name = L"cbxPays";
-			this->cbxPays->Size = System::Drawing::Size(224, 21);
-			this->cbxPays->TabIndex = 16;
-			// 
-			// gbxFact
-			// 
-			this->gbxFact->Controls->Add(this->cbxPaiementMoyen);
-			this->gbxFact->Controls->Add(this->dtpPaiementDate);
-			this->gbxFact->Controls->Add(this->lblPaiementDate);
-			this->gbxFact->Controls->Add(this->lblPaiementMoyen);
-			this->gbxFact->Controls->Add(this->tbxNomSociete);
-			this->gbxFact->Controls->Add(this->lblSocieteNom);
-			this->gbxFact->Controls->Add(this->tbxTelSAV);
-			this->gbxFact->Controls->Add(this->lblPaiementNombre);
-			this->gbxFact->Controls->Add(this->lblClient);
-			this->gbxFact->Controls->Add(this->lblTelSAV);
-			this->gbxFact->Controls->Add(this->cbxClient);
-			this->gbxFact->Controls->Add(this->tbxPaiementNombre);
-			this->gbxFact->Location = System::Drawing::Point(298, 17);
-			this->gbxFact->Margin = System::Windows::Forms::Padding(2);
-			this->gbxFact->Name = L"gbxFact";
-			this->gbxFact->Padding = System::Windows::Forms::Padding(2);
-			this->gbxFact->Size = System::Drawing::Size(290, 173);
-			this->gbxFact->TabIndex = 53;
-			this->gbxFact->TabStop = false;
-			this->gbxFact->Text = L"Facturation";
 			// 
 			// cbxPaiementMoyen
 			// 
+			this->cbxPaiementMoyen->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->cbxPaiementMoyen->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cbxPaiementMoyen->ForeColor = System::Drawing::Color::Silver;
 			this->cbxPaiementMoyen->FormattingEnabled = true;
-			this->cbxPaiementMoyen->Location = System::Drawing::Point(125, 114);
-			this->cbxPaiementMoyen->Margin = System::Windows::Forms::Padding(2);
+			this->cbxPaiementMoyen->Location = System::Drawing::Point(607, 201);
+			this->cbxPaiementMoyen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cbxPaiementMoyen->Name = L"cbxPaiementMoyen";
-			this->cbxPaiementMoyen->Size = System::Drawing::Size(161, 21);
+			this->cbxPaiementMoyen->Size = System::Drawing::Size(229, 24);
 			this->cbxPaiementMoyen->TabIndex = 64;
 			// 
 			// dtpPaiementDate
 			// 
-			this->dtpPaiementDate->Location = System::Drawing::Point(125, 139);
-			this->dtpPaiementDate->Margin = System::Windows::Forms::Padding(2);
+			this->dtpPaiementDate->Location = System::Drawing::Point(607, 236);
+			this->dtpPaiementDate->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dtpPaiementDate->Name = L"dtpPaiementDate";
-			this->dtpPaiementDate->Size = System::Drawing::Size(161, 20);
+			this->dtpPaiementDate->Size = System::Drawing::Size(229, 22);
 			this->dtpPaiementDate->TabIndex = 63;
 			// 
 			// lblPaiementDate
 			// 
 			this->lblPaiementDate->AutoSize = true;
-			this->lblPaiementDate->Location = System::Drawing::Point(4, 141);
-			this->lblPaiementDate->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblPaiementDate->ForeColor = System::Drawing::Color::Silver;
+			this->lblPaiementDate->Location = System::Drawing::Point(445, 241);
 			this->lblPaiementDate->Name = L"lblPaiementDate";
-			this->lblPaiementDate->Size = System::Drawing::Size(91, 13);
+			this->lblPaiementDate->Size = System::Drawing::Size(120, 17);
 			this->lblPaiementDate->TabIndex = 62;
 			this->lblPaiementDate->Text = L"Date de paiement";
 			// 
 			// lblPaiementMoyen
 			// 
 			this->lblPaiementMoyen->AutoSize = true;
-			this->lblPaiementMoyen->Location = System::Drawing::Point(4, 117);
-			this->lblPaiementMoyen->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblPaiementMoyen->ForeColor = System::Drawing::Color::Silver;
+			this->lblPaiementMoyen->Location = System::Drawing::Point(445, 205);
 			this->lblPaiementMoyen->Name = L"lblPaiementMoyen";
-			this->lblPaiementMoyen->Size = System::Drawing::Size(100, 13);
+			this->lblPaiementMoyen->Size = System::Drawing::Size(132, 17);
 			this->lblPaiementMoyen->TabIndex = 60;
 			this->lblPaiementMoyen->Text = L"Moyen de paiement";
-			// 
-			// tbxNomSociete
-			// 
-			this->tbxNomSociete->Location = System::Drawing::Point(125, 17);
-			this->tbxNomSociete->Margin = System::Windows::Forms::Padding(2);
-			this->tbxNomSociete->Name = L"tbxNomSociete";
-			this->tbxNomSociete->Size = System::Drawing::Size(161, 20);
-			this->tbxNomSociete->TabIndex = 56;
-			// 
-			// lblSocieteNom
-			// 
-			this->lblSocieteNom->AutoSize = true;
-			this->lblSocieteNom->Location = System::Drawing::Point(4, 20);
-			this->lblSocieteNom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->lblSocieteNom->Name = L"lblSocieteNom";
-			this->lblSocieteNom->Size = System::Drawing::Size(81, 13);
-			this->lblSocieteNom->TabIndex = 52;
-			this->lblSocieteNom->Text = L"Nom de société";
-			// 
-			// tbxTelSAV
-			// 
-			this->tbxTelSAV->Location = System::Drawing::Point(125, 41);
-			this->tbxTelSAV->Margin = System::Windows::Forms::Padding(2);
-			this->tbxTelSAV->Name = L"tbxTelSAV";
-			this->tbxTelSAV->Size = System::Drawing::Size(161, 20);
-			this->tbxTelSAV->TabIndex = 57;
 			// 
 			// lblPaiementNombre
 			// 
 			this->lblPaiementNombre->AutoSize = true;
-			this->lblPaiementNombre->Location = System::Drawing::Point(4, 92);
-			this->lblPaiementNombre->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblPaiementNombre->ForeColor = System::Drawing::Color::Silver;
+			this->lblPaiementNombre->Location = System::Drawing::Point(445, 174);
 			this->lblPaiementNombre->Name = L"lblPaiementNombre";
-			this->lblPaiementNombre->Size = System::Drawing::Size(110, 13);
+			this->lblPaiementNombre->Size = System::Drawing::Size(147, 17);
 			this->lblPaiementNombre->TabIndex = 55;
 			this->lblPaiementNombre->Text = L"Nombre de paiements";
 			// 
 			// lblClient
 			// 
 			this->lblClient->AutoSize = true;
-			this->lblClient->Location = System::Drawing::Point(4, 68);
-			this->lblClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->lblClient->ForeColor = System::Drawing::Color::Silver;
+			this->lblClient->Location = System::Drawing::Point(445, 88);
 			this->lblClient->Name = L"lblClient";
-			this->lblClient->Size = System::Drawing::Size(117, 13);
+			this->lblClient->Size = System::Drawing::Size(60, 17);
 			this->lblClient->TabIndex = 54;
-			this->lblClient->Text = L"Client ayant commandé";
+			this->lblClient->Text = L"id_client\r\n";
+			this->lblClient->Click += gcnew System::EventHandler(this, &InputCommandeInserer::lblClient_Click);
 			// 
-			// lblTelSAV
+			// cbxIdClient
 			// 
-			this->lblTelSAV->AutoSize = true;
-			this->lblTelSAV->Location = System::Drawing::Point(4, 44);
-			this->lblTelSAV->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->lblTelSAV->Name = L"lblTelSAV";
-			this->lblTelSAV->Size = System::Drawing::Size(97, 13);
-			this->lblTelSAV->TabIndex = 53;
-			this->lblTelSAV->Text = L"Téléphone du SAV";
-			// 
-			// cbxClient
-			// 
-			this->cbxClient->FormattingEnabled = true;
-			this->cbxClient->Location = System::Drawing::Point(125, 65);
-			this->cbxClient->Margin = System::Windows::Forms::Padding(2);
-			this->cbxClient->Name = L"cbxClient";
-			this->cbxClient->Size = System::Drawing::Size(161, 21);
-			this->cbxClient->TabIndex = 59;
+			this->cbxIdClient->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
+			this->cbxIdClient->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
+			this->cbxIdClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->cbxIdClient->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cbxIdClient->ForeColor = System::Drawing::Color::Silver;
+			this->cbxIdClient->FormattingEnabled = true;
+			this->cbxIdClient->Location = System::Drawing::Point(607, 81);
+			this->cbxIdClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->cbxIdClient->Name = L"cbxIdClient";
+			this->cbxIdClient->Size = System::Drawing::Size(93, 24);
+			this->cbxIdClient->TabIndex = 59;
 			// 
 			// tbxPaiementNombre
 			// 
-			this->tbxPaiementNombre->Location = System::Drawing::Point(125, 90);
-			this->tbxPaiementNombre->Margin = System::Windows::Forms::Padding(2);
+			this->tbxPaiementNombre->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxPaiementNombre->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxPaiementNombre->ForeColor = System::Drawing::Color::Silver;
+			this->tbxPaiementNombre->Location = System::Drawing::Point(607, 177);
+			this->tbxPaiementNombre->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tbxPaiementNombre->Name = L"tbxPaiementNombre";
-			this->tbxPaiementNombre->Size = System::Drawing::Size(161, 20);
+			this->tbxPaiementNombre->Size = System::Drawing::Size(229, 15);
 			this->tbxPaiementNombre->TabIndex = 58;
-			// 
-			// gbxCommande
-			// 
-			this->gbxCommande->Controls->Add(this->dtpEnvoi);
-			this->gbxCommande->Controls->Add(this->dtpLivraison);
-			this->gbxCommande->Controls->Add(this->tbxTotalPrix);
-			this->gbxCommande->Controls->Add(this->lblTotalPrix);
-			this->gbxCommande->Controls->Add(this->tbxTVA);
-			this->gbxCommande->Controls->Add(this->tbxTotalHT);
-			this->gbxCommande->Controls->Add(this->tbxRef);
-			this->gbxCommande->Controls->Add(this->prixht);
-			this->gbxCommande->Controls->Add(this->Produit);
-			this->gbxCommande->Controls->Add(this->Couleur);
-			this->gbxCommande->Controls->Add(this->Ref);
-			this->gbxCommande->Controls->Add(this->nom);
-			this->gbxCommande->Location = System::Drawing::Point(4, 17);
-			this->gbxCommande->Margin = System::Windows::Forms::Padding(2);
-			this->gbxCommande->Name = L"gbxCommande";
-			this->gbxCommande->Padding = System::Windows::Forms::Padding(2);
-			this->gbxCommande->Size = System::Drawing::Size(290, 173);
-			this->gbxCommande->TabIndex = 52;
-			this->gbxCommande->TabStop = false;
-			this->gbxCommande->Text = L"Commande";
 			// 
 			// dtpEnvoi
 			// 
-			this->dtpEnvoi->Location = System::Drawing::Point(82, 65);
-			this->dtpEnvoi->Margin = System::Windows::Forms::Padding(2);
+			this->dtpEnvoi->Location = System::Drawing::Point(141, 144);
+			this->dtpEnvoi->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dtpEnvoi->Name = L"dtpEnvoi";
-			this->dtpEnvoi->Size = System::Drawing::Size(204, 20);
+			this->dtpEnvoi->Size = System::Drawing::Size(271, 22);
 			this->dtpEnvoi->TabIndex = 58;
 			// 
 			// dtpLivraison
 			// 
-			this->dtpLivraison->Location = System::Drawing::Point(82, 41);
-			this->dtpLivraison->Margin = System::Windows::Forms::Padding(2);
+			this->dtpLivraison->Location = System::Drawing::Point(141, 114);
+			this->dtpLivraison->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dtpLivraison->Name = L"dtpLivraison";
-			this->dtpLivraison->Size = System::Drawing::Size(204, 20);
+			this->dtpLivraison->Size = System::Drawing::Size(271, 22);
 			this->dtpLivraison->TabIndex = 57;
 			// 
 			// tbxTotalPrix
 			// 
-			this->tbxTotalPrix->Location = System::Drawing::Point(82, 137);
-			this->tbxTotalPrix->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTotalPrix->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxTotalPrix->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxTotalPrix->ForeColor = System::Drawing::Color::Silver;
+			this->tbxTotalPrix->Location = System::Drawing::Point(141, 238);
+			this->tbxTotalPrix->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tbxTotalPrix->Name = L"tbxTotalPrix";
-			this->tbxTotalPrix->Size = System::Drawing::Size(204, 20);
+			this->tbxTotalPrix->Size = System::Drawing::Size(271, 15);
 			this->tbxTotalPrix->TabIndex = 56;
 			// 
 			// lblTotalPrix
 			// 
 			this->lblTotalPrix->AutoSize = true;
-			this->lblTotalPrix->Location = System::Drawing::Point(4, 140);
-			this->lblTotalPrix->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblTotalPrix->ForeColor = System::Drawing::Color::Silver;
+			this->lblTotalPrix->Location = System::Drawing::Point(37, 236);
 			this->lblTotalPrix->Name = L"lblTotalPrix";
-			this->lblTotalPrix->Size = System::Drawing::Size(47, 13);
+			this->lblTotalPrix->Size = System::Drawing::Size(62, 17);
 			this->lblTotalPrix->TabIndex = 55;
 			this->lblTotalPrix->Text = L"Prix total";
 			// 
 			// tbxTVA
 			// 
-			this->tbxTVA->Location = System::Drawing::Point(82, 113);
-			this->tbxTVA->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTVA->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxTVA->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxTVA->ForeColor = System::Drawing::Color::Silver;
+			this->tbxTVA->Location = System::Drawing::Point(141, 210);
+			this->tbxTVA->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tbxTVA->Name = L"tbxTVA";
-			this->tbxTVA->Size = System::Drawing::Size(204, 20);
+			this->tbxTVA->Size = System::Drawing::Size(271, 15);
 			this->tbxTVA->TabIndex = 54;
 			// 
 			// tbxTotalHT
 			// 
-			this->tbxTotalHT->Location = System::Drawing::Point(82, 89);
-			this->tbxTotalHT->Margin = System::Windows::Forms::Padding(2);
+			this->tbxTotalHT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxTotalHT->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxTotalHT->ForeColor = System::Drawing::Color::Silver;
+			this->tbxTotalHT->Location = System::Drawing::Point(141, 179);
+			this->tbxTotalHT->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tbxTotalHT->Name = L"tbxTotalHT";
-			this->tbxTotalHT->Size = System::Drawing::Size(204, 20);
+			this->tbxTotalHT->Size = System::Drawing::Size(271, 15);
 			this->tbxTotalHT->TabIndex = 53;
 			// 
 			// tbxRef
 			// 
-			this->tbxRef->Location = System::Drawing::Point(82, 17);
-			this->tbxRef->Margin = System::Windows::Forms::Padding(2);
+			this->tbxRef->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxRef->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxRef->ForeColor = System::Drawing::Color::Silver;
+			this->tbxRef->Location = System::Drawing::Point(141, 88);
+			this->tbxRef->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tbxRef->Name = L"tbxRef";
-			this->tbxRef->Size = System::Drawing::Size(204, 20);
+			this->tbxRef->Size = System::Drawing::Size(271, 15);
 			this->tbxRef->TabIndex = 52;
 			// 
 			// prixht
 			// 
 			this->prixht->AutoSize = true;
-			this->prixht->Location = System::Drawing::Point(4, 116);
-			this->prixht->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->prixht->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->prixht->ForeColor = System::Drawing::Color::Silver;
+			this->prixht->Location = System::Drawing::Point(37, 207);
 			this->prixht->Name = L"prixht";
-			this->prixht->Size = System::Drawing::Size(74, 13);
+			this->prixht->Size = System::Drawing::Size(97, 17);
 			this->prixht->TabIndex = 51;
 			this->prixht->Text = L"Prix de la TVA";
 			// 
 			// Produit
 			// 
 			this->Produit->AutoSize = true;
-			this->Produit->Location = System::Drawing::Point(4, 92);
-			this->Produit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Produit->ForeColor = System::Drawing::Color::Silver;
+			this->Produit->Location = System::Drawing::Point(37, 177);
 			this->Produit->Name = L"Produit";
-			this->Produit->Size = System::Drawing::Size(65, 13);
+			this->Produit->Size = System::Drawing::Size(85, 17);
 			this->Produit->TabIndex = 50;
 			this->Produit->Text = L"Prix total HT";
 			// 
 			// Couleur
 			// 
 			this->Couleur->AutoSize = true;
-			this->Couleur->Location = System::Drawing::Point(4, 68);
-			this->Couleur->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Couleur->ForeColor = System::Drawing::Color::Silver;
+			this->Couleur->Location = System::Drawing::Point(37, 148);
 			this->Couleur->Name = L"Couleur";
-			this->Couleur->Size = System::Drawing::Size(67, 13);
+			this->Couleur->Size = System::Drawing::Size(87, 17);
 			this->Couleur->TabIndex = 49;
 			this->Couleur->Text = L"Date d\'envoi";
 			// 
 			// Ref
 			// 
 			this->Ref->AutoSize = true;
-			this->Ref->Location = System::Drawing::Point(4, 44);
-			this->Ref->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Ref->ForeColor = System::Drawing::Color::Silver;
+			this->Ref->Location = System::Drawing::Point(37, 118);
 			this->Ref->Name = L"Ref";
-			this->Ref->Size = System::Drawing::Size(71, 13);
+			this->Ref->Size = System::Drawing::Size(94, 17);
 			this->Ref->TabIndex = 48;
 			this->Ref->Text = L"Date livraison";
 			// 
 			// nom
 			// 
 			this->nom->AutoSize = true;
-			this->nom->Location = System::Drawing::Point(4, 21);
-			this->nom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->nom->ForeColor = System::Drawing::Color::Silver;
+			this->nom->Location = System::Drawing::Point(37, 88);
 			this->nom->Name = L"nom";
-			this->nom->Size = System::Drawing::Size(57, 13);
+			this->nom->Size = System::Drawing::Size(74, 17);
 			this->nom->TabIndex = 47;
 			this->nom->Text = L"Reférence";
 			// 
-			// btnAnnuler
-			// 
-			this->btnAnnuler->Location = System::Drawing::Point(444, 195);
-			this->btnAnnuler->Name = L"btnAnnuler";
-			this->btnAnnuler->Size = System::Drawing::Size(439, 63);
-			this->btnAnnuler->TabIndex = 23;
-			this->btnAnnuler->Text = L"Annuler";
-			this->btnAnnuler->UseVisualStyleBackColor = true;
-			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputCommandeInserer::btnAnnuler_Click);
-			// 
 			// btnValider
 			// 
-			this->btnValider->Location = System::Drawing::Point(4, 195);
+			this->btnValider->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->btnValider->FlatAppearance->BorderSize = 0;
+			this->btnValider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnValider->ForeColor = System::Drawing::Color::White;
+			this->btnValider->Location = System::Drawing::Point(480, 298);
+			this->btnValider->Margin = System::Windows::Forms::Padding(4);
 			this->btnValider->Name = L"btnValider";
-			this->btnValider->Size = System::Drawing::Size(440, 63);
+			this->btnValider->Size = System::Drawing::Size(174, 28);
 			this->btnValider->TabIndex = 22;
 			this->btnValider->Text = L"Valider";
-			this->btnValider->UseVisualStyleBackColor = true;
+			this->btnValider->UseVisualStyleBackColor = false;
 			this->btnValider->Click += gcnew System::EventHandler(this, &InputCommandeInserer::btnValider_Click);
+			// 
+			// btnAnnuler
+			// 
+			this->btnAnnuler->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->btnAnnuler->FlatAppearance->BorderSize = 0;
+			this->btnAnnuler->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAnnuler->ForeColor = System::Drawing::Color::White;
+			this->btnAnnuler->Location = System::Drawing::Point(662, 298);
+			this->btnAnnuler->Margin = System::Windows::Forms::Padding(4);
+			this->btnAnnuler->Name = L"btnAnnuler";
+			this->btnAnnuler->Size = System::Drawing::Size(174, 28);
+			this->btnAnnuler->TabIndex = 23;
+			this->btnAnnuler->Text = L"Annuler";
+			this->btnAnnuler->UseVisualStyleBackColor = false;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputCommandeInserer::btnAnnuler_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->ForeColor = System::Drawing::Color::Silver;
+			this->label1->Location = System::Drawing::Point(12, 9);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(155, 17);
+			this->label1->TabIndex = 65;
+			this->label1->Text = L"Insertion de commande";
+			// 
+			// label_tire_commande
+			// 
+			this->label_tire_commande->AutoSize = true;
+			this->label_tire_commande->ForeColor = System::Drawing::Color::Silver;
+			this->label_tire_commande->Location = System::Drawing::Point(138, 47);
+			this->label_tire_commande->Name = L"label_tire_commande";
+			this->label_tire_commande->Size = System::Drawing::Size(79, 17);
+			this->label_tire_commande->TabIndex = 66;
+			this->label_tire_commande->Text = L"Commande";
+			// 
+			// label_titre_facturation
+			// 
+			this->label_titre_facturation->AutoSize = true;
+			this->label_titre_facturation->ForeColor = System::Drawing::Color::Silver;
+			this->label_titre_facturation->Location = System::Drawing::Point(611, 47);
+			this->label_titre_facturation->Name = L"label_titre_facturation";
+			this->label_titre_facturation->Size = System::Drawing::Size(79, 17);
+			this->label_titre_facturation->TabIndex = 67;
+			this->label_titre_facturation->Text = L"Facturation";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->label2->ForeColor = System::Drawing::Color::Silver;
+			this->label2->Location = System::Drawing::Point(445, 147);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(37, 17);
+			this->label2->TabIndex = 68;
+			this->label2->Text = L"Nom";
+			// 
+			// tbxNom
+			// 
+			this->tbxNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxNom->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxNom->ForeColor = System::Drawing::Color::Silver;
+			this->tbxNom->Location = System::Drawing::Point(607, 149);
+			this->tbxNom->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tbxNom->Name = L"tbxNom";
+			this->tbxNom->Size = System::Drawing::Size(133, 15);
+			this->tbxNom->TabIndex = 69;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->label3->ForeColor = System::Drawing::Color::Silver;
+			this->label3->Location = System::Drawing::Point(445, 121);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(57, 17);
+			this->label3->TabIndex = 70;
+			this->label3->Text = L"Prénom";
+			// 
+			// tbxPrenom
+			// 
+			this->tbxPrenom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxPrenom->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxPrenom->ForeColor = System::Drawing::Color::Silver;
+			this->tbxPrenom->Location = System::Drawing::Point(607, 121);
+			this->tbxPrenom->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tbxPrenom->Name = L"tbxPrenom";
+			this->tbxPrenom->Size = System::Drawing::Size(133, 15);
+			this->tbxPrenom->TabIndex = 71;
 			// 
 			// InputCommandeInserer
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(908, 285);
-			this->Controls->Add(this->gbxMain);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->ClientSize = System::Drawing::Size(853, 348);
+			this->Controls->Add(this->tbxPrenom);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->tbxNom);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label_titre_facturation);
+			this->Controls->Add(this->label_tire_commande);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->btnAnnuler);
+			this->Controls->Add(this->btnValider);
+			this->Controls->Add(this->cbxPaiementMoyen);
+			this->Controls->Add(this->dtpEnvoi);
+			this->Controls->Add(this->dtpPaiementDate);
+			this->Controls->Add(this->lblPaiementDate);
+			this->Controls->Add(this->dtpLivraison);
+			this->Controls->Add(this->lblPaiementMoyen);
+			this->Controls->Add(this->tbxTotalPrix);
+			this->Controls->Add(this->nom);
+			this->Controls->Add(this->lblTotalPrix);
+			this->Controls->Add(this->Ref);
+			this->Controls->Add(this->lblPaiementNombre);
+			this->Controls->Add(this->tbxTVA);
+			this->Controls->Add(this->lblClient);
+			this->Controls->Add(this->Couleur);
+			this->Controls->Add(this->tbxTotalHT);
+			this->Controls->Add(this->cbxIdClient);
+			this->Controls->Add(this->tbxPaiementNombre);
+			this->Controls->Add(this->Produit);
+			this->Controls->Add(this->tbxRef);
+			this->Controls->Add(this->prixht);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximumSize = System::Drawing::Size(871, 395);
+			this->MinimumSize = System::Drawing::Size(871, 395);
 			this->Name = L"InputCommandeInserer";
 			this->Text = L"Insérer une commande";
-			this->gbxMain->ResumeLayout(false);
-			this->gbxAdrEntreprise->ResumeLayout(false);
-			this->gbxAdrEntreprise->PerformLayout();
-			this->gbxFact->ResumeLayout(false);
-			this->gbxFact->PerformLayout();
-			this->gbxCommande->ResumeLayout(false);
-			this->gbxCommande->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		// Code pour validation
-		this->Close();
+		NS_map_commande::CLcommande^ commande= gcnew NS_map_commande::CLcommande;
+		if ( tbxRef->Text-> Length == 0 || tbxTotalHT->Text->Length  || tbxTVA->Text->Length == 0 ||
+			tbxTotalPrix->Text->Length == 0 || cbxIdClient->SelectedIndex < 0 || tbxPrenom->Text->Length == 0 ||
+			tbxNom->Text->Length == 0 || tbxPaiementNombre->Text->Length == 0 || cbxPaiementMoyen->Text->Length == 0) {
+			MessageBox::Show("Vous n'avez pas renseigné tous les champs", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+		
+		/*commande->setNom(this->tbxNom->Text);
+		client->setPrenom(this->tbxPrenom->Text);
+		client->setDateNaissance(this->dtpAnniversaire->Value.ToString("yyyy-MM-dd"));
+		adresse_livraison->setVille(1);
+		adresse_livraison->setNumeroRue(tbxNRueL->Text);
+		adresse_livraison->setRue(tbxRueL->Text);
+		adresse_livraison->setNumeroEtage(int::Parse(tbxEtageL->Text));
+		adresse_livraison->setNomResidence(tbxResidenceL->Text);
+		adresse_facturation->setVille(1);
+		adresse_facturation->setNumeroRue(tbxNRueF->Text);
+		adresse_facturation->setRue(tbxRueF->Text);
+		adresse_facturation->setNumeroEtage(int::Parse(tbxEtageF->Text));
+		adresse_facturation->setNomResidence(tbxResidenceF->Text);
+		client->setAdresseLivraison(adresse_livraison);
+		client->setAdresseFacturation(adresse_facturation);
+		UIAction::validerButtonClient(this, client);
+		this->Close();*/
 	}
 	private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Close();
 	}
+
+
+private: System::Void cbxCP_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+/*	NS_Utilitaire_svc::CLserviceutilitaire^ ville = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ region = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	NS_Utilitaire_svc::CLserviceutilitaire^ pays = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+
+	std::vector<std::string> vecteur_ville;
+	std::vector<std::string> vecteur_region;
+	std::vector<std::string> vecteur_pays;
+
+	cbxVille->Enabled = false;
+	cbxVille->Items->Clear();
+	vecteur_ville = ville->miseAjourVilleCBCP(vecteur_ville, this->cbxCP->Text);
+	for (int i = 0; i < vecteur_ville.size(); i++) {
+		this->cbxVille->Items->Add(gcnew String(vecteur_ville[i].c_str()));
+	}
+
+	cbxRegion->Enabled = false;
+	cbxRegion->Items->Clear();
+	vecteur_region = region->miseAjourRegionCBCP(vecteur_region, this->cbxCP->Text);
+	for (int i = 0; i < vecteur_region.size(); i++) {
+		this->cbxRegion->Items->Add(gcnew String(vecteur_region[i].c_str()));
+	}
+
+	cbxPays->Enabled = false;
+	cbxPays->Items->Clear();
+	vecteur_pays = pays->miseAjourPaysCBCP(vecteur_pays, this->cbxCP->Text);
+	for (int i = 0; i < vecteur_region.size(); i++) {
+		this->cbxPays->Items->Add(gcnew String(vecteur_pays[i].c_str()));
+	}
+
+
+	cbxVille->Enabled = true;
+	cbxRegion->Enabled = true;
+	cbxPays->Enabled = true;*/
+}
+
+private: System::Void lblClient_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+
 };
 }

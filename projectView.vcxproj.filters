@@ -107,11 +107,11 @@
     <ClInclude Include="CLservicecommande.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CLstats.h">
+    <ClInclude Include="CLservicearticle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CLserviceStats.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="MyForm2.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -205,10 +205,10 @@
     <ClCompile Include="CLservicecommande.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLstats.cpp">
+    <ClCompile Include="CLservicearticle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLserviceStats.cpp">
+    <ClCompile Include="MyForm2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

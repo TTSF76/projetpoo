@@ -44,3 +44,7 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectRegionV(System::String^ v
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectPaysV(System::String^ ville) {
 	return "select pays from villes where ville = '" + ville + "'";
 }
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClient() {
+	return "select id_client from client order by id_client ";
+}
