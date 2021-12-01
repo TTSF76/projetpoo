@@ -48,6 +48,27 @@ System::Data::DataSet^ NS_stats_svc::CLserviceStats::identifierMoinsVendus()
 	return this->Ocad->getRows(sql, "test");
 }
 
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerValeurCommerciale()
+{
+	System::String^ sql;
+	sql = this->mapStats->prixCommercial();
+	return this->Ocad->getRows(sql, "test");
+}
+
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerValeurDachat()
+{
+	System::String^ sql;
+	sql = this->mapStats->prixAchat();
+	return this->Ocad->getRows(sql, "test");
+}
+
+System::Data::DataSet^ NS_stats_svc::CLserviceStats::calculerVariationCommerciale()
+{
+	System::String^ sql;
+	sql = this->mapStats->varCommerciale(1, 10, 2000, 2000);
+	return this->Ocad->getRows(sql, "test");
+}
+
 System::String^ NS_stats_svc::CLserviceStats::convertToLabel(System::Data::DataSet^ ds, System::String^ nom) {
 	System::String^ result = nom+ ": ";
 	for each (System::Data::DataTable^ table in ds->Tables)

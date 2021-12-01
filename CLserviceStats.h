@@ -16,9 +16,9 @@ namespace NS_stats_svc {
 		System::Data::DataSet^ calculerMontantTotalAchats();
 		System::Data::DataSet^ identifierPlusVendus();
 		System::Data::DataSet^ identifierMoinsVendus();
-	/*	System::Data::DataSet^ calculerValeurCommerciale();
+		System::Data::DataSet^ calculerValeurCommerciale();
 		System::Data::DataSet^ calculerValeurDachat();
-		System::Data::DataSet^ calculerVariationCommerciale();*/
+		System::Data::DataSet^ calculerVariationCommerciale();
 		System::String^ convertToLabel(System::Data::DataSet^, System::String^);
 	};
 }
