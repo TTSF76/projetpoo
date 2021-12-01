@@ -100,12 +100,27 @@ void UIManager::modifierCouleur(System::Windows::Forms::Panel^ panel_menu_left, 
 	}
 }
 
-void UIManager::afficherElementRubrique(System::Windows::Forms::DataGridView^ DataGridView1, System::Windows::Forms::Button^ bouton_select, System::Windows::Forms::Button^ bouton_create, System::Windows::Forms::Button^ bouton_delete, System::Windows::Forms::Button^ bouton_update, System::Windows::Forms::Label^ label_bienvenue, System::Windows::Forms::PictureBox^ logo_welcome, System::Windows::Forms::Label^ titre_Rubrique, int numero_rubrique) {
+void UIManager::afficherElementRubrique(System::Windows::Forms::DataGridView^ DataGridView1, System::Windows::Forms::Button^ bouton_select, System::Windows::Forms::Button^ bouton_create, System::Windows::Forms::Button^ bouton_delete, System::Windows::Forms::Button^ bouton_update, System::Windows::Forms::Button^ bouton_stats_valider, System::Windows::Forms::Label^ label_bienvenue, System::Windows::Forms::PictureBox^ logo_welcome, System::Windows::Forms::Label^ titre_Rubrique, int numero_rubrique) {
 
-	bouton_select->Visible = true;
-	bouton_create->Visible = true;
-	bouton_delete->Visible = true;
-	bouton_update->Visible = true;
+	if (numero_rubrique == 5)
+	{
+		bouton_select->Visible = false;
+		bouton_create->Visible = false;
+		bouton_delete->Visible = false;
+		bouton_update->Visible = false;
+		// cbx_stats->Visible = true;
+		bouton_stats_valider->Visible = true;
+	}
+	else
+	{
+		bouton_select->Visible = true;
+		bouton_create->Visible = true;
+		bouton_delete->Visible = true;
+		bouton_update->Visible = true;
+		// cbx_stats->Visible = false;
+		bouton_stats_valider->Visible = false;
+	}
+
 	DataGridView1->Visible = true;
 	titre_Rubrique->Visible = true;
 	label_bienvenue->Visible = false;
@@ -116,7 +131,6 @@ void UIManager::afficherElementRubrique(System::Windows::Forms::DataGridView^ Da
 	case 1:
 		titre_Rubrique->Text = L"CLIENTS";
 		break;
-
 	case 2:
 		titre_Rubrique->Text = L"STOCK";
 		break;

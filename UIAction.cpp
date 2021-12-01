@@ -28,6 +28,15 @@ void UIAction::selectButtonPersonnel(System::Windows::Forms::DataGridView^ dgv, 
 	}
 }
 
+//void UIAction::selectButtonStock(System::Windows::Forms::DataGridView^ dgv, System::Windows::Forms::Label^ lbl)
+//{
+//	if (lbl->Text == "STOCK")
+//	{
+//		dgv->Refresh();
+//		UIAction::oDs = UIAction::svcStock->select
+//	}
+//}
+
 void UIAction::validerButtonPersonnel(System::Windows::Forms::Form^ form, NS_map_personnel::CLpersonnel^ personnel)
 {
 	if (form->Name == "InputPersonnelInserer") {
