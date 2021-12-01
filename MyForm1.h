@@ -42,24 +42,64 @@ namespace projectView {
 		}
 	public: System::Windows::Forms::Panel^ panel_menu_left;
 	private: System::Windows::Forms::Panel^ panel_logo;
+	public:
+	protected:
+
+	protected:
+
+	protected:
+
+	protected:
+
+
+	protected:
+
+	protected:
+
 	public: System::Windows::Forms::Button^ bouton_client;
+	private:
 	public: System::Windows::Forms::Button^ bouton_commande;
 	public: System::Windows::Forms::Button^ bouton_stock;
 	public: System::Windows::Forms::Button^ bouton_personnel;
 	public: System::Windows::Forms::Button^ bouton_stats;
 
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ bouton_select;
 	private: System::Windows::Forms::Button^ bouton_create;
+
+
+
 	private: System::Windows::Forms::Button^ bouton_update;
 	private: System::Windows::Forms::Button^ bouton_delete;
-	private: System::Windows::Forms::Button^ bouton_stats_valider;
-	private: System::Windows::Forms::ComboBox^ cbx_stats;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	public: System::Windows::Forms::Panel^ panel_header;
 	private: System::Windows::Forms::Label^ label_bienvenue;
 	private: System::Windows::Forms::PictureBox^ logo_welcome;
 	private: System::Windows::Forms::Label^ titre_rubrique;
+	public:
+
+
+	public:
+
+	public:
+	private:
+
+	private:
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -86,8 +126,6 @@ namespace projectView {
 			this->bouton_create = (gcnew System::Windows::Forms::Button());
 			this->bouton_update = (gcnew System::Windows::Forms::Button());
 			this->bouton_delete = (gcnew System::Windows::Forms::Button());
-			this->cbx_stats = (gcnew System::Windows::Forms::ComboBox());
-			this->bouton_stats_valider = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel_header = (gcnew System::Windows::Forms::Panel());
 			this->titre_rubrique = (gcnew System::Windows::Forms::Label());
@@ -203,7 +241,7 @@ namespace projectView {
 			this->bouton_client->TabIndex = 1;
 			this->bouton_client->Text = L" Gestion \r\n Clients";
 			this->bouton_client->UseVisualStyleBackColor = true;
-			this->bouton_client->Click += gcnew System::EventHandler(this, &MyForm1::bouton_client_Click);			
+			this->bouton_client->Click += gcnew System::EventHandler(this, &MyForm1::bouton_client_Click);
 			// 
 			// panel_logo
 			// 
@@ -314,25 +352,6 @@ namespace projectView {
 			this->bouton_delete->UseVisualStyleBackColor = false;
 			this->bouton_delete->Visible = false;
 			this->bouton_delete->Click += gcnew System::EventHandler(this, &MyForm1::bouton_delete_Click);
-			//
-			// bouton_stats_valider
-			//
-			this->bouton_stats_valider->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)), static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->bouton_stats_valider->FlatAppearance->BorderColor = System::Drawing::Color::White;
-			this->bouton_stats_valider->FlatAppearance->BorderSize = 2;
-			this->bouton_stats_valider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bouton_stats_valider->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bouton_stats_valider->ForeColor = System::Drawing::Color::White;
-			this->bouton_stats_valider->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bouton_create.Image")));
-			this->bouton_stats_valider->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->bouton_stats_valider->Location = System::Drawing::Point(552, 530);
-			this->bouton_stats_valider->Name = L"bouton_stats_valider";
-			this->bouton_stats_valider->TabIndex = 3;
-			this->bouton_stats_valider->Text = L" Valider";
-			this->bouton_stats_valider->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->bouton_stats_valider->UseVisualStyleBackColor = false;
-			this->bouton_stats_valider->Visible = false;
-			this->bouton_stats_valider->Click += gcnew System::EventHandler(this, &MyForm1::bouton_stats_valider_Click);
 			// 
 			// dataGridView1
 			// 
@@ -437,7 +456,7 @@ namespace projectView {
 		this->dataGridView1->DataSource = nullptr;
 		this->dataGridView1->Rows->Clear();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 1,this);
-		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->bouton_stats_valider, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 1);
+		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 1);
 		
 	}
 	
@@ -446,7 +465,7 @@ namespace projectView {
 		this->dataGridView1->Rows->Clear();
 		this->dataGridView1->Refresh();
 		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 2, this);
-		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->bouton_stats_valider, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 2);
+		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 2);
 	
 	}
 
@@ -470,48 +489,42 @@ namespace projectView {
 			inputForm.ShowDialog();
 		}
 	}
-	private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dataGridView1->DataSource = nullptr;
-		this->dataGridView1->Rows->Clear();
-		this->dataGridView1->Refresh();
-		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3, this);
-		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->bouton_stats_valider, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
-	}
-	private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dataGridView1->DataSource = nullptr;
-		this->dataGridView1->Rows->Clear();
-		this->dataGridView1->Refresh();
-		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4,this);
-		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->bouton_stats_valider, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
-	}
-	private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dataGridView1->DataSource = nullptr;
-		this->dataGridView1->Rows->Clear();
-		this->dataGridView1->Refresh();
-		UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5,this);
-		UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->bouton_stats_valider, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 5);
-	}
-	private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ gestion = titre_rubrique->Text;
+private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Rows->Clear();
+	this->dataGridView1->Refresh();
+	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 3, this);
+	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 3);
+}
+private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Rows->Clear();
+	this->dataGridView1->Refresh();
+	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 4,this);
+	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 4);
+}
+private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Rows->Clear();
+	this->dataGridView1->Refresh();
+	UIManager::modifierCouleur(this->panel_menu_left, this->panel_header, this->bouton_client, this->bouton_commande, this->bouton_stock, this->bouton_personnel, this->bouton_stats, 5,this);
+	UIManager::afficherElementRubrique(this->dataGridView1, this->bouton_select, this->bouton_create, this->bouton_delete, this->bouton_update, this->label_bienvenue, this->logo_welcome, this->titre_rubrique, 5);
+}
+private: System::Void bouton_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void bouton_select_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ gestion = titre_rubrique->Text;
 
-		if (gestion == "CLIENTS") {
+	if (gestion == "CLIENTS") {
 		
-			UIAction::selectButtonClient(this->dataGridView1, this->titre_rubrique);
-		}
-		else if (gestion == "PERSONNEL") {
+		UIAction::selectButtonClient(this->dataGridView1, this->titre_rubrique);
+	}
+	else if (gestion == "PERSONNEL") {
 		
-			UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
-
-		}
-	}
-
-	private: System::Void bouton_stats_valider_Click(System::Object^ sender, System::EventArgs^ e)
-	{
+		UIAction::selectButtonPersonnel(this->dataGridView1, this->titre_rubrique);
 
 	}
-
+}
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 
