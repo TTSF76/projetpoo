@@ -585,7 +585,7 @@ namespace projectView {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (this->textBox1->Text == "" || this->textBox2->Text == "") {
+		if (this->textBox1->Text == "") {
 			this->label2->Text = "Rentrez des données dans l\'inputs 1";
 			return;
 		}
@@ -624,7 +624,7 @@ namespace projectView {
 
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (this->textBox1->Text == "" || this->textBox2->Text == "") {
+		if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "") {
 			this->label2->Text = "Rentrez des données dans les inputs 1 et/ou 2 et/ou 3 et/ou 4";
 			return;
 		}
