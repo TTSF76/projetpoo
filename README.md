@@ -75,17 +75,17 @@ Ce projet est mené par [**Fabien RIBES**](https://github.com/Good660), [**Talla
 
 Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le **fichier executable** de l'application qui arrivera sur la page d'accueil :
 
-<img src="https://i.imgur.com/8lIj9rI.png"></img>
+<p align="center"><img src="https://i.imgur.com/8lIj9rI.png"></img></p>
 
 Ensuite, il faudra selectionner une catégorie parmis celles ci-dessous :
 
-<img src="https://i.imgur.com/pFCkkek.png"></img>
+<p align="center"><img src="https://i.imgur.com/pFCkkek.png"></img></p>
 
 **Note :** Lorsque que vous cliquer sur personnel, cela vous ouvre la page ci-dessous, il suffit de rentrer le mot de passe "motdepasse" pour accéder a la catégorie personnel.
 
 ##### La fenêtre d'authentification :
 
-<img src="https://i.imgur.com/sVSmISc.png"></img>
+<p align="center"><img src="https://i.imgur.com/sVSmISc.png"></img></p>
 
 Ensuite vous pouvez choisir une action parmis les 4 boutons qui seront affichés à l'écran (**Afficher**, **Créer**, **Supprimer**, **Mettre à jour**)
 
@@ -97,7 +97,7 @@ Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (_DataGridView_
 
 ##### Voici un exemple de page de gestion (les données sont générées aléatoirement) :
 
-<img src="https://i.imgur.com/mlQt44y.png"></img>
+<p align="center"><img src="https://i.imgur.com/mlQt44y.png"></img></p>
 
 ---
 
@@ -107,11 +107,11 @@ Lorsqu'un employé clique sur le bouton **Créer**, une nouvelle fenêtre s'ouvr
 
 ##### Le formulaire d'insertion de Personnel :
 
-<img src="https://i.imgur.com/yh9vBPk.png"></img>
+<p align="center"><img src="https://i.imgur.com/yh9vBPk.png"></img></p>
 
 ##### Le formulaire d'insertion de Commande :
 
-<img src="https://i.imgur.com/J9uJX22.png"></img>
+<p align="center"><img src="https://i.imgur.com/J9uJX22.png"></img></p>
 
 ---
 
@@ -127,7 +127,7 @@ Lorsqu'un employé clique sur le bouton **Mettre à jour** après avoir sélecti
 
 ##### Le formulaire de mise à jour d'un Client :
 
-<img src="https://i.imgur.com/LQA6RAr.png"></img><br><br>
+<p align="center"><img src="https://i.imgur.com/LQA6RAr.png"></img></p>
 
 ## Réalisation
 
@@ -137,13 +137,13 @@ Nous avons commencé par créer des diagrammes _UML 2.0_ afin de savoir quoi fai
 
 > **Note :** pour voir les autres diagrammes, veuillez consulter le **livrable 2**.
 
-<img src="https://i.imgur.com/2zp56ji.png"></img>
+<p align="center"><img src="https://i.imgur.com/2zp56ji.png"></img></p>
 
 A partir du diagramme de classe ci dessus, nous avons pu développer l'arborescence ci-dessous. Notez que des fichiers ont été ajouté par rapport au diagramme de classe, afin de correspondre au besoin de faire un système de "Service-Mappage-Contrôle".
 
 <details>
 	<summary>Arborescence</summary><br>
-	<p><img src="https://i.imgur.com/Pj5QjLd.png"></img></p>
+	<p align="center"><img src="https://i.imgur.com/Pj5QjLd.png"></img></p>
 </details>
 
 Dans ces fichier, il y a donc trois catégories :
@@ -158,7 +158,7 @@ Dans ces fichier, il y a donc trois catégories :
 
 La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte _optionnelles_ qui permettent de faire les requêtes ci-dessous.
 
-<img src="https://i.imgur.com/R71fUhg.png"></img>
+<p align="center"><img src="https://i.imgur.com/R71fUhg.png"></img></p>
 
 ### Calculer le panier moyen
 
