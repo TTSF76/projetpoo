@@ -160,4 +160,4 @@ GO
 ```
 #### Réponse-type
 
-`Variation commericiale: 159594149€`
+`Variation commerciale: 159594149€`
