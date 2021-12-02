@@ -186,3 +186,15 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPre
 	}
 	return vecteur_nom_prenom;
 }
+
+System::String^ NS_Utilitaire_svc::CLserviceutilitaire::recupererNumeroIncrementiel(System::String^numero_incrementiel, System::String^ ref_command) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectIncrementReference(ref_command);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		numero_incrementiel = val[0]->ToString();
+	
+	}
+	return numero_incrementiel;
+}

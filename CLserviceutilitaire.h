@@ -20,6 +20,7 @@ namespace NS_Utilitaire_svc {
 		std::vector<std::string> repertorierRegion(std::vector<std::string>);
 
 		std::vector<std::string> repertorierIdClients(std::vector<std::string>);
+		System::String^ recupererNumeroIncrementiel(System::String^,System::String^);
 
 		std::vector<std::string> repertorierIdAdresseFacturation(std::vector<std::string>,int);
 		std::vector<std::string> miseAjourAdresseFacturation(std::vector<std::string>, int);

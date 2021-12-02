@@ -49,6 +49,10 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClient() {
 	return "select id_client from client order by id_client ";
 }
 
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdPersonnel() {
+	return "select id_personnel from personnel ";
+}
+
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenom(int id_client) {
 
 	return "select nom_client, prenom_client from client where id_client = '"+id_client+"'";
@@ -72,4 +76,8 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdAdresseLivraison(int id
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoAdresseLivraison(int id_adresse_livraison) {
 	return "select rue, numero_rue, nom_residence,numero_etage, code_postal,ville,region, pays from adresses inner join villes on adresses.id_ville = villes.id_ville AND id_adresse ='" + id_adresse_livraison + "'";
+}
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIncrementReference(System::String^ ref_commande) {
+	return "SELECT COUNT(*)+1 as auto_increment FROM commande WHERE ref_command LIKE '" + ref_commande + "%'";
 }

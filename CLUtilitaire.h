@@ -19,6 +19,7 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectRegionV(System::String^);
 
 		System::String^ SelectIdClient();
+		System::String^ SelectIdPersonnel();
 		System::String^ SelectNomPrenom(int);
 		
 		System::String^ SelectIdAdresseFacturation(int);
@@ -27,6 +28,7 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectIdAdresseLivraison(int);
 		System::String^ SelectInfoAdresseLivraison(int);
 
+		System::String^ SelectIncrementReference(System::String^);
 	};
 }
 
