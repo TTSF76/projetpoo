@@ -59,25 +59,56 @@ Elle permet de gérer:
 
 ## Guide d'utilisation
 
-Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application'. 
+Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application qui arrivera sur la page d'accueil : 
+##### Ecran d'accueil :
+<img src="https://i.imgur.com/jSUs46l.png"></img> 
 
-<img src="https://i.imgur.com/451PbDF.png"></img>
-<img src="https://i.imgur.com/XqQXoI6.png"></img>
-<img src="https://i.imgur.com/lxdCN9S.png"></img>
-<img src="https://i.imgur.com/26PRauK.png"></img>
-<img src="https://i.imgur.com/PqU0ZsJ.png"></img>
-<img src="https://i.imgur.com/mrFDTcD.png"></img>
-<img src="https://i.imgur.com/2asNOkM.png"></img>
-<img src="https://i.imgur.com/YkfAoii.png"></img>
+Ensuite, il faudra selectionner une catégorie parmis celles ci-dessous :
+
+<img src="https://i.imgur.com/SExdclZ.png"></img>
+
+**Note :** Lorsque que vous cliquer sur personnel, cela vous ouvre la page ci-dessous, il suffit de rentrer le mot de passe "motdepasse" pour accéder a la catégorie personnel.
+##### La fenêtre d'authentification :
 <img src="https://i.imgur.com/j5RFIz2.png"></img>
-<img src="https://i.imgur.com/jSUs46l.png"></img>
 
-<br> <br>Une fois ces actions réalisées, selectionner une catégorie sur laquelle vous effectuerez une action. (pour accéder au personnel il faut rentrer le mot de passe "motdepasse").
-<br> <br>Enfin vous aurez accès à plusieurs actions (entre créer, insérer, selectionner ou mettre à jour) dans toutes les catégories autre que les stats. Pour ces dernière vous pourrez actionner une des neufs actions, qui sont précisées [ici](#Statistiques).
+Ensuite vous pouvez choisir une action parmis les 4 boutons qui seront affichés à l'écran (**Afficher**, **Créer**, **Supprimer**, **Mettre à jour**)
+
+---
+
+Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (*DataGridView*) apparait avec les données demandées.
+
+##### Voici un exemple de page de gestion (les données sont générées aléatoirement) :
+<img src="https://i.imgur.com/YkfAoii.png"></img>
+
+---
+
+Lorsqu'un employé clique sur le bouton **Créer**, une nouvelle fenêtre s'ouvrira avec les entrées relatives à la catégorie sélectionnée.
+
+##### Le formulaire d'insertion de Personnel :
+<img src="https://i.imgur.com/mrFDTcD.png"></img>
+
+##### Le formulaire d'insertion de Commande :
+<img src="https://i.imgur.com/26PRauK.png"></img>
 
 
+---
+
+Lorsqu'un employé clique sur le bouton **Supprimer** après avoir sélectionné un ID dans l'affichage, le programme supprimera les données.
+
+---
+
+Lorsqu'un employé clique sur le bouton **Mettre à jour** après avoir sélectionné un ID dans l'affichage, une nouvelle fenêtre s'ouvrira avec un formulaire à remplir avec les données souhaitées.
+
+##### Le formulaire de mise à jour d'un Client :
+<img src="https://i.imgur.com/tbl8o7K.png"></img>
 
 ## Statistiques
+
+<img src="https://i.imgur.com/XqQXoI6.png"></img>
+
+
+La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte *optionnelles* qui permettent de faire les requêtes ci-dessous.
+
 ### Calculer le panier moyen
 
 Cette commande permet de visualiser la valeur moyenne des paniers des clients (en €).
