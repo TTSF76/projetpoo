@@ -106,7 +106,9 @@ ORDER BY quantite ASC
 GO
 ```
 
-### Calculer la valeur commerciale du stock
+### Calculer la valeur commerciale du stock (sans variables)
+
+Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise
 
 ```sql
 CREATE PROCEDURE prixCommercial as
@@ -114,7 +116,13 @@ SELECT SUM(prix_article_ht*stock_article) from article
 GO
 ```
 
+#### Réponse-type
+
+`Variation commericiale: 147714163€`
+
 ### Calculer la valeur d'achat du stock
+
+Cette commande permet de calculer le prix auquel l'entièreté du stock à été acheté
 
 ```sql
 CREATE PROCEDURE prixAchat
@@ -124,7 +132,14 @@ FROM article
 GO
 ```
 
-### Calculer la valeur commerciale du stock (avec variables)
+#### Réponse-type
+
+`Valeur d'achat: 140475544€`
+
+### Calculer la variation commerciale du stock (avec variables)
+
+Cette commande effectue la même action que la commande de la valeur commerciale, avec une tva, une marge, une remise et une démarque modifiables au besoin <br>
+Elle prendre en argument un mode de tva (1,2 ou 3), puis des valeurs pour les valeurs restantes.
 
 ```sql
 CREATE PROCEDURE varCommerciale @tva int, @marge int, @remise int, @demarche int
@@ -143,3 +158,6 @@ SET @prix = @prix * (1 - @demarche2 / 100)
 SELECT @prix AS valeur
 GO
 ```
+#### Réponse-type
+
+`Variation commericiale: 159594149€`
