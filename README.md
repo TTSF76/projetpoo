@@ -8,12 +8,18 @@
     -   [Fonctionnalités](#Fonctionnalités)
     -   [Les langages et outils que nous avons utilisé](#Langages-et-Outils-utilisés)
 -   [Guide d'utilisation](#Guide-d'utilisation)
+    -   [Accueil](#Accueil)
     -   [Affichage](#Affichage)
     -   [Création](#Création)
     -   [Suppression](#Suppression)
     -   [Mise à jour](#Mise-à-jour)
 -   [Réalisation](#Réalisation)
     -   [Diagramme de classe](#Diagramme)
+    -   [Fichiers](#Fichiers)
+    -   [Base de données](#Base-de-données)
+    -   [Contraintes](#Contrainte)
+        -   [Problèmes](#Problèmes)
+        -   [Solutions](#Solutions)
 -   [Gestion des statistiques](#Statistiques)
     -   [Panier moyen](#Calculer-le-panier-moyen)
     -   [Chiffre d'affaire](#Calculer-le-chiffre-d'affaire-sur-un-mois-en-particuler)
@@ -35,7 +41,12 @@ L'application **Delivery Manager** a été conçu grâce aux langages **C++** (p
 
 ### Contributeurs
 
-Ce projet est mené par [**Fabien RIBES**](https://github.com/Good660), [**Talla DIOP**](https://github.com/Corleone667), [**Tristan JEHANNO**](https://github.com/Git-Rigoras) et [**Samuel WARD**](https://github.com/INF-Zenyth).
+Ce projet est mené par:
+
+-   [**Fabien RIBES**](https://github.com/Good660)
+-   [**Talla DIOP**](https://github.com/Corleone667)
+-   [**Tristan JEHANNO**](https://github.com/Git-Rigoras)
+-   [**Samuel WARD**](https://github.com/INF-Zenyth)
 
 ### Fonctionnalités
 
@@ -72,6 +83,8 @@ Ce projet est mené par [**Fabien RIBES**](https://github.com/Good660), [**Talla
 <a href=""></a>
 
 ## Guide d'utilisation
+
+### Accueil
 
 Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le **fichier executable** de l'application qui arrivera sur la page d'accueil :
 
@@ -129,6 +142,8 @@ Lorsqu'un employé clique sur le bouton **Mettre à jour** après avoir sélecti
 
 <p align="center"><img src="https://i.imgur.com/LQA6RAr.png"></img></p>
 
+---
+
 ## Réalisation
 
 ### Diagramme
@@ -141,24 +156,44 @@ Nous avons commencé par créer des diagrammes _UML 2.0_ afin de savoir quoi fai
 
 A partir du diagramme de classe ci dessus, nous avons pu développer l'arborescence ci-dessous. Notez que des fichiers ont été ajouté par rapport au diagramme de classe, afin de correspondre au besoin de faire un système de "Service-Mappage-Contrôle".
 
+### Fichiers
+
 <details>
-	<summary>Arborescence</summary><br>
+	<summary>Arborescence des fichiers</summary><br>
 	<p align="center"><img src="https://i.imgur.com/Pj5QjLd.png"></img></p>
 </details>
 
 Dans ces fichier, il y a donc trois catégories :
 
 -   Les services
-
 -   Les maps (ou carte)
-
 -   Les contrôles
+
+### Contraintes
+
+#### Problèmes
+
+1. On aurait pu utilisé une base de données locale ou sur un serveur local, mais comme les membres du groupe ne travaillent pas aux mêmes campus, ce n'était pas un choix.
+
+2. Se partager le code et pouvoir travailler dessus en même temps.
+
+#### Solutions
+
+1. On a trouvé des entreprises spécialisées dans l'hébergement de bases de données. On est passé par quelques uns pour finalement opter pour **Microsoft Azure**. Cette dernière propose aux étudiants un service d'hébergement gratuit qui est **stable**, **rapide**, **sécurisé** et **compatible avec SQL Server**.
+
+2. Utilisation de **GitHub** pour envoyer et recevoir des fichiers. On a aussi mis en place un _webhook_ dans notre groupe de communication sur Discord qui permet de nous notifier lorsqu'il y a des modifications (**nouvelle branche**, **push**, **commit**...).
+
+<p align="center"><img src="https://i.imgur.com/KwzzdoC.png"></img></p>
+
+---
 
 ## Statistiques
 
 La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte _optionnelles_ qui permettent de faire les requêtes ci-dessous.
 
 <p align="center"><img src="https://i.imgur.com/R71fUhg.png"></img></p>
+
+---
 
 ### Calculer le panier moyen
 
@@ -181,10 +216,13 @@ Panier moyen :
 350 €
 ```
 
+---
+
 ### Calculer le chiffre d'affaire sur un mois en particuler
 
 Cette commande permet de visualiser le chiffre d'affaire de l'entreprise sur un mois et année en particulier choisi par l'employé.
-<br> **Note :** Il faut rentrer l'année dans la première boîte de texte, et le mois dans la deuxième.
+
+> **Note :** Il faut rentrer l'année dans la première boîte de texte, et le mois dans la deuxième.
 
 #### Procédure SQL
 
@@ -204,6 +242,8 @@ GO
 Chiffre d'Affaire :
 1400 €
 ```
+
+---
 
 ### Identifier les produits sous le seuil de réapprovisionnement
 
@@ -229,10 +269,13 @@ Restocker :
 29
 ```
 
+---
+
 ### Calculer le montant total des achats pour un client
 
 Cette commande permet de visualiser le montant total (en €) du panier d'un client sélectionné par l'employé.
-<br> **Note :** Cette commande requiert de rentrer un id de client dans la première boîte de texte.
+
+> **Note :** Cette commande requiert de rentrer un ID de client dans la première boîte de texte.
 
 #### Procédure SQL
 
@@ -253,6 +296,8 @@ GO
 Montant Total:
 1400 €
 ```
+
+---
 
 ### Identifier les 10 articles les plus vendus
 
@@ -287,6 +332,10 @@ Plus Vendus :
 48 Mictopepor    7
 ```
 
+> Chaque ligne comporte la référence de l'article, le nom de l'article et la quantité vendue.
+
+---
+
 ### Identifier les 10 articles les moins vendus
 
 Cette commande permet d'indentifier les id des 10 articles les moins vendus, afin d'éventuellement envisager une modification sur leur prix par exemple.
@@ -320,9 +369,13 @@ Moins Vendus :
 15 Subwoofgaer   41
 ```
 
+> Chaque ligne comporte la référence de l'article, le nom de l'article et la quantité vendue.
+
+---
+
 ### Calculer la valeur d'achat du stock
 
-Cette commande permet de calculer le prix auquel l'entièreté du stock à été acheté
+Cette commande permet de calculer le prix auquel l'entièreté du stock à été acheté.
 
 #### Procédure SQL
 
@@ -341,9 +394,11 @@ Valeur d'achat :
 140475544 €
 ```
 
+---
+
 ### Calculer la valeur commerciale du stock (sans variables)
 
-Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise
+Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise.
 
 #### Procédure SQL
 
@@ -356,20 +411,22 @@ GO
 #### Réponse-type
 
 ```
-Variation commerciale :
+Valeur commerciale :
 147714163 €
 ```
 
+---
+
 ### Calculer la variation commerciale du stock (avec variables)
 
-Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin <br>
-Elle prendre en argument un mode de TVA (1, 2 ou 3), puis des valeurs pour les valeurs restantes.
-<br>**Note:** Cette commande nécessite de remplir les 4 boites de texte, dans l'ordre qui suit :
+Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin.
 
--   La TVA (1, 2, ou 3)
--   La marge
--   La remise
--   La démarque
+> **Note:** Cette commande nécessite de remplir les 4 boites de texte, dans l'ordre qui suit:
+>
+> -   La **_TVA_** (**1** [5.5%], **2** [10%], ou **3** [20%])
+> -   La **_marge_** (en %)
+> -   La **_remise_** (en %)
+> -   La **_démarque_** (en %)
 
 #### Procédure SQL
 
@@ -397,3 +454,5 @@ GO
 Variation commerciale :
 159594149 €
 ```
+
+---
