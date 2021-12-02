@@ -30,6 +30,8 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectInfoAdresseLivraison(int);
 
 		System::String^ SelectIncrementReference(System::String^);
+
+		System::String^ SelectInfoArticle(int);
 	};
 }
 

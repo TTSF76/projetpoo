@@ -1315,13 +1315,17 @@ private: System::Void cbxIdClient_SelectedIndexChanged(System::Object^ sender, S
 	NS_Utilitaire_svc::CLserviceutilitaire^ id_adresse_facturation = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	std::vector<std::string> vecteur_id_adresse_facturation;
 	vecteur_id_adresse_facturation = id_adresse_facturation->repertorierIdAdresseFacturation(vecteur_id_adresse_facturation, int::Parse(this->cbxIdClient->Text));
-	 this->cbxIdFacturation->Items->Add(gcnew String(vecteur_id_adresse_facturation[0].c_str()));
+	for (int i = 0; i < vecteur_id_adresse_facturation.size(); i++) {
+		this->cbxIdFacturation->Items->Add(gcnew String(vecteur_id_adresse_facturation[i].c_str()));
+	}
 
 
 	 NS_Utilitaire_svc::CLserviceutilitaire^ id_adresse_livraison = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	 std::vector<std::string> vecteur_id_adresse_livraison;
 	 vecteur_id_adresse_livraison = id_adresse_livraison->repertorierIdAdresseLivraison(vecteur_id_adresse_livraison, int::Parse(this->cbxIdClient->Text));
-	 this->cbxIdLivraison->Items->Add(gcnew String(vecteur_id_adresse_livraison[0].c_str()));
+	 for (int i = 0; i < vecteur_id_adresse_livraison.size(); i++) {
+		 this->cbxIdLivraison->Items->Add(gcnew String(vecteur_id_adresse_livraison[i].c_str()));
+	 }
 }
 
 private: System::Void btnAnnuler_Click_1(System::Object^ sender, System::EventArgs^ e) {

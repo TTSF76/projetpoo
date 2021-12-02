@@ -11,4 +11,5 @@
 #include "InputAdresseClient.h"
 #include "InputArticleInserer.h"
 #include "InputClientUpdate.h"
+#include "InputArticleUpdate.h"
 #include "Auth.h"

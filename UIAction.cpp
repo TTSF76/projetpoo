@@ -92,6 +92,14 @@ void UIAction::validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_a
 	}
 }
 
+void UIAction::validerUpdateButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article)
+{
+	if (form->Name == "InputArticleUpdate") {
+		UIAction::svcArticle->updateArticle(article);
+	}
+}
+
+
 void UIAction::deleteButtonArticle(System::Windows::Forms::Label^ lbl, NS_map_article::CLarticle^ article, System::Windows::Forms::DataGridView^ dgv)
 {
 	UIAction::svcArticle->deleteArticle(article);

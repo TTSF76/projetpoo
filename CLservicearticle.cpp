@@ -29,3 +29,11 @@ void NS_Article_svc::CLservicearticle::insertArticle(NS_map_article::CLarticle^ 
 	sql = this->mapArticle->Create();
 	this->oCad->actionRows(sql);
 }
+
+void NS_Article_svc::CLservicearticle::updateArticle(NS_map_article::CLarticle^ article)
+{
+	System::String^ sql;
+	this->mapArticle = article;
+	sql = this->mapArticle->Update();
+	this->oCad->actionRows(sql);
+}

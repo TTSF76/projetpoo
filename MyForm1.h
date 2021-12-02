@@ -1001,12 +1001,12 @@ private: System::Void bouton_update_Click(System::Object^ sender, System::EventA
 			MessageBox::Show("Vous devez lister le stock puis sélectionner une valeur de la colonne ref_article!", "Erreur", MessageBoxButtons::OK);
 			return;
 		}
-		NS_map_article::CLarticle::cvalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
+		NS_map_article::CLarticle::avalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
 		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
 		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
 		this->articleId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
-		/*projectView::InputArticleUpdate inputForm;
-		inputForm.ShowDialog();*/
+		projectView::InputArticleUpdate inputForm;
+		inputForm.ShowDialog();
 
 	}
 }

@@ -264,6 +264,9 @@
     <EmbeddedResource Include="InputArticleInserer.resx">
       <DependentUpon>InputArticleInserer.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputArticleUpdate.resx">
+      <DependentUpon>InputArticleUpdate.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputClientInserer.resx">
       <DependentUpon>InputClientInserer.h</DependentUpon>
     </EmbeddedResource>

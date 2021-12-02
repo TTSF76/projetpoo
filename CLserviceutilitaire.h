@@ -37,5 +37,7 @@ namespace NS_Utilitaire_svc {
 		std::vector<std::string> miseAjourVilleCBCP(std::vector<std::string>, System::String^);
 		std::vector<std::string> miseAjourRegionCBCP(std::vector<std::string>, System::String^);
 		std::vector<std::string> miseAjourPaysCBCP(std::vector<std::string>, System::String^);
+
+		std::vector<std::string> repertorierInfoArticles(std::vector<std::string> liste_info_articles,int);
 	};
 }
