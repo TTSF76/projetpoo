@@ -18,7 +18,7 @@
 
 
 ## Présentation
-Delivery Manager est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application.
+**Delivery Manager** est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application.
 
 Ce projet est mené par **Fabien RIBES**, **Talla DIOP**, **Tristan JEHANNO** et **Samuel WARD**.
 
@@ -59,7 +59,19 @@ Elle permet de gérer:
 
 ## Guide d'utilisation
 
-Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe. 
+Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application'. 
+
+<img src="https://i.imgur.com/451PbDF.png"></img>
+<img src="https://i.imgur.com/XqQXoI6.png"></img>
+<img src="https://i.imgur.com/lxdCN9S.png"></img>
+<img src="https://i.imgur.com/26PRauK.png"></img>
+<img src="https://i.imgur.com/PqU0ZsJ.png"></img>
+<img src="https://i.imgur.com/mrFDTcD.png"></img>
+<img src="https://i.imgur.com/2asNOkM.png"></img>
+<img src="https://i.imgur.com/YkfAoii.png"></img>
+<img src="https://i.imgur.com/j5RFIz2.png"></img>
+<img src="https://i.imgur.com/jSUs46l.png"></img>
+
 <br> <br>Une fois ces actions réalisées, selectionner une catégorie sur laquelle vous effectuerez une action. (pour accéder au personnel il faut rentrer le mot de passe "motdepasse").
 <br> <br>Enfin vous aurez accès à plusieurs actions (entre créer, insérer, selectionner ou mettre à jour) dans toutes les catégories autre que les stats. Pour ces dernière vous pourrez actionner une des neufs actions, qui sont précisées [ici](#Statistiques).
 
