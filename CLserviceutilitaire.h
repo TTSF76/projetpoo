@@ -18,6 +18,8 @@ namespace NS_Utilitaire_svc {
 		std::vector<std::string> repertorierPays(std::vector<std::string>);
 		std::vector<std::string> repertorierCodePostaux(std::vector<std::string>);
 		std::vector<std::string> repertorierRegion(std::vector<std::string>);
+		std::vector<std::string> repertorierIdPersonnel(std::vector<std::string>);
+
 
 		std::vector<std::string> repertorierIdClients(std::vector<std::string>);
 		System::String^ recupererNumeroIncrementiel(System::String^,System::String^);

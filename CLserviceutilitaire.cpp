@@ -134,6 +134,16 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierRegi
 	return list_region;
 }
 
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierIdPersonnel(std::vector<std::string> list_id_personnel) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectIdPersonnel();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		list_id_personnel.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+	}
+	return list_id_personnel;
+}
 
 std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire:: miseAjourVilleCBCP(std::vector<std::string> vecteur_ville, System::String^ code_postal)
 {
