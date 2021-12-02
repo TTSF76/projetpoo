@@ -6,7 +6,8 @@
 namespace NS_Adresse_svc {
 	ref class CLserviceadresse {
 	public:
-		void insertAdresse(CLadresse^ adresse);
+		void insertAdresseLiv(CLadresse^ adresse);
+		void insertAdresseFac(CLadresse^ adresse);
 		void deleteAdresseLiv(CLadresse^ adresse);
 		void deleteAdresseFac(CLadresse^ adresse);
 		CLserviceadresse(void);

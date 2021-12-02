@@ -34,6 +34,9 @@ public:
 	static void validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article);
 	static void deleteButtonArticle(System::Windows::Forms::Label^ lbl, NS_map_article::CLarticle^ article, System::Windows::Forms::DataGridView^ dgv);
 
+	static void insertButtonAdresseLiv(CLadresse^ adresse);
+	static void insertButtonAdresseFac(CLadresse^ adresse);
+
 	static void deleteButtonAdresseLiv(CLadresse^ adresse);
 	static void deleteButtonAdresseFac(CLadresse^ adresse);
 };

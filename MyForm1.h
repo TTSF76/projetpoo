@@ -975,8 +975,6 @@ namespace projectView {
 	}
 private: System::Void bouton_update_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ gestion = titre_rubrique->Text;
-	int rowindex = this->dataGridView1->CurrentCell->RowIndex;
-	int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
 	if (gestion == "CLIENTS")
 	{
 		if (this->dataGridView1->DataSource == nullptr) {
@@ -984,11 +982,13 @@ private: System::Void bouton_update_Click(System::Object^ sender, System::EventA
 			return;
 		}
 		NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
-		if (columnindex != 0)
+		if (this->dataGridView1->CurrentCell->ColumnIndex != 0)
 		{
 			MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
 			return;
 		}
+		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
 		NS_map_client::CLclient::cvalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
 		this->clientId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
 		projectView::InputClientUpdate inputForm;
@@ -1002,6 +1002,8 @@ private: System::Void bouton_update_Click(System::Object^ sender, System::EventA
 			return;
 		}
 		NS_map_article::CLarticle::cvalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
+		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
 		this->articleId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
 		/*projectView::InputArticleUpdate inputForm;
 		inputForm.ShowDialog();*/

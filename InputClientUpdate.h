@@ -1,9 +1,8 @@
 #pragma once
-#include "CLconnect.h"
-#include "CLcommande.h"
-#include "UIAction.h"
+#include "InputAdresseClient.h"
 #include "CLserviceutilitaire.h"
-#include "CLadresse.h"
+#include "CLclient.h"
+#include "UIAction.h"
 
 namespace projectView {
 
@@ -95,8 +94,10 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::Button^ suprAdrLiv;
 	private: System::Windows::Forms::Button^ ajoutAdrLiv;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ suprAdrFac;
+	private: System::Windows::Forms::Button^ ajoutAdrFac;
+
+
 	private: System::Windows::Forms::Label^ label20;
 
 
@@ -164,8 +165,8 @@ namespace projectView {
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->suprAdrLiv = (gcnew System::Windows::Forms::Button());
 			this->ajoutAdrLiv = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->suprAdrFac = (gcnew System::Windows::Forms::Button());
+			this->ajoutAdrFac = (gcnew System::Windows::Forms::Button());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -261,6 +262,7 @@ namespace projectView {
 			this->btnAnnuler->TabIndex = 41;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = false;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputClientUpdate::btnAnnuler_Click);
 			// 
 			// btnValider
 			// 
@@ -794,38 +796,40 @@ namespace projectView {
 			this->ajoutAdrLiv->TabIndex = 159;
 			this->ajoutAdrLiv->Text = L"Créer nouvelle adresse de livraison";
 			this->ajoutAdrLiv->UseVisualStyleBackColor = false;
+			this->ajoutAdrLiv->Click += gcnew System::EventHandler(this, &InputClientUpdate::ajoutAdrLiv_Click);
 			// 
-			// button1
+			// suprAdrFac
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+			this->suprAdrFac->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(222, 498);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(174, 24);
-			this->button1->TabIndex = 162;
-			this->button1->Text = L"Supprimer cette adresse";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &InputClientUpdate::button1_Click);
+			this->suprAdrFac->FlatAppearance->BorderSize = 0;
+			this->suprAdrFac->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->suprAdrFac->ForeColor = System::Drawing::Color::White;
+			this->suprAdrFac->Location = System::Drawing::Point(222, 498);
+			this->suprAdrFac->Margin = System::Windows::Forms::Padding(4);
+			this->suprAdrFac->Name = L"suprAdrFac";
+			this->suprAdrFac->Size = System::Drawing::Size(174, 24);
+			this->suprAdrFac->TabIndex = 162;
+			this->suprAdrFac->Text = L"Supprimer cette adresse";
+			this->suprAdrFac->UseVisualStyleBackColor = false;
+			this->suprAdrFac->Click += gcnew System::EventHandler(this, &InputClientUpdate::suprAdrFac_Click);
 			// 
-			// button2
+			// ajoutAdrFac
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
+			this->ajoutAdrFac->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(214)),
 				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 5.3F));
-			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Location = System::Drawing::Point(404, 498);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(192, 24);
-			this->button2->TabIndex = 161;
-			this->button2->Text = L"Créer nouvelle adresse de facturation";
-			this->button2->UseVisualStyleBackColor = false;
+			this->ajoutAdrFac->FlatAppearance->BorderSize = 0;
+			this->ajoutAdrFac->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ajoutAdrFac->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 5.3F));
+			this->ajoutAdrFac->ForeColor = System::Drawing::Color::White;
+			this->ajoutAdrFac->Location = System::Drawing::Point(404, 498);
+			this->ajoutAdrFac->Margin = System::Windows::Forms::Padding(4);
+			this->ajoutAdrFac->Name = L"ajoutAdrFac";
+			this->ajoutAdrFac->Size = System::Drawing::Size(192, 24);
+			this->ajoutAdrFac->TabIndex = 161;
+			this->ajoutAdrFac->Text = L"Créer nouvelle adresse de facturation";
+			this->ajoutAdrFac->UseVisualStyleBackColor = false;
+			this->ajoutAdrFac->Click += gcnew System::EventHandler(this, &InputClientUpdate::ajoutAdrFac_Click);
 			// 
 			// label20
 			// 
@@ -849,8 +853,8 @@ namespace projectView {
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(639, 826);
 			this->Controls->Add(this->label20);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->suprAdrFac);
+			this->Controls->Add(this->ajoutAdrFac);
 			this->Controls->Add(this->suprAdrLiv);
 			this->Controls->Add(this->ajoutAdrLiv);
 			this->Controls->Add(this->tbxRegionL);
@@ -905,7 +909,7 @@ namespace projectView {
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"InputClientUpdate";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"InputClientUpdate";
+			this->Text = L"Mettre à jour client";
 			this->Load += gcnew System::EventHandler(this, &InputClientUpdate::InputClientUpdate_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -953,13 +957,17 @@ private: System::Void InputClientUpdate_Load(System::Object^ sender, System::Eve
 	NS_Utilitaire_svc::CLserviceutilitaire^ id_adresse_facturation = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	std::vector<std::string> vecteur_id_adresse_facturation;
 	vecteur_id_adresse_facturation = id_adresse_facturation->repertorierIdAdresseFacturation(vecteur_id_adresse_facturation, int::Parse(this->tbxIdClient->Text));
-	this->cbxIdFacturation->Items->Add(gcnew String(vecteur_id_adresse_facturation[0].c_str()));
+	for (int i = 0; i < vecteur_id_adresse_facturation.size(); i++) {
+		this->cbxIdFacturation->Items->Add(gcnew String(vecteur_id_adresse_facturation[i].c_str()));
+	}
 
 
 	NS_Utilitaire_svc::CLserviceutilitaire^ id_adresse_livraison = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	std::vector<std::string> vecteur_id_adresse_livraison;
 	vecteur_id_adresse_livraison = id_adresse_livraison->repertorierIdAdresseLivraison(vecteur_id_adresse_livraison, int::Parse(this->tbxIdClient->Text));
-	this->cbxIdLivraison->Items->Add(gcnew String(vecteur_id_adresse_livraison[0].c_str()));
+	for (int i = 0; i < vecteur_id_adresse_livraison.size(); i++) {
+		this->cbxIdLivraison->Items->Add(gcnew String(vecteur_id_adresse_livraison[i].c_str()));
+	}
 }
 private: System::Void suprAdrLiv_Click(System::Object^ sender, System::EventArgs^ e) {
 	CLadresse^ adresse = gcnew CLadresse;
@@ -968,7 +976,7 @@ private: System::Void suprAdrLiv_Click(System::Object^ sender, System::EventArgs
 	
 	this->Close();
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void suprAdrFac_Click(System::Object^ sender, System::EventArgs^ e) {
 	CLadresse^ adresse = gcnew CLadresse;
 	adresse->setIdAdress(int::Parse(cbxIdFacturation->Text));
 	UIAction::deleteButtonAdresseFac(adresse);
@@ -976,15 +984,24 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
 	NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
-	/*CLadresse^ adresse_livraison = gcnew CLadresse;
-	CLadresse^ adresse_facturation = gcnew CLadresse;
-	client->setAdresseFacturation(adresse_facturation);
-	client->setAdresseLivraison(adresse_livraison);*/
 	client->setPrenom(tbxPrenom->Text);
 	client->setNom(tbxNom->Text);
 	client->setDateNaissance(this->dtpAnniversaire->Value.ToString("yyyy-MM-dd"));
 	UIAction::validerUpdateButtonClient(client);
 	this->Close();
+}
+private: System::Void ajoutAdrLiv_Click(System::Object^ sender, System::EventArgs^ e) {
+	CLadresse::avalue = "livraison";
+	projectView::InputAdresseClient inputForm;
+	inputForm.ShowDialog();
+}
+private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void ajoutAdrFac_Click(System::Object^ sender, System::EventArgs^ e) {
+	CLadresse::avalue = "facturation";
+	projectView::InputAdresseClient inputForm;
+	inputForm.ShowDialog();
 }
 };
 }

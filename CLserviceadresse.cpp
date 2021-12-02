@@ -8,11 +8,6 @@ NS_Adresse_svc::CLserviceadresse::CLserviceadresse(void)
 }
 
 
-void NS_Adresse_svc::CLserviceadresse::insertAdresse(CLadresse^ adresse)
-{
-    throw gcnew System::NotImplementedException();
-}
-
 void NS_Adresse_svc::CLserviceadresse::deleteAdresseLiv(CLadresse^ adresse)
 {
 	System::String^ sql;
@@ -26,5 +21,21 @@ void NS_Adresse_svc::CLserviceadresse::deleteAdresseFac(CLadresse^ adresse)
 	System::String^ sql;
 	this->mapAdresse = adresse;
 	sql = this->mapAdresse->DeleteFac();
+	this->oCad->actionRows(sql);
+}
+
+void NS_Adresse_svc::CLserviceadresse::insertAdresseLiv(CLadresse^ adresse)
+{
+	System::String^ sql;
+	this->mapAdresse = adresse;
+	sql = this->mapAdresse->CreateLiv();
+	this->oCad->actionRows(sql);
+}
+
+void NS_Adresse_svc::CLserviceadresse::insertAdresseFac(CLadresse^ adresse)
+{
+	System::String^ sql;
+	this->mapAdresse = adresse;
+	sql = this->mapAdresse->CreateFac();
 	this->oCad->actionRows(sql);
 }

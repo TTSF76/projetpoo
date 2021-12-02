@@ -33,4 +33,7 @@ public:
 	void setNumeroEtage(int);
 	System::String^ DeleteLiv();
 	System::String^ DeleteFac();
+	System::String^ CreateLiv();
+	System::String^ CreateFac();
+	static System::String^ avalue = "undefined";
 };

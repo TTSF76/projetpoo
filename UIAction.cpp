@@ -111,6 +111,16 @@ void UIAction::deleteButtonAdresseFac(CLadresse^ adresse)
 	UIAction::svcAdresse->deleteAdresseFac(adresse);
 }
 
+void UIAction::insertButtonAdresseLiv(CLadresse^ adresse)
+{
+	UIAction::svcAdresse->insertAdresseLiv(adresse);
+}
+
+void UIAction::insertButtonAdresseFac(CLadresse^ adresse)
+{
+	UIAction::svcAdresse->insertAdresseFac(adresse);
+}
+
 void UIAction::validerUpdateButtonClient(NS_map_client::CLclient^ client)
 {
 	UIAction::svcClient->updateClient(client);
