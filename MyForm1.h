@@ -988,8 +988,8 @@ private: System::Void bouton_update_Click(System::Object^ sender, System::EventA
 		}
 		NS_map_article::CLarticle::cvalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
 		this->articleId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
-		projectView::InputArticleUpdate inputForm;
-		inputForm.ShowDialog();
+		/*projectView::InputArticleUpdate inputForm;
+		inputForm.ShowDialog();*/
 
 	}
 }
