@@ -1,8 +1,31 @@
-<h1 align="center">Projet CESI: Delivery Manager</h1>
+<h1 align="center">Projet CESI: Delivery Manager [Equipe 6]</h1>
+
+## Somaire
+
+- [Présentation du projet](#Présentation)
+	- [Les langages et outils que nous avons utilisé](#Langages-et-Outils-utilisés)
+- [Guide d'utilisation](#Guide-d'utilisation)
+- [Gestion des statistiques](#Statistiques)
+	- [Panier moyen](#Calculer-le-panier-moyen)
+	- [Chiffre d'affaire](#Calculer-le-chiffre-d'affaire-sur-un-mois-en-particuler)
+	- [Produits sous le seuil](#Identifier-les-produits-sous-le-seuil-de-réapprovisionnement)
+	- [Montant total d'un client](#Calculer-le-montant-total-des-achats-pour-un-client)
+	- [Dix articles les plus vendus](#Identifier-les-10-articles-les-plus-vendus)
+	- [Dix articles les moins vendus](#Identifier-les-10-articles-les-moins-vendus)
+	- [Valeur commerciale du stock (sans variables)](#Calculer-la-valeur-commerciale-du-stock-(sans-variables))
+	- [Valeur d'achat du stock](#Calculer-la-valeur-d'achat-du-stock)
+	- [Valeur commerciale du stock (avec variables)](#Calculer-la-variation-commerciale-du-stock-(avec-variables))
+
 
 ## Présentation
-Delivery Manager est une application de gestion de base de données pour une nouvelle entreprise.<br>
-Elle permet de gérer:<br><br>
+Delivery Manager est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application.
+
+Ce projet est mené par **Fabien RIBES**, **Talla DIOP**, **Tristan JEHANNO** et **Samuel WARD**.
+
+
+
+Elle permet de gérer:
+
 
 - Clients
 	- L'*employé* pourra visualiser, créer, modifier et supprimer des **clients**
@@ -25,7 +48,21 @@ Elle permet de gérer:<br><br>
 		- Calculer la valeur d'achat du stock
 		- Calculer la valeur commerciale du stock (avec variables)
 
+### Langages et Outils utilisés
+
+<a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/></a>
+<a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/></a>
+<a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/></a>
+<a href="https://visualstudio.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/354520/visual-studio.svg" alt="Visual Studio" width="40" height="40"/></a>
+<a href="https://code.visualstudio.com" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/354522/visual-studio-code.svg" alt="Visual Studio Code" width="40" height="40"></a>
+<a href=""></a>
+
 ## Guide d'utilisation
+
+Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe. 
+<br> <br>Une fois ces actions réalisées, selectionner une catégorie sur laquelle vous effectuerez une action. (pour accéder au personnel il faut rentrer le mot de passe "motdepasse").
+<br> <br>Enfin vous aurez accès à plusieurs actions (entre créer, insérer, selectionner ou mettre à jour) dans toutes les catégories autre que les stats. Pour ces dernière vous pourrez actionner une des neufs actions, qui sont précisées [ici](#Statistiques).
+
 
 
 ## Statistiques
@@ -53,6 +90,7 @@ Panier moyen :
 ### Calculer le chiffre d'affaire sur un mois en particuler
 
 Cette commande permet de visualiser le chiffre d'affaire de l'entreprise sur un mois et année en particulier choisi par l'employé.
+<br> **Note :** Il faut rentrer l'année dans la première boîte de texte, et le mois dans la deuxième.
 
 #### Requête
 
@@ -62,9 +100,7 @@ AS
 SELECT SUM(total_ttc)
 FROM commande
 INNER JOIN facturation ON commande.id_facturation = facturation.id_facturation
-WHERE
-	MONTH(date_paiement) = @mois AND 
-	YEAR(date_paiement) = @annee
+WHERE MONTH(date_paiement) = @mois AND YEAR(date_paiement) = @annee
 GO
 ```
 
@@ -102,6 +138,7 @@ Restocker :
 ### Calculer le montant total des achats pour un client
 
 Cette commande permet de visualiser le montant total (en €) du panier d'un client sélectionné par l'employé.
+<br> **Note :** Cette commande requiert de rentrer un id de client dans la première boîte de texte.
 
 #### Requête
 
@@ -227,8 +264,13 @@ Valeur d'achat :
 
 ### Calculer la variation commerciale du stock (avec variables)
 
-Cette commande effectue la même action que la commande de la valeur commerciale, avec une tva, une marge, une remise et une démarque modifiables au besoin <br>
-Elle prendre en argument un mode de tva (1,2 ou 3), puis des valeurs pour les valeurs restantes.
+Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin <br>
+Elle prendre en argument un mode de TVA (1, 2 ou 3), puis des valeurs pour les valeurs restantes.
+<br>**Note:** Cette commande nécessite de remplir les 4 boites de texte, dans l'ordre qui suit :
++ La TVA (1, 2, ou 3)
++ La marge
++ La remise
++ La démarque
 
 #### Requête
 
