@@ -17,7 +17,7 @@
     -   [Diagramme de classe](#Diagramme)
     -   [Fichiers](#Fichiers)
     -   [Base de données](#Base-de-données)
-    -   [Contraintes](#Contrainte)
+    -   [Contraintes](#Contraintes)
         -   [Problèmes](#Problèmes)
         -   [Solutions](#Solutions)
 -   [Gestion des statistiques](#Statistiques)
