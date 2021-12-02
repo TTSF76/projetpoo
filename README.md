@@ -13,6 +13,7 @@
     -   [Suppression](#Suppression)
     -   [Mise à jour](#Mise-à-jour)
 -   [Réalisation](#Réalisation)
+    -   [Diagramme de classe](#Diagramme)
 -   [Gestion des statistiques](#Statistiques)
     -   [Panier moyen](#Calculer-le-panier-moyen)
     -   [Chiffre d'affaire](#Calculer-le-chiffre-d'affaire-sur-un-mois-en-particuler)
@@ -72,21 +73,19 @@ Ce projet est mené par [**Fabien RIBES**](https://github.com/Good660), [**Talla
 
 ## Guide d'utilisation
 
-Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application qui arrivera sur la page d'accueil :
+Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le **fichier executable** de l'application qui arrivera sur la page d'accueil :
 
-##### Ecran d'accueil :
-
-<img src="https://i.imgur.com/jSUs46l.png"></img>
+<img src="https://i.imgur.com/8lIj9rI.png"></img>
 
 Ensuite, il faudra selectionner une catégorie parmis celles ci-dessous :
 
-<img src="https://i.imgur.com/SExdclZ.png"></img>
+<img src="https://i.imgur.com/pFCkkek.png"></img>
 
 **Note :** Lorsque que vous cliquer sur personnel, cela vous ouvre la page ci-dessous, il suffit de rentrer le mot de passe "motdepasse" pour accéder a la catégorie personnel.
 
 ##### La fenêtre d'authentification :
 
-<img src="https://i.imgur.com/j5RFIz2.png"></img>
+<img src="https://i.imgur.com/sVSmISc.png"></img>
 
 Ensuite vous pouvez choisir une action parmis les 4 boutons qui seront affichés à l'écran (**Afficher**, **Créer**, **Supprimer**, **Mettre à jour**)
 
@@ -98,7 +97,7 @@ Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (_DataGridView_
 
 ##### Voici un exemple de page de gestion (les données sont générées aléatoirement) :
 
-<img src="https://i.imgur.com/YkfAoii.png"></img>
+<img src="https://i.imgur.com/mlQt44y.png"></img>
 
 ---
 
@@ -108,11 +107,11 @@ Lorsqu'un employé clique sur le bouton **Créer**, une nouvelle fenêtre s'ouvr
 
 ##### Le formulaire d'insertion de Personnel :
 
-<img src="https://i.imgur.com/mrFDTcD.png"></img>
+<img src="https://i.imgur.com/yh9vBPk.png"></img>
 
 ##### Le formulaire d'insertion de Commande :
 
-<img src="https://i.imgur.com/26PRauK.png"></img>
+<img src="https://i.imgur.com/J9uJX22.png"></img>
 
 ---
 
@@ -128,21 +127,23 @@ Lorsqu'un employé clique sur le bouton **Mettre à jour** après avoir sélecti
 
 ##### Le formulaire de mise à jour d'un Client :
 
-<img src="https://i.imgur.com/tbl8o7K.png"></img><br><br>
+<img src="https://i.imgur.com/LQA6RAr.png"></img><br><br>
 
 ## Réalisation
+
+### Diagramme
 
 Nous avons commencé par créer des diagrammes _UML 2.0_ afin de savoir quoi faire. Ici, nous allons seulement vous remontrer le **diagramme de classe**.<br>
 
 > **Note :** pour voir les autres diagrammes, veuillez consulter le **livrable 2**.
 
-<img src="https://i.imgur.com/tep8W4a.png"></img>
+<img src="https://i.imgur.com/2zp56ji.png"></img>
 
 A partir du diagramme de classe ci dessus, nous avons pu développer l'arborescence ci-dessous. Notez que des fichiers ont été ajouté par rapport au diagramme de classe, afin de correspondre au besoin de faire un système de "Service-Mappage-Contrôle".
 
 <details>
 	<summary>Arborescence</summary><br>
-	<p><img src="https://i.imgur.com/eAnEDb7.png"></img></p>
+	<p><img src="https://i.imgur.com/Pj5QjLd.png"></img></p>
 </details>
 
 Dans ces fichier, il y a donc trois catégories :
@@ -157,13 +158,13 @@ Dans ces fichier, il y a donc trois catégories :
 
 La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte _optionnelles_ qui permettent de faire les requêtes ci-dessous.
 
-<img src="https://i.imgur.com/XqQXoI6.png"></img>
+<img src="https://i.imgur.com/R71fUhg.png"></img>
 
 ### Calculer le panier moyen
 
 Cette commande permet de visualiser la valeur moyenne des paniers des clients (en €).
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE panierMoyen
@@ -185,7 +186,7 @@ Panier moyen :
 Cette commande permet de visualiser le chiffre d'affaire de l'entreprise sur un mois et année en particulier choisi par l'employé.
 <br> **Note :** Il faut rentrer l'année dans la première boîte de texte, et le mois dans la deuxième.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE chiffreAffaire @annee int, @mois int
@@ -209,7 +210,7 @@ Chiffre d'Affaire :
 Cette commande permet de visualiser tous les produits qui devront être restocker par l'entreprise.
 Les valeurs renvoyées correspondent à la référence de l'article.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE restocker
@@ -233,7 +234,7 @@ Restocker :
 Cette commande permet de visualiser le montant total (en €) du panier d'un client sélectionné par l'employé.
 <br> **Note :** Cette commande requiert de rentrer un id de client dans la première boîte de texte.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE montantTotal @clientId int
@@ -257,7 +258,7 @@ Montant Total:
 
 Cette commande permet d'identifier les id des 10 produits les moins vendus, afin d'envisager par exemple d'augmenter les stocks de ces produits pour augmenter les recettes.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE plusVendus
@@ -290,7 +291,7 @@ Plus Vendus :
 
 Cette commande permet d'indentifier les id des 10 articles les moins vendus, afin d'éventuellement envisager une modification sur leur prix par exemple.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE moinsVendus
@@ -319,26 +320,11 @@ Moins Vendus :
 15 Subwoofgaer   41
 ```
 
-### Calculer la valeur commerciale du stock (sans variables)
-
-Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise
-
-```sql
-CREATE PROCEDURE prixCommercial as
-SELECT SUM(prix_article_ht*stock_article) from article
-GO
-```
-
-#### Réponse-type
-
-```
-Variation commerciale :
-147714163 €
-```
-
 ### Calculer la valeur d'achat du stock
 
 Cette commande permet de calculer le prix auquel l'entièreté du stock à été acheté
+
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE prixAchat
@@ -355,6 +341,25 @@ Valeur d'achat :
 140475544 €
 ```
 
+### Calculer la valeur commerciale du stock (sans variables)
+
+Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise
+
+#### Procédure SQL
+
+```sql
+CREATE PROCEDURE prixCommercial as
+SELECT SUM(prix_article_ht*stock_article) from article
+GO
+```
+
+#### Réponse-type
+
+```
+Variation commerciale :
+147714163 €
+```
+
 ### Calculer la variation commerciale du stock (avec variables)
 
 Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin <br>
@@ -366,7 +371,7 @@ Elle prendre en argument un mode de TVA (1, 2 ou 3), puis des valeurs pour les v
 -   La remise
 -   La démarque
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE varCommerciale @tva int, @marge int, @remise int, @demarche int
