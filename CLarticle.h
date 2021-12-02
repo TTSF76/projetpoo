@@ -37,5 +37,7 @@ namespace NS_map_article {
 		System::String^ Delete();
 		System::String^ Select();
 
+		static System::String^ cvalue = "0";
+
 	};
 };

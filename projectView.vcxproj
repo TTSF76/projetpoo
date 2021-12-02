@@ -144,6 +144,9 @@
     <ClInclude Include="CLserviceutilitaire.h" />
     <ClInclude Include="CLstats.h" />
     <ClInclude Include="CLUtilitaire.h" />
+    <ClInclude Include="InputAdresseClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="InputArticleInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -181,6 +184,9 @@
     <ClInclude Include="InputStockSupprimer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InputStockUpdate.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -213,6 +219,7 @@
     <ClCompile Include="CLserviceutilitaire.cpp" />
     <ClCompile Include="CLstats.cpp" />
     <ClCompile Include="CLUtilitaire.cpp" />
+    <ClCompile Include="InputAdresseClient.cpp" />
     <ClCompile Include="InputArticleInserer.cpp" />
     <ClCompile Include="InputArticleUpdate.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
@@ -223,6 +230,7 @@
     <ClCompile Include="InputPersonnelInserer.cpp" />
     <ClCompile Include="InputPersonnelSupprimer.cpp" />
     <ClCompile Include="InputPersonnelUpdate.cpp" />
+    <ClCompile Include="InputStockUpdate.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="MyForm1.cpp" />
@@ -276,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputStockSupprimer.resx">
       <DependentUpon>InputStockSupprimer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputStockUpdate.resx">
+      <DependentUpon>InputStockUpdate.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
