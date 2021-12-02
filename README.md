@@ -1,6 +1,6 @@
 <h1 align="center">Projet CESI - Delivery Manager [Equipe 6]</h1>
 
-## Somaire
+## Sommaire
 
 -   [Présentation du projet](#Présentation)
     -   [Description](#Description)
