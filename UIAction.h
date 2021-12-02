@@ -20,6 +20,7 @@ public:
 	static void selectButtonClient(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void deleteButtonClient(System::Windows::Forms::Label^, NS_map_client::CLclient^, System::Windows::Forms::DataGridView^ dgv);
 	static void validerButtonClient(System::Windows::Forms::Form^, NS_map_client::CLclient^);
+	static void validerUpdateButtonClient(NS_map_client::CLclient^);
 	
 	static void selectButtonPersonnel(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void deleteButtonPersonnel(System::Windows::Forms::Label^, NS_map_personnel::CLpersonnel^, System::Windows::Forms::DataGridView^ dgv);

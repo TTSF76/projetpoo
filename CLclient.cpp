@@ -51,7 +51,7 @@ System::String^ NS_map_client::CLclient::Create()
 
 System::String^ NS_map_client::CLclient::Update()
 {
-	return "";
+	return "UPDATE client set date_naissance='" + this->date_anniversaire +"',nom_client='"+this->nom+"',prenom_client='"+this->prenom+"' WHERE id_client="+this->cvalue;
 }
 
 System::String^ NS_map_client::CLclient::Delete()

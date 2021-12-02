@@ -276,6 +276,7 @@ namespace projectView {
 			this->btnValider->TabIndex = 40;
 			this->btnValider->Text = L"Valider";
 			this->btnValider->UseVisualStyleBackColor = false;
+			this->btnValider->Click += gcnew System::EventHandler(this, &InputClientUpdate::btnValider_Click);
 			// 
 			// tbxIdClient
 			// 
@@ -971,6 +972,18 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	CLadresse^ adresse = gcnew CLadresse;
 	adresse->setIdAdress(int::Parse(cbxIdFacturation->Text));
 	UIAction::deleteButtonAdresseFac(adresse);
+	this->Close();
+}
+private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
+	/*CLadresse^ adresse_livraison = gcnew CLadresse;
+	CLadresse^ adresse_facturation = gcnew CLadresse;
+	client->setAdresseFacturation(adresse_facturation);
+	client->setAdresseLivraison(adresse_livraison);*/
+	client->setPrenom(tbxPrenom->Text);
+	client->setNom(tbxNom->Text);
+	client->setDateNaissance(this->dtpAnniversaire->Value.ToString("yyyy-MM-dd"));
+	UIAction::validerUpdateButtonClient(client);
 	this->Close();
 }
 };

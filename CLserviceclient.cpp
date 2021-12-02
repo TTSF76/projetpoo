@@ -29,3 +29,11 @@ void NS_Client_svc::CLserviceclient::deleteClient(NS_map_client::CLclient^ clien
 	sql = this->mapClient->Delete();
 	this->oCad->actionRows(sql);
 }
+
+void NS_Client_svc::CLserviceclient::updateClient(NS_map_client::CLclient^ client)
+{
+	System::String^ sql;
+	this->mapClient = client;
+	sql = this->mapClient->Update();
+	this->oCad->actionRows(sql);
+}

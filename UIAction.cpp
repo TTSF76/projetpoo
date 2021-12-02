@@ -103,3 +103,8 @@ void UIAction::deleteButtonAdresseFac(CLadresse^ adresse)
 {
 	UIAction::svcAdresse->deleteAdresseFac(adresse);
 }
+
+void UIAction::validerUpdateButtonClient(NS_map_client::CLclient^ client)
+{
+	UIAction::svcClient->updateClient(client);
+}
