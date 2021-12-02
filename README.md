@@ -1,52 +1,65 @@
-<h1 align="center">Projet CESI: Delivery Manager [Equipe 6]</h1>
+<h1 align="center">Projet CESI - Delivery Manager [Equipe 6]</h1>
 
 ## Somaire
 
-- [Présentation du projet](#Présentation)
-	- [Les langages et outils que nous avons utilisé](#Langages-et-Outils-utilisés)
-- [Guide d'utilisation](#Guide-d'utilisation)
-- [Gestion des statistiques](#Statistiques)
-	- [Panier moyen](#Calculer-le-panier-moyen)
-	- [Chiffre d'affaire](#Calculer-le-chiffre-d'affaire-sur-un-mois-en-particuler)
-	- [Produits sous le seuil](#Identifier-les-produits-sous-le-seuil-de-réapprovisionnement)
-	- [Montant total d'un client](#Calculer-le-montant-total-des-achats-pour-un-client)
-	- [Dix articles les plus vendus](#Identifier-les-10-articles-les-plus-vendus)
-	- [Dix articles les moins vendus](#Identifier-les-10-articles-les-moins-vendus)
-	- [Valeur commerciale du stock (sans variables)](#Calculer-la-valeur-commerciale-du-stock-(sans-variables))
-	- [Valeur d'achat du stock](#Calculer-la-valeur-d'achat-du-stock)
-	- [Valeur commerciale du stock (avec variables)](#Calculer-la-variation-commerciale-du-stock-(avec-variables))
-
+-   [Présentation du projet](#Présentation)
+    -   [Description](#Description)
+    -   [Contributeurs](#Contributeurs)
+    -   [Fonctionnalités](#Fonctionnalités)
+    -   [Les langages et outils que nous avons utilisé](#Langages-et-Outils-utilisés)
+-   [Guide d'utilisation](#Guide-d'utilisation)
+    -   [Affichage](#Affichage)
+    -   [Création](#Création)
+    -   [Suppression](#Suppression)
+    -   [Mise à jour](#Mise-à-jour)
+-   [Réalisation](#Réalisation)
+-   [Gestion des statistiques](#Statistiques)
+    -   [Panier moyen](#Calculer-le-panier-moyen)
+    -   [Chiffre d'affaire](#Calculer-le-chiffre-d'affaire-sur-un-mois-en-particuler)
+    -   [Produits sous le seuil](#Identifier-les-produits-sous-le-seuil-de-réapprovisionnement)
+    -   [Montant total d'un client](#Calculer-le-montant-total-des-achats-pour-un-client)
+    -   [Dix articles les plus vendus](#Identifier-les-10-articles-les-plus-vendus)
+    -   [Dix articles les moins vendus](#Identifier-les-10-articles-les-moins-vendus)
+    -   [Valeur commerciale du stock (sans variables)](<#Calculer-la-valeur-commerciale-du-stock-(sans-variables)>)
+    -   [Valeur d'achat du stock](#Calculer-la-valeur-d'achat-du-stock)
+    -   [Valeur commerciale du stock (avec variables)](<#Calculer-la-variation-commerciale-du-stock-(avec-variables)>)
 
 ## Présentation
-**Delivery Manager** est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application.
 
-Ce projet est mené par **Fabien RIBES**, **Talla DIOP**, **Tristan JEHANNO** et **Samuel WARD**.
+### Description
 
+**Delivery Manager** est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application, pour permettre à leurs employés de manipuler facilement les données de leurs clients, commandes...
 
+L'application **Delivery Manager** a été conçu grâce aux langages **C++** (pour la partie interface graphique) et **SQL** (pour les requêtes de base de données). Pour ce faire, nous avons utilisé l'IDE **Visual Studio 2019** de Microsoft, le logiciel **Microsoft SQL Server Management Studio 18** pour créer la BDD ainsi qu'un hébergement de BDD grâce à **Microsoft Azure**.
 
-Elle permet de gérer:
+### Contributeurs
 
+Ce projet est mené par [**Fabien RIBES**](https://github.com/Good660), [**Talla DIOP**](https://github.com/Corleone667), [**Tristan JEHANNO**](https://github.com/Git-Rigoras) et [**Samuel WARD**](https://github.com/INF-Zenyth).
 
-- Clients
-	- L'*employé* pourra visualiser, créer, modifier et supprimer des **clients**
-- Personnel
-	- Le *manager* pourra visualiser, créer, modifier et supprimer un membre du **personnel**
-	- Cette base est accessible **seulement** par des supérieurs hiérarchiques (*manager*)
-- Commandes
-	- L'*employé* pourra visualiser, créer, modifier et supprimer des **commandes**
-- Stock
-	- L'*employé* pourra visualiser, créer, modifier et supprimer des éléments du **stock**
-- Statistiques
-	- L'*employé* pourra effectuer des commandes qui interrogeront la base de données
-		- Calculer le panier moyen
-		- Calculer le chiffre d'affaire sur un mois en particulier
-		- Identifier les produits sous le seuil de réapprovisionnement
-		- Calculer le montant total des achats pour un client
-		- Identifier les 10 articles les plus vendus
-		- Identifier les 10 articles les moins vendus
-		- Calculer la valeur commerciale du stock
-		- Calculer la valeur d'achat du stock
-		- Calculer la valeur commerciale du stock (avec variables)
+### Fonctionnalités
+
+**Delivery Manager** permet à l'utilisateur de gérer:
+
+-   **_Clients_**
+    -   L'_employé_ pourra visualiser, créer, modifier et supprimer des **clients**
+-   **_Personnel_**
+    -   Le _manager_ pourra visualiser, créer, modifier et supprimer un membre du **personnel**
+    -   Cette base est accessible **seulement** par des supérieurs hiérarchiques (_manager_)
+-   **_Commandes_**
+    -   L'_employé_ pourra visualiser, créer, modifier et supprimer des **commandes**
+-   **_Stock_**
+    -   L'_employé_ pourra visualiser, créer, modifier et supprimer des éléments du **stock**
+-   [**_Statistiques_**](##Statistiques)
+    -   L'_employé_ pourra effectuer des commandes qui interrogeront la base de données
+        -   Calculer le panier moyen
+        -   Calculer le chiffre d'affaire sur un mois en particulier
+        -   Identifier les produits sous le seuil de réapprovisionnement
+        -   Calculer le montant total des achats pour un client
+        -   Identifier les 10 articles les plus vendus
+        -   Identifier les 10 articles les moins vendus
+        -   Calculer la valeur commerciale du stock
+        -   Calculer la valeur d'achat du stock
+        -   Calculer la valeur commerciale du stock (avec variables)
 
 ### Langages et Outils utilisés
 
@@ -59,55 +72,92 @@ Elle permet de gérer:
 
 ## Guide d'utilisation
 
-Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application qui arrivera sur la page d'accueil : 
+Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application qui arrivera sur la page d'accueil :
+
 ##### Ecran d'accueil :
-<img src="https://i.imgur.com/jSUs46l.png"></img> 
+
+<img src="https://i.imgur.com/jSUs46l.png"></img>
 
 Ensuite, il faudra selectionner une catégorie parmis celles ci-dessous :
 
 <img src="https://i.imgur.com/SExdclZ.png"></img>
 
 **Note :** Lorsque que vous cliquer sur personnel, cela vous ouvre la page ci-dessous, il suffit de rentrer le mot de passe "motdepasse" pour accéder a la catégorie personnel.
+
 ##### La fenêtre d'authentification :
+
 <img src="https://i.imgur.com/j5RFIz2.png"></img>
 
 Ensuite vous pouvez choisir une action parmis les 4 boutons qui seront affichés à l'écran (**Afficher**, **Créer**, **Supprimer**, **Mettre à jour**)
 
 ---
 
-Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (*DataGridView*) apparait avec les données demandées.
+### Affichage
+
+Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (_DataGridView_) apparait avec les données demandées.
 
 ##### Voici un exemple de page de gestion (les données sont générées aléatoirement) :
+
 <img src="https://i.imgur.com/YkfAoii.png"></img>
 
 ---
 
+### Création
+
 Lorsqu'un employé clique sur le bouton **Créer**, une nouvelle fenêtre s'ouvrira avec les entrées relatives à la catégorie sélectionnée.
 
 ##### Le formulaire d'insertion de Personnel :
+
 <img src="https://i.imgur.com/mrFDTcD.png"></img>
 
 ##### Le formulaire d'insertion de Commande :
+
 <img src="https://i.imgur.com/26PRauK.png"></img>
 
-
 ---
+
+### Suppression
 
 Lorsqu'un employé clique sur le bouton **Supprimer** après avoir sélectionné un ID dans l'affichage, le programme supprimera les données.
 
 ---
 
+### Mise à jour
+
 Lorsqu'un employé clique sur le bouton **Mettre à jour** après avoir sélectionné un ID dans l'affichage, une nouvelle fenêtre s'ouvrira avec un formulaire à remplir avec les données souhaitées.
 
 ##### Le formulaire de mise à jour d'un Client :
-<img src="https://i.imgur.com/tbl8o7K.png"></img>
+
+<img src="https://i.imgur.com/tbl8o7K.png"></img><br><br>
+
+## Réalisation
+
+Nous avons commencé par créer des diagrammes _UML 2.0_ afin de savoir quoi faire. Ici, nous allons seulement vous remontrer le **diagramme de classe**.<br>
+
+> **Note :** pour voir les autres diagrammes, veuillez consulter le **livrable 2**.
+
+<img src="https://i.imgur.com/tep8W4a.png"></img>
+
+A partir du diagramme de classe ci dessus, nous avons pu développer l'arborescence ci-dessous. Notez que des fichiers ont été ajouté par rapport au diagramme de classe, afin de correspondre au besoin de faire un système de "Service-Mappage-Contrôle".
+
+<details>
+	<summary>Arborescence</summary><br>
+	<p><img src="https://i.imgur.com/eAnEDb7.png"></img></p>
+</details>
+
+Dans ces fichier, il y a donc trois catégories :
+
+-   Les services
+
+-   Les maps (ou carte)
+
+-   Les contrôles
 
 ## Statistiques
 
+La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte _optionnelles_ qui permettent de faire les requêtes ci-dessous.
+
 <img src="https://i.imgur.com/XqQXoI6.png"></img>
-
-
-La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte *optionnelles* qui permettent de faire les requêtes ci-dessous.
 
 ### Calculer le panier moyen
 
@@ -282,7 +332,7 @@ GO
 #### Réponse-type
 
 ```
-Variation commerciale : 
+Variation commerciale :
 147714163 €
 ```
 
@@ -301,7 +351,7 @@ GO
 #### Réponse-type
 
 ```
-Valeur d'achat : 
+Valeur d'achat :
 140475544 €
 ```
 
@@ -310,10 +360,11 @@ Valeur d'achat :
 Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin <br>
 Elle prendre en argument un mode de TVA (1, 2 ou 3), puis des valeurs pour les valeurs restantes.
 <br>**Note:** Cette commande nécessite de remplir les 4 boites de texte, dans l'ordre qui suit :
-+ La TVA (1, 2, ou 3)
-+ La marge
-+ La remise
-+ La démarque
+
+-   La TVA (1, 2, ou 3)
+-   La marge
+-   La remise
+-   La démarque
 
 #### Requête
 
@@ -334,9 +385,10 @@ SET @prix = @prix * (1 - @demarche2 / 100)
 SELECT @prix AS valeur
 GO
 ```
+
 #### Réponse-type
 
 ```
-Variation commerciale : 
+Variation commerciale :
 159594149 €
 ```
