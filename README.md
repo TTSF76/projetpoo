@@ -4,16 +4,16 @@
 Delivery Manager est une application de gestion de base de données pour une nouvelle entreprise.<br>
 Elle permet de gérer:<br><br>
 
-+ Clients
+- Clients
 	- L'*employé* pourra visualiser, créer, modifier et supprimer des **clients**
-+ Personnel
+- Personnel
 	- Le *manager* pourra visualiser, créer, modifier et supprimer un membre du **personnel**
 	- Cette base est accessible **seulement** par des supérieurs hiérarchiques (*manager*)
-+ Commandes
+- Commandes
 	- L'*employé* pourra visualiser, créer, modifier et supprimer des **commandes**
-+ Stock
+- Stock
 	- L'*employé* pourra visualiser, créer, modifier et supprimer des éléments du **stock**
-+ Statistiques
+- Statistiques
 	- L'*employé* pourra effectuer des commandes qui interrogeront la base de données
 		- Calculer le panier moyen
 		- Calculer le chiffre d'affaire sur un mois en particulier
@@ -30,6 +30,9 @@ Elle permet de gérer:<br><br>
 
 ## Statistiques
 ### Calculer le panier moyen
+
+Cette commande permet de visualiser la valeur moyenne des paniers des clients (en €).
+
 #### Requête
 
 ```sql
@@ -42,9 +45,16 @@ GO
 
 #### Réponse-type
 
-`Panier moyen: 1181.3€`
+```
+Panier moyen :
+350 €
+```
 
 ### Calculer le chiffre d'affaire sur un mois en particuler
+
+Cette commande permet de visualiser le chiffre d'affaire de l'entreprise sur un mois et année en particulier choisi par l'employé.
+
+#### Requête
 
 ```sql
 CREATE PROCEDURE chiffreAffaire @annee int, @mois int
@@ -58,7 +68,19 @@ WHERE
 GO
 ```
 
+#### Réponse-type
+
+```
+Chiffre d'Affaire :
+1400 €
+```
+
 ### Identifier les produits sous le seuil de réapprovisionnement
+
+Cette commande permet de visualiser tous les produits qui devront être restocker par l'entreprise.
+Les valeurs renvoyées correspondent à la référence de l'article.
+
+#### Requête
 
 ```sql
 CREATE PROCEDURE restocker
@@ -69,7 +91,19 @@ WHERE stock_article < seuil_reapprovisionnement
 GO
 ```
 
+#### Réponse-type
+
+```
+Restocker :
+14
+29
+```
+
 ### Calculer le montant total des achats pour un client
+
+Cette commande permet de visualiser le montant total (en €) du panier d'un client sélectionné par l'employé.
+
+#### Requête
 
 ```sql
 CREATE PROCEDURE montantTotal @clientId int
@@ -82,28 +116,77 @@ WHERE client.id_client = @clientId
 GO
 ```
 
+#### Réponse-type
+
+```
+Montant Total:
+1400 €
+```
+
 ### Identifier les 10 articles les plus vendus
+
+Cette commande permet d'identifier les id des 10 produits les moins vendus, afin d'envisager par exemple d'augmenter les stocks de ces produits pour augmenter les recettes.
+
+#### Requête
 
 ```sql
 CREATE PROCEDURE plusVendus
 AS
-SELECT TOP (10) ref_article, SUM(quantite_article) as quantite
+SELECT TOP (10) contenir.ref_article, nom_article, SUM(quantite_article) as quantite
 FROM contenir
-GROUP BY ref_article
+INNER JOIN article ON contenir.ref_article = article.ref_article
+GROUP BY contenir.ref_article, nom_article
 ORDER BY quantite DESC
 GO
 ```
 
+#### Réponse-type
+
+```
+Plus Vendus :
+23 Micplottor    84
+35 Cleanjectader 78
+1  Monofindoller 64
+15 Subwoofgaer   41
+5  Contopedgor   32
+12 Miclifiedgor  24
+2  Cleantopefon  19
+27 Readpickor    9
+17 Tablifior     7
+48 Mictopepor    7
+```
+
 ### Identifier les 10 articles les moins vendus
+
+Cette commande permet d'indentifier les id des 10 articles les moins vendus, afin d'éventuellement envisager une modification sur leur prix par exemple.
+
+#### Requête
 
 ```sql
 CREATE PROCEDURE moinsVendus
 AS
-SELECT TOP (10) ref_article, SUM(quantite_article) as quantite
+SELECT TOP (10) contenir.ref_article, nom_article, SUM(quantite_article) as quantite
 FROM contenir
-GROUP BY ref_article
+INNER JOIN article ON contenir.ref_article = article.ref_article
+GROUP BY contenir.ref_article, nom_article
 ORDER BY quantite ASC
 GO
+```
+
+#### Réponse-type
+
+```
+Moins Vendus :
+25 Speaktaoller  2
+45 Armputphone   4
+32 Printculentor 6
+17 Tablifior     7
+48 Mictopepor    7
+27 Readpickor    9
+2  Cleantopefon  19
+12 Miclifiedgor  24
+5  Contopedgor   32
+15 Subwoofgaer   41
 ```
 
 ### Calculer la valeur commerciale du stock (sans variables)
@@ -118,7 +201,10 @@ GO
 
 #### Réponse-type
 
-`Variation commericiale: 147714163€`
+```
+Variation commerciale : 
+147714163 €
+```
 
 ### Calculer la valeur d'achat du stock
 
@@ -134,12 +220,17 @@ GO
 
 #### Réponse-type
 
-`Valeur d'achat: 140475544€`
+```
+Valeur d'achat : 
+140475544 €
+```
 
 ### Calculer la variation commerciale du stock (avec variables)
 
 Cette commande effectue la même action que la commande de la valeur commerciale, avec une tva, une marge, une remise et une démarque modifiables au besoin <br>
 Elle prendre en argument un mode de tva (1,2 ou 3), puis des valeurs pour les valeurs restantes.
+
+#### Requête
 
 ```sql
 CREATE PROCEDURE varCommerciale @tva int, @marge int, @remise int, @demarche int
@@ -160,4 +251,7 @@ GO
 ```
 #### Réponse-type
 
-`Variation commerciale: 159594149€`
+```
+Variation commerciale : 
+159594149 €
+```
