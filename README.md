@@ -49,7 +49,7 @@ Ce projet est mené par [**Fabien RIBES**](https://github.com/Good660), [**Talla
     -   L'_employé_ pourra visualiser, créer, modifier et supprimer des **commandes**
 -   **_Stock_**
     -   L'_employé_ pourra visualiser, créer, modifier et supprimer des éléments du **stock**
--   [**_Statistiques_**](##Statistiques)
+-   [**_Statistiques_**](#Statistiques)
     -   L'_employé_ pourra effectuer des commandes qui interrogeront la base de données
         -   Calculer le panier moyen
         -   Calculer le chiffre d'affaire sur un mois en particulier
