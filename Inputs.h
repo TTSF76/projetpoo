@@ -8,3 +8,5 @@
 #include "InputStockSupprimer.h"
 #include "InputClientUpdate.h"
 #include "InputArticleInserer.h"
+#include "InputClientUpdate.h"
+#include "Auth.h"

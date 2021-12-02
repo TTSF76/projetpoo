@@ -79,3 +79,7 @@ void CLadresse::setRue(System::String^ rue) {
 System::String^ CLadresse::getCodePostal() {
 	return this->code_postal;
 }
+
+System::String^ CLadresse::Delete() {
+	return "DECLARE @id_adresse int;SET @id_adresse = 502;DECLARE @id_client int;SET @id_client = 502;DELETE FROM livrer WHERE id_adresse=@id_adresse AND id_client=@id_clientIF NOT EXISTS (SELECT * FROM personnel WHERE personnel.id_adresse=@id_adresse)AND NOT EXISTS (SELECT * FROM facturation WHERE facturation.id_adresse=@id_adresse)AND NOT EXISTS (SELECT * FROM commande WHERE commande.id_adresse=@id_adresse)BEGINDELETE FROM adresses WHERE id_adresse=@id_adresseEnd":
+}
