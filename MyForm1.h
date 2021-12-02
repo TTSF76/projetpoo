@@ -916,7 +916,7 @@ namespace projectView {
 			UIAction::deleteButtonPersonnel(this->lblDeliveryManager, personnel,this->dataGridView1);
 		}
 		
-		if (this->titre_rubrique->Text == "STOCK")
+		else if (this->titre_rubrique->Text == "STOCK")
 		{
 			if (this->dataGridView1->DataSource == nullptr) {
 				MessageBox::Show("Vous devez lister le stock puis sélectionner une valeur de la colonne ref_article !", "Erreur", MessageBoxButtons::OK);
@@ -932,6 +932,21 @@ namespace projectView {
 			}
 			article->setRefArticle(int::Parse(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString()));
 			UIAction::deleteButtonArticle(this->lblDeliveryManager, article, this->dataGridView1);
+		}
+		else if (this->titre_rubrique->Text == "COMMANDE") {
+			if (this->dataGridView1->DataSource == nullptr) {
+				MessageBox::Show("Vous devez créer une commande puis sélectionner une valeur de la colonne ref_commande !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
+			NS_map_commande::CLcommande^ commande = gcnew NS_map_commande::CLcommande;
+			int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+			int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+			if (columnindex != 0) {
+				MessageBox::Show("Vous devez sélectionner une valeur de la colonne ref_commande !", "Erreur", MessageBoxButtons::OK);
+				return;
+			}
+			commande->setRefCommande(this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString());
+			UIAction::deleteButtonCommande(this->lblDeliveryManager, commande, this->dataGridView1);
 		}
 	}
 

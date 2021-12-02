@@ -58,6 +58,11 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenom(int id_client) 
 	return "select nom_client, prenom_client,date_naissance from client where id_client = '"+id_client+"'";
 }
 
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenomPersonnel(int id_personnel) {
+
+	return "select nom_personnel, prenom_personnel,date_embauche,id_personnel_etre_dirige from personnel where id_personnel = '" + id_personnel + "'";
+}
+
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdAdresseFacturation(int id_client) {
 	return "select id_adresse from facturer where id_client = '"+id_client+"'";
 }

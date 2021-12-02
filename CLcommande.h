@@ -14,10 +14,10 @@ namespace NS_map_commande {
 
 	public:
 		System::String^ Create();
-		void Update();
-		void Delete();
+		System::String^ Update();
+		System::String^ Delete();
 	    System::String^ Select();
-		void setReference(System::String^);
+		void setRefCommande(System::String^);
 		void setDateLivraison(System::String^);
 		void setDateEmission(System::String^);
 		void setTotalHT(float);

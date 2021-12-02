@@ -77,6 +77,13 @@ void UIAction::validerButtonCommande(System::Windows::Forms::Form^ form, NS_map_
 		UIAction::svcCommande->insertCommande(commande);
 	}
 }
+void UIAction::deleteButtonCommande(System::Windows::Forms::Label^ lbl, NS_map_commande::CLcommande^ commande, System::Windows::Forms::DataGridView^ dgv) {
+	UIAction::svcCommande->deleteCommande(commande);
+	dgv->Refresh();
+	UIAction::oDs = UIAction::svcCommande->selectAllCommandes("Rsl");
+	dgv->DataSource = UIAction::oDs;
+	dgv->DataMember = "Rsl";
+}
 
 void UIAction::validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article)
 {

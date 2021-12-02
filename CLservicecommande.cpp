@@ -20,3 +20,11 @@ void NS_Commande_svc::CLservicecommande::insertCommande(NS_map_commande::CLcomma
 	sql = this->mapCommande->Create();
 	this->oCad->actionRows(sql);
 }
+
+void NS_Commande_svc::CLservicecommande::deleteCommande(NS_map_commande::CLcommande^ commande)
+{
+	System::String^ sql;
+	this->mapCommande = commande;
+	sql = this->mapCommande->Delete();
+	this->oCad->actionRows(sql);
+}

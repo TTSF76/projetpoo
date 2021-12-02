@@ -28,6 +28,7 @@ public:
 
 	static void selectButtonCommande(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void validerButtonCommande(System::Windows::Forms::Form^, NS_map_commande::CLcommande^);
+	static void deleteButtonCommande(System::Windows::Forms::Label^, NS_map_commande::CLcommande^, System::Windows::Forms::DataGridView^);
 
 	static void selectButtonArticle(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article);

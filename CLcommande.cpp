@@ -5,16 +5,17 @@ System::String^ NS_map_commande::CLcommande::Create() {
 	return "DECLARE @ref_command varchar(40); SET @ref_command = '"+this->ref_commande+"'; DECLARE @date_livraison datetime; SET @date_livraison = '"+this->date_livraison+"' DECLARE @date_emission datetime; SET @date_emission = '"+this->date_emission+"'; DECLARE @total_ht float; SET @total_ht = '"+this->total_ht+"'; DECLARE @total_tva float; SET @total_tva ='"+this->total_tva+"'; DECLARE @total_ttc float; SET @total_ttc = '"+this->total_ttc+"'; DECLARE @id_client int; SET @id_client ='"+this->id_client+"'; DECLARE @id_personnel int; SET @id_personnel = '"+this->id_personnel+"' ; DECLARE @id_adresse_livraison int; SET @id_adresse_livraison = '"+this->id_adresse_livraison+"'; DECLARE @nombre_paiement int; SET @nombre_paiement = '"+this->nombre_paiement+"'; DECLARE @moyen_paiement varchar(40); SET @moyen_paiement = '"+this->moyen_paiement+"'; DECLARE @date_paiement datetime; SET @date_paiement = '"+this->date_paiement+"'; DECLARE @id_adresse_facturation int; SET @id_adresse_facturation = '"+this->id_adresse_facturation+"'; INSERT INTO [dbo].[commande] ([ref_command] ,[date_livraison] ,[date_emission] ,[total_ht] ,[total_tva] ,[total_ttc] ,[id_client] ,[id_personnel] ,[id_adresse]) VALUES(@ref_command,@date_livraison,@date_emission,@total_ht,@total_tva,@total_ttc,@id_client,@id_personnel,@id_adresse_livraison) INSERT INTO [dbo].[facturation] ([nombre_paiement] ,[moyen_paiement] ,[date_paiement] ,[id_adresse] ,[ref_command]) VALUES (@nombre_paiement,@moyen_paiement,@date_paiement,@id_adresse_facturation,@ref_command); UPDATE commande SET id_facturation = (SELECT id_facturation FROM facturation WHERE commande.ref_command = facturation.ref_command) WHERE commande.ref_command = @ref_command";
 }
 
-void NS_map_commande::CLcommande::Update() {
-
+System::String^ NS_map_commande::CLcommande::Update() {
+	return "";
 }
 
-void NS_map_commande::CLcommande::Delete() {
+System::String^ NS_map_commande::CLcommande::Delete() {
+	return " DECLARE @ref_command varchar(40); SET @ref_command = '"+this->ref_commande+"'; IF ((select commande.date_emission from commande where ref_command = @ref_command)<= (year(getdate()) - 10) OR getdate() <= (select commande.date_emission from commande where ref_command = @ref_command)) BEGIN DELETE from contenir where ref_command = @ref_command UPDATE facturation SET ref_command = null WHERE ref_command=@ref_command UPDATE commande SET id_facturation = null WHERE ref_command=@ref_command DELETE FROM commande WHERE ref_command=@ref_command DELETE FROM facturation WHERE ref_command IS NULL END ";
 
 }
 
 System::String^ NS_map_commande::CLcommande::Select() {
-	return "SELECT * FROM commande";
+	return "SELECT commande.ref_command,commande.date_livraison,commande.date_emission,commande.total_ht,commande.total_tva,commande.total_ttc, commande.id_client,commande.id_personnel,commande.id_adresse as id_adresse_livraison,commande.id_facturation,facturation.nombre_paiement,facturation.moyen_paiement, facturation.date_paiement,facturation.id_adresse as id_adresse_facturation FROM commande inner join facturation ON commande.ref_command=facturation.ref_command";
 }
 
 void NS_map_commande::CLcommande::setDateLivraison(System::String^date_livraison) {
@@ -25,7 +26,7 @@ void NS_map_commande::CLcommande::setDateEmission(System::String^ date_emission)
 	this->date_emission = date_emission;
 }
 
-void NS_map_commande::CLcommande::setReference(System::String^ ref_commande) {
+void NS_map_commande::CLcommande::setRefCommande(System::String^ ref_commande) {
 	this->ref_commande = ref_commande;
 }
 

@@ -198,6 +198,22 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPre
 	return vecteur_nom_prenom;
 }
 
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPrenomPersonnel(std::vector<std::string> vecteur_nom_prenom_personnel, int id_personnel) {
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectNomPrenomPersonnel(id_personnel);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
+		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[3]->ToString()));
+
+	}
+	return vecteur_nom_prenom_personnel;
+}
+
 System::String^ NS_Utilitaire_svc::CLserviceutilitaire::recupererNumeroIncrementiel(System::String^numero_incrementiel, System::String^ ref_command) {
 	System::String^ sql;
 	sql = mapUtilitaire->SelectIncrementReference(ref_command);

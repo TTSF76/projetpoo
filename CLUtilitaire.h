@@ -21,6 +21,7 @@ namespace NS_map_Utilitaire {
 		System::String^ SelectIdClient();
 		System::String^ SelectIdPersonnel();
 		System::String^ SelectNomPrenom(int);
+		System::String^ SelectNomPrenomPersonnel(int);
 		
 		System::String^ SelectIdAdresseFacturation(int);
 		System::String^ SelectInfoAdresseFacturation(int);
