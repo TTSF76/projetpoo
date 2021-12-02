@@ -93,3 +93,13 @@ void UIAction::deleteButtonArticle(System::Windows::Forms::Label^ lbl, NS_map_ar
 	dgv->DataSource = UIAction::oDs;
 	dgv->DataMember = "Rsl";
 }
+
+void UIAction::deleteButtonAdresseLiv(CLadresse^ adresse)
+{
+	UIAction::svcAdresse->deleteAdresseLiv(adresse);
+}
+
+void UIAction::deleteButtonAdresseFac(CLadresse^ adresse)
+{
+	UIAction::svcAdresse->deleteAdresseFac(adresse);
+}

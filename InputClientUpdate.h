@@ -3,6 +3,7 @@
 #include "CLcommande.h"
 #include "UIAction.h"
 #include "CLserviceutilitaire.h"
+#include "CLadresse.h"
 
 namespace projectView {
 
@@ -281,6 +282,7 @@ namespace projectView {
 			this->tbxIdClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
 				static_cast<System::Int32>(static_cast<System::Byte>(49)));
 			this->tbxIdClient->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxIdClient->Enabled = false;
 			this->tbxIdClient->ForeColor = System::Drawing::Color::Silver;
 			this->tbxIdClient->Location = System::Drawing::Point(115, 81);
 			this->tbxIdClient->Margin = System::Windows::Forms::Padding(4);
@@ -774,6 +776,7 @@ namespace projectView {
 			this->suprAdrLiv->TabIndex = 160;
 			this->suprAdrLiv->Text = L"Supprimer cette adresse";
 			this->suprAdrLiv->UseVisualStyleBackColor = false;
+			this->suprAdrLiv->Click += gcnew System::EventHandler(this, &InputClientUpdate::suprAdrLiv_Click);
 			// 
 			// ajoutAdrLiv
 			// 
@@ -805,6 +808,7 @@ namespace projectView {
 			this->button1->TabIndex = 162;
 			this->button1->Text = L"Supprimer cette adresse";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &InputClientUpdate::button1_Click);
 			// 
 			// button2
 			// 
@@ -828,12 +832,12 @@ namespace projectView {
 			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label20->ForeColor = System::Drawing::Color::Yellow;
-			this->label20->Location = System::Drawing::Point(3, 723);
+			this->label20->Location = System::Drawing::Point(12, 723);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(607, 34);
+			this->label20->Size = System::Drawing::Size(591, 34);
 			this->label20->TabIndex = 163;
-			this->label20->Text = L"Note : une adresse ne peut pas être supprimée si elle est utilisée d\'autres table"
-				L"s. \r\nLa suppression n\'aura aucun effet le cas échéant.";
+			this->label20->Text = L"Note : une adresse ne peut pas être supprimée si elle est unique pour le client. "
+				L"\r\nLa suppression n\'aura aucun effet le cas échéant.";
 			this->label20->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// InputClientUpdate
@@ -955,6 +959,19 @@ private: System::Void InputClientUpdate_Load(System::Object^ sender, System::Eve
 	std::vector<std::string> vecteur_id_adresse_livraison;
 	vecteur_id_adresse_livraison = id_adresse_livraison->repertorierIdAdresseLivraison(vecteur_id_adresse_livraison, int::Parse(this->tbxIdClient->Text));
 	this->cbxIdLivraison->Items->Add(gcnew String(vecteur_id_adresse_livraison[0].c_str()));
+}
+private: System::Void suprAdrLiv_Click(System::Object^ sender, System::EventArgs^ e) {
+	CLadresse^ adresse = gcnew CLadresse;
+	adresse->setIdAdress(int::Parse(cbxIdLivraison->Text));
+	UIAction::deleteButtonAdresseLiv(adresse);
+	
+	this->Close();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	CLadresse^ adresse = gcnew CLadresse;
+	adresse->setIdAdress(int::Parse(cbxIdFacturation->Text));
+	UIAction::deleteButtonAdresseFac(adresse);
+	this->Close();
 }
 };
 }

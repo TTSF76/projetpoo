@@ -128,6 +128,9 @@
     <ClInclude Include="InputCommandeUpdate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CLserviceadresse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -234,6 +237,9 @@
     </ClCompile>
     <ClCompile Include="InputCommandeUpdate.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLserviceadresse.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

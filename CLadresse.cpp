@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CLadresse.h"
+#include "CLclient.h"
 
 int CLadresse::getIdAdresse() {
 	return this->id_adresse;
@@ -80,6 +81,10 @@ System::String^ CLadresse::getCodePostal() {
 	return this->code_postal;
 }
 
-System::String^ CLadresse::Delete() {
-	return "DECLARE @id_adresse int;SET @id_adresse = 502;DECLARE @id_client int;SET @id_client = 502;DELETE FROM livrer WHERE id_adresse=@id_adresse AND id_client=@id_clientIF NOT EXISTS (SELECT * FROM personnel WHERE personnel.id_adresse=@id_adresse)AND NOT EXISTS (SELECT * FROM facturation WHERE facturation.id_adresse=@id_adresse)AND NOT EXISTS (SELECT * FROM commande WHERE commande.id_adresse=@id_adresse)BEGINDELETE FROM adresses WHERE id_adresse=@id_adresseEnd":
+System::String^ CLadresse::DeleteLiv() {
+	return "DECLARE @id_adresse int;SET @id_adresse = "+this->id_adresse+";DECLARE @id_client int;SET @id_client = "+NS_map_client::CLclient::cvalue+";IF (SELECT count(*) FROM livrer WHERE id_client=@id_client) > 1 BEGIN DELETE FROM livrer WHERE id_adresse=@id_adresse AND id_client=@id_client; END IF NOT EXISTS (SELECT * FROM personnel WHERE personnel.id_adresse=@id_adresse) AND NOT EXISTS (SELECT * FROM facturation WHERE facturation.id_adresse=@id_adresse) AND NOT EXISTS (SELECT * FROM commande WHERE commande.id_adresse=@id_adresse) AND NOT EXISTS (SELECT * FROM facturer WHERE facturer.id_adresse=@id_adresse) BEGIN SELECT * FROM adresses WHERE id_adresse=@id_adresse End";
+}
+
+System::String^ CLadresse::DeleteFac() {
+	return "DECLARE @id_adresse int;SET @id_adresse = " + this->id_adresse + ";DECLARE @id_client int;SET @id_client = " + NS_map_client::CLclient::cvalue + ";IF (SELECT count(*) FROM facturer WHERE id_client=@id_client) > 1 BEGIN DELETE FROM facturer WHERE id_adresse=@id_adresse AND id_client=@id_client; END IF NOT EXISTS (SELECT * FROM personnel WHERE personnel.id_adresse=@id_adresse) AND NOT EXISTS (SELECT * FROM facturation WHERE facturation.id_adresse=@id_adresse) AND NOT EXISTS (SELECT * FROM commande WHERE commande.id_adresse=@id_adresse) AND NOT EXISTS (SELECT * FROM livrer WHERE livrer.id_adresse=@id_adresse) BEGIN SELECT * FROM adresses WHERE id_adresse=@id_adresse End";
 }

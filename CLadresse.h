@@ -1,5 +1,6 @@
 #pragma once
 
+
 ref class CLadresse {
 private:
 	int id_adresse;
@@ -30,4 +31,6 @@ public:
 	void setNumeroRue(System::String^);
 	int getNumeroEtage();
 	void setNumeroEtage(int);
+	System::String^ DeleteLiv();
+	System::String^ DeleteFac();
 };
