@@ -106,11 +106,12 @@ namespace projectView {
 #pragma endregion
 	private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (textBox1->Text == "motdepasse") {
-			MessageBox::Show("Le mot de passe est bon", "OK", MessageBoxButtons::OK);
+			MessageBox::Show("Code bon. Accès autorisé.", "Identification réussie", MessageBoxButtons::OK);
 			this->Hide();
 		}
 		else {
-			MessageBox::Show("Mot de passe incorrect, réessayez", "none", MessageBoxButtons::OK);
+			MessageBox::Show("Code incorrect. Accès refusé.", "Oups !", MessageBoxButtons::OK);
+			this->Close();
 			Application::Restart();
 		}
 		

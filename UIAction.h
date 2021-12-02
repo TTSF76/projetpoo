@@ -4,6 +4,7 @@
 #include "CLservicepersonnel.h"
 #include "CLservicearticle.h"
 #include "CLservicecommande.h"
+#include "CLserviceadresse.h"
 
 
 ref class UIAction
@@ -11,6 +12,7 @@ ref class UIAction
 private:
 	static NS_Client_svc::CLserviceclient^ svcClient = gcnew NS_Client_svc::CLserviceclient();
 	static NS_Article_svc::CLservicearticle^ svcArticle = gcnew NS_Article_svc::CLservicearticle();
+	static NS_Adresse_svc::CLserviceadresse^ svcAdresse = gcnew NS_Adresse_svc::CLserviceadresse();
 	static System::Data::DataSet^ oDs;
 	static NS_Personnel_svc::CLservicepersonnel^ svcPersonnel = gcnew NS_Personnel_svc::CLservicepersonnel();
 	static NS_Commande_svc::CLservicecommande^ svcCommande = gcnew NS_Commande_svc::CLservicecommande();
@@ -29,4 +31,7 @@ public:
 	static void selectButtonArticle(System::Windows::Forms::DataGridView^, System::Windows::Forms::Label^);
 	static void validerButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article);
 	static void deleteButtonArticle(System::Windows::Forms::Label^ lbl, NS_map_article::CLarticle^ article, System::Windows::Forms::DataGridView^ dgv);
+
+	static void deleteButtonAdresseLiv(CLadresse^ adresse);
+	static void deleteButtonAdresseFac(CLadresse^ adresse);
 };

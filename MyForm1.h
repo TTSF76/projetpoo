@@ -34,6 +34,7 @@ namespace projectView {
 		System::Windows::Forms::Button^ bouton_personnel;
 		System::Windows::Forms::Button^ bouton_stats;
 		System::Windows::Forms::Panel^ panel_header;
+		static System::String^ clientId;
 
 	private:
 		System::Windows::Forms::Panel^ panel_logo;
@@ -42,7 +43,9 @@ namespace projectView {
 		System::Windows::Forms::Button^ bouton_create;
 		System::Windows::Forms::Button^ bouton_update;
 		System::Windows::Forms::Button^ bouton_delete;
-		System::Windows::Forms::DataGridView^ dataGridView1;
+	public: System::Windows::Forms::DataGridView^ dataGridView1;
+	private:
+
 		System::Windows::Forms::Label^ label_bienvenue;
 		System::Windows::Forms::PictureBox^ logo_welcome;
 		System::Windows::Forms::Label^ titre_rubrique;
@@ -320,6 +323,7 @@ namespace projectView {
 			this->bouton_update->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bouton_update->UseVisualStyleBackColor = false;
 			this->bouton_update->Visible = false;
+			this->bouton_update->Click += gcnew System::EventHandler(this, &MyForm1::bouton_update_Click);
 			// 
 			// bouton_delete
 			// 
@@ -777,6 +781,7 @@ namespace projectView {
 	}
 
 	private: System::Void bouton_client_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (titre_rubrique->Text == "CLIENTS") return;
 		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
@@ -787,6 +792,9 @@ namespace projectView {
 
 	private: System::Void bouton_personnel_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		if (titre_rubrique->Text == "PERSONNEL") return;
+		projectView::Auth fenetreAuth;
+		fenetreAuth.ShowDialog();
 		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
@@ -798,6 +806,7 @@ namespace projectView {
 	
 	private: System::Void bouton_stock_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		if (titre_rubrique->Text == "STOCK") return;
 		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
@@ -809,6 +818,7 @@ namespace projectView {
 
 	private: System::Void bouton_commande_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		if (titre_rubrique->Text == "COMMANDE") return;
 		this->clearLabels();
 		UIManager::cacherStats(this->label2, this->button1, this->button2, this->button3, this->button4, this->button5, this->button6, this->button7, this->button8, this->button9, this->textBox1, this->textBox2, this->textBox3, this->textBox4);
 		this->dataGridView1->DataSource = nullptr;
@@ -820,6 +830,9 @@ namespace projectView {
 
 	private: System::Void bouton_stats_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		if (titre_rubrique->Text == "STATISTIQUES") return;
+		this->titre_rubrique->Visible = true;
+		this->titre_rubrique->Text = "STATISTIQUES";
 		this->label_bienvenue->Visible = false;
 		this->logo_welcome->Visible = false;
 		this->dataGridView1->Visible = false;
@@ -944,5 +957,27 @@ namespace projectView {
 		}
 
 	}
+private: System::Void bouton_update_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ gestion = titre_rubrique->Text;
+	if (gestion == "CLIENTS")
+	{
+		if (this->dataGridView1->DataSource == nullptr) {
+			MessageBox::Show("Vous devez lister les clients puis sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+		NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
+		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+		if (columnindex != 0)
+		{
+			MessageBox::Show("Vous devez sélectionner une valeur de la colonne id_client !", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+		NS_map_client::CLclient::cvalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
+		this->clientId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
+		projectView::InputClientUpdate inputForm;
+		inputForm.ShowDialog();
+	}
+}
 };
 }

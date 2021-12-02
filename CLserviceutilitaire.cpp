@@ -183,6 +183,7 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPre
 	while (val->Read()) {
 		vecteur_nom_prenom.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
 		vecteur_nom_prenom.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+		vecteur_nom_prenom.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
 	}
 	return vecteur_nom_prenom;
 }
