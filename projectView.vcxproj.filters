@@ -131,6 +131,9 @@
     <ClInclude Include="CLserviceadresse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputStockUpdate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -239,6 +242,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="CLserviceadresse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputStockUpdate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
