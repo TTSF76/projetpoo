@@ -107,3 +107,13 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectArticle() {
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClientCommande(System::String^ ref_commande) {
 	return "select client.id_client, client.nom_client, client.prenom_client from client inner join commande on client.id_client = commande.id_client where ref_command = '"+ref_commande+"'";
 }
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectArticles(System::String^ nom_article) {
+	return "Select nature, stock_article, couleur_article, prix_article_ht, remise_article from article where nom_article = '" + nom_article + "'";
+}
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoArticlesCommande(System::String^ ref_commande) {
+	return "SELECT contenir.quantite_article,article.nom_article,article.couleur_article,commande.ref_command,commande.total_ht,commande.total_tva,commande.total_ttc from contenir inner join article on article.ref_article=contenir.ref_article INNER JOIN commande on contenir.ref_command=commande.ref_command WHERE commande.ref_command='" + ref_commande + "'";
+
+}
+

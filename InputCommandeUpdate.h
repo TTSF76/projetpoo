@@ -1198,6 +1198,17 @@ private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs
 private: System::Void button_add_article_Click(System::Object^ sender, System::EventArgs^ e) {
 	projectView::InputArticleInsererCommande inputform;
 	inputform.ShowDialog();
+
+	/*NS_Utilitaire_svc::CLserviceutilitaire^ infos_articles_commande = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	std::vector<std::string> vecteur_articles_commande;
+	vecteur_articles_commande = infos_articles_commande->repertorierArticlesCommande(vecteur_articles_commande, NS_map_commande::CLcommande::covalue);
+	
+	this->cbxNomArticle->Items->Add(gcnew String(vecteur_articles_commande[1].c_str()));*/
+
+
+	
 }
+
+
 };
 }
