@@ -184,6 +184,8 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourPaysCB
 	return vecteur_pays;
 }
 
+
+
 std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPrenom(std::vector<std::string> vecteur_nom_prenom, int id_client) {
 
 	System::String^ sql;
@@ -224,4 +226,19 @@ System::String^ NS_Utilitaire_svc::CLserviceutilitaire::recupererNumeroIncrement
 	
 	}
 	return numero_incrementiel;
+}
+
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::recupererInfoClient(std::vector<std::string> liste_info_client, System::String^ ref_command) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectIdClientCommande(ref_command);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+
+		liste_info_client.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		liste_info_client.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+		liste_info_client.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
+	}
+	return liste_info_client;
+
 }

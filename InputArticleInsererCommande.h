@@ -10,12 +10,12 @@ namespace projectView {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de InputArticleUpdate
+	/// Description résumée de InputArticleInsererCommande
 	/// </summary>
-	public ref class InputArticleUpdate : public System::Windows::Forms::Form
+	public ref class InputArticleInsererCommande : public System::Windows::Forms::Form
 	{
 	public:
-		InputArticleUpdate(void)
+		InputArticleInsererCommande(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace projectView {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~InputArticleUpdate()
+		~InputArticleInsererCommande()
 		{
 			if (components)
 			{
@@ -50,13 +50,13 @@ namespace projectView {
 		{
 			this->SuspendLayout();
 			// 
-			// InputArticleUpdate
+			// InputArticleInsererCommande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(445, 338);
-			this->Name = L"InputArticleUpdate";
-			this->Text = L"InputArticleUpdate";
+			this->ClientSize = System::Drawing::Size(604, 410);
+			this->Name = L"InputArticleInsererCommande";
+			this->Text = L"InputArticleInsererCommande";
 			this->ResumeLayout(false);
 
 		}

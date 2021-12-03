@@ -33,9 +33,11 @@ namespace NS_Utilitaire_svc {
         std::vector<std::string> miseAjourNomPrenom(std::vector<std::string>, int);
 		std::vector<std::string> miseAjourNomPrenomPersonnel(std::vector<std::string>, int);
 
-
 		std::vector<std::string> miseAjourVilleCBCP(std::vector<std::string>, System::String^);
 		std::vector<std::string> miseAjourRegionCBCP(std::vector<std::string>, System::String^);
 		std::vector<std::string> miseAjourPaysCBCP(std::vector<std::string>, System::String^);
+
+		std::vector<std::string> recupererInfoClient(std::vector<std::string>, System::String^);
+
 	};
 }

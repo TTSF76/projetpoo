@@ -12,3 +12,4 @@
 #include "InputArticleInserer.h"
 #include "InputClientUpdate.h"
 #include "Auth.h"
+#include "InputCommandeUpdate.h"

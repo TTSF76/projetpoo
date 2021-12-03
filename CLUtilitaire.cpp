@@ -86,3 +86,7 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoAdresseLivraison(int 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIncrementReference(System::String^ ref_commande) {
 	return "SELECT COUNT(*)+1 as auto_increment FROM commande WHERE ref_command LIKE '" + ref_commande + "%'";
 }
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClientCommande(System::String^ ref_commande) {
+	return "select client.id_client, client.nom_client, client.prenom_client from client inner join commande on client.id_client = commande.id_client where ref_command = '"+ref_commande+"'";
+}

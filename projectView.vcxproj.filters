@@ -137,6 +137,9 @@
     <ClInclude Include="InputAdresseClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputArticleInsererCommande.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="projectView.cpp">
@@ -252,6 +255,9 @@
     </ClCompile>
     <ClCompile Include="InputAdresseClient.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputArticleInsererCommande.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

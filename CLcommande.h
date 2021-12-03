@@ -43,7 +43,8 @@ namespace NS_map_commande {
 		int getIdAdresseLivraison();
 		int getIdAdresseFacturation();
 		int getNombrePaiement();
-	
+	    static System::String^ covalue = "0";
+
 		
 		
 	};

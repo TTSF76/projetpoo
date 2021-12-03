@@ -150,6 +150,9 @@
     <ClInclude Include="InputArticleInserer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InputArticleInsererCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="InputArticleUpdate.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -221,6 +224,7 @@
     <ClCompile Include="CLUtilitaire.cpp" />
     <ClCompile Include="InputAdresseClient.cpp" />
     <ClCompile Include="InputArticleInserer.cpp" />
+    <ClCompile Include="InputArticleInsererCommande.cpp" />
     <ClCompile Include="InputArticleUpdate.cpp" />
     <ClCompile Include="InputClientInserer.cpp" />
     <ClCompile Include="InputClientUpdate.cpp" />
@@ -264,6 +268,12 @@
     <EmbeddedResource Include="InputArticleInserer.resx">
       <DependentUpon>InputArticleInserer.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputArticleInsererCommande.resx">
+      <DependentUpon>InputArticleInsererCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputArticleUpdate.resx">
+      <DependentUpon>InputArticleUpdate.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputClientInserer.resx">
       <DependentUpon>InputClientInserer.h</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputCommandeSupprimer.resx">
       <DependentUpon>InputCommandeSupprimer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputCommandeUpdate.resx">
+      <DependentUpon>InputCommandeUpdate.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputPersonnelInserer.resx">
       <DependentUpon>InputPersonnelInserer.h</DependentUpon>

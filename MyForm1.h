@@ -7,6 +7,7 @@
 #include "CLserviceStats.h"
 #include "CLservicearticle.h"
 
+
 namespace projectView {
 
 	using namespace System;
@@ -1005,8 +1006,27 @@ private: System::Void bouton_update_Click(System::Object^ sender, System::EventA
 		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
 		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
 		this->articleId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
-		/*projectView::InputArticleUpdate inputForm;
-		inputForm.ShowDialog();*/
+	
+
+	}
+
+	else if (gestion == "COMMANDE") {
+		if (this->dataGridView1->DataSource == nullptr) {
+			MessageBox::Show("Vous devez lister les commandes puis sélectionner une valeur de la colonne ref_command!", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+		NS_map_commande::CLcommande^ client = gcnew NS_map_commande::CLcommande;
+		if (this->dataGridView1->CurrentCell->ColumnIndex != 0)
+		{
+			MessageBox::Show("Vous devez sélectionner une valeur de la colonne ref_command !", "Erreur", MessageBoxButtons::OK);
+			return;
+		}
+		int rowindex = this->dataGridView1->CurrentCell->RowIndex;
+		int columnindex = this->dataGridView1->CurrentCell->ColumnIndex;
+		NS_map_commande::CLcommande::covalue = this->dataGridView1->Rows[this->dataGridView1->CurrentCell->RowIndex]->Cells[this->dataGridView1->CurrentCell->ColumnIndex]->Value->ToString();
+		this->clientId = this->dataGridView1->Rows[rowindex]->Cells[columnindex]->Value->ToString();
+		projectView:: InputCommandeUpdate inputForm;
+		inputForm.ShowDialog();
 
 	}
 }
