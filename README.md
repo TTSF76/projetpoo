@@ -456,3 +456,39 @@ Variation commerciale :
 ```
 
 ---
+
+## Test unitaire
+
+Étape 1 : cliquer sur la rubrique « Gestion personnel »
+
+<p align="center"><img src="https://i.imgur.com/nLtWain.png"></img></p>
+
+Étape 2 : on se connecte avec le mot de passe « motdepasse »
+
+<p align="center"><img src="https://i.imgur.com/fJZ82JG.png"></img></p>
+
+Une fois connecté, on clique sur créer : 
+
+<p align="center"><img src="https://i.imgur.com/nLtWain.png"></img></p>
+
+Cette fenêtre s’affiche alors :
+
+<p align="center"><img src="https://i.imgur.com/9AgAN82.png"></img></p>
+
+On remplit tous les champs ce qui nous donne ceci :
+
+<p align="center"><img src="https://i.imgur.com/DBVt25J.png"></img></p>
+
+Nous pouvons alors cliquer sur le bouton valider, ce qui nous ferme la fenêtre. On revient alors sur cette fenêtre. 
+ 
+<p align="center"><img src="https://i.imgur.com/qc0NJN9.png"></img></p>
+
+On n’a alors plus qu’à cliquer sur afficher pour voir le nouvel enregistrement :
+
+<p align="center"><img src="https://i.imgur.com/hEAdml5.png"></img></p>
+
+
+On voit bien apparaître Talla dans la base. On peut enfin cliquer sur « Mettre à jour » pour afficher de façon claire et formatée dans une fenêtre les données du personnel :
+
+ 
+<p align="center"><img src="https://i.imgur.com/hxlMcfC.png></img></p>
