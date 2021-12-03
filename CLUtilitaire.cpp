@@ -98,7 +98,6 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIncrementReference(System
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoArticle(int ref_article) {
 	return "SELECT * FROM article WHERE ref_article="+ ref_article;
 }
-}
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClientCommande(System::String^ ref_commande) {
 	return "select client.id_client, client.nom_client, client.prenom_client from client inner join commande on client.id_client = commande.id_client where ref_command = '"+ref_commande+"'";
