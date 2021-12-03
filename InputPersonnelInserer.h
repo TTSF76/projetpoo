@@ -576,7 +576,9 @@ namespace projectView {
 		else {
 			personnel->setIdSupHierarchique(int::Parse("0"));
 		}
-		adresse_personnel->setVille(1);
+		adresse_personnel->setRegion(cbxRegion->Text);
+		adresse_personnel->setCodePostal(cbxCode_postal->Text);
+		adresse_personnel->setPays(cbxPays->Text);
 		adresse_personnel->setNumeroRue(tbxRueNum->Text);
 		adresse_personnel->setRue(tbxRue->Text);
 		adresse_personnel->setNumeroEtage(int::Parse(tbxEtage->Text));
