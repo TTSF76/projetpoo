@@ -133,3 +133,8 @@ void UIAction::validerUpdateButtonClient(NS_map_client::CLclient^ client)
 {
 	UIAction::svcClient->updateClient(client);
 }
+
+void UIAction::validerUpdateButtonPersonnel(System::Windows::Forms::Form^ form, NS_map_personnel::CLpersonnel^ personnel)
+{
+	UIAction::svcPersonnel->updatePersonnel(personnel);
+}

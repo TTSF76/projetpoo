@@ -390,7 +390,7 @@ namespace projectView {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
-			this->ClientSize = System::Drawing::Size(398, 486);
+			this->ClientSize = System::Drawing::Size(445, 495);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->tbxRef);
 			this->Controls->Add(this->tbxCouleur);
@@ -416,7 +416,7 @@ namespace projectView {
 			this->Controls->Add(this->lblNature);
 			this->Name = L"InputArticleUpdate";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Modifier un article";
+			this->Text = L"InputArticleUpdate";
 			this->Load += gcnew System::EventHandler(this, &InputArticleUpdate::InputArticleUpdate_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tbxSeuil))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tbxTauxTVA))->EndInit();
@@ -426,17 +426,6 @@ namespace projectView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tbxQuantite))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
-			this->SuspendLayout();
-			// 
-			// InputArticleUpdate
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(445, 338);
-			this->Name = L"InputArticleUpdate";
-			this->Text = L"InputArticleUpdate";
-			this->ResumeLayout(false);
 
 		}
 #pragma endregion

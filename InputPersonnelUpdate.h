@@ -2,6 +2,7 @@
 #include "CLserviceadresse.h"
 #include "CLserviceutilitaire.h"
 #include "CLpersonnel.h"
+#include "UIAction.h"
 
 namespace projectView {
 
@@ -227,6 +228,7 @@ private: System::Windows::Forms::TextBox^ tbxIdAdress;
 			this->btnAnnuler->TabIndex = 49;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = false;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputPersonnelUpdate::btnAnnuler_Click);
 			// 
 			// btnValider
 			// 
@@ -244,6 +246,7 @@ private: System::Windows::Forms::TextBox^ tbxIdAdress;
 			this->btnValider->TabIndex = 47;
 			this->btnValider->Text = L"Valider";
 			this->btnValider->UseVisualStyleBackColor = false;
+			this->btnValider->Click += gcnew System::EventHandler(this, &InputPersonnelUpdate::btnValider_Click);
 			// 
 			// lblResidence
 			// 
@@ -610,6 +613,7 @@ private: System::Windows::Forms::TextBox^ tbxIdAdress;
 			this->Controls->Add(this->cbxPays);
 			this->Controls->Add(this->lblPays);
 			this->Name = L"InputPersonnelUpdate";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Modifier un membre du personnel";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -660,6 +664,40 @@ private: System::Void cbxManager_SelectedIndexChanged(System::Object^ sender, Sy
 	else {
 		this->tbxNomPrenomManager->Text = "Lui-même";
 	}
+}
+private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	NS_map_personnel::CLpersonnel^ personnel = gcnew NS_map_personnel::CLpersonnel;
+	if (tbxNom->Text->Length == 0 || tbxPrenom->Text->Length == 0 || tbxRueNum->Text->Length == 0 || tbxRue->Text->Length == 0 || tbxEtage->Text->Length == 0 ||
+		tbxResidence->Text->Length == 0 || cbxRegion->SelectedIndex < 0 || cbxPays->SelectedIndex < 0 || cbxVille->SelectedIndex < 0 || cbxCode_postal->Text->Length == 0) {
+		MessageBox::Show("Vous n'avez pas renseigné tous les champs", "Erreur", MessageBoxButtons::OK);
+		return;
+	}
+	CLadresse^ adresse_personnel = gcnew CLadresse;
+
+	personnel->setNom(this->tbxNom->Text);
+	personnel->setPrenom(this->tbxPrenom->Text);
+	personnel->setDateEmbauche(this->dtpEmbauche->Value.ToString("yyyy-MM-dd"));
+	if (this->cbxManager->Text != "Lui-même") {
+		personnel->setIdSupHierarchique(int::Parse(this->cbxManager->Text));
+	}
+	else {
+		personnel->setIdSupHierarchique(int::Parse("0"));
+	}
+	adresse_personnel->setRegion(cbxRegion->Text);
+	adresse_personnel->setCodePostal(cbxCode_postal->Text);
+	adresse_personnel->setPays(cbxPays->Text);
+	adresse_personnel->setNumeroRue(tbxRueNum->Text);
+	adresse_personnel->setRue(tbxRue->Text);
+	adresse_personnel->setNumeroEtage(int::Parse(tbxEtage->Text));
+	adresse_personnel->setNomResidence(tbxResidence->Text);
+
+	personnel->setAdresse(adresse_personnel);
+
+	UIAction::validerUpdateButtonPersonnel(this, personnel);
+	this->Close();
+}
+private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }
