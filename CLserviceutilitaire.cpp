@@ -287,3 +287,16 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::recupererInfoCl
 	return liste_info_client;
 
 }
+
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierArticles(std::vector<std::string> liste_articles) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectArticle();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+
+		liste_articles.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		
+	}
+	return liste_articles;
+}

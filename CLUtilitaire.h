@@ -34,6 +34,7 @@ namespace NS_map_Utilitaire {
 
 		System::String^ SelectIncrementReference(System::String^);
 
+		System::String^ SelectArticle();
 		System::String^ SelectInfoArticle(int);
 
 		System::String^ SelectIdClientCommande(System::String^);

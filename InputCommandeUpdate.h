@@ -3,7 +3,7 @@
 #include "CLcommande.h"
 #include "UIAction.h"
 #include "CLserviceutilitaire.h"
-
+#include "InputArticleInsererCommande.h"
 
 namespace projectView {
 
@@ -244,6 +244,7 @@ private: System::Windows::Forms::Label^ label_total_TTC;
 			this->btnAnnuler->TabIndex = 178;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = false;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputCommandeUpdate::btnAnnuler_Click);
 			// 
 			// btnValider
 			// 
@@ -964,6 +965,7 @@ private: System::Windows::Forms::Label^ label_total_TTC;
 			this->button_add_article->TabIndex = 241;
 			this->button_add_article->Text = L"Ajouter Article";
 			this->button_add_article->UseVisualStyleBackColor = false;
+			this->button_add_article->Click += gcnew System::EventHandler(this, &InputCommandeUpdate::button_add_article_Click);
 			// 
 			// tbxPrixHT
 			// 
@@ -1189,6 +1191,13 @@ private: System::Void cbxIdLivraison_SelectedIndexChanged(System::Object^ sender
 	this->tbxNRueL->Text = (gcnew String(vecteur_adresse_livraison[1].c_str()));
 	this->tbxRueL->Text = (gcnew String(vecteur_adresse_livraison[0].c_str()));
 	this->tbxEtageL->Text = (gcnew String(vecteur_adresse_livraison[3].c_str()));
+}
+private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void button_add_article_Click(System::Object^ sender, System::EventArgs^ e) {
+	projectView::InputArticleInsererCommande inputform;
+	inputform.ShowDialog();
 }
 };
 }
