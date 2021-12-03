@@ -13,3 +13,6 @@
 #include "InputClientUpdate.h"
 #include "Auth.h"
 #include "InputCommandeUpdate.h"
+#include "InputArticleUpdate.h"
+#include "InputPersonnelUpdate.h"
+#include "Auth.h"

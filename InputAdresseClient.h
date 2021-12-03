@@ -161,6 +161,7 @@ namespace projectView {
 			this->btnAnnuler->TabIndex = 176;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = false;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &InputAdresseClient::btnAnnuler_Click);
 			// 
 			// btnValider
 			// 
@@ -481,6 +482,9 @@ private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs
 		UIAction::insertButtonAdresseFac(adresse_facturation);
 		this->Close();
 	}
+}
+private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

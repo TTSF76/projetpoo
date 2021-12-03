@@ -9,6 +9,7 @@ namespace NS_Article_svc {
 		System::Data::DataSet^ selectAllArticle(System::String^);
 		void insertArticle(NS_map_article::CLarticle^ article);
 		void deleteArticle(NS_map_article::CLarticle^ article);
+		void updateArticle(NS_map_article::CLarticle^ article);
 		CLservicearticle(void);
 	private:
 		NS_Comp_Data::CLconnect^ oCad;

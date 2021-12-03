@@ -25,6 +25,8 @@ public:
 	virtual System::String^ Update() override;
 	virtual System::String^ Delete() override;
 	virtual System::String^ Select() override;
+
+	static System::String^ pvalue = "0";
 	};
 };
 

@@ -53,14 +53,22 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdPersonnel() {
 	return "select id_personnel from personnel ";
 }
 
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdSup() {
+	return "select id_personnel from personnel WHERE id_personnel_etre_dirige IS NULL";
+}
+
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenom(int id_client) {
 
 	return "select nom_client, prenom_client,date_naissance from client where id_client = '"+id_client+"'";
 }
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenomManager(int id_manager) {
+
+	return "select prenom_personnel, nom_personnel FROM personnel WHERE id_personnel = '" + id_manager + "'";
+}
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenomPersonnel(int id_personnel) {
 
-	return "select nom_personnel, prenom_personnel,date_embauche,id_personnel_etre_dirige from personnel where id_personnel = '" + id_personnel + "'";
+	return "select nom_personnel, prenom_personnel,date_embauche,id_personnel_etre_dirige,id_adresse from personnel where id_personnel = '" + id_personnel + "'";
 }
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdAdresseFacturation(int id_client) {
@@ -85,6 +93,11 @@ System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoAdresseLivraison(int 
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIncrementReference(System::String^ ref_commande) {
 	return "SELECT COUNT(*)+1 as auto_increment FROM commande WHERE ref_command LIKE '" + ref_commande + "%'";
+}
+
+System::String^ NS_map_Utilitaire::CLUtilitaire::SelectInfoArticle(int ref_article) {
+	return "SELECT * FROM article WHERE ref_article="+ ref_article;
+}
 }
 
 System::String^ NS_map_Utilitaire::CLUtilitaire::SelectIdClientCommande(System::String^ ref_commande) {

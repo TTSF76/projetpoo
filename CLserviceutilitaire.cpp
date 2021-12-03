@@ -73,6 +73,26 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierIdAd
 	return list_id_adresse_livraison;
 }
 
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierInfoArticles(std::vector<std::string> liste_info_articles, int ref_article)
+{
+	System::String^ sql;
+	sql = mapUtilitaire->SelectInfoArticle(ref_article);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[3]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[4]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[5]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[6]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[7]->ToString()));
+		liste_info_articles.push_back(msclr::interop::marshal_as<std::string>(val[8]->ToString()));
+	}
+	return liste_info_articles;
+}
+
 std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourAdresseLivraison(std::vector<std::string> vecteur_adresse_livraison, int id_adresse_livraison) {
 
 	System::String^ sql;
@@ -145,6 +165,17 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierIdPe
 	return list_id_personnel;
 }
 
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierSuperieurHierarchique(std::vector<std::string> liste_sup) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectIdSup();
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		liste_sup.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+	}
+	return liste_sup;
+}
+
 std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire:: miseAjourVilleCBCP(std::vector<std::string> vecteur_ville, System::String^ code_postal)
 {
 
@@ -200,6 +231,19 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPre
 	return vecteur_nom_prenom;
 }
 
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPrenonManager(std::vector<std::string> vecteur_nom_prenom_manager, int id_manager) {
+
+	System::String^ sql;
+	sql = mapUtilitaire->SelectNomPrenomManager(id_manager);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+		vecteur_nom_prenom_manager.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		vecteur_nom_prenom_manager.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+	}
+	return vecteur_nom_prenom_manager;
+}
+
 std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPrenomPersonnel(std::vector<std::string> vecteur_nom_prenom_personnel, int id_personnel) {
 
 	System::String^ sql;
@@ -211,6 +255,7 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourNomPre
 		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
 		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
 		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[3]->ToString()));
+		vecteur_nom_prenom_personnel.push_back(msclr::interop::marshal_as<std::string>(val[4]->ToString()));
 
 	}
 	return vecteur_nom_prenom_personnel;

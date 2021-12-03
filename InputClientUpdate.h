@@ -945,6 +945,13 @@ private: System::Void cbxIdLivraison_SelectedIndexChanged(System::Object^ sender
 	this->tbxResidenceL->Text = (gcnew String(vecteur_adresse_livraison[2].c_str()));
 }
 private: System::Void InputClientUpdate_Load(System::Object^ sender, System::EventArgs^ e) {
+	updateForm();
+}
+private: void updateForm() {
+	this->cbxIdFacturation->Text = "";
+	this->cbxIdLivraison->Text = "";
+	this->cbxIdFacturation->Items->Clear();
+	this->cbxIdLivraison->Items->Clear();
 	this->tbxIdClient->Text = NS_map_client::CLclient::cvalue;
 	NS_Utilitaire_svc::CLserviceutilitaire^ nomprenom = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
 	std::vector<std::string> vecteur_nom_prenom;
@@ -973,14 +980,13 @@ private: System::Void suprAdrLiv_Click(System::Object^ sender, System::EventArgs
 	CLadresse^ adresse = gcnew CLadresse;
 	adresse->setIdAdress(int::Parse(cbxIdLivraison->Text));
 	UIAction::deleteButtonAdresseLiv(adresse);
-	
-	this->Close();
+	updateForm();
 }
 private: System::Void suprAdrFac_Click(System::Object^ sender, System::EventArgs^ e) {
 	CLadresse^ adresse = gcnew CLadresse;
 	adresse->setIdAdress(int::Parse(cbxIdFacturation->Text));
 	UIAction::deleteButtonAdresseFac(adresse);
-	this->Close();
+	updateForm();
 }
 private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs^ e) {
 	NS_map_client::CLclient^ client = gcnew NS_map_client::CLclient;
@@ -989,11 +995,13 @@ private: System::Void btnValider_Click(System::Object^ sender, System::EventArgs
 	client->setDateNaissance(this->dtpAnniversaire->Value.ToString("yyyy-MM-dd"));
 	UIAction::validerUpdateButtonClient(client);
 	this->Close();
+	updateForm();
 }
 private: System::Void ajoutAdrLiv_Click(System::Object^ sender, System::EventArgs^ e) {
 	CLadresse::avalue = "livraison";
 	projectView::InputAdresseClient inputForm;
 	inputForm.ShowDialog();
+	updateForm();
 }
 private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
@@ -1002,6 +1010,7 @@ private: System::Void ajoutAdrFac_Click(System::Object^ sender, System::EventArg
 	CLadresse::avalue = "facturation";
 	projectView::InputAdresseClient inputForm;
 	inputForm.ShowDialog();
+	updateForm();
 }
 };
 }

@@ -54,6 +54,14 @@ namespace projectView {
 			for (int i = 0; i < list_region.size(); i++) {
 				this->cbxRegion->Items->Add(gcnew String(list_region[i].c_str()));
 			}
+
+			NS_Utilitaire_svc::CLserviceutilitaire^ sup_hierar = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+			std::vector<std::string> list_superieur;
+			list_superieur = sup_hierar->repertorierSuperieurHierarchique(list_superieur);
+			for (int i = 0; i < list_superieur.size(); i++) {
+				this->cbxManager->Items->Add(gcnew String(list_superieur[i].c_str()));
+			}
+			this->cbxManager->Items->Add("Lui-même");
 		
 		
 		
@@ -102,6 +110,7 @@ namespace projectView {
 	private: System::Windows::Forms::Label^ label_titre_infos;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::ComboBox^ cbxCode_postal;
+	private: System::Windows::Forms::TextBox^ tbxNomPrenomManager;
 
 
 	protected:
@@ -150,6 +159,7 @@ namespace projectView {
 			this->label_titre_infos = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->cbxCode_postal = (gcnew System::Windows::Forms::ComboBox());
+			this->tbxNomPrenomManager = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// cbxPays
@@ -381,11 +391,12 @@ namespace projectView {
 			this->cbxManager->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbxManager->ForeColor = System::Drawing::Color::Silver;
 			this->cbxManager->FormattingEnabled = true;
-			this->cbxManager->Location = System::Drawing::Point(91, 184);
+			this->cbxManager->Location = System::Drawing::Point(85, 184);
 			this->cbxManager->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cbxManager->Name = L"cbxManager";
-			this->cbxManager->Size = System::Drawing::Size(289, 24);
+			this->cbxManager->Size = System::Drawing::Size(295, 24);
 			this->cbxManager->TabIndex = 20;
+			this->cbxManager->SelectedIndexChanged += gcnew System::EventHandler(this, &InputPersonnelInserer::cbxManager_SelectedIndexChanged);
 			// 
 			// lblManager
 			// 
@@ -487,6 +498,18 @@ namespace projectView {
 			this->cbxCode_postal->TabIndex = 26;
 			this->cbxCode_postal->SelectedIndexChanged += gcnew System::EventHandler(this, &InputPersonnelInserer::cbxCode_postal_SelectedIndexChanged);
 			// 
+			// tbxNomPrenomManager
+			// 
+			this->tbxNomPrenomManager->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->tbxNomPrenomManager->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbxNomPrenomManager->ForeColor = System::Drawing::Color::Silver;
+			this->tbxNomPrenomManager->Location = System::Drawing::Point(85, 214);
+			this->tbxNomPrenomManager->Margin = System::Windows::Forms::Padding(4);
+			this->tbxNomPrenomManager->Name = L"tbxNomPrenomManager";
+			this->tbxNomPrenomManager->Size = System::Drawing::Size(295, 15);
+			this->tbxNomPrenomManager->TabIndex = 27;
+			// 
 			// InputPersonnelInserer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -494,6 +517,7 @@ namespace projectView {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(841, 323);
+			this->Controls->Add(this->tbxNomPrenomManager);
 			this->Controls->Add(this->cbxCode_postal);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label_titre_infos);
@@ -546,7 +570,12 @@ namespace projectView {
 		personnel->setNom(this->tbxNom->Text);
 		personnel->setPrenom(this->tbxPrenom->Text);
 		personnel->setDateEmbauche(this->dtpEmbauche->Value.ToString("yyyy-MM-dd"));
-		personnel->setIdSupHierarchique(1523);
+		if (this->cbxManager->Text != "Lui-même") {
+			personnel->setIdSupHierarchique(int::Parse(this->cbxManager->Text));
+		}
+		else {
+			personnel->setIdSupHierarchique(int::Parse("0"));
+		}
 		adresse_personnel->setVille(1);
 		adresse_personnel->setNumeroRue(tbxRueNum->Text);
 		adresse_personnel->setRue(tbxRue->Text);
@@ -599,6 +628,17 @@ private: System::Void cbxCode_postal_SelectedIndexChanged(System::Object^ sender
 	cbxVille->Enabled = true;
 	cbxRegion->Enabled = true;
 	cbxPays->Enabled = true;
+}
+private: System::Void cbxManager_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	NS_Utilitaire_svc::CLserviceutilitaire^ info_manager = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	std::vector<std::string> vecteur_info_manager;
+	if (this->cbxManager->Text != "Lui-même") {
+		vecteur_info_manager = info_manager->miseAjourNomPrenonManager(vecteur_info_manager, int::Parse(this->cbxManager->Text));
+		this->tbxNomPrenomManager->Text = (gcnew String(vecteur_info_manager[0].c_str())) + (gcnew String(vecteur_info_manager[1].c_str()));
+	}
+	else {
+		this->tbxNomPrenomManager->Text = "Lui-même";
+	}
 }
 };
 }

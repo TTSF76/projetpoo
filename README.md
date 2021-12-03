@@ -1,52 +1,77 @@
-<h1 align="center">Projet CESI: Delivery Manager [Equipe 6]</h1>
+<h1 align="center">Projet CESI - Delivery Manager [Equipe 6]</h1>
 
-## Somaire
+## Sommaire
 
-- [Présentation du projet](#Présentation)
-	- [Les langages et outils que nous avons utilisé](#Langages-et-Outils-utilisés)
-- [Guide d'utilisation](#Guide-d'utilisation)
-- [Gestion des statistiques](#Statistiques)
-	- [Panier moyen](#Calculer-le-panier-moyen)
-	- [Chiffre d'affaire](#Calculer-le-chiffre-d'affaire-sur-un-mois-en-particuler)
-	- [Produits sous le seuil](#Identifier-les-produits-sous-le-seuil-de-réapprovisionnement)
-	- [Montant total d'un client](#Calculer-le-montant-total-des-achats-pour-un-client)
-	- [Dix articles les plus vendus](#Identifier-les-10-articles-les-plus-vendus)
-	- [Dix articles les moins vendus](#Identifier-les-10-articles-les-moins-vendus)
-	- [Valeur commerciale du stock (sans variables)](#Calculer-la-valeur-commerciale-du-stock-(sans-variables))
-	- [Valeur d'achat du stock](#Calculer-la-valeur-d'achat-du-stock)
-	- [Valeur commerciale du stock (avec variables)](#Calculer-la-variation-commerciale-du-stock-(avec-variables))
-
+-   [Présentation du projet](#Présentation)
+    -   [Description](#Description)
+    -   [Contributeurs](#Contributeurs)
+    -   [Fonctionnalités](#Fonctionnalités)
+    -   [Les langages et outils que nous avons utilisé](#Langages-et-Outils-utilisés)
+-   [Guide d'utilisation](#Guide-dutilisation)
+    -   [Accueil](#Accueil)
+    -   [Affichage](#Affichage)
+    -   [Création](#Création)
+    -   [Suppression](#Suppression)
+    -   [Mise à jour](#Mise-à-jour)
+-   [Réalisation](#Réalisation)
+    -   [Diagramme de classe](#Diagramme)
+    -   [Fichiers](#Fichiers)
+    -   [Base de données](#Base-de-données)
+    -   [Contraintes](#Contraintes)
+        -   [Problèmes](#Problèmes)
+        -   [Solutions](#Solutions)
+-   [Gestion des statistiques](#Statistiques)
+    -   [Panier moyen](#Calculer-le-panier-moyen)
+    -   [Chiffre d'affaire](#Calculer-le-chiffre-daffaire-sur-un-mois-en-particuler)
+    -   [Produits sous le seuil](#Identifier-les-produits-sous-le-seuil-de-réapprovisionnement)
+    -   [Montant total d'un client](#Calculer-le-montant-total-des-achats-pour-un-client)
+    -   [Dix articles les plus vendus](#Identifier-les-10-articles-les-plus-vendus)
+    -   [Dix articles les moins vendus](#Identifier-les-10-articles-les-moins-vendus)
+    -   [Valeur commerciale du stock (sans variables)](<#Calculer-la-valeur-commerciale-du-stock-(sans-variables)>)
+    -   [Valeur d'achat du stock](#Calculer-la-valeur-dachat-du-stock)
+    -   [Valeur commerciale du stock (avec variables)](<#Calculer-la-variation-commerciale-du-stock-(avec-variables)>)
 
 ## Présentation
-**Delivery Manager** est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application.
 
-Ce projet est mené par **Fabien RIBES**, **Talla DIOP**, **Tristan JEHANNO** et **Samuel WARD**.
+### Description
 
+**Delivery Manager** est une application de gestion de base de données pour une nouvelle entreprise. Cette dernière nous a contacté afin de concrétiser l'application, pour permettre à leurs employés de manipuler facilement les données de leurs clients, commandes...
 
+L'application **Delivery Manager** a été conçu grâce aux langages **C++** (pour la partie interface graphique) et **SQL** (pour les requêtes de base de données). Pour ce faire, nous avons utilisé l'IDE **Visual Studio 2019** de Microsoft, le logiciel **Microsoft SQL Server Management Studio 18** pour créer la BDD ainsi qu'un hébergement de BDD grâce à **Microsoft Azure**.
 
-Elle permet de gérer:
+### Contributeurs
 
+Ce projet est mené par:
 
-- Clients
-	- L'*employé* pourra visualiser, créer, modifier et supprimer des **clients**
-- Personnel
-	- Le *manager* pourra visualiser, créer, modifier et supprimer un membre du **personnel**
-	- Cette base est accessible **seulement** par des supérieurs hiérarchiques (*manager*)
-- Commandes
-	- L'*employé* pourra visualiser, créer, modifier et supprimer des **commandes**
-- Stock
-	- L'*employé* pourra visualiser, créer, modifier et supprimer des éléments du **stock**
-- Statistiques
-	- L'*employé* pourra effectuer des commandes qui interrogeront la base de données
-		- Calculer le panier moyen
-		- Calculer le chiffre d'affaire sur un mois en particulier
-		- Identifier les produits sous le seuil de réapprovisionnement
-		- Calculer le montant total des achats pour un client
-		- Identifier les 10 articles les plus vendus
-		- Identifier les 10 articles les moins vendus
-		- Calculer la valeur commerciale du stock
-		- Calculer la valeur d'achat du stock
-		- Calculer la valeur commerciale du stock (avec variables)
+-   [**Fabien RIBES**](https://github.com/Good660)
+-   [**Talla DIOP**](https://github.com/Corleone667)
+-   [**Tristan JEHANNO**](https://github.com/Git-Rigoras)
+-   [**Samuel WARD**](https://github.com/INF-Zenyth)
+
+### Fonctionnalités
+
+**Delivery Manager** permet à l'utilisateur de gérer:
+
+-   **_Clients_**
+    -   L'_employé_ pourra visualiser, créer, modifier et supprimer des **clients**
+-   **_Personnel_**
+    -   Le _manager_ pourra visualiser, créer, modifier et supprimer un membre du **personnel**
+    -   Cette base est accessible **seulement** par des supérieurs hiérarchiques (_manager_)
+-   **_Commandes_**
+    -   L'_employé_ pourra visualiser, créer, modifier et supprimer des **commandes**
+-   **_Stock_**
+    -   L'_employé_ pourra visualiser, créer, modifier et supprimer des éléments du **stock**
+-   [**_Statistiques_**](#Statistiques)
+    -   L'_employé_ pourra effectuer des commandes qui interrogeront la base de données
+        -   Calculer le panier moyen
+        -   Calculer le chiffre d'affaire sur un mois en particulier
+        -   Identifier les produits sous le seuil de réapprovisionnement
+        -   Calculer le montant total des achats pour un client
+        -   Identifier les 10 articles les plus vendus
+        -   Identifier les 10 articles les moins vendus
+        -   Calculer la valeur commerciale du stock
+        -   Calculer la valeur d'achat du stock
+        -   Calculer la valeur commerciale du stock (avec variables)
 
 ### Langages et Outils utilisés
 
@@ -59,61 +84,122 @@ Elle permet de gérer:
 
 ## Guide d'utilisation
 
-Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le fichier.exe de l'application qui arrivera sur la page d'accueil : 
-##### Ecran d'accueil :
-<img src="https://i.imgur.com/jSUs46l.png"></img> 
+### Accueil
+
+Pour utiliser cette application il faut tout simplement posséder une connection internet, et lancer le **fichier executable** de l'application qui arrivera sur la page d'accueil :
+
+<p align="center"><img src="https://i.imgur.com/8lIj9rI.png"></img></p>
 
 Ensuite, il faudra selectionner une catégorie parmis celles ci-dessous :
 
-<img src="https://i.imgur.com/SExdclZ.png"></img>
+<p align="center"><img src="https://i.imgur.com/pFCkkek.png"></img></p>
 
 **Note :** Lorsque que vous cliquer sur personnel, cela vous ouvre la page ci-dessous, il suffit de rentrer le mot de passe "motdepasse" pour accéder a la catégorie personnel.
+
 ##### La fenêtre d'authentification :
-<img src="https://i.imgur.com/j5RFIz2.png"></img>
+
+<p align="center"><img src="https://i.imgur.com/sVSmISc.png"></img></p>
 
 Ensuite vous pouvez choisir une action parmis les 4 boutons qui seront affichés à l'écran (**Afficher**, **Créer**, **Supprimer**, **Mettre à jour**)
 
 ---
 
-Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (*DataGridView*) apparait avec les données demandées.
+### Affichage
+
+Lorsqu'un employé clique sur le bouton **Afficher**, un tableau (_DataGridView_) apparait avec les données demandées.
 
 ##### Voici un exemple de page de gestion (les données sont générées aléatoirement) :
-<img src="https://i.imgur.com/YkfAoii.png"></img>
+
+<p align="center"><img src="https://i.imgur.com/mlQt44y.png"></img></p>
 
 ---
+
+### Création
 
 Lorsqu'un employé clique sur le bouton **Créer**, une nouvelle fenêtre s'ouvrira avec les entrées relatives à la catégorie sélectionnée.
 
 ##### Le formulaire d'insertion de Personnel :
-<img src="https://i.imgur.com/mrFDTcD.png"></img>
+
+<p align="center"><img src="https://i.imgur.com/yh9vBPk.png"></img></p>
 
 ##### Le formulaire d'insertion de Commande :
-<img src="https://i.imgur.com/26PRauK.png"></img>
 
+<p align="center"><img src="https://i.imgur.com/J9uJX22.png"></img></p>
 
 ---
+
+### Suppression
 
 Lorsqu'un employé clique sur le bouton **Supprimer** après avoir sélectionné un ID dans l'affichage, le programme supprimera les données.
 
 ---
 
+### Mise à jour
+
 Lorsqu'un employé clique sur le bouton **Mettre à jour** après avoir sélectionné un ID dans l'affichage, une nouvelle fenêtre s'ouvrira avec un formulaire à remplir avec les données souhaitées.
 
 ##### Le formulaire de mise à jour d'un Client :
-<img src="https://i.imgur.com/tbl8o7K.png"></img>
+
+<p align="center"><img src="https://i.imgur.com/LQA6RAr.png"></img></p>
+
+---
+
+## Réalisation
+
+### Diagramme
+
+Nous avons commencé par créer des diagrammes _UML 2.0_ afin de savoir quoi faire. Ici, nous allons seulement vous remontrer le **diagramme de classe**.<br>
+
+> **Note :** pour voir les autres diagrammes, veuillez consulter le **livrable 2**.
+
+<p align="center"><img src="https://i.imgur.com/2zp56ji.png"></img></p>
+
+A partir du diagramme de classe ci dessus, nous avons pu développer l'arborescence ci-dessous. Notez que des fichiers ont été ajouté par rapport au diagramme de classe, afin de correspondre au besoin de faire un système de "Service-Mappage-Contrôle".
+
+### Fichiers
+
+<details>
+	<summary>Arborescence des fichiers</summary><br>
+	<p align="center"><img src="https://i.imgur.com/Pj5QjLd.png"></img></p>
+</details>
+
+Dans ces fichier, il y a donc trois catégories :
+
+-   Les services
+-   Les maps (ou carte)
+-   Les contrôles
+
+### Contraintes
+
+#### Problèmes
+
+1. On aurait pu utilisé une base de données locale ou sur un serveur local, mais comme les membres du groupe ne travaillent pas aux mêmes campus, ce n'était pas un choix.
+
+2. Se partager le code et pouvoir travailler dessus en même temps.
+
+#### Solutions
+
+1. On a trouvé des entreprises spécialisées dans l'hébergement de bases de données. On est passé par quelques uns pour finalement opter pour **Microsoft Azure**. Cette dernière propose aux étudiants un service d'hébergement gratuit qui est **stable**, **rapide**, **sécurisé** et **compatible avec SQL Server**.
+
+2. Utilisation de **GitHub** pour envoyer et recevoir des fichiers. On a aussi mis en place un _webhook_ dans notre groupe de communication sur Discord qui permet de nous notifier lorsqu'il y a des modifications (**nouvelle branche**, **push**, **commit**...).
+
+<p align="center"><img src="https://i.imgur.com/KwzzdoC.png"></img></p>
+
+---
 
 ## Statistiques
 
-<img src="https://i.imgur.com/XqQXoI6.png"></img>
+La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte _optionnelles_ qui permettent de faire les requêtes ci-dessous.
 
+<p align="center"><img src="https://i.imgur.com/R71fUhg.png"></img></p>
 
-La page **statistiques** est un peu différente des autres: elle comporte 9 boutons et 4 entrées de texte *optionnelles* qui permettent de faire les requêtes ci-dessous.
+---
 
 ### Calculer le panier moyen
 
 Cette commande permet de visualiser la valeur moyenne des paniers des clients (en €).
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE panierMoyen
@@ -130,12 +216,15 @@ Panier moyen :
 350 €
 ```
 
+---
+
 ### Calculer le chiffre d'affaire sur un mois en particuler
 
 Cette commande permet de visualiser le chiffre d'affaire de l'entreprise sur un mois et année en particulier choisi par l'employé.
-<br> **Note :** Il faut rentrer l'année dans la première boîte de texte, et le mois dans la deuxième.
 
-#### Requête
+> **Note :** Il faut rentrer l'année dans la première boîte de texte, et le mois dans la deuxième.
+
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE chiffreAffaire @annee int, @mois int
@@ -154,12 +243,14 @@ Chiffre d'Affaire :
 1400 €
 ```
 
+---
+
 ### Identifier les produits sous le seuil de réapprovisionnement
 
 Cette commande permet de visualiser tous les produits qui devront être restocker par l'entreprise.
 Les valeurs renvoyées correspondent à la référence de l'article.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE restocker
@@ -178,12 +269,15 @@ Restocker :
 29
 ```
 
+---
+
 ### Calculer le montant total des achats pour un client
 
 Cette commande permet de visualiser le montant total (en €) du panier d'un client sélectionné par l'employé.
-<br> **Note :** Cette commande requiert de rentrer un id de client dans la première boîte de texte.
 
-#### Requête
+> **Note :** Cette commande requiert de rentrer un ID de client dans la première boîte de texte.
+
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE montantTotal @clientId int
@@ -203,11 +297,13 @@ Montant Total:
 1400 €
 ```
 
+---
+
 ### Identifier les 10 articles les plus vendus
 
 Cette commande permet d'identifier les id des 10 produits les moins vendus, afin d'envisager par exemple d'augmenter les stocks de ces produits pour augmenter les recettes.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE plusVendus
@@ -236,11 +332,15 @@ Plus Vendus :
 48 Mictopepor    7
 ```
 
+> Chaque ligne comporte la référence de l'article, le nom de l'article et la quantité vendue.
+
+---
+
 ### Identifier les 10 articles les moins vendus
 
 Cette commande permet d'indentifier les id des 10 articles les moins vendus, afin d'éventuellement envisager une modification sur leur prix par exemple.
 
-#### Requête
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE moinsVendus
@@ -269,26 +369,15 @@ Moins Vendus :
 15 Subwoofgaer   41
 ```
 
-### Calculer la valeur commerciale du stock (sans variables)
+> Chaque ligne comporte la référence de l'article, le nom de l'article et la quantité vendue.
 
-Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise
-
-```sql
-CREATE PROCEDURE prixCommercial as
-SELECT SUM(prix_article_ht*stock_article) from article
-GO
-```
-
-#### Réponse-type
-
-```
-Variation commerciale : 
-147714163 €
-```
+---
 
 ### Calculer la valeur d'achat du stock
 
-Cette commande permet de calculer le prix auquel l'entièreté du stock à été acheté
+Cette commande permet de calculer le prix auquel l'entièreté du stock à été acheté.
+
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE prixAchat
@@ -301,21 +390,45 @@ GO
 #### Réponse-type
 
 ```
-Valeur d'achat : 
+Valeur d'achat :
 140475544 €
 ```
 
+---
+
+### Calculer la valeur commerciale du stock (sans variables)
+
+Cette commande permet de calculer l'argent que vaut tout le stock de l'entreprise.
+
+#### Procédure SQL
+
+```sql
+CREATE PROCEDURE prixCommercial as
+SELECT SUM(prix_article_ht*stock_article) from article
+GO
+```
+
+#### Réponse-type
+
+```
+Valeur commerciale :
+147714163 €
+```
+
+---
+
 ### Calculer la variation commerciale du stock (avec variables)
 
-Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin <br>
-Elle prendre en argument un mode de TVA (1, 2 ou 3), puis des valeurs pour les valeurs restantes.
-<br>**Note:** Cette commande nécessite de remplir les 4 boites de texte, dans l'ordre qui suit :
-+ La TVA (1, 2, ou 3)
-+ La marge
-+ La remise
-+ La démarque
+Cette commande effectue la même action que la commande de la valeur commerciale, avec une TVA, une marge, une remise et une démarque modifiables au besoin.
 
-#### Requête
+> **Note:** Cette commande nécessite de remplir les 4 boites de texte, dans l'ordre qui suit:
+>
+> -   La **_TVA_** (**1** [5.5%], **2** [10%], ou **3** [20%])
+> -   La **_marge_** (en %)
+> -   La **_remise_** (en %)
+> -   La **_démarque_** (en %)
+
+#### Procédure SQL
 
 ```sql
 CREATE PROCEDURE varCommerciale @tva int, @marge int, @remise int, @demarche int
@@ -334,9 +447,12 @@ SET @prix = @prix * (1 - @demarche2 / 100)
 SELECT @prix AS valeur
 GO
 ```
+
 #### Réponse-type
 
 ```
-Variation commerciale : 
+Variation commerciale :
 159594149 €
 ```
+
+---

@@ -39,4 +39,6 @@ public:
 
 	static void deleteButtonAdresseLiv(CLadresse^ adresse);
 	static void deleteButtonAdresseFac(CLadresse^ adresse);
+
+	static void validerUpdateButtonArticle(System::Windows::Forms::Form^ form, NS_map_article::CLarticle^ article);
 };
