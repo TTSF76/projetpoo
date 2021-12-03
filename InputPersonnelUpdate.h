@@ -61,11 +61,14 @@ namespace projectView {
 				this->cbxManager->Items->Add(gcnew String(list_superieur[i].c_str()));
 			}
 			this->cbxManager->Items->Add("Lui-même");
-
 			this->tbxPrenom->Text = (gcnew String(vecteur_nom_prenom[1].c_str()));
 			this->tbxNom->Text = (gcnew String(vecteur_nom_prenom[0].c_str()));
 			this->dtpEmbauche->Value = System::DateTime::Parse(gcnew String(vecteur_nom_prenom[2].c_str()));
 			this->cbxManager->Text = (gcnew String(vecteur_nom_prenom[3].c_str()));
+			System::String^ manager = gcnew String(vecteur_nom_prenom[3].c_str());
+			if (manager->Length == 0) {
+				this->cbxManager->Text = "Lui-même";
+			}
 			this->tbxIdAdress->Text = (gcnew String(vecteur_nom_prenom[4].c_str()));
 
 			NS_Utilitaire_svc::CLserviceutilitaire^ info_adresse = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
