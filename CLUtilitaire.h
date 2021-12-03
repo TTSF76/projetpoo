@@ -20,8 +20,11 @@ namespace NS_map_Utilitaire {
 
 		System::String^ SelectIdClient();
 		System::String^ SelectIdPersonnel();
+		System::String^ SelectIdSup();
 		System::String^ SelectNomPrenom(int);
 		System::String^ SelectNomPrenomPersonnel(int);
+
+		System::String^ NS_map_Utilitaire::CLUtilitaire::SelectNomPrenomManager(int id_manager);
 		
 		System::String^ SelectIdAdresseFacturation(int);
 		System::String^ SelectInfoAdresseFacturation(int);

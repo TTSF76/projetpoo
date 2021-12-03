@@ -285,6 +285,9 @@
     <EmbeddedResource Include="InputPersonnelSupprimer.resx">
       <DependentUpon>InputPersonnelSupprimer.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputPersonnelUpdate.resx">
+      <DependentUpon>InputPersonnelUpdate.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputStockInserer.resx">
       <DependentUpon>InputStockInserer.h</DependentUpon>
     </EmbeddedResource>
