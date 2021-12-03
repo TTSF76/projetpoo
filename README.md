@@ -491,4 +491,4 @@ On n’a alors plus qu’à cliquer sur afficher pour voir le nouvel enregistrem
 On voit bien apparaître Talla dans la base. On peut enfin cliquer sur « Mettre à jour » pour afficher de façon claire et formatée dans une fenêtre les données du personnel :
 
  
-<p align="center"><img src="https://i.imgur.com/hxlMcfC.png></img></p>
+<p align="center"><img src="https://i.imgur.com/hxlMcfC.png"></img></p>
