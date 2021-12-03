@@ -288,6 +288,7 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::recupererInfoCl
 
 }
 
+
 std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierArticles(std::vector<std::string> liste_articles) {
 	System::String^ sql;
 	sql = mapUtilitaire->SelectArticle();
@@ -299,4 +300,49 @@ std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierArti
 		
 	}
 	return liste_articles;
+}
+
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::miseAjourArticleCommande(std::vector<std::string> liste_article_update, System::String^ nom_article) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectArticles(nom_article);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[3]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[4]->ToString()));
+
+
+
+
+	}
+	return liste_article_update;
+}
+
+std::vector<std::string> NS_Utilitaire_svc::CLserviceutilitaire::repertorierArticlesCommande(std::vector<std::string> liste_article_update, System::String^ ref_commande) {
+	System::String^ sql;
+	sql = mapUtilitaire->SelectInfoArticlesCommande(ref_commande);
+	System::Data::SqlClient::SqlDataReader^ val = Ocad->lecteurData(sql);
+
+	while (val->Read()) {
+
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[0]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[1]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[2]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[3]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[4]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[5]->ToString()));
+		liste_article_update.push_back(msclr::interop::marshal_as<std::string>(val[6]->ToString()));
+
+
+
+
+
+
+	}
+	return liste_article_update;
+
 }

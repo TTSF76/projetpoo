@@ -44,5 +44,10 @@ namespace NS_Utilitaire_svc {
 
 		std::vector<std::string> recupererInfoClient(std::vector<std::string>, System::String^);
 
+		std::vector<std::string> miseAjourArticleCommande(std::vector<std::string>, System::String^);
+		std::vector<std::string> repertorierArticlesCommande(std::vector<std::string>, System::String^);
+
+
+
 	};
 }

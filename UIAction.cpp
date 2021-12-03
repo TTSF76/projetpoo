@@ -77,6 +77,14 @@ void UIAction::validerButtonCommande(System::Windows::Forms::Form^ form, NS_map_
 		UIAction::svcCommande->insertCommande(commande);
 	}
 }
+
+	void UIAction::validerButtonArticleCommande(System::Windows::Forms::Form^ form, NS_map_commande::CLcommande^ commande)
+{
+	if (form->Name == "InputArticleInsererCommande") {
+		UIAction::svcCommande->insertCommande(commande);
+	}
+
+}
 void UIAction::deleteButtonCommande(System::Windows::Forms::Label^ lbl, NS_map_commande::CLcommande^ commande, System::Windows::Forms::DataGridView^ dgv) {
 	UIAction::svcCommande->deleteCommande(commande);
 	dgv->Refresh();

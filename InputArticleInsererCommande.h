@@ -354,6 +354,16 @@ private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs
 	this->Close();
 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	
+	NS_Utilitaire_svc::CLserviceutilitaire^ article_update = gcnew NS_Utilitaire_svc::CLserviceutilitaire();
+	std::vector<std::string> vecteur_article_update;
+	vecteur_article_update = article_update->miseAjourArticleCommande(vecteur_article_update, this->cbxNomArticle->Text);
+	
+	this->tbxNatureArticle->Text = (gcnew String(vecteur_article_update[0].c_str()));
+	this->tbxStockArticle->Text = (gcnew String(vecteur_article_update[1].c_str()));
+	this->tbxCouleurArticle->Text = (gcnew String(vecteur_article_update[2].c_str()));
+	this->tbxPrixArticle->Text = (gcnew String(vecteur_article_update[3].c_str()));
+	this->tbxRemiseArticle->Text = (gcnew String(vecteur_article_update[4].c_str()));
 
 }
 };

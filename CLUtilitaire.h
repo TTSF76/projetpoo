@@ -39,6 +39,10 @@ namespace NS_map_Utilitaire {
 
 		System::String^ SelectIdClientCommande(System::String^);
 
+		System::String^ SelectArticles(System::String^);
+
+		System::String^ SelectInfoArticlesCommande(System::String^);
+		
 	};
 }
 
